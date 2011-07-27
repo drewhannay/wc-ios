@@ -39,6 +39,20 @@
 		2D26543113E06A5D00DE089C /* stalkernet.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26542013E06A5D00DE089C /* stalkernet.png */; };
 		2D26543313E06A8C00DE089C /* 57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26543213E06A8C00DE089C /* 57x57.png */; };
 		2D26543513E06A9200DE089C /* 114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26543413E06A9200DE089C /* 114x114.png */; };
+		2D26543913E06B5D00DE089C /* HomeScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26543713E06B5D00DE089C /* HomeScreen.m */; };
+		2D26543A13E06B5D00DE089C /* HomeScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26543813E06B5D00DE089C /* HomeScreen.xib */; };
+		2D26543E13E06B8D00DE089C /* StalkernetHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26543C13E06B8D00DE089C /* StalkernetHome.m */; };
+		2D26543F13E06B8D00DE089C /* StalkernetHome.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26543D13E06B8D00DE089C /* StalkernetHome.xib */; };
+		2D26544313E06B9900DE089C /* StalkernetResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26544113E06B9800DE089C /* StalkernetResults.m */; };
+		2D26544413E06B9900DE089C /* StalkernetResults.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26544213E06B9900DE089C /* StalkernetResults.xib */; };
+		2D26544813E06BA400DE089C /* Links.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26544613E06BA400DE089C /* Links.m */; };
+		2D26544913E06BA400DE089C /* Links.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26544713E06BA400DE089C /* Links.xib */; };
+		2D26544D13E06BBD00DE089C /* Chapel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26544B13E06BBC00DE089C /* Chapel.m */; };
+		2D26544E13E06BBD00DE089C /* Chapel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26544C13E06BBC00DE089C /* Chapel.xib */; };
+		2D26545213E06BD700DE089C /* DiningMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26545013E06BD600DE089C /* DiningMenu.m */; };
+		2D26545313E06BD700DE089C /* DiningMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26545113E06BD600DE089C /* DiningMenu.xib */; };
+		2D26545713E06BE800DE089C /* OpenFloor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26545513E06BE800DE089C /* OpenFloor.m */; };
+		2D26545813E06BE800DE089C /* OpenFloor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26545613E06BE800DE089C /* OpenFloor.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +102,27 @@
 		2D26542013E06A5D00DE089C /* stalkernet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stalkernet.png; sourceTree = "<group>"; };
 		2D26543213E06A8C00DE089C /* 57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 57x57.png; sourceTree = "<group>"; };
 		2D26543413E06A9200DE089C /* 114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114x114.png; sourceTree = "<group>"; };
+		2D26543613E06B5D00DE089C /* HomeScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreen.h; sourceTree = "<group>"; };
+		2D26543713E06B5D00DE089C /* HomeScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreen.m; sourceTree = "<group>"; };
+		2D26543813E06B5D00DE089C /* HomeScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeScreen.xib; sourceTree = "<group>"; };
+		2D26543B13E06B8D00DE089C /* StalkernetHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StalkernetHome.h; sourceTree = "<group>"; };
+		2D26543C13E06B8D00DE089C /* StalkernetHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StalkernetHome.m; sourceTree = "<group>"; };
+		2D26543D13E06B8D00DE089C /* StalkernetHome.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StalkernetHome.xib; sourceTree = "<group>"; };
+		2D26544013E06B9800DE089C /* StalkernetResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StalkernetResults.h; sourceTree = "<group>"; };
+		2D26544113E06B9800DE089C /* StalkernetResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StalkernetResults.m; sourceTree = "<group>"; };
+		2D26544213E06B9900DE089C /* StalkernetResults.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StalkernetResults.xib; sourceTree = "<group>"; };
+		2D26544513E06BA400DE089C /* Links.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Links.h; sourceTree = "<group>"; };
+		2D26544613E06BA400DE089C /* Links.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Links.m; sourceTree = "<group>"; };
+		2D26544713E06BA400DE089C /* Links.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Links.xib; sourceTree = "<group>"; };
+		2D26544A13E06BBC00DE089C /* Chapel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chapel.h; sourceTree = "<group>"; };
+		2D26544B13E06BBC00DE089C /* Chapel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chapel.m; sourceTree = "<group>"; };
+		2D26544C13E06BBC00DE089C /* Chapel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Chapel.xib; sourceTree = "<group>"; };
+		2D26544F13E06BD600DE089C /* DiningMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiningMenu.h; sourceTree = "<group>"; };
+		2D26545013E06BD600DE089C /* DiningMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiningMenu.m; sourceTree = "<group>"; };
+		2D26545113E06BD600DE089C /* DiningMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiningMenu.xib; sourceTree = "<group>"; };
+		2D26545413E06BE800DE089C /* OpenFloor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenFloor.h; sourceTree = "<group>"; };
+		2D26545513E06BE800DE089C /* OpenFloor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenFloor.m; sourceTree = "<group>"; };
+		2D26545613E06BE800DE089C /* OpenFloor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenFloor.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +186,27 @@
 				2D2653EB13E069CF00DE089C /* Wheaton_AppAppDelegate.h */,
 				2D2653EC13E069CF00DE089C /* Wheaton_AppAppDelegate.m */,
 				2D2653EE13E069CF00DE089C /* MainWindow.xib */,
+				2D26543613E06B5D00DE089C /* HomeScreen.h */,
+				2D26543B13E06B8D00DE089C /* StalkernetHome.h */,
+				2D26544013E06B9800DE089C /* StalkernetResults.h */,
+				2D26544513E06BA400DE089C /* Links.h */,
+				2D26544A13E06BBC00DE089C /* Chapel.h */,
+				2D26544F13E06BD600DE089C /* DiningMenu.h */,
+				2D26545413E06BE800DE089C /* OpenFloor.h */,
+				2D26545513E06BE800DE089C /* OpenFloor.m */,
+				2D26545613E06BE800DE089C /* OpenFloor.xib */,
+				2D26545013E06BD600DE089C /* DiningMenu.m */,
+				2D26545113E06BD600DE089C /* DiningMenu.xib */,
+				2D26544B13E06BBC00DE089C /* Chapel.m */,
+				2D26544C13E06BBC00DE089C /* Chapel.xib */,
+				2D26544613E06BA400DE089C /* Links.m */,
+				2D26544713E06BA400DE089C /* Links.xib */,
+				2D26544113E06B9800DE089C /* StalkernetResults.m */,
+				2D26544213E06B9900DE089C /* StalkernetResults.xib */,
+				2D26543C13E06B8D00DE089C /* StalkernetHome.m */,
+				2D26543D13E06B8D00DE089C /* StalkernetHome.xib */,
+				2D26543713E06B5D00DE089C /* HomeScreen.m */,
+				2D26543813E06B5D00DE089C /* HomeScreen.xib */,
 				2D2653E313E069CF00DE089C /* Supporting Files */,
 			);
 			path = "Wheaton App";
@@ -300,6 +356,13 @@
 				2D26543113E06A5D00DE089C /* stalkernet.png in Resources */,
 				2D26543313E06A8C00DE089C /* 57x57.png in Resources */,
 				2D26543513E06A9200DE089C /* 114x114.png in Resources */,
+				2D26543A13E06B5D00DE089C /* HomeScreen.xib in Resources */,
+				2D26543F13E06B8D00DE089C /* StalkernetHome.xib in Resources */,
+				2D26544413E06B9900DE089C /* StalkernetResults.xib in Resources */,
+				2D26544913E06BA400DE089C /* Links.xib in Resources */,
+				2D26544E13E06BBD00DE089C /* Chapel.xib in Resources */,
+				2D26545313E06BD700DE089C /* DiningMenu.xib in Resources */,
+				2D26545813E06BE800DE089C /* OpenFloor.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +400,13 @@
 			files = (
 				2D2653EA13E069CF00DE089C /* main.m in Sources */,
 				2D2653ED13E069CF00DE089C /* Wheaton_AppAppDelegate.m in Sources */,
+				2D26543913E06B5D00DE089C /* HomeScreen.m in Sources */,
+				2D26543E13E06B8D00DE089C /* StalkernetHome.m in Sources */,
+				2D26544313E06B9900DE089C /* StalkernetResults.m in Sources */,
+				2D26544813E06BA400DE089C /* Links.m in Sources */,
+				2D26544D13E06BBD00DE089C /* Chapel.m in Sources */,
+				2D26545213E06BD700DE089C /* DiningMenu.m in Sources */,
+				2D26545713E06BE800DE089C /* OpenFloor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

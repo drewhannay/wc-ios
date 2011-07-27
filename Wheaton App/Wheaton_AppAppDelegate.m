@@ -11,11 +11,13 @@
 @implementation Wheaton_AppAppDelegate
 
 
-@synthesize window=_window;
+@synthesize window;
+@synthesize navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [window addSubview:[navigationController view]];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -61,7 +63,8 @@
 
 - (void)dealloc
 {
-    [_window release];
+    [navigationController release];
+    [window release];
     [super dealloc];
 }
 
