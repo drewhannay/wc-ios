@@ -53,6 +53,8 @@
 		2D26545313E06BD700DE089C /* DiningMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26545113E06BD600DE089C /* DiningMenu.xib */; };
 		2D26545713E06BE800DE089C /* OpenFloor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26545513E06BE800DE089C /* OpenFloor.m */; };
 		2D26545813E06BE800DE089C /* OpenFloor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26545613E06BE800DE089C /* OpenFloor.xib */; };
+		2D26546C13E0A74100DE089C /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26546A13E0A73D00DE089C /* Map.m */; };
+		2D26546D13E0A74100DE089C /* Map.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26546B13E0A73E00DE089C /* Map.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,9 @@
 		2D26545413E06BE800DE089C /* OpenFloor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenFloor.h; sourceTree = "<group>"; };
 		2D26545513E06BE800DE089C /* OpenFloor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenFloor.m; sourceTree = "<group>"; };
 		2D26545613E06BE800DE089C /* OpenFloor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenFloor.xib; sourceTree = "<group>"; };
+		2D26546913E0A73B00DE089C /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
+		2D26546A13E0A73D00DE089C /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
+		2D26546B13E0A73E00DE089C /* Map.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Map.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +200,9 @@
 				2D26545413E06BE800DE089C /* OpenFloor.h */,
 				2D26545513E06BE800DE089C /* OpenFloor.m */,
 				2D26545613E06BE800DE089C /* OpenFloor.xib */,
+				2D26546913E0A73B00DE089C /* Map.h */,
+				2D26546A13E0A73D00DE089C /* Map.m */,
+				2D26546B13E0A73E00DE089C /* Map.xib */,
 				2D26545013E06BD600DE089C /* DiningMenu.m */,
 				2D26545113E06BD600DE089C /* DiningMenu.xib */,
 				2D26544B13E06BBC00DE089C /* Chapel.m */,
@@ -363,6 +371,7 @@
 				2D26544E13E06BBD00DE089C /* Chapel.xib in Resources */,
 				2D26545313E06BD700DE089C /* DiningMenu.xib in Resources */,
 				2D26545813E06BE800DE089C /* OpenFloor.xib in Resources */,
+				2D26546D13E0A74100DE089C /* Map.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +416,7 @@
 				2D26544D13E06BBD00DE089C /* Chapel.m in Sources */,
 				2D26545213E06BD700DE089C /* DiningMenu.m in Sources */,
 				2D26545713E06BE800DE089C /* OpenFloor.m in Sources */,
+				2D26546C13E0A74100DE089C /* Map.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

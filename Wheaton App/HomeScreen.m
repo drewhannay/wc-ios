@@ -11,16 +11,19 @@
 #import "DiningMenu.h"
 #import "Chapel.h"
 #import "Links.h"
+#import "Map.h"
 
 @implementation HomeScreen
 
 @synthesize stalkernetHome;
 @synthesize diningMenu;
 @synthesize chapel;
+@synthesize map;
 @synthesize links;
 @synthesize stalkernetButton;
 @synthesize diningMenuButton;
 @synthesize chapelButton;
+@synthesize mapButton;
 @synthesize linksButton;
 
 -(IBAction) launchPage:(UIButton *)button
@@ -37,7 +40,54 @@
         stalkernetHome.navigationItem.title = @"Who's Who";
         [self.navigationController pushViewController:self.stalkernetHome animated:YES];
     }
-    
+    else if(button == diningMenuButton)
+    {
+        if(self.diningMenu == nil)
+        {
+            DiningMenu *dMenu = [[DiningMenu alloc]
+                                     initWithNibName:@"DiningMenu" bundle:[NSBundle mainBundle]];
+            self.diningMenu = dMenu;
+            [dMenu release];
+        }
+        diningMenu.navigationItem.title = @"Bon Appétit";
+        [self.navigationController pushViewController:self.diningMenu animated:YES];
+    }
+    else if(button == chapelButton)
+    {
+        if(self.chapel == nil)
+        {
+            Chapel *chap = [[Chapel alloc]
+                                 initWithNibName:@"Chapel" bundle:[NSBundle mainBundle]];
+            self.chapel = chap;
+            [chap release];
+        }
+        chapel.navigationItem.title = @"Chapel Schedule";
+        [self.navigationController pushViewController:self.chapel animated:YES];
+    }
+    else if(button == mapButton)
+    {
+        if(self.map == nil)
+        {
+            Map *m = [[Map alloc]
+                            initWithNibName:@"Map" bundle:[NSBundle mainBundle]];
+            self.map = m;
+            [m release];
+        }
+        map.navigationItem.title = @"Campus Map";
+        [self.navigationController pushViewController:self.map animated:YES];
+    }
+    else if(button == linksButton)
+    {
+        if(self.links == nil)
+        {
+            Links *linkView = [[Links alloc]
+                            initWithNibName:@"Links" bundle:[NSBundle mainBundle]];
+            self.links = linkView;
+            [linkView release];
+        }
+        links.navigationItem.title = @"Miscellaneous";
+        [self.navigationController pushViewController:self.links animated:YES];
+    }
     
 }
 
