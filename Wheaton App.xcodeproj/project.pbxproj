@@ -20,6 +20,25 @@
 		2D26540113E069D000DE089C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D2653FF13E069D000DE089C /* InfoPlist.strings */; };
 		2D26540413E069D000DE089C /* Wheaton_AppTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 2D26540313E069D000DE089C /* Wheaton_AppTests.h */; };
 		2D26540613E069D000DE089C /* Wheaton_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26540513E069D000DE089C /* Wheaton_AppTests.m */; };
+		2D26542113E06A5D00DE089C /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541013E06A5D00DE089C /* about.png */; };
+		2D26542213E06A5D00DE089C /* blur.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541113E06A5D00DE089C /* blur.png */; };
+		2D26542313E06A5D00DE089C /* chapel.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541213E06A5D00DE089C /* chapel.png */; };
+		2D26542413E06A5D00DE089C /* default_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541313E06A5D00DE089C /* default_pic.png */; };
+		2D26542513E06A5D00DE089C /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541413E06A5D00DE089C /* home.png */; };
+		2D26542613E06A5D00DE089C /* icon_old.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541513E06A5D00DE089C /* icon_old.png */; };
+		2D26542713E06A5D00DE089C /* icon_older.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541613E06A5D00DE089C /* icon_older.png */; };
+		2D26542813E06A5D00DE089C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541713E06A5D00DE089C /* icon.png */; };
+		2D26542913E06A5D00DE089C /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541813E06A5D00DE089C /* map.png */; };
+		2D26542A13E06A5D00DE089C /* menu_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541913E06A5D00DE089C /* menu_header.png */; };
+		2D26542B13E06A5D00DE089C /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541A13E06A5D00DE089C /* menu.png */; };
+		2D26542C13E06A5D00DE089C /* misc.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541B13E06A5D00DE089C /* misc.png */; };
+		2D26542D13E06A5D00DE089C /* open_floor_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541C13E06A5D00DE089C /* open_floor_header.png */; };
+		2D26542E13E06A5D00DE089C /* open_floors.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541D13E06A5D00DE089C /* open_floors.png */; };
+		2D26542F13E06A5D00DE089C /* push_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541E13E06A5D00DE089C /* push_pin.png */; };
+		2D26543013E06A5D00DE089C /* stalkernet_square.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541F13E06A5D00DE089C /* stalkernet_square.png */; };
+		2D26543113E06A5D00DE089C /* stalkernet.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26542013E06A5D00DE089C /* stalkernet.png */; };
+		2D26543313E06A8C00DE089C /* 57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26543213E06A8C00DE089C /* 57x57.png */; };
+		2D26543513E06A9200DE089C /* 114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26543413E06A9200DE089C /* 114x114.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,19 +56,38 @@
 		2D2653DC13E069CF00DE089C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2D2653DE13E069CF00DE089C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2D2653E013E069CF00DE089C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2D2653E413E069CF00DE089C /* Wheaton App-Info.plist */ = {isa = PBXFileReference; path = "Wheaton App-Info.plist"; sourceTree = "<group>"; };
+		2D2653E413E069CF00DE089C /* Wheaton App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Wheaton App-Info.plist"; sourceTree = "<group>"; };
 		2D2653E613E069CF00DE089C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2D2653E813E069CF00DE089C /* Wheaton App-Prefix.pch */ = {isa = PBXFileReference; path = "Wheaton App-Prefix.pch"; sourceTree = "<group>"; };
+		2D2653E813E069CF00DE089C /* Wheaton App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wheaton App-Prefix.pch"; sourceTree = "<group>"; };
 		2D2653E913E069CF00DE089C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2D2653EB13E069CF00DE089C /* Wheaton_AppAppDelegate.h */ = {isa = PBXFileReference; path = Wheaton_AppAppDelegate.h; sourceTree = "<group>"; };
+		2D2653EB13E069CF00DE089C /* Wheaton_AppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wheaton_AppAppDelegate.h; sourceTree = "<group>"; };
 		2D2653EC13E069CF00DE089C /* Wheaton_AppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Wheaton_AppAppDelegate.m; sourceTree = "<group>"; };
 		2D2653EF13E069CF00DE089C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		2D2653F613E069D000DE089C /* Wheaton AppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wheaton AppTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D2653FE13E069D000DE089C /* Wheaton AppTests-Info.plist */ = {isa = PBXFileReference; path = "Wheaton AppTests-Info.plist"; sourceTree = "<group>"; };
+		2D2653FE13E069D000DE089C /* Wheaton AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Wheaton AppTests-Info.plist"; sourceTree = "<group>"; };
 		2D26540013E069D000DE089C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2D26540213E069D000DE089C /* Wheaton AppTests-Prefix.pch */ = {isa = PBXFileReference; path = "Wheaton AppTests-Prefix.pch"; sourceTree = "<group>"; };
+		2D26540213E069D000DE089C /* Wheaton AppTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wheaton AppTests-Prefix.pch"; sourceTree = "<group>"; };
 		2D26540313E069D000DE089C /* Wheaton_AppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wheaton_AppTests.h; sourceTree = "<group>"; };
 		2D26540513E069D000DE089C /* Wheaton_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Wheaton_AppTests.m; sourceTree = "<group>"; };
+		2D26541013E06A5D00DE089C /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		2D26541113E06A5D00DE089C /* blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blur.png; sourceTree = "<group>"; };
+		2D26541213E06A5D00DE089C /* chapel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chapel.png; sourceTree = "<group>"; };
+		2D26541313E06A5D00DE089C /* default_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_pic.png; sourceTree = "<group>"; };
+		2D26541413E06A5D00DE089C /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		2D26541513E06A5D00DE089C /* icon_old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_old.png; sourceTree = "<group>"; };
+		2D26541613E06A5D00DE089C /* icon_older.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_older.png; sourceTree = "<group>"; };
+		2D26541713E06A5D00DE089C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		2D26541813E06A5D00DE089C /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		2D26541913E06A5D00DE089C /* menu_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_header.png; sourceTree = "<group>"; };
+		2D26541A13E06A5D00DE089C /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		2D26541B13E06A5D00DE089C /* misc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = misc.png; sourceTree = "<group>"; };
+		2D26541C13E06A5D00DE089C /* open_floor_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = open_floor_header.png; sourceTree = "<group>"; };
+		2D26541D13E06A5D00DE089C /* open_floors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = open_floors.png; sourceTree = "<group>"; };
+		2D26541E13E06A5D00DE089C /* push_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = push_pin.png; sourceTree = "<group>"; };
+		2D26541F13E06A5D00DE089C /* stalkernet_square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stalkernet_square.png; sourceTree = "<group>"; };
+		2D26542013E06A5D00DE089C /* stalkernet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stalkernet.png; sourceTree = "<group>"; };
+		2D26543213E06A8C00DE089C /* 57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 57x57.png; sourceTree = "<group>"; };
+		2D26543413E06A9200DE089C /* 114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114x114.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +117,8 @@
 		2D2653CD13E069CF00DE089C = {
 			isa = PBXGroup;
 			children = (
+				2D26543413E06A9200DE089C /* 114x114.png */,
+				2D26543213E06A8C00DE089C /* 57x57.png */,
 				2D2653E213E069CF00DE089C /* Wheaton App */,
 				2D2653FC13E069D000DE089C /* Wheaton AppTests */,
 				2D2653DB13E069CF00DE089C /* Frameworks */,
@@ -119,6 +159,7 @@
 		2D2653E313E069CF00DE089C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2D26540F13E069DB00DE089C /* Images */,
 				2D2653E413E069CF00DE089C /* Wheaton App-Info.plist */,
 				2D2653E513E069CF00DE089C /* InfoPlist.strings */,
 				2D2653E813E069CF00DE089C /* Wheaton App-Prefix.pch */,
@@ -145,6 +186,30 @@
 				2D26540213E069D000DE089C /* Wheaton AppTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2D26540F13E069DB00DE089C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2D26541013E06A5D00DE089C /* about.png */,
+				2D26541113E06A5D00DE089C /* blur.png */,
+				2D26541213E06A5D00DE089C /* chapel.png */,
+				2D26541313E06A5D00DE089C /* default_pic.png */,
+				2D26541413E06A5D00DE089C /* home.png */,
+				2D26541513E06A5D00DE089C /* icon_old.png */,
+				2D26541613E06A5D00DE089C /* icon_older.png */,
+				2D26541713E06A5D00DE089C /* icon.png */,
+				2D26541813E06A5D00DE089C /* map.png */,
+				2D26541913E06A5D00DE089C /* menu_header.png */,
+				2D26541A13E06A5D00DE089C /* menu.png */,
+				2D26541B13E06A5D00DE089C /* misc.png */,
+				2D26541C13E06A5D00DE089C /* open_floor_header.png */,
+				2D26541D13E06A5D00DE089C /* open_floors.png */,
+				2D26541E13E06A5D00DE089C /* push_pin.png */,
+				2D26541F13E06A5D00DE089C /* stalkernet_square.png */,
+				2D26542013E06A5D00DE089C /* stalkernet.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +281,25 @@
 			files = (
 				2D2653E713E069CF00DE089C /* InfoPlist.strings in Resources */,
 				2D2653F013E069CF00DE089C /* MainWindow.xib in Resources */,
+				2D26542113E06A5D00DE089C /* about.png in Resources */,
+				2D26542213E06A5D00DE089C /* blur.png in Resources */,
+				2D26542313E06A5D00DE089C /* chapel.png in Resources */,
+				2D26542413E06A5D00DE089C /* default_pic.png in Resources */,
+				2D26542513E06A5D00DE089C /* home.png in Resources */,
+				2D26542613E06A5D00DE089C /* icon_old.png in Resources */,
+				2D26542713E06A5D00DE089C /* icon_older.png in Resources */,
+				2D26542813E06A5D00DE089C /* icon.png in Resources */,
+				2D26542913E06A5D00DE089C /* map.png in Resources */,
+				2D26542A13E06A5D00DE089C /* menu_header.png in Resources */,
+				2D26542B13E06A5D00DE089C /* menu.png in Resources */,
+				2D26542C13E06A5D00DE089C /* misc.png in Resources */,
+				2D26542D13E06A5D00DE089C /* open_floor_header.png in Resources */,
+				2D26542E13E06A5D00DE089C /* open_floors.png in Resources */,
+				2D26542F13E06A5D00DE089C /* push_pin.png in Resources */,
+				2D26543013E06A5D00DE089C /* stalkernet_square.png in Resources */,
+				2D26543113E06A5D00DE089C /* stalkernet.png in Resources */,
+				2D26543313E06A8C00DE089C /* 57x57.png in Resources */,
+				2D26543513E06A9200DE089C /* 114x114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +398,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -328,7 +412,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 			};
@@ -343,6 +427,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
 				INFOPLIST_FILE = "Wheaton App/Wheaton App-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -356,6 +441,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
 				INFOPLIST_FILE = "Wheaton App/Wheaton App-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
