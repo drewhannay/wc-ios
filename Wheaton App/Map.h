@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapKit/MapKit.h"
+#import "PinAnnotation.h"
 
 
-@interface Map : UIViewController {
-    
+@interface Map : UIViewController
+    <MKMapViewDelegate> {
+    MKMapView *mapView;
 }
+
+@property (nonatomic, retain) IBOutlet MKMapView *mapView;
 
 @end

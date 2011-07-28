@@ -55,6 +55,8 @@
 		2D26545813E06BE800DE089C /* OpenFloor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26545613E06BE800DE089C /* OpenFloor.xib */; };
 		2D26546C13E0A74100DE089C /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26546A13E0A73D00DE089C /* Map.m */; };
 		2D26546D13E0A74100DE089C /* Map.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26546B13E0A73E00DE089C /* Map.xib */; };
+		2D26546F13E0AA7E00DE089C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D26546E13E0AA7E00DE089C /* MapKit.framework */; };
+		2D26547213E0BAF000DE089C /* PinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26547113E0BAEF00DE089C /* PinAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,9 @@
 		2D26546913E0A73B00DE089C /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
 		2D26546A13E0A73D00DE089C /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
 		2D26546B13E0A73E00DE089C /* Map.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Map.xib; sourceTree = "<group>"; };
+		2D26546E13E0AA7E00DE089C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2D26547013E0BAEE00DE089C /* PinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinAnnotation.h; sourceTree = "<group>"; };
+		2D26547113E0BAEF00DE089C /* PinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D26546F13E0AA7E00DE089C /* MapKit.framework in Frameworks */,
 				2D2653DD13E069CF00DE089C /* UIKit.framework in Frameworks */,
 				2D2653DF13E069CF00DE089C /* Foundation.framework in Frameworks */,
 				2D2653E113E069CF00DE089C /* CoreGraphics.framework in Frameworks */,
@@ -178,6 +184,7 @@
 		2D2653DB13E069CF00DE089C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D26546E13E0AA7E00DE089C /* MapKit.framework */,
 				2D2653DC13E069CF00DE089C /* UIKit.framework */,
 				2D2653DE13E069CF00DE089C /* Foundation.framework */,
 				2D2653E013E069CF00DE089C /* CoreGraphics.framework */,
@@ -194,6 +201,8 @@
 				2D26543613E06B5D00DE089C /* HomeScreen.h */,
 				2D26543B13E06B8D00DE089C /* StalkernetHome.h */,
 				2D26544013E06B9800DE089C /* StalkernetResults.h */,
+				2D26547013E0BAEE00DE089C /* PinAnnotation.h */,
+				2D26547113E0BAEF00DE089C /* PinAnnotation.m */,
 				2D26544513E06BA400DE089C /* Links.h */,
 				2D26544A13E06BBC00DE089C /* Chapel.h */,
 				2D26544F13E06BD600DE089C /* DiningMenu.h */,
@@ -417,6 +426,7 @@
 				2D26545213E06BD700DE089C /* DiningMenu.m in Sources */,
 				2D26545713E06BE800DE089C /* OpenFloor.m in Sources */,
 				2D26546C13E0A74100DE089C /* Map.m in Sources */,
+				2D26547213E0BAF000DE089C /* PinAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +601,7 @@
 				2D26540B13E069D000DE089C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2D26540C13E069D000DE089C /* Build configuration list for PBXNativeTarget "Wheaton AppTests" */ = {
 			isa = XCConfigurationList;
@@ -599,6 +610,7 @@
 				2D26540E13E069D000DE089C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
