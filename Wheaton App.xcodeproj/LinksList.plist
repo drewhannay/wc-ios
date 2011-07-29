@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Academic Calendar</key>
+	<string>http://wheaton.edu/Academics/Academic-Calendar</string>
+	<key>Arena Theater</key>
+	<string>http://www.wheatonarena.com</string>
+	<key>Athletics</key>
+	<string>http://athletics.wheaton.edu</string>
+	<key>Bookstore</key>
+	<string>http://www.wheatonbooks.com</string>
+	<key>Chapel Schedule</key>
+	<string>http://www.wheaton.edu/Student-Life/Spiritual-Life/Chapel/Schedule</string>
+	<key>Conservatory</key>
+	<string>http://www.wheaton.edu/academics/departments/conservatory</string>
+	<key>Events Calendar</key>
+	<string>http://wheaton.edu/events</string>
+	<key>General Education Requirements</key>
+	<string>http://wheaton.edu/Registrar/catalog/ug_acad_policies.htm#General_Education_Requirements</string>
+	<key>HoneyRock</key>
+	<string>http://www.honeyrockcamp.org</string>
+	<key>Housing Calendar</key>
+	<string>http://www.wheaton.edu/Student-Life/Living-at-Wheaton/Calendar</string>
+	<key>Library</key>
+	<string>http://library.wheaton.edu</string>
+	<key>Long Term Calendar</key>
+	<string>http://www.wheaton.edu/Academics/Services/Registrar/~/media/Files/Academics/Academic%20Services/Office%20of%20the%20Registrar/Schedule/future_calendar.pdf</string>
+	<key>Metra Schedule</key>
+	<string>http://www.metrarail.com</string>
+	<key>My Wheaton Portal</key>
+	<string>http://my.wheaton.edu</string>
+	<key>Registrar&apos;s Catalog</key>
+	<string>http://www2.wheaton.edu/Registrar/catalog/index.htm</string>
+	<key>WETN</key>
+	<string>http://www.wheaton.edu/wetn</string>
+</dict>
+</plist>

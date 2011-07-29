@@ -57,6 +57,7 @@
 		2D26546D13E0A74100DE089C /* Map.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26546B13E0A73E00DE089C /* Map.xib */; };
 		2D26546F13E0AA7E00DE089C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D26546E13E0AA7E00DE089C /* MapKit.framework */; };
 		2D26547213E0BAF000DE089C /* PinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26547113E0BAEF00DE089C /* PinAnnotation.m */; };
+		2DCEB34513E2010A00787E39 /* LinksList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DCEB34413E2010A00787E39 /* LinksList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		2D26546E13E0AA7E00DE089C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2D26547013E0BAEE00DE089C /* PinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinAnnotation.h; sourceTree = "<group>"; };
 		2D26547113E0BAEF00DE089C /* PinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinAnnotation.m; sourceTree = "<group>"; };
+		2DCEB34413E2010A00787E39 /* LinksList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LinksList.plist; path = "Wheaton App.xcodeproj/LinksList.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 		2D2653E313E069CF00DE089C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2DCEB34413E2010A00787E39 /* LinksList.plist */,
 				2D26540F13E069DB00DE089C /* Images */,
 				2D2653E413E069CF00DE089C /* Wheaton App-Info.plist */,
 				2D2653E513E069CF00DE089C /* InfoPlist.strings */,
@@ -381,6 +384,7 @@
 				2D26545313E06BD700DE089C /* DiningMenu.xib in Resources */,
 				2D26545813E06BE800DE089C /* OpenFloor.xib in Resources */,
 				2D26546D13E0A74100DE089C /* Map.xib in Resources */,
+				2DCEB34513E2010A00787E39 /* LinksList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

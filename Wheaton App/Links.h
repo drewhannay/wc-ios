@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
-@interface Links : UIViewController {
-    
+@interface Links : UIViewController
+    <UITableViewDataSource,
+    UITableViewDelegate> {
+        NSDictionary *linksList;
 }
+
+@property (nonatomic, retain) NSDictionary *linksList;
 
 @end

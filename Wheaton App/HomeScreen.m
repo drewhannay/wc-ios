@@ -85,7 +85,7 @@
             self.links = linkView;
             [linkView release];
         }
-        links.navigationItem.title = @"Miscellaneous";
+        links.navigationItem.title = @"Links";
         [self.navigationController pushViewController:self.links animated:YES];
     }
     
