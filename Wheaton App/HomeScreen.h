@@ -15,6 +15,7 @@
 
 
 @interface HomeScreen : UIViewController {
+    UIActivityIndicatorView *loadingView;
     StalkernetHome *stalkernetHome;
     DiningMenu *diningMenu;
     Chapel *chapel;
@@ -27,6 +28,7 @@
     UIButton *linksButton;
 }
 
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *loadingView;
 @property (nonatomic, retain) StalkernetHome *stalkernetHome;
 @property (nonatomic, retain) DiningMenu *diningMenu;
 @property (nonatomic, retain) Chapel *chapel;
@@ -39,5 +41,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *linksButton;
 
 -(IBAction)launchPage:(UIButton *) button;
+- (void)spinBegin;
+- (void)spinEnd;
 
 @end

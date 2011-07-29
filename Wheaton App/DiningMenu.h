@@ -10,7 +10,17 @@
 
 
 @interface DiningMenu : UIViewController {
-    
+    UIWebView *webView;
+    UIButton *todayButton;
+    UIButton *prevButton;
+    UIButton *nextButton;
 }
+
+@property (nonatomic, retain) IBOutlet UIWebView *webView;
+@property (nonatomic, retain) IBOutlet UIButton *todayButton;
+@property (nonatomic, retain) IBOutlet UIButton *prevButton;
+@property (nonatomic, retain) IBOutlet UIButton *nextButton;
+
+-(IBAction) switchPage:(UIButton *)id;
 
 @end

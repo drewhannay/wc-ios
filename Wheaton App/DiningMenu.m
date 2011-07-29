@@ -11,6 +11,11 @@
 
 @implementation DiningMenu
 
+@synthesize webView;
+@synthesize todayButton;
+@synthesize prevButton;
+@synthesize nextButton;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -22,6 +27,7 @@
 
 - (void)dealloc
 {
+    [webView release];
     [super dealloc];
 }
 
@@ -37,6 +43,12 @@
 
 - (void)viewDidLoad
 {
+    NSString *content = @"<html><head><style type=\"text/css\"> h1 { font-size: 1.2em; font-weight: bold; text-align: center; }</style></head><body><br/><br/><br/><br/><h1>No current cafe menu available</h1></body></html>";
+    [webView loadHTMLString:content baseURL:nil];
+    //NSURL *url = [NSURL URLWithString:@"http://www.wheaton.edu"];
+    //NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    //[webView loadRequest:req];
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
@@ -52,6 +64,11 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(IBAction) switchPage:(UIButton *)id
+{
+    
 }
 
 @end
