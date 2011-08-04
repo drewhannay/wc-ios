@@ -12,8 +12,9 @@
 	<string></string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>57x57.png</string>
+		<string>small.png</string>
 		<string>114x114.png</string>
+		<string>57x57.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>Wheaton-College.${PRODUCT_NAME:rfc1034identifier}</string>

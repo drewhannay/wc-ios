@@ -15,17 +15,22 @@
 
 @implementation HomeScreen
 
+@synthesize scrollView;
 @synthesize loadingView;
 @synthesize stalkernetHome;
 @synthesize diningMenu;
 @synthesize chapel;
+@synthesize openFloor;
 @synthesize map;
 @synthesize links;
+@synthesize about;
 @synthesize stalkernetButton;
 @synthesize diningMenuButton;
 @synthesize chapelButton;
+@synthesize openFloorButton;
 @synthesize mapButton;
 @synthesize linksButton;
+@synthesize aboutButton;
 
 -(IBAction) launchPage:(UIButton *)button
 {
@@ -78,12 +83,12 @@
             [chap release];
         }
         
-        // TODO: Check if we've already cached the menu before loading the spinner
+        // TODO: Check if we've already cached the schedule before loading the spinner
         
         //---Start our loading spinner---
         [NSThread detachNewThreadSelector: @selector(spinBegin) toTarget:self withObject:nil];
         
-        // TODO: Load the menu from Dropbox
+        // TODO: Load the schedule from Dropbox
         
         //--This line is just for testing how the spinner looks---
         [NSThread sleepForTimeInterval:3];
@@ -94,6 +99,33 @@
         
         chapel.navigationItem.title = @"Chapel Schedule";
         [self.navigationController pushViewController:self.chapel animated:YES];
+    }
+    else if(button == openFloorButton)
+    {
+        if(self.openFloor == nil)
+        {
+            OpenFloor *open = [[OpenFloor alloc]
+                            initWithNibName:@"OpenFloor" bundle:[NSBundle mainBundle]];
+            self.openFloor = open;
+            [open release];
+        }
+        
+        // TODO: Check if we've already cached the schedule before loading the spinner
+        
+        //---Start our loading spinner---
+        [NSThread detachNewThreadSelector: @selector(spinBegin) toTarget:self withObject:nil];
+        
+        // TODO: Load the schedule from Dropbox
+        
+        //--This line is just for testing how the spinner looks---
+        [NSThread sleepForTimeInterval:3];
+        
+        //---Stop the spinner and continue on with launching the view---
+        [NSThread detachNewThreadSelector: @selector(spinEnd) toTarget:self withObject:nil];
+        
+        
+        openFloor.navigationItem.title = @"Open Floors";
+        [self.navigationController pushViewController:self.openFloor animated:YES];
     }
     else if(button == mapButton)
     {
@@ -118,6 +150,17 @@
         }
         links.navigationItem.title = @"Links";
         [self.navigationController pushViewController:self.links animated:YES];
+    }
+    else if(button == aboutButton)
+    {
+        if(self.about == nil)
+        {
+            About *ab = [[About alloc] init];
+            self.about = ab;
+            [ab release];
+        }
+        [about setModalTransitionStyle:UIModalTransitionStylePartialCurl];
+        [self presentModalViewController:about animated:YES];
     }
     
 }
@@ -145,6 +188,7 @@
 
 - (void)dealloc
 {
+    [scrollView release];
     [loadingView release];
     [stalkernetHome release];
     [diningMenu release];
@@ -154,8 +198,10 @@
     [stalkernetButton release];
     [diningMenuButton release];
     [chapelButton release];
+    [openFloorButton release];
     [mapButton release];
     [linksButton release];
+    [aboutButton release];
     [super dealloc];
 }
 
@@ -172,6 +218,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [scrollView setContentSize:CGSizeMake(320,560)];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
