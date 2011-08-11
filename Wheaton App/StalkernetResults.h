@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 
 
-@interface StalkernetResults : UIViewController {
-    
+@interface StalkernetResults : UIViewController 
+    <UITableViewDataSource>{
+        NSDictionary *resultsList;
+        UIImageView *image;
 }
+
+@property (nonatomic, retain) NSDictionary *resultsList;
+@property (nonatomic, retain) IBOutlet UIImageView *image;
 
 @end

@@ -11,6 +11,60 @@
 
 @implementation OpenFloor
 
+@synthesize loadingView;
+@synthesize webView;
+@synthesize todayButton;
+@synthesize prevButton;
+@synthesize nextButton;
+@synthesize results;
+
+-(void) loadData
+{
+
+}
+
+-(IBAction) switchPage:(UIButton *)button
+{
+    if(button==nextButton)
+    {
+        viewIndex++;
+        [webView loadHTMLString:[results objectAtIndex:viewIndex] baseURL:nil];
+        
+        prevButton.hidden = false;
+        
+        if(viewIndex==([results count]-1))
+            nextButton.hidden = true;
+        
+    }
+    else if(button==prevButton)
+    {
+        viewIndex--;
+        [webView loadHTMLString:[results objectAtIndex:viewIndex] baseURL:nil];
+        
+        nextButton.hidden = false;
+        
+        if(viewIndex==0)
+            prevButton.hidden = true;
+        
+    }
+    else if(button==todayButton)
+    {        
+        viewIndex = todayIndex;
+        
+        [webView loadHTMLString:[results objectAtIndex:viewIndex] baseURL:nil];
+        
+        if(viewIndex==0)
+            prevButton.hidden = true;
+        else
+            prevButton.hidden = false;
+        if(viewIndex==([results count]-1))
+            nextButton.hidden = true;
+        else
+            nextButton.hidden = false;
+        
+    }
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -22,6 +76,12 @@
 
 - (void)dealloc
 {
+    [loadingView release];
+    [webView release];
+    [todayButton release];
+    [prevButton release];
+    [nextButton release];
+    [results release];
     [super dealloc];
 }
 
@@ -39,7 +99,42 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    //Hide both the buttons. We'll set them to visible later if needed.
+    prevButton.hidden = true;
+    nextButton.hidden = true;
 }
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    //Hide both the buttons. We'll set them to visible later if needed.
+    prevButton.hidden = true;
+    nextButton.hidden = true;
+    
+    //---Start our loading spinner---
+    [NSThread detachNewThreadSelector: @selector(spinBegin) toTarget:self withObject:nil];
+    
+    if(self.results == nil)
+        [self loadData];
+    
+    //---Stop the spinner and continue on with launching the view---
+    [NSThread detachNewThreadSelector: @selector(spinEnd) toTarget:self withObject:nil];
+    
+    viewIndex = todayIndex;
+    
+    [webView loadHTMLString:[results objectAtIndex:viewIndex] baseURL:nil];
+    if(viewIndex==0)
+        prevButton.hidden = true;
+    else
+        prevButton.hidden = false;
+    if(viewIndex==([results count]-1))
+        nextButton.hidden = true;
+    else
+        nextButton.hidden = false;
+}
+
 
 - (void)viewDidUnload
 {
@@ -52,6 +147,16 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void) spinBegin
+{
+    [loadingView startAnimating];
+}
+
+-(void) spinEnd
+{
+    [loadingView stopAnimating];
 }
 
 @end

@@ -10,7 +10,13 @@
 
 
 @interface StalkernetHome : UIViewController {
-    
+    UITextField *searchBox;
+    UIButton *searchButton;
 }
+
+@property (nonatomic, retain) IBOutlet UITextField *searchBox;
+@property (nonatomic, retain) IBOutlet UIButton *searchButton;
+
+-(IBAction) runSearch;
 
 @end

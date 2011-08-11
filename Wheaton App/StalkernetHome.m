@@ -11,6 +11,17 @@
 
 @implementation StalkernetHome
 
+@synthesize searchBox;
+@synthesize searchButton;
+
+
+-(IBAction) runSearch
+{
+    
+}
+
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -22,6 +33,8 @@
 
 - (void)dealloc
 {
+    [searchBox release];
+    [searchButton release];
     [super dealloc];
 }
 

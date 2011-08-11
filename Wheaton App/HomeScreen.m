@@ -56,20 +56,6 @@
             [dMenu release];
         }
         
-        // TODO: Check if we've already cached the menu before loading the spinner
-        
-        //---Start our loading spinner---
-        [NSThread detachNewThreadSelector: @selector(spinBegin) toTarget:self withObject:nil];
-        
-        // TODO: Load the menu from Dropbox
-        
-        //--This line is just for testing how the spinner looks---
-        [NSThread sleepForTimeInterval:3];
-        
-        //---Stop the spinner and continue on with launching the view---
-        [NSThread detachNewThreadSelector: @selector(spinEnd) toTarget:self withObject:nil];
-        
-        
         diningMenu.navigationItem.title = @"Bon Appétit";
         [self.navigationController pushViewController:self.diningMenu animated:YES];
     }
@@ -82,20 +68,6 @@
             self.chapel = chap;
             [chap release];
         }
-        
-        // TODO: Check if we've already cached the schedule before loading the spinner
-        
-        //---Start our loading spinner---
-        [NSThread detachNewThreadSelector: @selector(spinBegin) toTarget:self withObject:nil];
-        
-        // TODO: Load the schedule from Dropbox
-        
-        //--This line is just for testing how the spinner looks---
-        [NSThread sleepForTimeInterval:3];
-        
-        //---Stop the spinner and continue on with launching the view---
-        [NSThread detachNewThreadSelector: @selector(spinEnd) toTarget:self withObject:nil];
-        
         
         chapel.navigationItem.title = @"Chapel Schedule";
         [self.navigationController pushViewController:self.chapel animated:YES];
