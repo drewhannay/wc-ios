@@ -63,6 +63,9 @@
 		2D66563213EB3F7A00645BC3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D66563113EB3F7900645BC3 /* Default.png */; };
 		2D66563413EB3F8B00645BC3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D66563313EB3F8B00645BC3 /* Default@2x.png */; };
 		2DCEB34513E2010A00787E39 /* LinksList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DCEB34413E2010A00787E39 /* LinksList.plist */; };
+		623BF32D13F5868100FECDE9 /* UpdateMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 623BF32B13F5868100FECDE9 /* UpdateMessage.m */; };
+		623BF32E13F5868100FECDE9 /* UpdateMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 623BF32C13F5868100FECDE9 /* UpdateMessage.xib */; };
+		624C421613F42EEC007B1A07 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 624C421513F42EEC007B1A07 /* iToast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +149,11 @@
 		2D66563113EB3F7900645BC3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2D66563313EB3F8B00645BC3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2DCEB34413E2010A00787E39 /* LinksList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LinksList.plist; path = "Wheaton App.xcodeproj/LinksList.plist"; sourceTree = SOURCE_ROOT; };
+		623BF32A13F5868000FECDE9 /* UpdateMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateMessage.h; sourceTree = "<group>"; };
+		623BF32B13F5868100FECDE9 /* UpdateMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateMessage.m; sourceTree = "<group>"; };
+		623BF32C13F5868100FECDE9 /* UpdateMessage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateMessage.xib; sourceTree = "<group>"; };
+		624C421413F42EEC007B1A07 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
+		624C421513F42EEC007B1A07 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,11 +218,16 @@
 		2D2653E213E069CF00DE089C /* Wheaton App */ = {
 			isa = PBXGroup;
 			children = (
+				624C421413F42EEC007B1A07 /* iToast.h */,
+				624C421513F42EEC007B1A07 /* iToast.m */,
 				2D2653EB13E069CF00DE089C /* Wheaton_AppAppDelegate.h */,
 				2D2653EC13E069CF00DE089C /* Wheaton_AppAppDelegate.m */,
 				2D66562413EB0FA700645BC3 /* About.h */,
 				2D66562513EB0FA700645BC3 /* About.m */,
 				2D66562613EB0FA700645BC3 /* About.xib */,
+				623BF32A13F5868000FECDE9 /* UpdateMessage.h */,
+				623BF32B13F5868100FECDE9 /* UpdateMessage.m */,
+				623BF32C13F5868100FECDE9 /* UpdateMessage.xib */,
 				2D2653EE13E069CF00DE089C /* MainWindow.xib */,
 				2D26547013E0BAEE00DE089C /* PinAnnotation.h */,
 				2D26547113E0BAEF00DE089C /* PinAnnotation.m */,
@@ -406,6 +419,7 @@
 				2D66563213EB3F7A00645BC3 /* Default.png in Resources */,
 				2D66563413EB3F8B00645BC3 /* Default@2x.png in Resources */,
 				2D31C02713EC8963004030A3 /* links.png in Resources */,
+				623BF32E13F5868100FECDE9 /* UpdateMessage.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +467,8 @@
 				2D26546C13E0A74100DE089C /* Map.m in Sources */,
 				2D26547213E0BAF000DE089C /* PinAnnotation.m in Sources */,
 				2D66562713EB0FA700645BC3 /* About.m in Sources */,
+				624C421613F42EEC007B1A07 /* iToast.m in Sources */,
+				623BF32D13F5868100FECDE9 /* UpdateMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

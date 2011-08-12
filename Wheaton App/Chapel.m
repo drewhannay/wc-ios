@@ -19,6 +19,11 @@
 
 -(void) loadData
 {
+    todayIndex = -1;
+    //To hold the results; one week per entry.
+    NSMutableArray *tempResults = [NSMutableArray arrayWithCapacity:0];  
+
+    @try{
     NSError *error;
     NSString *stuff = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://dl.dropbox.com/u/36045671/Chapel%20Schedule.txt"] encoding:NSUTF8StringEncoding error:&error];
     //array populated with URL contents - one line per array entry    
@@ -35,14 +40,11 @@
     while(i<length && [line rangeOfString:@"-----"].location==NSNotFound) 
         line = [array objectAtIndex:i++]; 
     line = [array objectAtIndex:i++];
-    //To hold the results; one week per entry.
-    NSMutableArray *tempResults = [NSMutableArray arrayWithCapacity:0];  
     //Start off the week properly
     NSString *weekStart = @"<html><head><style type=\"text/css\"> h1 { font-size: 1.1em; font-weight: bold;text-align: center; color:#CC6600; } h2 { font-size: 0.9em; } h3 { font-style:italic; font-size: 0.8em;}p { font-size: 0.7em; } </style></head><body>";
     NSString *weekEnd = @"</body></html>";
     NSString *currentWeek = @"";
-    todayIndex = -1;
-    int numWeeks = 0;
+        int numWeeks = 0;
     //main loop
     while(i<length&&[line rangeOfString:@"-----"].location==NSNotFound){
         NSString *text = @"";
@@ -66,10 +68,11 @@
             // Instantiate a NSDateFormatter
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             // Set the dateFormatter format
-            [dateFormatter setDateFormat:@"yyyyMMd"];
+            [dateFormatter setDateFormat:@"yyyyMMdd"];
             // Get the date time in NSString
             NSString *dateInString = [dateFormatter stringFromDate:currentDateTime];
             int currentDate = [dateInString intValue];
+
             if(!indexSet&&currentDate<=fullDay){
                 todayIndex = numWeeks;
                 indexSet = TRUE;
@@ -85,10 +88,38 @@
          currentWeek = [currentWeek stringByAppendingString:day]; //either way, the day goes in the current week.
     }
 
-    if(![currentWeek isEqualToString:@""])
+    if(![currentWeek isEqualToString:@""]){
         [tempResults addObject:[NSString stringWithFormat:@"%@%@%@",weekStart,currentWeek,weekEnd]];
-    
-       self.results = [NSArray arrayWithArray:tempResults];
+        NSDate *currentDateTime = [NSDate date];
+        // Instantiate a NSDateFormatter
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        // Set the dateFormatter format
+        [dateFormatter setDateFormat:@"yyyyMMdd"];
+        // Get the date time in NSString
+        NSString *dateInString = [dateFormatter stringFromDate:currentDateTime];
+        int currentDate = [dateInString intValue];
+        
+        if(!indexSet&&currentDate<=fullDay){
+            todayIndex = numWeeks;
+            indexSet = TRUE;
+        }
+        [dateFormatter release];
+       
+
+    }
+    }@catch (NSException *e) {
+        self.results = [NSArray arrayWithObjects: @"<html><head><style type=\"text/css\"> h1 { font-size: 1.2em; font-weight: bold;text-align: center; }</style></head><body><br/><br/><br/><br/><h1>The chapel schedule is not yet available. Check back soon!</h1></body></html>",nil];
+        todayIndex = 0;
+    }
+    //todayIndex = -1; uncomment this line to test the empty chapel schedule case.
+    if(todayIndex == -1){
+        
+        self.results = [NSArray arrayWithObjects: @"<html><head><style type=\"text/css\"> h1 { font-size: 1.2em; font-weight: bold;text-align: center; }</style></head><body><br/><br/><br/><br/><h1>The chapel schedule is not yet available. Check back soon!</h1></body></html>",nil];
+        todayIndex = 0;
+    }
+
+    else
+        self.results = [NSArray arrayWithArray:tempResults];
 }
 -(BOOL) addDay:(NSString*)day
 {
@@ -126,7 +157,7 @@
     [dateFormatter setDateFormat:@"EEEE, MMMM d, yyyy"];
     // Get the date time in NSString
     NSDate *oldDate = [dateFormatter dateFromString:temp];
-    [dateFormatter setDateFormat:@"yyyyMMd"];
+    [dateFormatter setDateFormat:@"yyyyMMdd"];
     NSString *newDate = [dateFormatter stringFromDate:oldDate];
     // Release the dateFormatter
     [dateFormatter release];

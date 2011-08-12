@@ -20,6 +20,10 @@
 
 -(void) loadData
 {
+    NSMutableArray *days = [NSMutableArray arrayWithCapacity:7];
+    todayIndex = -1;
+    
+    @try{
     NSError *error;
     NSString *stuff = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://dl.dropbox.com/u/36045671/menu.txt"] encoding:NSUTF8StringEncoding error:&error];
     //array populated with URL contents - one line per array entry    
@@ -27,8 +31,6 @@
     //i is a counter, to keep track of where we are in the array.
     int i = 0;
         NSString *line = [array objectAtIndex:i++];
-    NSMutableArray *days = [NSMutableArray arrayWithCapacity:7];
-    todayIndex = -1;
     for(int j = 0;j<7;j++){
         while([line rangeOfString:@"Date:"].location == NSNotFound){
             line = [array objectAtIndex:i++];
@@ -127,7 +129,18 @@
         day = [day stringByAppendingString:@"</body></html>"];
         [days insertObject:day atIndex:j];
     }
-    self.results = [NSArray arrayWithArray:days];
+    }@catch (NSException *e) {
+        self.results = [NSArray arrayWithObject:@"<html><head><style type=\"text/css\"> h1 { font-size: 1.2em; font-weight: bold;text-align: center; }</style></head><body><br/><br/><br/><br/><h1>No current cafe menu available</h1></body></html>"];
+        todayIndex = 0;
+    }
+   // todayIndex = -1; uncomment this line for error testing
+    if(todayIndex == -1){
+        self.results = [NSArray arrayWithObject:@"<html><head><style type=\"text/css\"> h1 { font-size: 1.2em; font-weight: bold;text-align: center; }</style></head><body><br/><br/><br/><br/><h1>No current cafe menu available</h1></body></html>"];
+        todayIndex = 0;
+    }
+    
+    else
+        self.results = [NSArray arrayWithArray:days];
 }
 
 -(IBAction) switchPage:(UIButton *)button

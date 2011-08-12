@@ -7,15 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StalkernetResults.h"
+#import "iToast.h"
 
-
-@interface StalkernetHome : UIViewController {
-    UITextField *searchBox;
-    UIButton *searchButton;
+@interface StalkernetHome : UIViewController 
+    <UITextFieldDelegate>{
+        UIActivityIndicatorView *loadingView;
+        UITextField *searchBox;
+        UIButton *searchButton;
+        StalkernetResults *resultScreen;
 }
 
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *loadingView;
 @property (nonatomic, retain) IBOutlet UITextField *searchBox;
 @property (nonatomic, retain) IBOutlet UIButton *searchButton;
+@property (nonatomic, retain) StalkernetResults *resultScreen;
 
 -(IBAction) runSearch;
 

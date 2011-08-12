@@ -13,14 +13,63 @@
 
 @synthesize searchBox;
 @synthesize searchButton;
-
+@synthesize resultScreen;
+@synthesize loadingView;
 
 -(IBAction) runSearch
 {
+    StalkernetResults *rScreen = [[StalkernetResults alloc]
+                                  initWithNibName:@"StalkernetResults" bundle:[NSBundle mainBundle]];
+    self.resultScreen = rScreen;
+    [rScreen release];
     
+    NSString *temp = [searchBox.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    resultScreen.navigationItem.title = temp;
+    
+    temp = [temp stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    if([temp isEqualToString:@""])
+    {
+        [[[iToast makeText:NSLocalizedString(@"Please enter a search term", @"")] setDuration:3000] show];
+        return;
+    }
+        
+    //---Start our loading spinner---
+    [NSThread detachNewThreadSelector: @selector(spinBegin) toTarget:self withObject:nil];
+    
+    //--This line is just for testing how the spinner looks---
+    //[NSThread sleepForTimeInterval:3];
+    
+    resultScreen.searchParam = temp;
+    BOOL exception = FALSE;
+    @try {
+        [self.resultScreen loadData];
+    }
+    @catch (NSException *e) {
+        [[[iToast makeText:@"You must connect to the Wheaton College campus internet to use this feature."] setDuration:3000] show];
+        exception = TRUE;
+    }
+
+    
+    //---Stop the spinner and continue on with launching the view---
+    [NSThread detachNewThreadSelector: @selector(spinEnd) toTarget:self withObject:nil];
+    
+    if(!exception&&[resultScreen.resultsList count]>0)
+    {
+        [self.navigationController pushViewController:self.resultScreen animated:YES];
+    }
+    else if(!exception)
+    {
+        [[[iToast makeText:NSLocalizedString(@"No results", @"")] setDuration:3000] show];
+    }
 }
 
-
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    [self runSearch];
+    return NO;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +82,8 @@
 
 - (void)dealloc
 {
+    [resultScreen release];
+    [loadingView release];
     [searchBox release];
     [searchButton release];
     [super dealloc];
@@ -65,6 +116,16 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void) spinBegin
+{
+    [loadingView startAnimating];
+}
+
+-(void) spinEnd
+{
+    [loadingView stopAnimating];
 }
 
 @end

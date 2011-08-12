@@ -24,6 +24,7 @@
 
 - (void)dealloc
 {
+    [linksList release];
     [super dealloc];
 }
 

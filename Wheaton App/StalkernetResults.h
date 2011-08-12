@@ -10,12 +10,19 @@
 
 
 @interface StalkernetResults : UIViewController 
-    <UITableViewDataSource>{
+    <UITableViewDataSource,
+    UITableViewDelegate>{
+        UITableView *mainTableView;
         NSDictionary *resultsList;
         UIImageView *image;
+        NSString *searchParam;
 }
 
+@property (nonatomic, retain) IBOutlet UITableView *mainTableView;
 @property (nonatomic, retain) NSDictionary *resultsList;
 @property (nonatomic, retain) IBOutlet UIImageView *image;
+@property (nonatomic, retain) NSString *searchParam;
+
+-(void) loadData;
 
 @end

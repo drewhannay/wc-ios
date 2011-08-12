@@ -8,12 +8,69 @@
 
 #import "StalkernetResults.h"
 
-
 @implementation StalkernetResults
 
 @synthesize resultsList;
 @synthesize image;
+@synthesize searchParam;
+@synthesize mainTableView;
 
+-(void) loadData
+{
+    NSError *error;
+    // NSString *string = [NSString stringWithContentsOfFile:@"Users/lemongirl/Desktop/search2.xml" encoding:NSUTF8StringEncoding error:&error];
+    NSURL *url = [NSURL URLWithString:[@"http://intra.wheaton.edu/directory/whosnew/index.php?search_text=" stringByAppendingString:searchParam]];
+   
+    NSString *string = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error]; //put the real resultant URL here.
+    if(string == nil){
+        NSException *e = [NSException
+                          exceptionWithName: @"Off campus"
+                          reason: @"You must be connected to the campus internet"
+                          userInfo: nil];
+        @throw e; 
+    }
+       
+    //array populated w;ith URL contents - one line per array entry    
+    //NSArray *array = [stuff componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    //i is a counter, to keep track of where we are in the array.
+    NSMutableDictionary *temp_results = [NSMutableDictionary dictionaryWithCapacity:10];
+    while([string rangeOfString:@"<match>"].location!=NSNotFound){
+        NSString *match = @"";
+        
+        string = [string substringFromIndex:[string rangeOfString:@"<first_name>"].location+12];
+        match = [string substringToIndex:[string rangeOfString:@"</first_name>"].location];
+        if([match rangeOfString:@"Extra results"].location!=NSNotFound)
+            break;
+        
+        string = [string substringFromIndex:[string rangeOfString:@"<last_name>"].location+11];
+        NSString *lastName = [string substringToIndex:[string rangeOfString:@"</last_name>"].location];
+
+        string = [string substringFromIndex:[string rangeOfString:@"<middle_name>"].location+13];
+        NSString *middleName =[string substringToIndex:[string rangeOfString:@"</middle_name>"].location];
+         
+        
+        string = [string substringFromIndex:[string rangeOfString:@"<preferred_first_name>"].location+22];
+        NSString *preferredFirstName =[string substringToIndex:[string rangeOfString:@"</preferred_first_name>"].location];
+        
+        string = [string substringFromIndex:[string rangeOfString:@"<student_type>"].location+14];
+        NSString *studentType = [string substringToIndex:[string rangeOfString:@"</student_type>"].location];
+        
+        string = [string substringFromIndex:[string rangeOfString:@"<year_entered>"].location+14];
+        NSString *yearEntered = [string substringToIndex:[string rangeOfString:@"</year_entered>"].location];
+        
+        string = [string substringFromIndex:[string rangeOfString:@"<photo_file>"].location+12];
+        NSString *photoFile = [@"http://intra.wheaton.edu/directory/whosnew/" stringByAppendingString:[string substringToIndex:[string rangeOfString:@"</photo_file>"].location]];
+
+        preferredFirstName = [preferredFirstName isEqualToString:@""]?@"":[NSString stringWithFormat:@"(%@) ",preferredFirstName];
+        match = [match stringByAppendingFormat:@" %@%@ %@, %@, %@",preferredFirstName,middleName,lastName,studentType,yearEntered];
+        
+        [temp_results setObject:photoFile forKey:match];
+        
+    }
+
+    self.resultsList = [temp_results copy];
+    
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -25,8 +82,10 @@
 
 - (void)dealloc
 {
+    [mainTableView release];
     [resultsList release];
     [image release];
+    [searchParam release];
     [super dealloc];
 }
 
@@ -44,24 +103,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-}
-
--(void) viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    //---Start our loading spinner---
-    [NSThread detachNewThreadSelector: @selector(spinBegin) toTarget:self withObject:nil];
-    
-    //--This line is just for testing how the spinner looks---
-    [NSThread sleepForTimeInterval:3];
-    
-//    if(self.results == nil)
-//        [self loadData];
-    
-    //---Stop the spinner and continue on with launching the view---
-    [NSThread detachNewThreadSelector: @selector(spinEnd) toTarget:self withObject:nil];
-
 }
 
 - (void)viewDidUnload
@@ -90,12 +131,17 @@
     {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                        reuseIdentifier:CellIdentifier] autorelease];
+        cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+        cell.textLabel.numberOfLines = 0;
+        cell.textLabel.font = [UIFont fontWithName:@"Trebuchet MS" size:18.0];
+
     }
     
     //---set the text to display for the cell---
-    NSString *cellValue = [[[resultsList allKeys] 
+
+    NSString *cellValue = [[[self.resultsList allKeys] 
                             sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)]
-                           objectAtIndex:indexPath.row];
+                            objectAtIndex:indexPath.row];
     cell.textLabel.text = cellValue;
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -107,7 +153,7 @@
 -(NSInteger) tableView:(UITableView *)tableView 
  numberOfRowsInSection:(NSInteger)section
 {
-    return [[resultsList allKeys] count];
+    return [[self.resultsList allKeys] count];
 }
 
 -(NSString *) tableView:(UITableView *)tableView 
@@ -120,7 +166,6 @@ titleForHeaderInSection:(NSInteger)section
 -(void) tableView:(UITableView *)tableView 
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     NSString *toOpen = [[[resultsList allKeys] 
                          sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)]
                         objectAtIndex:indexPath.row];

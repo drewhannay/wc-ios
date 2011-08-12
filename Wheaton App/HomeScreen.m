@@ -7,11 +7,6 @@
 //
 
 #import "HomeScreen.h"
-#import "StalkernetHome.h"
-#import "DiningMenu.h"
-#import "Chapel.h"
-#import "Links.h"
-#import "Map.h"
 
 @implementation HomeScreen
 
@@ -24,6 +19,7 @@
 @synthesize map;
 @synthesize links;
 @synthesize about;
+@synthesize updateMessage;
 @synthesize stalkernetButton;
 @synthesize diningMenuButton;
 @synthesize chapelButton;
@@ -81,20 +77,6 @@
             self.openFloor = open;
             [open release];
         }
-        
-        // TODO: Check if we've already cached the schedule before loading the spinner
-        
-        //---Start our loading spinner---
-        [NSThread detachNewThreadSelector: @selector(spinBegin) toTarget:self withObject:nil];
-        
-        // TODO: Load the schedule from Dropbox
-        
-        //--This line is just for testing how the spinner looks---
-        [NSThread sleepForTimeInterval:3];
-        
-        //---Stop the spinner and continue on with launching the view---
-        [NSThread detachNewThreadSelector: @selector(spinEnd) toTarget:self withObject:nil];
-        
         
         openFloor.navigationItem.title = @"Open Floors";
         [self.navigationController pushViewController:self.openFloor animated:YES];
@@ -160,13 +142,17 @@
 
 - (void)dealloc
 {
+    [versionCode release];
     [scrollView release];
     [loadingView release];
     [stalkernetHome release];
     [diningMenu release];
     [chapel release];
+    [openFloor release];
     [map release];
     [links release];
+    [about release];
+    [updateMessage release];
     [stalkernetButton release];
     [diningMenuButton release];
     [chapelButton release];
@@ -190,10 +176,36 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
     
     [scrollView setContentSize:CGSizeMake(320,560)];
     
-    // Do any additional setup after loading the view from its nib.
+    versionCode = @"1.0";
+    NSError *error = nil;
+    NSString *stuff = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://dl.dropbox.com/u/36045671/update.txt"] encoding:NSUTF8StringEncoding error:&error];
+    //array populated with URL contents - one line per array entry    
+    NSMutableArray *array = [[[stuff componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] mutableCopy] autorelease];
+    if(error != nil || [versionCode isEqualToString:[array objectAtIndex:0]])
+        return;
+
+    [array removeObjectAtIndex:0];
+    
+    UpdateMessage *um = [[UpdateMessage alloc] init];
+    self.updateMessage = um;
+    [um release];
+        
+    NSString *temp = [array componentsJoinedByString:@"\n"];
+
+    
+    updateMessage.updateText = temp;
+    
+    
+    [self.updateMessage setModalTransitionStyle:UIModalTransitionStylePartialCurl];
+    [self presentModalViewController:self.updateMessage animated:YES];
+
+    
+    
+    
 }
 
 - (void)viewDidUnload
