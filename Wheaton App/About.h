@@ -2,8 +2,8 @@
 //  About.h
 //  Wheaton App
 //
-//  Created by support on 8/4/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Drew Hannay on 8/4/11.
+//  Copyright 2011 Wheaton College. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

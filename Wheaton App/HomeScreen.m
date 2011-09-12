@@ -2,8 +2,8 @@
 //  HomeScreen.m
 //  Wheaton App
 //
-//  Created by support on 7/27/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Drew Hannay on 7/27/11.
+//  Copyright 2011 Wheaton College. All rights reserved.
 //
 
 #import "HomeScreen.h"
@@ -180,9 +180,11 @@
     
     [scrollView setContentSize:CGSizeMake(320,560)];
     
-    versionCode = @"1.0";
+    versionCode = @"1.4";
     NSError *error = nil;
     NSString *stuff = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://dl.dropbox.com/u/36045671/update.txt"] encoding:NSUTF8StringEncoding error:&error];
+    if(stuff == nil|| [stuff isEqualToString:@""])
+        return;
     //array populated with URL contents - one line per array entry    
     NSMutableArray *array = [[[stuff componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] mutableCopy] autorelease];
     if(error != nil || [versionCode isEqualToString:[array objectAtIndex:0]])
@@ -202,10 +204,6 @@
     
     [self.updateMessage setModalTransitionStyle:UIModalTransitionStylePartialCurl];
     [self presentModalViewController:self.updateMessage animated:YES];
-
-    
-    
-    
 }
 
 - (void)viewDidUnload

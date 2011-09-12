@@ -2,8 +2,8 @@
 //  StalkernetHome.m
 //  Wheaton App
 //
-//  Created by support on 7/27/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Drew Hannay on 7/27/11.
+//  Copyright 2011 Wheaton College. All rights reserved.
 //
 
 #import "StalkernetHome.h"
@@ -43,9 +43,10 @@
     resultScreen.searchParam = temp;
     BOOL exception = FALSE;
     @try {
-        [self.resultScreen loadData];
+        [self.resultScreen loadData]; //try to get the results
     }
-    @catch (NSException *e) {
+    @catch (NSException *e) { //if something goes wrong, tell the user they must connect to the campus internet for this feature
+        //make sure it displays long enough to be visible
         [[[iToast makeText:@"You must connect to the Wheaton College campus internet to use this feature."] setDuration:3000] show];
         exception = TRUE;
     }
@@ -54,11 +55,11 @@
     //---Stop the spinner and continue on with launching the view---
     [NSThread detachNewThreadSelector: @selector(spinEnd) toTarget:self withObject:nil];
     
-    if(!exception&&[resultScreen.resultsList count]>0)
+    if(!exception&&[resultScreen.resultsList count]>0) //don't show the results page if something went wrong
     {
         [self.navigationController pushViewController:self.resultScreen animated:YES];
     }
-    else if(!exception)
+    else if(!exception) //don't show the "No results" toast if something went wrong.
     {
         [[[iToast makeText:NSLocalizedString(@"No results", @"")] setDuration:3000] show];
     }

@@ -3,7 +3,7 @@
 //  iToast
 //
 //  Created by Diallo Mamadou Bobo on 2/10/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Wheaton College. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

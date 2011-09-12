@@ -24,8 +24,6 @@
 		2D26542313E06A5D00DE089C /* chapel.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541213E06A5D00DE089C /* chapel.png */; };
 		2D26542413E06A5D00DE089C /* default_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541313E06A5D00DE089C /* default_pic.png */; };
 		2D26542513E06A5D00DE089C /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541413E06A5D00DE089C /* home.png */; };
-		2D26542613E06A5D00DE089C /* icon_old.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541513E06A5D00DE089C /* icon_old.png */; };
-		2D26542713E06A5D00DE089C /* icon_older.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541613E06A5D00DE089C /* icon_older.png */; };
 		2D26542813E06A5D00DE089C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541713E06A5D00DE089C /* icon.png */; };
 		2D26542A13E06A5D00DE089C /* menu_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541913E06A5D00DE089C /* menu_header.png */; };
 		2D26542B13E06A5D00DE089C /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541A13E06A5D00DE089C /* menu.png */; };
@@ -100,8 +98,6 @@
 		2D26541213E06A5D00DE089C /* chapel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chapel.png; sourceTree = "<group>"; };
 		2D26541313E06A5D00DE089C /* default_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_pic.png; sourceTree = "<group>"; };
 		2D26541413E06A5D00DE089C /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
-		2D26541513E06A5D00DE089C /* icon_old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_old.png; sourceTree = "<group>"; };
-		2D26541613E06A5D00DE089C /* icon_older.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_older.png; sourceTree = "<group>"; };
 		2D26541713E06A5D00DE089C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		2D26541913E06A5D00DE089C /* menu_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_header.png; sourceTree = "<group>"; };
 		2D26541A13E06A5D00DE089C /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
@@ -222,13 +218,13 @@
 				624C421513F42EEC007B1A07 /* iToast.m */,
 				2D2653EB13E069CF00DE089C /* Wheaton_AppAppDelegate.h */,
 				2D2653EC13E069CF00DE089C /* Wheaton_AppAppDelegate.m */,
+				2D2653EE13E069CF00DE089C /* MainWindow.xib */,
 				2D66562413EB0FA700645BC3 /* About.h */,
 				2D66562513EB0FA700645BC3 /* About.m */,
 				2D66562613EB0FA700645BC3 /* About.xib */,
 				623BF32A13F5868000FECDE9 /* UpdateMessage.h */,
 				623BF32B13F5868100FECDE9 /* UpdateMessage.m */,
 				623BF32C13F5868100FECDE9 /* UpdateMessage.xib */,
-				2D2653EE13E069CF00DE089C /* MainWindow.xib */,
 				2D26547013E0BAEE00DE089C /* PinAnnotation.h */,
 				2D26547113E0BAEF00DE089C /* PinAnnotation.m */,
 				2D26545413E06BE800DE089C /* OpenFloor.h */,
@@ -305,8 +301,6 @@
 				2D26541213E06A5D00DE089C /* chapel.png */,
 				2D26541313E06A5D00DE089C /* default_pic.png */,
 				2D26541413E06A5D00DE089C /* home.png */,
-				2D26541513E06A5D00DE089C /* icon_old.png */,
-				2D26541613E06A5D00DE089C /* icon_older.png */,
 				2D26541713E06A5D00DE089C /* icon.png */,
 				2D26541913E06A5D00DE089C /* menu_header.png */,
 				2D26541A13E06A5D00DE089C /* menu.png */,
@@ -391,8 +385,6 @@
 				2D26542313E06A5D00DE089C /* chapel.png in Resources */,
 				2D26542413E06A5D00DE089C /* default_pic.png in Resources */,
 				2D26542513E06A5D00DE089C /* home.png in Resources */,
-				2D26542613E06A5D00DE089C /* icon_old.png in Resources */,
-				2D26542713E06A5D00DE089C /* icon_older.png in Resources */,
 				2D26542813E06A5D00DE089C /* icon.png in Resources */,
 				2D26542A13E06A5D00DE089C /* menu_header.png in Resources */,
 				2D26542B13E06A5D00DE089C /* menu.png in Resources */,
@@ -522,7 +514,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Wheaton College";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wheaton College";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -531,7 +525,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PROVISIONING_PROFILE = "3E3EC309-D947-46F9-AA43-11F52A4F179F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3E3EC309-D947-46F9-AA43-11F52A4F179F";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
 			};
 			name = Debug;
 		};
@@ -539,14 +536,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Wheaton College";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wheaton College";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "3E3EC309-D947-46F9-AA43-11F52A4F179F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3E3EC309-D947-46F9-AA43-11F52A4F179F";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
 			};
 			name = Release;
 		};
@@ -554,13 +556,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
 				INFOPLIST_FILE = "Wheaton App/Wheaton App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Wheaton App\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -570,12 +578,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
 				INFOPLIST_FILE = "Wheaton App/Wheaton App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Wheaton App\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -626,6 +640,70 @@
 			};
 			name = Release;
 		};
+		62AADA3913F983E7001BC0DA /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Wheaton College";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wheaton College";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "3E3EC309-D947-46F9-AA43-11F52A4F179F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3E3EC309-D947-46F9-AA43-11F52A4F179F";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+			};
+			name = Distribution;
+		};
+		62AADA3A13F983E7001BC0DA /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
+				INFOPLIST_FILE = "Wheaton App/Wheaton App-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Wheaton App\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Distribution;
+		};
+		62AADA3B13F983E7001BC0DA /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Wheaton App.app/Wheaton App";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Wheaton AppTests/Wheaton AppTests-Prefix.pch";
+				INFOPLIST_FILE = "Wheaton AppTests/Wheaton AppTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Distribution;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -634,6 +712,7 @@
 			buildConfigurations = (
 				2D26540713E069D000DE089C /* Debug */,
 				2D26540813E069D000DE089C /* Release */,
+				62AADA3913F983E7001BC0DA /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -643,6 +722,7 @@
 			buildConfigurations = (
 				2D26540A13E069D000DE089C /* Debug */,
 				2D26540B13E069D000DE089C /* Release */,
+				62AADA3A13F983E7001BC0DA /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -652,6 +732,7 @@
 			buildConfigurations = (
 				2D26540D13E069D000DE089C /* Debug */,
 				2D26540E13E069D000DE089C /* Release */,
+				62AADA3B13F983E7001BC0DA /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

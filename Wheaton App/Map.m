@@ -3,8 +3,8 @@
 //  Map.m
 //  Wheaton App
 //
-//  Created by support on 7/27/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Drew Hannay on 7/27/11.
+//  Copyright 2011 Wheaton College. All rights reserved.
 //
 
 #import "Map.h"

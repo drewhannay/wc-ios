@@ -4,6 +4,8 @@
 <dict>
 	<key>Academic Calendar</key>
 	<string>http://wheaton.edu/Academics/Academic-Calendar</string>
+	<key>Admissions</key>
+	<string>http://wheaton.edu/Admissions-and-aid</string>
 	<key>Arena Theater</key>
 	<string>http://www.wheatonarena.com</string>
 	<key>Athletics</key>
@@ -14,6 +16,8 @@
 	<string>http://www.wheaton.edu/Student-Life/Spiritual-Life/Chapel/Schedule</string>
 	<key>Conservatory</key>
 	<string>http://www.wheaton.edu/academics/departments/conservatory</string>
+	<key>Counseling Center</key>
+	<string>http://www.wheaton.edu/student-life/student-care/counseling-center</string>
 	<key>Events Calendar</key>
 	<string>http://wheaton.edu/events</string>
 	<key>General Education Requirements</key>
