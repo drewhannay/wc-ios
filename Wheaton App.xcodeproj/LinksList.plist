@@ -18,6 +18,8 @@
 	<string>http://www.wheaton.edu/academics/departments/conservatory</string>
 	<key>Counseling Center</key>
 	<string>http://www.wheaton.edu/student-life/student-care/counseling-center</string>
+	<key>Course Schedules</key>
+	<string>http://wheaton.edu/Academics/Services/Registrar/Schedules</string>
 	<key>Events Calendar</key>
 	<string>http://wheaton.edu/events</string>
 	<key>General Education Requirements</key>

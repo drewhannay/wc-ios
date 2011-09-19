@@ -19,7 +19,6 @@
 @synthesize map;
 @synthesize links;
 @synthesize about;
-@synthesize updateMessage;
 @synthesize stalkernetButton;
 @synthesize diningMenuButton;
 @synthesize chapelButton;
@@ -142,7 +141,6 @@
 
 - (void)dealloc
 {
-    [versionCode release];
     [scrollView release];
     [loadingView release];
     [stalkernetHome release];
@@ -152,7 +150,6 @@
     [map release];
     [links release];
     [about release];
-    [updateMessage release];
     [stalkernetButton release];
     [diningMenuButton release];
     [chapelButton release];
@@ -180,30 +177,6 @@
     
     [scrollView setContentSize:CGSizeMake(320,560)];
     
-    versionCode = @"1.4";
-    NSError *error = nil;
-    NSString *stuff = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://dl.dropbox.com/u/36045671/update.txt"] encoding:NSUTF8StringEncoding error:&error];
-    if(stuff == nil|| [stuff isEqualToString:@""])
-        return;
-    //array populated with URL contents - one line per array entry    
-    NSMutableArray *array = [[[stuff componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] mutableCopy] autorelease];
-    if(error != nil || [versionCode isEqualToString:[array objectAtIndex:0]])
-        return;
-
-    [array removeObjectAtIndex:0];
-    
-    UpdateMessage *um = [[UpdateMessage alloc] init];
-    self.updateMessage = um;
-    [um release];
-        
-    NSString *temp = [array componentsJoinedByString:@"\n"];
-
-    
-    updateMessage.updateText = temp;
-    
-    
-    [self.updateMessage setModalTransitionStyle:UIModalTransitionStylePartialCurl];
-    [self presentModalViewController:self.updateMessage animated:YES];
 }
 
 - (void)viewDidUnload

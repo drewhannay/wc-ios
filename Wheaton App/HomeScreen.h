@@ -14,11 +14,9 @@
 #import "Links.h"
 #import "Map.h"
 #import "About.h"
-#import "UpdateMessage.h"
 
 
 @interface HomeScreen : UIViewController<UIScrollViewDelegate>{
-    NSString *versionCode;
     UIScrollView *scrollView;
     UIActivityIndicatorView *loadingView;
     StalkernetHome *stalkernetHome;
@@ -28,7 +26,6 @@
     Map *map;
     Links *links;
     About *about;
-    UpdateMessage *updateMessage;
     UIButton *stalkernetButton;
     UIButton *diningMenuButton;
     UIButton *chapelButton;
@@ -47,7 +44,6 @@
 @property (nonatomic, retain) Map *map;
 @property (nonatomic, retain) Links *links;
 @property (nonatomic, retain) About *about;
-@property (nonatomic, retain) UpdateMessage *updateMessage;
 @property (nonatomic, retain) IBOutlet UIButton *stalkernetButton;
 @property (nonatomic, retain) IBOutlet UIButton *diningMenuButton;
 @property (nonatomic, retain) IBOutlet UIButton *chapelButton;

@@ -24,7 +24,6 @@
 		2D26542313E06A5D00DE089C /* chapel.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541213E06A5D00DE089C /* chapel.png */; };
 		2D26542413E06A5D00DE089C /* default_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541313E06A5D00DE089C /* default_pic.png */; };
 		2D26542513E06A5D00DE089C /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541413E06A5D00DE089C /* home.png */; };
-		2D26542813E06A5D00DE089C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541713E06A5D00DE089C /* icon.png */; };
 		2D26542A13E06A5D00DE089C /* menu_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541913E06A5D00DE089C /* menu_header.png */; };
 		2D26542B13E06A5D00DE089C /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541A13E06A5D00DE089C /* menu.png */; };
 		2D26542D13E06A5D00DE089C /* open_floor_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26541C13E06A5D00DE089C /* open_floor_header.png */; };
@@ -61,8 +60,6 @@
 		2D66563213EB3F7A00645BC3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D66563113EB3F7900645BC3 /* Default.png */; };
 		2D66563413EB3F8B00645BC3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D66563313EB3F8B00645BC3 /* Default@2x.png */; };
 		2DCEB34513E2010A00787E39 /* LinksList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DCEB34413E2010A00787E39 /* LinksList.plist */; };
-		623BF32D13F5868100FECDE9 /* UpdateMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 623BF32B13F5868100FECDE9 /* UpdateMessage.m */; };
-		623BF32E13F5868100FECDE9 /* UpdateMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 623BF32C13F5868100FECDE9 /* UpdateMessage.xib */; };
 		624C421613F42EEC007B1A07 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 624C421513F42EEC007B1A07 /* iToast.m */; };
 /* End PBXBuildFile section */
 
@@ -98,7 +95,6 @@
 		2D26541213E06A5D00DE089C /* chapel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chapel.png; sourceTree = "<group>"; };
 		2D26541313E06A5D00DE089C /* default_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_pic.png; sourceTree = "<group>"; };
 		2D26541413E06A5D00DE089C /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
-		2D26541713E06A5D00DE089C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		2D26541913E06A5D00DE089C /* menu_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_header.png; sourceTree = "<group>"; };
 		2D26541A13E06A5D00DE089C /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		2D26541C13E06A5D00DE089C /* open_floor_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = open_floor_header.png; sourceTree = "<group>"; };
@@ -145,9 +141,6 @@
 		2D66563113EB3F7900645BC3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2D66563313EB3F8B00645BC3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2DCEB34413E2010A00787E39 /* LinksList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LinksList.plist; path = "Wheaton App.xcodeproj/LinksList.plist"; sourceTree = SOURCE_ROOT; };
-		623BF32A13F5868000FECDE9 /* UpdateMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateMessage.h; sourceTree = "<group>"; };
-		623BF32B13F5868100FECDE9 /* UpdateMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateMessage.m; sourceTree = "<group>"; };
-		623BF32C13F5868100FECDE9 /* UpdateMessage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateMessage.xib; sourceTree = "<group>"; };
 		624C421413F42EEC007B1A07 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
 		624C421513F42EEC007B1A07 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,9 +215,6 @@
 				2D66562413EB0FA700645BC3 /* About.h */,
 				2D66562513EB0FA700645BC3 /* About.m */,
 				2D66562613EB0FA700645BC3 /* About.xib */,
-				623BF32A13F5868000FECDE9 /* UpdateMessage.h */,
-				623BF32B13F5868100FECDE9 /* UpdateMessage.m */,
-				623BF32C13F5868100FECDE9 /* UpdateMessage.xib */,
 				2D26547013E0BAEE00DE089C /* PinAnnotation.h */,
 				2D26547113E0BAEF00DE089C /* PinAnnotation.m */,
 				2D26545413E06BE800DE089C /* OpenFloor.h */,
@@ -301,7 +291,6 @@
 				2D26541213E06A5D00DE089C /* chapel.png */,
 				2D26541313E06A5D00DE089C /* default_pic.png */,
 				2D26541413E06A5D00DE089C /* home.png */,
-				2D26541713E06A5D00DE089C /* icon.png */,
 				2D26541913E06A5D00DE089C /* menu_header.png */,
 				2D26541A13E06A5D00DE089C /* menu.png */,
 				2D26541C13E06A5D00DE089C /* open_floor_header.png */,
@@ -385,7 +374,6 @@
 				2D26542313E06A5D00DE089C /* chapel.png in Resources */,
 				2D26542413E06A5D00DE089C /* default_pic.png in Resources */,
 				2D26542513E06A5D00DE089C /* home.png in Resources */,
-				2D26542813E06A5D00DE089C /* icon.png in Resources */,
 				2D26542A13E06A5D00DE089C /* menu_header.png in Resources */,
 				2D26542B13E06A5D00DE089C /* menu.png in Resources */,
 				2D26542D13E06A5D00DE089C /* open_floor_header.png in Resources */,
@@ -411,7 +399,6 @@
 				2D66563213EB3F7A00645BC3 /* Default.png in Resources */,
 				2D66563413EB3F8B00645BC3 /* Default@2x.png in Resources */,
 				2D31C02713EC8963004030A3 /* links.png in Resources */,
-				623BF32E13F5868100FECDE9 /* UpdateMessage.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,7 +447,6 @@
 				2D26547213E0BAF000DE089C /* PinAnnotation.m in Sources */,
 				2D66562713EB0FA700645BC3 /* About.m in Sources */,
 				624C421613F42EEC007B1A07 /* iToast.m in Sources */,
-				623BF32D13F5868100FECDE9 /* UpdateMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,8 +501,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Wheaton College";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wheaton College";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Perciante";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -525,8 +511,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				PROVISIONING_PROFILE = "3E3EC309-D947-46F9-AA43-11F52A4F179F";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3E3EC309-D947-46F9-AA43-11F52A4F179F";
+				PROVISIONING_PROFILE = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 			};
@@ -537,16 +523,16 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Wheaton College";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wheaton College";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Perciante";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "3E3EC309-D947-46F9-AA43-11F52A4F179F";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3E3EC309-D947-46F9-AA43-11F52A4F179F";
+				PROVISIONING_PROFILE = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 			};
@@ -557,6 +543,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Perciante";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -568,6 +556,8 @@
 					"\"$(SRCROOT)/Wheaton App\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -579,6 +569,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Perciante";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
@@ -589,6 +581,8 @@
 					"\"$(SRCROOT)/Wheaton App\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
@@ -645,16 +639,16 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Wheaton College";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wheaton College";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Perciante";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "3E3EC309-D947-46F9-AA43-11F52A4F179F";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3E3EC309-D947-46F9-AA43-11F52A4F179F";
+				PROVISIONING_PROFILE = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 			};
@@ -665,6 +659,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Perciante";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
@@ -675,6 +671,8 @@
 					"\"$(SRCROOT)/Wheaton App\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
