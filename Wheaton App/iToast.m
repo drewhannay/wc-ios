@@ -40,7 +40,7 @@ static iToastSettings *sharedSettings = nil;
 	UIFont *font = [UIFont systemFontOfSize:16];
 	CGSize textSize = [text sizeWithFont:font constrainedToSize:CGSizeMake(280, 60)];
 	
-	UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, textSize.width + 5, textSize.height + 5)] autorelease];
+	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, textSize.width + 5, textSize.height + 5)];
 	label.backgroundColor = [UIColor clearColor];
 	label.textColor = [UIColor whiteColor];
 	label.font = font;
@@ -83,7 +83,7 @@ static iToastSettings *sharedSettings = nil;
 	
 	[window addSubview:v];
 	
-	view = [v retain];
+	view = v;
 	
 	[v addTarget:self action:@selector(hideToast:) forControlEvents:UIControlEventTouchDown];
 }
@@ -105,7 +105,7 @@ static iToastSettings *sharedSettings = nil;
 
 
 + (iToast *) makeText:(NSString *) _text{
-	iToast *toast = [[[iToast alloc] initWithText:_text] autorelease];
+	iToast *toast = [[iToast alloc] initWithText:_text];
 	
 	return toast;
 }

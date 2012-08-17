@@ -21,7 +21,6 @@
     StalkernetResults *rScreen = [[StalkernetResults alloc]
                                   initWithNibName:@"StalkernetResults" bundle:[NSBundle mainBundle]];
     self.resultScreen = rScreen;
-    [rScreen release];
     
     NSString *temp = [searchBox.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
@@ -79,15 +78,6 @@
         // Custom initialization
     }
     return self;
-}
-
-- (void)dealloc
-{
-    [resultScreen release];
-    [loadingView release];
-    [searchBox release];
-    [searchButton release];
-    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning

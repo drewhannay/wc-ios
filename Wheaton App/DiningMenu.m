@@ -69,8 +69,6 @@
             [dateFormatter setDateFormat:@"EEEE, MMMM d, yyyy"];
             // Get the date time in NSString
             NSString *dateInString = [dateFormatter stringFromDate:currentDateTime];
-            // Release the dateFormatter
-            [dateFormatter release];
             
             //check if we've found today yet - if so, change todayIndex to demonstrate this
             if([dateInString isEqualToString:line]){
@@ -254,17 +252,6 @@
         // Custom initialization
     }
     return self;
-}
-
-- (void)dealloc
-{
-    [loadingView release];
-    [webView release];
-    [todayButton release];
-    [prevButton release];
-    [nextButton release];
-    [results release];
-    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning

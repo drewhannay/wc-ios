@@ -92,9 +92,6 @@
                     indexSet = TRUE;
                 }
 
-
-                // Release the dateFormatter
-                [dateFormatter release];
                 numWeeks++;
             
            
@@ -118,8 +115,6 @@
                 todayIndex = numWeeks;
                 indexSet = TRUE;
             }
-            [dateFormatter release];
-       
 
         }
     }@catch (NSException *e) {
@@ -186,8 +181,7 @@
     NSDate *oldDate = [dateFormatter dateFromString:temp];
     [dateFormatter setDateFormat:@"yyyyMMdd"];
     NSString *newDate = [dateFormatter stringFromDate:oldDate];
-    // Release the dateFormatter
-    [dateFormatter release];
+
     fullDay = [newDate intValue]; //set fullDay for use later.
     
     //add the date to the day
@@ -278,17 +272,6 @@
         // Custom initialization
     }
     return self;
-}
-
-- (void)dealloc
-{
-    [loadingView release];
-    [webView release];
-    [todayButton release];
-    [prevButton release];
-    [nextButton release];
-    [results release];
-    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning

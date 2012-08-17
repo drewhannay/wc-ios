@@ -169,15 +169,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [mainTableView release];
-    [resultsList release];
-    [image release];
-    [searchParam release];
-    [super dealloc];
-}
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -218,8 +209,8 @@
     //---create a new cell if no reusable cell is available---
     if(cell == nil)
     {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                       reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                       reuseIdentifier:CellIdentifier];
         cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
         cell.textLabel.numberOfLines = 0;
         cell.textLabel.font = [UIFont fontWithName:@"Trebuchet MS" size:18.0];
@@ -261,7 +252,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     
     UIImage *tempImage = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[resultsList valueForKey:toOpen]]]];
     [image setImage:tempImage];
-    [tempImage release];
 }
 
 @end

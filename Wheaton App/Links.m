@@ -22,12 +22,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [linksList release];
-    [super dealloc];
-}
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -45,7 +39,6 @@
                                                      ofType:@"plist"];
     NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:path];
     self.linksList = dic;
-    [dic release];
     
     
     
@@ -79,8 +72,8 @@
     //---create a new cell if no reusable cell is available---
     if(cell == nil)
     {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                       reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                       reuseIdentifier:CellIdentifier];
     }
     
     //---set the text to display for the cell---

@@ -36,7 +36,6 @@
             StalkernetHome *sHome = [[StalkernetHome alloc]
                                      initWithNibName:@"StalkernetHome" bundle:[NSBundle mainBundle]];
             self.stalkernetHome = sHome;
-            [sHome release];
         }
         stalkernetHome.navigationItem.title = @"Who's Who";
         [self.navigationController pushViewController:self.stalkernetHome animated:YES];
@@ -48,7 +47,6 @@
             DiningMenu *dMenu = [[DiningMenu alloc]
                                      initWithNibName:@"DiningMenu" bundle:[NSBundle mainBundle]];
             self.diningMenu = dMenu;
-            [dMenu release];
         }
         
         diningMenu.navigationItem.title = @"Bon Appétit";
@@ -61,7 +59,6 @@
             Chapel *chap = [[Chapel alloc]
                                  initWithNibName:@"Chapel" bundle:[NSBundle mainBundle]];
             self.chapel = chap;
-            [chap release];
         }
         
         chapel.navigationItem.title = @"Chapel Schedule";
@@ -74,7 +71,6 @@
             OpenFloor *open = [[OpenFloor alloc]
                             initWithNibName:@"OpenFloor" bundle:[NSBundle mainBundle]];
             self.openFloor = open;
-            [open release];
         }
         
         openFloor.navigationItem.title = @"Open Floors";
@@ -87,7 +83,6 @@
             Map *m = [[Map alloc]
                             initWithNibName:@"Map" bundle:[NSBundle mainBundle]];
             self.map = m;
-            [m release];
         }
         map.navigationItem.title = @"Campus Map";
         [self.navigationController pushViewController:self.map animated:YES];
@@ -99,7 +94,6 @@
             Links *linkView = [[Links alloc]
                             initWithNibName:@"Links" bundle:[NSBundle mainBundle]];
             self.links = linkView;
-            [linkView release];
         }
         links.navigationItem.title = @"Links";
         [self.navigationController pushViewController:self.links animated:YES];
@@ -110,7 +104,6 @@
         {
             About *ab = [[About alloc] init];
             self.about = ab;
-            [ab release];
         }
         [about setModalTransitionStyle:UIModalTransitionStylePartialCurl];
         [self presentModalViewController:about animated:YES];
@@ -137,27 +130,6 @@
         // Custom initialization
     }
     return self;
-}
-
-- (void)dealloc
-{
-    [scrollView release];
-    [loadingView release];
-    [stalkernetHome release];
-    [diningMenu release];
-    [chapel release];
-    [openFloor release];
-    [map release];
-    [links release];
-    [about release];
-    [stalkernetButton release];
-    [diningMenuButton release];
-    [chapelButton release];
-    [openFloorButton release];
-    [mapButton release];
-    [linksButton release];
-    [aboutButton release];
-    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning
