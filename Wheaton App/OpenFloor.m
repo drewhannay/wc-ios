@@ -67,7 +67,7 @@
             NSString *text = @"<head><style type=\"text/css\"> h1 { font-size: 1.1em; font-weight: bold;text-align: center; color:#CC6600; } h2 { font-size: 0.9em; } h3 { font-style:italic; font-size: 0.8em;}p { font-size: 0.7em; } </style></head>";
             
             //look for the indication that the day has started
-            while([line isEqualToString:@""]||[line rangeOfString:@"-----"].location!=NSNotFound&&i<length){
+            while([line isEqualToString:@""]||([line rangeOfString:@"-----"].location!=NSNotFound&&i<length)){
                 line = [array objectAtIndex:i++];
             }
             
