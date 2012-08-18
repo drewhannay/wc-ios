@@ -11,9 +11,11 @@
 #import "PinAnnotation.h"
 
 
-@interface Map : UIViewController
-    <MKMapViewDelegate> {
+@interface Map : UIViewController <MKMapViewDelegate>
+{
     MKMapView *mapView;
+    NSMutableDictionary *urlMap;
+    int urlMapIndex;
 }
 
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;

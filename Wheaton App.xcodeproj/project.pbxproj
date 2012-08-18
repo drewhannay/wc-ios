@@ -207,10 +207,13 @@
 		2D2653E213E069CF00DE089C /* Wheaton App */ = {
 			isa = PBXGroup;
 			children = (
-				624C421413F42EEC007B1A07 /* iToast.h */,
-				624C421513F42EEC007B1A07 /* iToast.m */,
 				2D2653EB13E069CF00DE089C /* Wheaton_AppAppDelegate.h */,
 				2D2653EC13E069CF00DE089C /* Wheaton_AppAppDelegate.m */,
+				2D26543613E06B5D00DE089C /* HomeScreen.h */,
+				2D26543713E06B5D00DE089C /* HomeScreen.m */,
+				2D26543813E06B5D00DE089C /* HomeScreen.xib */,
+				624C421413F42EEC007B1A07 /* iToast.h */,
+				624C421513F42EEC007B1A07 /* iToast.m */,
 				2D2653EE13E069CF00DE089C /* MainWindow.xib */,
 				2D66562413EB0FA700645BC3 /* About.h */,
 				2D66562513EB0FA700645BC3 /* About.m */,
@@ -238,9 +241,6 @@
 				2D26543B13E06B8D00DE089C /* StalkernetHome.h */,
 				2D26543C13E06B8D00DE089C /* StalkernetHome.m */,
 				2D26543D13E06B8D00DE089C /* StalkernetHome.xib */,
-				2D26543613E06B5D00DE089C /* HomeScreen.h */,
-				2D26543713E06B5D00DE089C /* HomeScreen.m */,
-				2D26543813E06B5D00DE089C /* HomeScreen.xib */,
 				2D2653E313E069CF00DE089C /* Supporting Files */,
 			);
 			path = "Wheaton App";

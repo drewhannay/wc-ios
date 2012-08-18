@@ -15,6 +15,7 @@
 #import "Map.h"
 #import "About.h"
 
+extern NSString *const MAP_PINS_URL;
 extern NSString *const MENU_URL;
 
 @interface HomeScreen : UIViewController<UIScrollViewDelegate>{

@@ -13,6 +13,8 @@
 
 @synthesize coordinate;
 @synthesize title;
+@synthesize url;
+@synthesize isPurple;
 
 -(NSString *) title
 {
@@ -23,7 +25,7 @@
                    title:(NSString *)t
 {
     coordinate = c;
-    self.title = t;
+    title = t;
     return self;
 }
 

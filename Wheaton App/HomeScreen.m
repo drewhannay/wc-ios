@@ -27,6 +27,7 @@
 @synthesize linksButton;
 @synthesize aboutButton;
 
+NSString *const MAP_PINS_URL = @"http://dl.dropbox.com/u/36045671/mapPins.json";
 NSString *const MENU_URL = @"http://www.cafebonappetit.com/print-menu/cafe/339/menu/13292/days/not-today/pgbrks/0/";
 
 -(IBAction) launchPage:(UIButton *)button
