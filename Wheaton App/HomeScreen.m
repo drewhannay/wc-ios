@@ -27,6 +27,8 @@
 @synthesize linksButton;
 @synthesize aboutButton;
 
+NSString *const MENU_URL = @"http://www.cafebonappetit.com/print-menu/cafe/339/menu/13292/days/not-today/pgbrks/0/";
+
 -(IBAction) launchPage:(UIButton *)button
 {
     if(button == stalkernetButton)
