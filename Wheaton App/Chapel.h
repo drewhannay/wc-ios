@@ -8,35 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Chapel : UIViewController {
-    UIActivityIndicatorView *loadingView;
-    UIWebView *webView;
-    UIButton *todayButton;
-    UIButton *prevButton;
-    UIButton *nextButton;
-    NSArray *results;
-    int viewIndex;
-    int todayIndex;
-    int currDay;
-    int prevDay;
-    int fullDay;
-    BOOL indexSet;
-    
+@interface Chapel : UIViewController
+{
+    NSMutableArray *m_chapelWeeks;
+    NSMutableString *m_currentWeek;
+    NSDateFormatter *m_dateFormatter;
+    NSString *m_lastDay;
+    int m_viewIndex;
+    int m_todayIndex;
+    BOOL m_isWorking;
+    BOOL m_errorOccurred;
 }
 
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *loadingView;
 @property (nonatomic, retain) IBOutlet UIWebView *webView;
 @property (nonatomic, retain) IBOutlet UIButton *todayButton;
-@property (nonatomic, retain) IBOutlet UIButton *prevButton;
 @property (nonatomic, retain) IBOutlet UIButton *nextButton;
-@property (nonatomic, retain) NSArray *results;
-
--(void) loadData;
--(NSString *) parseDay: (NSString *)text;
--(IBAction) switchPage:(UIButton *)button;
-- (void)spinBegin;
-- (void)spinEnd;
--(void) viewDidAppear:(BOOL)animated;
--(BOOL) addDay;
+@property (nonatomic, retain) IBOutlet UIButton *previousButton;
 
 @end
