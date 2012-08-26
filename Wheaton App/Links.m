@@ -56,6 +56,8 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+
     NSString *toOpen = [[[linksList allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)] objectAtIndex:indexPath.row];
 
     [[UIApplication sharedApplication]openURL:[NSURL URLWithString:[linksList valueForKey:toOpen]]];
