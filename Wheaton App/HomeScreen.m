@@ -12,14 +12,14 @@
 
 @synthesize scrollView;
 @synthesize loadingView;
-@synthesize stalkernetHome;
+@synthesize whosWhoSearch;
 @synthesize diningMenu;
 @synthesize chapel;
 @synthesize openFloor;
 @synthesize map;
 @synthesize links;
 @synthesize about;
-@synthesize stalkernetButton;
+@synthesize whosWhoButton;
 @synthesize diningMenuButton;
 @synthesize chapelButton;
 @synthesize openFloorButton;
@@ -30,19 +30,20 @@
 NSString *const CHAPEL_URL = @"http://dl.dropbox.com/u/36045671/chapel.json";
 NSString *const MAP_PINS_URL = @"http://dl.dropbox.com/u/36045671/mapPins.json";
 NSString *const MENU_URL = @"http://www.cafebonappetit.com/print-menu/cafe/339/menu/13292/days/not-today/pgbrks/0/";
+NSString *const WHOS_WHO_PREFIX = @"https://webapp.wheaton.edu/whoswho/person/searchJson?page_size=100&q=";
 
 -(IBAction) launchPage:(UIButton *)button
 {
-    if(button == stalkernetButton)
+    if(button == whosWhoButton)
     {
-        if(self.stalkernetHome == nil)
+        if(self.whosWhoSearch == nil)
         {
-            StalkernetHome *sHome = [[StalkernetHome alloc]
-                                     initWithNibName:@"StalkernetHome" bundle:[NSBundle mainBundle]];
-            self.stalkernetHome = sHome;
+            WhosWhoSearch *sHome = [[WhosWhoSearch alloc]
+                                     initWithNibName:@"WhosWhoSearch" bundle:[NSBundle mainBundle]];
+            self.whosWhoSearch = sHome;
         }
-        stalkernetHome.navigationItem.title = @"Who's Who";
-        [self.navigationController pushViewController:self.stalkernetHome animated:YES];
+        whosWhoSearch.navigationItem.title = @"Who's Who";
+        [self.navigationController pushViewController:self.whosWhoSearch animated:YES];
     }
     else if(button == diningMenuButton)
     {

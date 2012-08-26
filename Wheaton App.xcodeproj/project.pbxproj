@@ -34,10 +34,10 @@
 		2D26543513E06A9200DE089C /* 114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D26543413E06A9200DE089C /* 114x114.png */; };
 		2D26543913E06B5D00DE089C /* HomeScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26543713E06B5D00DE089C /* HomeScreen.m */; };
 		2D26543A13E06B5D00DE089C /* HomeScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26543813E06B5D00DE089C /* HomeScreen.xib */; };
-		2D26543E13E06B8D00DE089C /* StalkernetHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26543C13E06B8D00DE089C /* StalkernetHome.m */; };
-		2D26543F13E06B8D00DE089C /* StalkernetHome.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26543D13E06B8D00DE089C /* StalkernetHome.xib */; };
-		2D26544313E06B9900DE089C /* StalkernetResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26544113E06B9800DE089C /* StalkernetResults.m */; };
-		2D26544413E06B9900DE089C /* StalkernetResults.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26544213E06B9900DE089C /* StalkernetResults.xib */; };
+		2D26543E13E06B8D00DE089C /* WhosWhoSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26543C13E06B8D00DE089C /* WhosWhoSearch.m */; };
+		2D26543F13E06B8D00DE089C /* WhosWhoSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26543D13E06B8D00DE089C /* WhosWhoSearch.xib */; };
+		2D26544313E06B9900DE089C /* WhosWhoResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26544113E06B9800DE089C /* WhosWhoResults.m */; };
+		2D26544413E06B9900DE089C /* WhosWhoResults.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26544213E06B9900DE089C /* WhosWhoResults.xib */; };
 		2D26544813E06BA400DE089C /* Links.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26544613E06BA400DE089C /* Links.m */; };
 		2D26544913E06BA400DE089C /* Links.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D26544713E06BA400DE089C /* Links.xib */; };
 		2D26544D13E06BBD00DE089C /* Chapel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D26544B13E06BBC00DE089C /* Chapel.m */; };
@@ -61,6 +61,8 @@
 		2D66563413EB3F8B00645BC3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D66563313EB3F8B00645BC3 /* Default@2x.png */; };
 		2DCEB34513E2010A00787E39 /* LinksList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DCEB34413E2010A00787E39 /* LinksList.plist */; };
 		624C421613F42EEC007B1A07 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 624C421513F42EEC007B1A07 /* iToast.m */; };
+		62603D3815E82FE700FF2645 /* WhosWhoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62603D3715E82FE600FF2645 /* WhosWhoTableViewCell.m */; };
+		62603D3B15E8301800FF2645 /* WhosWhoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62603D3A15E8301800FF2645 /* WhosWhoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,12 +108,12 @@
 		2D26543613E06B5D00DE089C /* HomeScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreen.h; sourceTree = "<group>"; };
 		2D26543713E06B5D00DE089C /* HomeScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreen.m; sourceTree = "<group>"; };
 		2D26543813E06B5D00DE089C /* HomeScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeScreen.xib; sourceTree = "<group>"; };
-		2D26543B13E06B8D00DE089C /* StalkernetHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StalkernetHome.h; sourceTree = "<group>"; };
-		2D26543C13E06B8D00DE089C /* StalkernetHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StalkernetHome.m; sourceTree = "<group>"; };
-		2D26543D13E06B8D00DE089C /* StalkernetHome.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StalkernetHome.xib; sourceTree = "<group>"; };
-		2D26544013E06B9800DE089C /* StalkernetResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StalkernetResults.h; sourceTree = "<group>"; };
-		2D26544113E06B9800DE089C /* StalkernetResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StalkernetResults.m; sourceTree = "<group>"; };
-		2D26544213E06B9900DE089C /* StalkernetResults.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StalkernetResults.xib; sourceTree = "<group>"; };
+		2D26543B13E06B8D00DE089C /* WhosWhoSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhosWhoSearch.h; sourceTree = "<group>"; };
+		2D26543C13E06B8D00DE089C /* WhosWhoSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhosWhoSearch.m; sourceTree = "<group>"; };
+		2D26543D13E06B8D00DE089C /* WhosWhoSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhosWhoSearch.xib; sourceTree = "<group>"; };
+		2D26544013E06B9800DE089C /* WhosWhoResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhosWhoResults.h; sourceTree = "<group>"; };
+		2D26544113E06B9800DE089C /* WhosWhoResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhosWhoResults.m; sourceTree = "<group>"; };
+		2D26544213E06B9900DE089C /* WhosWhoResults.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhosWhoResults.xib; sourceTree = "<group>"; };
 		2D26544513E06BA400DE089C /* Links.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Links.h; sourceTree = "<group>"; };
 		2D26544613E06BA400DE089C /* Links.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Links.m; sourceTree = "<group>"; };
 		2D26544713E06BA400DE089C /* Links.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Links.xib; sourceTree = "<group>"; };
@@ -143,6 +145,9 @@
 		2DCEB34413E2010A00787E39 /* LinksList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LinksList.plist; path = "Wheaton App.xcodeproj/LinksList.plist"; sourceTree = SOURCE_ROOT; };
 		624C421413F42EEC007B1A07 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
 		624C421513F42EEC007B1A07 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
+		62603D3615E82FE600FF2645 /* WhosWhoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhosWhoTableViewCell.h; sourceTree = "<group>"; };
+		62603D3715E82FE600FF2645 /* WhosWhoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhosWhoTableViewCell.m; sourceTree = "<group>"; };
+		62603D3A15E8301800FF2645 /* WhosWhoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhosWhoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,12 +240,15 @@
 				2D26544513E06BA400DE089C /* Links.h */,
 				2D26544613E06BA400DE089C /* Links.m */,
 				2D26544713E06BA400DE089C /* Links.xib */,
-				2D26544013E06B9800DE089C /* StalkernetResults.h */,
-				2D26544113E06B9800DE089C /* StalkernetResults.m */,
-				2D26544213E06B9900DE089C /* StalkernetResults.xib */,
-				2D26543B13E06B8D00DE089C /* StalkernetHome.h */,
-				2D26543C13E06B8D00DE089C /* StalkernetHome.m */,
-				2D26543D13E06B8D00DE089C /* StalkernetHome.xib */,
+				2D26544013E06B9800DE089C /* WhosWhoResults.h */,
+				2D26544113E06B9800DE089C /* WhosWhoResults.m */,
+				2D26544213E06B9900DE089C /* WhosWhoResults.xib */,
+				62603D3615E82FE600FF2645 /* WhosWhoTableViewCell.h */,
+				62603D3715E82FE600FF2645 /* WhosWhoTableViewCell.m */,
+				62603D3A15E8301800FF2645 /* WhosWhoTableViewCell.xib */,
+				2D26543B13E06B8D00DE089C /* WhosWhoSearch.h */,
+				2D26543C13E06B8D00DE089C /* WhosWhoSearch.m */,
+				2D26543D13E06B8D00DE089C /* WhosWhoSearch.xib */,
 				2D2653E313E069CF00DE089C /* Supporting Files */,
 			);
 			path = "Wheaton App";
@@ -386,8 +394,8 @@
 				2D26543313E06A8C00DE089C /* 57x57.png in Resources */,
 				2D26543513E06A9200DE089C /* 114x114.png in Resources */,
 				2D26543A13E06B5D00DE089C /* HomeScreen.xib in Resources */,
-				2D26543F13E06B8D00DE089C /* StalkernetHome.xib in Resources */,
-				2D26544413E06B9900DE089C /* StalkernetResults.xib in Resources */,
+				2D26543F13E06B8D00DE089C /* WhosWhoSearch.xib in Resources */,
+				2D26544413E06B9900DE089C /* WhosWhoResults.xib in Resources */,
 				2D26544913E06BA400DE089C /* Links.xib in Resources */,
 				2D26544E13E06BBD00DE089C /* Chapel.xib in Resources */,
 				2D26545313E06BD700DE089C /* DiningMenu.xib in Resources */,
@@ -402,6 +410,7 @@
 				2D66563213EB3F7A00645BC3 /* Default.png in Resources */,
 				2D66563413EB3F8B00645BC3 /* Default@2x.png in Resources */,
 				2D31C02713EC8963004030A3 /* links.png in Resources */,
+				62603D3B15E8301800FF2645 /* WhosWhoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,8 +449,8 @@
 				2D2653EA13E069CF00DE089C /* main.m in Sources */,
 				2D2653ED13E069CF00DE089C /* Wheaton_AppAppDelegate.m in Sources */,
 				2D26543913E06B5D00DE089C /* HomeScreen.m in Sources */,
-				2D26543E13E06B8D00DE089C /* StalkernetHome.m in Sources */,
-				2D26544313E06B9900DE089C /* StalkernetResults.m in Sources */,
+				2D26543E13E06B8D00DE089C /* WhosWhoSearch.m in Sources */,
+				2D26544313E06B9900DE089C /* WhosWhoResults.m in Sources */,
 				2D26544813E06BA400DE089C /* Links.m in Sources */,
 				2D26544D13E06BBD00DE089C /* Chapel.m in Sources */,
 				2D26545213E06BD700DE089C /* DiningMenu.m in Sources */,
@@ -450,6 +459,7 @@
 				2D26547213E0BAF000DE089C /* PinAnnotation.m in Sources */,
 				2D66562713EB0FA700645BC3 /* About.m in Sources */,
 				624C421613F42EEC007B1A07 /* iToast.m in Sources */,
+				62603D3815E82FE700FF2645 /* WhosWhoTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,8 +514,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Perciante";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Hayward (5ST3Z235DD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Hayward (5ST3Z235DD)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -514,8 +524,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				PROVISIONING_PROFILE = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
+				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 			};
@@ -526,7 +536,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Perciante";
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Hayward (5ST3Z235DD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -534,7 +544,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
+				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
@@ -548,8 +558,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Perciante";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Hayward (5ST3Z235DD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Hayward (5ST3Z235DD)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -562,8 +572,8 @@
 					"\"$(SRCROOT)/Wheaton App\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
+				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -577,7 +587,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Perciante";
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Hayward (5ST3Z235DD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -590,7 +600,7 @@
 					"\"$(SRCROOT)/Wheaton App\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
+				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -652,7 +662,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Perciante";
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Hayward (5ST3Z235DD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -660,7 +670,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
+				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
@@ -674,7 +684,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Perciante";
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Hayward (5ST3Z235DD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -687,7 +697,7 @@
 					"\"$(SRCROOT)/Wheaton App\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
+				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
