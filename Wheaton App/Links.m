@@ -26,8 +26,14 @@
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath
 {
+    static NSString *cellIdentifier = @"Cell";
     // attempt to request the reusable cell
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
     
     // set the text for the cell
     NSString *cellValue = [[[linksList allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)] objectAtIndex:indexPath.row];
