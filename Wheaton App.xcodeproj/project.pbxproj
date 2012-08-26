@@ -523,7 +523,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				SDKROOT = iphoneos;
@@ -542,7 +542,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
@@ -566,7 +566,7 @@
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Wheaton App/Wheaton App-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Wheaton App\"",
@@ -594,7 +594,7 @@
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Wheaton App/Wheaton App-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Wheaton App\"",
@@ -668,7 +668,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
@@ -691,7 +691,7 @@
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Wheaton App/Wheaton App-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Wheaton App\"",
