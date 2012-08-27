@@ -49,7 +49,13 @@
 
 -(void)fetchedData:(NSData *)responseData
 {
-    //parse out the json data
+    if (responseData == nil)
+    {
+        [[[iToast makeText:NSLocalizedString(@"Map pins are not available without a network connection", @"")] setDuration:3000] show];
+        return;
+    }
+
+    // parse out the json data
     NSError* error;
     NSDictionary* json = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
     NSArray* pins = [json objectForKey:@"pins"];
