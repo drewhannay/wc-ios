@@ -12,13 +12,6 @@
 
 @synthesize scrollView;
 @synthesize loadingView;
-@synthesize whosWhoSearch;
-@synthesize diningMenu;
-@synthesize chapel;
-@synthesize openFloor;
-@synthesize map;
-@synthesize links;
-@synthesize about;
 @synthesize whosWhoButton;
 @synthesize diningMenuButton;
 @synthesize chapelButton;
@@ -36,113 +29,67 @@ NSString *const WHOS_WHO_PREFIX = @"https://webapp.wheaton.edu/whoswho/person/se
 {
     if(button == whosWhoButton)
     {
-        if(self.whosWhoSearch == nil)
-        {
-            WhosWhoSearch *sHome = [[WhosWhoSearch alloc]
-                                     initWithNibName:@"WhosWhoSearch" bundle:[NSBundle mainBundle]];
-            self.whosWhoSearch = sHome;
-        }
+        if(whosWhoSearch == nil)
+            whosWhoSearch = [[WhosWhoSearch alloc] initWithNibName:@"WhosWhoSearch" bundle:[NSBundle mainBundle]];
+
         whosWhoSearch.navigationItem.title = @"Who's Who";
-        [self.navigationController pushViewController:self.whosWhoSearch animated:YES];
+        [self.navigationController pushViewController:whosWhoSearch animated:YES];
     }
     else if(button == diningMenuButton)
     {
-        if(self.diningMenu == nil)
-        {
-            DiningMenu *dMenu = [[DiningMenu alloc]
-                                     initWithNibName:@"DiningMenu" bundle:[NSBundle mainBundle]];
-            self.diningMenu = dMenu;
-        }
-        
+        if(diningMenu == nil)
+            diningMenu = [[DiningMenu alloc] initWithNibName:@"DiningMenu" bundle:[NSBundle mainBundle]];
+
         diningMenu.navigationItem.title = @"Bon Appétit";
-        [self.navigationController pushViewController:self.diningMenu animated:YES];
+        [self.navigationController pushViewController:diningMenu animated:YES];
     }
     else if(button == chapelButton)
     {
-        if(self.chapel == nil)
-        {
-            Chapel *chap = [[Chapel alloc]
-                                 initWithNibName:@"Chapel" bundle:[NSBundle mainBundle]];
-            self.chapel = chap;
-        }
-        
+        Chapel *chapel = [[Chapel alloc] initWithNibName:@"Chapel" bundle:[NSBundle mainBundle]];
         chapel.navigationItem.title = @"Chapel Schedule";
-        [self.navigationController pushViewController:self.chapel animated:YES];
+        [self.navigationController pushViewController:chapel animated:YES];
     }
     else if(button == openFloorButton)
     {
-        if(self.openFloor == nil)
-        {
-            OpenFloor *open = [[OpenFloor alloc]
-                            initWithNibName:@"OpenFloor" bundle:[NSBundle mainBundle]];
-            self.openFloor = open;
-        }
-        
+        OpenFloor *openFloor = [[OpenFloor alloc] initWithNibName:@"OpenFloor" bundle:[NSBundle mainBundle]];
         openFloor.navigationItem.title = @"Open Floors";
-        [self.navigationController pushViewController:self.openFloor animated:YES];
+        [self.navigationController pushViewController:openFloor animated:YES];
     }
     else if(button == mapButton)
     {
-        if(self.map == nil)
-        {
-            Map *m = [[Map alloc]
-                            initWithNibName:@"Map" bundle:[NSBundle mainBundle]];
-            self.map = m;
-        }
+        Map *map = [[Map alloc] initWithNibName:@"Map" bundle:[NSBundle mainBundle]];
         map.navigationItem.title = @"Campus Map";
-        [self.navigationController pushViewController:self.map animated:YES];
+        [self.navigationController pushViewController:map animated:YES];
     }
     else if(button == linksButton)
     {
-        if(self.links == nil)
-        {
-            Links *linkView = [[Links alloc]
-                            initWithNibName:@"Links" bundle:[NSBundle mainBundle]];
-            self.links = linkView;
-        }
+        if(links == nil)
+            links = [[Links alloc] initWithNibName:@"Links" bundle:[NSBundle mainBundle]];
+
         links.navigationItem.title = @"Links";
-        [self.navigationController pushViewController:self.links animated:YES];
+        [self.navigationController pushViewController:links animated:YES];
     }
     else if(button == aboutButton)
     {
-        if(self.about == nil)
-        {
-            About *ab = [[About alloc] init];
-            self.about = ab;
-        }
+        if(about == nil)
+            about = [[About alloc] init];
         [about setModalTransitionStyle:UIModalTransitionStylePartialCurl];
         [self presentModalViewController:about animated:YES];
     }
-    
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
 	[super viewWillAppear:animated];
-    
+
 	[self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated
+{
 	[super viewWillDisappear:animated];
-    
+
 	[self.navigationController setNavigationBarHidden:NO animated:YES];
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
@@ -151,32 +98,8 @@ NSString *const WHOS_WHO_PREFIX = @"https://webapp.wheaton.edu/whoswho/person/se
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+
     [scrollView setContentSize:CGSizeMake(320,560)];
-    
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
--(void) spinBegin
-{
-    [loadingView startAnimating];
-}
-
--(void) spinEnd
-{
-    [loadingView stopAnimating];
 }
 
 @end

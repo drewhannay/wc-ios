@@ -22,33 +22,14 @@ extern NSString *const WHOS_WHO_PREFIX;
 
 @interface HomeScreen : UIViewController<UIScrollViewDelegate>
 {
-    UIScrollView *scrollView;
-    UIActivityIndicatorView *loadingView;
     WhosWhoSearch *whosWhoSearch;
     DiningMenu *diningMenu;
-    Chapel *chapel;
-    OpenFloor *openFloor;
-    Map *map;
     Links *links;
     About *about;
-    UIButton *whosWhoButton;
-    UIButton *diningMenuButton;
-    UIButton *chapelButton;
-    UIButton *openFloorButton;
-    UIButton *mapButton;
-    UIButton *linksButton;
-    UIButton *aboutButton;
 }
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *loadingView;
-@property (nonatomic, retain) WhosWhoSearch *whosWhoSearch;
-@property (nonatomic, retain) DiningMenu *diningMenu;
-@property (nonatomic, retain) Chapel *chapel;
-@property (nonatomic, retain) OpenFloor *openFloor;
-@property (nonatomic, retain) Map *map;
-@property (nonatomic, retain) Links *links;
-@property (nonatomic, retain) About *about;
 @property (nonatomic, retain) IBOutlet UIButton *whosWhoButton;
 @property (nonatomic, retain) IBOutlet UIButton *diningMenuButton;
 @property (nonatomic, retain) IBOutlet UIButton *chapelButton;
@@ -56,9 +37,5 @@ extern NSString *const WHOS_WHO_PREFIX;
 @property (nonatomic, retain) IBOutlet UIButton *mapButton;
 @property (nonatomic, retain) IBOutlet UIButton *linksButton;
 @property (nonatomic, retain) IBOutlet UIButton *aboutButton;
-
--(IBAction)launchPage:(UIButton *) button;
-- (void)spinBegin;
-- (void)spinEnd;
 
 @end
