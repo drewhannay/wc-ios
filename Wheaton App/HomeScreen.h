@@ -18,6 +18,7 @@
 extern NSString *const CHAPEL_URL;
 extern NSString *const MAP_PINS_URL;
 extern NSString *const MENU_URL;
+extern NSString *const OPEN_FLOOR_URL;
 extern NSString *const WHOS_WHO_PREFIX;
 
 @interface HomeScreen : UIViewController<UIScrollViewDelegate>

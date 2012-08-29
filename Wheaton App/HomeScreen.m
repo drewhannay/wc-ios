@@ -23,6 +23,7 @@
 NSString *const CHAPEL_URL = @"http://dl.dropbox.com/u/36045671/chapel.json";
 NSString *const MAP_PINS_URL = @"http://dl.dropbox.com/u/36045671/mapPins.json";
 NSString *const MENU_URL = @"http://www.cafebonappetit.com/print-menu/cafe/339/menu/13292/days/not-today/pgbrks/0/";
+NSString *const OPEN_FLOOR_URL = @"http://cs.wheaton.edu/~drew.hannay/wheatonapp/GetFloorJson.php";
 NSString *const WHOS_WHO_PREFIX = @"https://webapp.wheaton.edu/whoswho/person/searchJson?page_size=100&q=";
 
 -(IBAction) launchPage:(UIButton *)button

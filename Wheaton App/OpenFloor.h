@@ -9,16 +9,15 @@
 #import <UIKit/UIKit.h>
 
 
-@interface OpenFloor : UIViewController {
-    UIActivityIndicatorView *loadingView;
-    UIWebView *webView;
-    UIButton *todayButton;
-    UIButton *prevButton;
-    UIButton *nextButton;
-    NSArray *results;
-    int viewIndex;
-    int todayIndex;
-
+@interface OpenFloor : UIViewController
+{
+    NSArray *m_openFloorDays;
+    NSDateFormatter *m_dateFormatter;
+    NSDate *m_latestDate;
+    int m_todayIndex;
+    int m_viewIndex;
+    BOOL m_errorOccurred;
+    BOOL m_isWorking;
 }
 
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *loadingView;
@@ -26,13 +25,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *todayButton;
 @property (nonatomic, retain) IBOutlet UIButton *prevButton;
 @property (nonatomic, retain) IBOutlet UIButton *nextButton;
-@property (nonatomic, retain) NSArray *results;
 
--(void) loadData;
--(IBAction) switchPage:(UIButton *)button;
-- (void)spinBegin;
-- (void)spinEnd;
--(void) viewDidAppear:(BOOL)animated;
-
+-(IBAction)switchPage:(UIButton *)button;
 
 @end
