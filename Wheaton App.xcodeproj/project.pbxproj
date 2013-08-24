@@ -63,6 +63,7 @@
 		624C421613F42EEC007B1A07 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 624C421513F42EEC007B1A07 /* iToast.m */; };
 		62603D3815E82FE700FF2645 /* WhosWhoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62603D3715E82FE600FF2645 /* WhosWhoTableViewCell.m */; };
 		62603D3B15E8301800FF2645 /* WhosWhoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62603D3A15E8301800FF2645 /* WhosWhoTableViewCell.xib */; };
+		62AB87D517C858E300674C0D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62AB87D417C858E300674C0D /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		62603D3615E82FE600FF2645 /* WhosWhoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhosWhoTableViewCell.h; sourceTree = "<group>"; };
 		62603D3715E82FE600FF2645 /* WhosWhoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhosWhoTableViewCell.m; sourceTree = "<group>"; };
 		62603D3A15E8301800FF2645 /* WhosWhoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhosWhoTableViewCell.xib; sourceTree = "<group>"; };
+		62AB87D417C858E300674C0D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 		2D2653CD13E069CF00DE089C = {
 			isa = PBXGroup;
 			children = (
+				62AB87D417C858E300674C0D /* Default-568h@2x.png */,
 				2D66563313EB3F8B00645BC3 /* Default@2x.png */,
 				2D66563113EB3F7900645BC3 /* Default.png */,
 				2D26543413E06A9200DE089C /* 114x114.png */,
@@ -354,7 +357,7 @@
 		2D2653CF13E069CF00DE089C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = 2D2653D213E069CF00DE089C /* Build configuration list for PBXProject "Wheaton App" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -411,6 +414,7 @@
 				2D66563413EB3F8B00645BC3 /* Default@2x.png in Resources */,
 				2D31C02713EC8963004030A3 /* links.png in Resources */,
 				62603D3B15E8301800FF2645 /* WhosWhoTableViewCell.xib in Resources */,
+				62AB87D517C858E300674C0D /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +560,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer: John Hayward (5ST3Z235DD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Hayward (5ST3Z235DD)";
@@ -585,7 +588,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer: John Hayward (5ST3Z235DD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
@@ -682,7 +684,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer: John Hayward (5ST3Z235DD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
