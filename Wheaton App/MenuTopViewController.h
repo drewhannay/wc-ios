@@ -14,6 +14,7 @@
     NSXMLParser *parser;
     NSMutableArray *feeds;
     NSString *element;
+    NSMutableDictionary *item;
     NSMutableString *htmlCode;
 }
 
