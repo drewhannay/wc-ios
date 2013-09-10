@@ -28,7 +28,7 @@
     });
 }
 
--(void)fetchedData:(NSData *)responseData
+- (void)fetchedData:(NSData *)responseData
 {
     if (responseData == nil) {
         UIAlertView *alertView = [[UIAlertView alloc]

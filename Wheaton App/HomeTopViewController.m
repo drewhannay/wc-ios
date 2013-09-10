@@ -39,14 +39,14 @@
 - (void)viewDidLoad
 {
     self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    menuBtn.frame = CGRectMake(4, 5, 42, 34);
+    self.menuBtn.frame = CGRectMake(4, 0, 44, 44);
     [menuBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
     [menuBtn addTarget:self action:@selector(revealMenu:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:self.menuBtn];
     
     self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    menuBtn.frame = CGRectMake(self.view.frame.size.width-34-8, 10, 34, 24);
+    menuBtn.frame = CGRectMake(self.view.frame.size.width-44-4, 0, 44, 44);
     [menuBtn setBackgroundImage:[UIImage imageNamed:@"twitter.png"] forState:UIControlStateNormal];
     [menuBtn addTarget:self action:@selector(tweet:) forControlEvents:UIControlEventTouchUpInside];
     

@@ -35,7 +35,7 @@
 - (void)viewDidLoad
 {
     self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.menuBtn.frame = CGRectMake(8, 10, 34, 24);
+    self.menuBtn.frame = CGRectMake(4, 0, 44, 44);
     [self.menuBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
     [self.menuBtn addTarget:self action:@selector(revealMenu:) forControlEvents:UIControlEventTouchUpInside];
     

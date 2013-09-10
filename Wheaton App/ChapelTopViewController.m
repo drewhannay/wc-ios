@@ -36,8 +36,10 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    
     self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    menuBtn.frame = CGRectMake(8, 10, 34, 24);
+    self.menuBtn.frame = CGRectMake(4, 0, 44, 44);
     [menuBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
     [menuBtn addTarget:self action:@selector(revealMenu:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -45,7 +47,6 @@
     [self.view addSubview:self.menuBtn];
     
     [self loadSchedule];
-    [super viewDidLoad];
 }
 
 - (IBAction)revealMenu:(id)sender

@@ -18,11 +18,10 @@
 @synthesize infoView, profileImage;
 @synthesize person = _person;
 
--(void)viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    //UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:[UIImageView ...]];
     UIButton *menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    menuBtn.frame = CGRectMake(8, 10, 34, 24); 
+    menuBtn.frame = CGRectMake(4, 0, 44, 44);
     [menuBtn setBackgroundImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
     [menuBtn addTarget:self action:@selector(goBack:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -30,13 +29,9 @@
     [self.navigationItem setLeftBarButtonItem:anotherButton];
 }
 
--(void)viewDidLoad
+- (void)viewDidLoad
 {
-//    
-//    UINavigationController *navControl = (UINavigationController *)self.window.rootViewController;
-//    
-//    navControl.
-    
+    [super viewDidLoad];
     
     NSString *firstName = [self.person objectForKey:@"FirstName"];
     NSString *prefFirstName = [self.person objectForKey:@"PrefFirstName"];
@@ -84,9 +79,6 @@
             });
         }
     });
-    
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 -(BOOL)isNullOrEmpty:(NSString *) string

@@ -10,7 +10,7 @@
 
 @interface HomeSportsCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property(nonatomic, weak) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, retain) NSMutableArray *sportResults;
 
 @end
