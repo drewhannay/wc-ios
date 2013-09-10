@@ -24,6 +24,11 @@
 		610D48D617DD620400DE574C /* Calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 610D48D417DD620400DE574C /* Calendar@2x.png */; };
 		610E2B6B17DA8FA5003D5405 /* searchBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 610E2B6917DA8FA5003D5405 /* searchBar.png */; };
 		610E2B6C17DA8FA5003D5405 /* searchBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 610E2B6A17DA8FA5003D5405 /* searchBar@2x.png */; };
+		612BFEFD17DED11300EB2C8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 612BFEF517DED11200EB2C8C /* AppDelegate.m */; };
+		612BFEFE17DED11300EB2C8C /* HomeTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 612BFEF717DED11200EB2C8C /* HomeTopViewController.m */; };
+		612BFEFF17DED11300EB2C8C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 612BFEF917DED11200EB2C8C /* MenuViewController.m */; };
+		612BFF0017DED11300EB2C8C /* SideBarTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 612BFEFB17DED11200EB2C8C /* SideBarTableCell.m */; };
+		612BFF0117DED11300EB2C8C /* SideBarTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 612BFEFC17DED11300EB2C8C /* SideBarTableCell.xib */; };
 		615097F117D5221900456A9D /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 615097EF17D5221900456A9D /* back.png */; };
 		615097F217D5221900456A9D /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 615097F017D5221900456A9D /* back@2x.png */; };
 		615097F417D541CA00456A9D /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 615097F317D541CA00456A9D /* twitter@2x.png */; };
@@ -40,12 +45,7 @@
 		61CA409F17CA6C8D00617623 /* InitialSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA409E17CA6C8D00617623 /* InitialSlidingViewController.m */; };
 		61CA40A817CA6F4F00617623 /* CustomNav.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40A617CA6F4F00617623 /* CustomNav.png */; };
 		61CA40A917CA6F4F00617623 /* CustomNav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40A717CA6F4F00617623 /* CustomNav@2x.png */; };
-		61CA40AA17CA6FB400617623 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA40A217CA6DA800617623 /* AppDelegate.m */; };
 		61CA40AD17CA702200617623 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40AC17CA702200617623 /* iPhone.storyboard */; };
-		61CA40B017CA739500617623 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA40AF17CA739500617623 /* MenuViewController.m */; };
-		61CA40B417CA73F200617623 /* SideBarTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA40B217CA73F200617623 /* SideBarTableCell.m */; };
-		61CA40B517CA73F200617623 /* SideBarTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40B317CA73F200617623 /* SideBarTableCell.xib */; };
-		61CA40BA17CA78E300617623 /* HomeTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA40B917CA78E300617623 /* HomeTopViewController.m */; };
 		61CA40BC17CA798100617623 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CA40BB17CA798100617623 /* Twitter.framework */; };
 		61CA40BE17CA799F00617623 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CA40BD17CA799F00617623 /* CoreLocation.framework */; };
 		61CA40C117CA79E000617623 /* CustomNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA40C017CA79E000617623 /* CustomNavBar.m */; };
@@ -118,6 +118,15 @@
 		610D48D417DD620400DE574C /* Calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar@2x.png"; sourceTree = "<group>"; };
 		610E2B6917DA8FA5003D5405 /* searchBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchBar.png; sourceTree = "<group>"; };
 		610E2B6A17DA8FA5003D5405 /* searchBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchBar@2x.png"; sourceTree = "<group>"; };
+		612BFEF417DED11200EB2C8C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		612BFEF517DED11200EB2C8C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		612BFEF617DED11200EB2C8C /* HomeTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTopViewController.h; sourceTree = "<group>"; };
+		612BFEF717DED11200EB2C8C /* HomeTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTopViewController.m; sourceTree = "<group>"; };
+		612BFEF817DED11200EB2C8C /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		612BFEF917DED11200EB2C8C /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		612BFEFA17DED11200EB2C8C /* SideBarTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarTableCell.h; sourceTree = "<group>"; };
+		612BFEFB17DED11200EB2C8C /* SideBarTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarTableCell.m; sourceTree = "<group>"; };
+		612BFEFC17DED11300EB2C8C /* SideBarTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideBarTableCell.xib; sourceTree = "<group>"; };
 		615097EF17D5221900456A9D /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		615097F017D5221900456A9D /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		615097F317D541CA00456A9D /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
@@ -135,18 +144,9 @@
 		61CA409817CA6C2A00617623 /* UIImage+ImageWithUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithUIView.m"; sourceTree = "<group>"; };
 		61CA409D17CA6C8D00617623 /* InitialSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialSlidingViewController.h; sourceTree = "<group>"; };
 		61CA409E17CA6C8D00617623 /* InitialSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialSlidingViewController.m; sourceTree = "<group>"; };
-		61CA40A117CA6DA800617623 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
-		61CA40A217CA6DA800617623 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		61CA40A617CA6F4F00617623 /* CustomNav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CustomNav.png; sourceTree = "<group>"; };
 		61CA40A717CA6F4F00617623 /* CustomNav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CustomNav@2x.png"; sourceTree = "<group>"; };
 		61CA40AC17CA702200617623 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
-		61CA40AE17CA739500617623 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = ../MenuViewController.h; sourceTree = "<group>"; };
-		61CA40AF17CA739500617623 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = ../MenuViewController.m; sourceTree = "<group>"; };
-		61CA40B117CA73F200617623 /* SideBarTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SideBarTableCell.h; path = ../SideBarTableCell.h; sourceTree = "<group>"; };
-		61CA40B217CA73F200617623 /* SideBarTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SideBarTableCell.m; path = ../SideBarTableCell.m; sourceTree = "<group>"; };
-		61CA40B317CA73F200617623 /* SideBarTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SideBarTableCell.xib; path = ../SideBarTableCell.xib; sourceTree = "<group>"; };
-		61CA40B817CA78E300617623 /* HomeTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeTopViewController.h; path = ../HomeTopViewController.h; sourceTree = "<group>"; };
-		61CA40B917CA78E300617623 /* HomeTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeTopViewController.m; path = ../HomeTopViewController.m; sourceTree = "<group>"; };
 		61CA40BB17CA798100617623 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		61CA40BD17CA799F00617623 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		61CA40BF17CA79E000617623 /* CustomNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavBar.h; sourceTree = "<group>"; };
@@ -264,8 +264,8 @@
 			children = (
 				61CA40C717CA94DB00617623 /* Model */,
 				61CA40AB17CA6FE900617623 /* GUI */,
-				61CA40A117CA6DA800617623 /* AppDelegate.h */,
-				61CA40A217CA6DA800617623 /* AppDelegate.m */,
+				612BFEF417DED11200EB2C8C /* AppDelegate.h */,
+				612BFEF517DED11200EB2C8C /* AppDelegate.m */,
 				61CA409C17CA6C6300617623 /* Controllers */,
 				2D2653E313E069CF00DE089C /* Supporting Files */,
 				61CA409317CA6C2A00617623 /* Vendor */,
@@ -350,7 +350,6 @@
 				61E4076717CBC9080068AE00 /* menuButton@2x.png */,
 				61CA40D017CB137500617623 /* CustomMenuNav.png */,
 				61CA40D117CB137600617623 /* CustomMenuNav@2x.png */,
-				61CA40A417CA6E0100617623 /* Old */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -377,14 +376,14 @@
 		61CA409C17CA6C6300617623 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				61CA40AE17CA739500617623 /* MenuViewController.h */,
-				61CA40AF17CA739500617623 /* MenuViewController.m */,
+				612BFEF817DED11200EB2C8C /* MenuViewController.h */,
+				612BFEF917DED11200EB2C8C /* MenuViewController.m */,
 				61E4078017CEF4950068AE00 /* MenuTopViewController.h */,
 				61E4078117CEF4960068AE00 /* MenuTopViewController.m */,
 				61CA409D17CA6C8D00617623 /* InitialSlidingViewController.h */,
 				61CA409E17CA6C8D00617623 /* InitialSlidingViewController.m */,
-				61CA40B817CA78E300617623 /* HomeTopViewController.h */,
-				61CA40B917CA78E300617623 /* HomeTopViewController.m */,
+				612BFEF617DED11200EB2C8C /* HomeTopViewController.h */,
+				612BFEF717DED11200EB2C8C /* HomeTopViewController.m */,
 				61CA40C417CA8EAF00617623 /* MapTopViewController.h */,
 				61CA40C517CA8EAF00617623 /* MapTopViewController.m */,
 				61E4076917CC3B7D0068AE00 /* ChapelTopViewController.h */,
@@ -403,19 +402,12 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		61CA40A417CA6E0100617623 /* Old */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Old;
-			sourceTree = "<group>";
-		};
 		61CA40AB17CA6FE900617623 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				61CA40B117CA73F200617623 /* SideBarTableCell.h */,
-				61CA40B217CA73F200617623 /* SideBarTableCell.m */,
-				61CA40B317CA73F200617623 /* SideBarTableCell.xib */,
+				612BFEFA17DED11200EB2C8C /* SideBarTableCell.h */,
+				612BFEFB17DED11200EB2C8C /* SideBarTableCell.m */,
+				612BFEFC17DED11300EB2C8C /* SideBarTableCell.xib */,
 				61E407A717D3975E0068AE00 /* SportsCollectionCell.h */,
 				61E407A817D397620068AE00 /* SportsCollectionCell.m */,
 				61E4076E17CC5B7B0068AE00 /* ChapelTableCell.h */,
@@ -507,7 +499,6 @@
 				61CA40A817CA6F4F00617623 /* CustomNav.png in Resources */,
 				61CA40A917CA6F4F00617623 /* CustomNav@2x.png in Resources */,
 				61CA40AD17CA702200617623 /* iPhone.storyboard in Resources */,
-				61CA40B517CA73F200617623 /* SideBarTableCell.xib in Resources */,
 				61CA40CE17CB12E500617623 /* CustomMenuNavBar.m in Resources */,
 				61CA40D217CB137600617623 /* CustomMenuNav.png in Resources */,
 				61CA40D317CB137600617623 /* CustomMenuNav@2x.png in Resources */,
@@ -544,6 +535,7 @@
 				610E2B6C17DA8FA5003D5405 /* searchBar@2x.png in Resources */,
 				610D48D517DD620400DE574C /* Calendar.png in Resources */,
 				610D48D617DD620400DE574C /* Calendar@2x.png in Resources */,
+				612BFF0117DED11300EB2C8C /* SideBarTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,10 +551,6 @@
 				61CA409917CA6C2A00617623 /* ECSlidingViewController.m in Sources */,
 				61CA409A17CA6C2A00617623 /* UIImage+ImageWithUIView.m in Sources */,
 				61CA409F17CA6C8D00617623 /* InitialSlidingViewController.m in Sources */,
-				61CA40AA17CA6FB400617623 /* AppDelegate.m in Sources */,
-				61CA40B017CA739500617623 /* MenuViewController.m in Sources */,
-				61CA40B417CA73F200617623 /* SideBarTableCell.m in Sources */,
-				61CA40BA17CA78E300617623 /* HomeTopViewController.m in Sources */,
 				61CA40C117CA79E000617623 /* CustomNavBar.m in Sources */,
 				61CA40C617CA8EAF00617623 /* MapTopViewController.m in Sources */,
 				61CA40CA17CA94FB00617623 /* Location.m in Sources */,
@@ -579,6 +567,10 @@
 				61F05EDA17D399A50006CC1F /* HomeSportsCollectionViewController.m in Sources */,
 				610D48CD17DD575900DE574C /* EventsTopViewController.m in Sources */,
 				610D48D217DD591F00DE574C /* EventsTableCell.m in Sources */,
+				612BFEFD17DED11300EB2C8C /* AppDelegate.m in Sources */,
+				612BFEFE17DED11300EB2C8C /* HomeTopViewController.m in Sources */,
+				612BFEFF17DED11300EB2C8C /* MenuViewController.m in Sources */,
+				612BFF0017DED11300EB2C8C /* SideBarTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
