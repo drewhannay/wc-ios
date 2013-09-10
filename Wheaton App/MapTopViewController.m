@@ -91,7 +91,7 @@
 }
 
 
--(void)loadLocations
+- (void)loadLocations
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString: c_MapLocations]];
@@ -137,7 +137,7 @@
 }
 
 
--(void)fetchedData:(id)responseData
+- (void)fetchedData:(id)responseData
 {
     if (responseData == nil) {
         return;
@@ -174,7 +174,7 @@
 }
 
 #pragma mark - UISearchDisplayController delegate methods
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller
 shouldReloadTableForSearchString:(NSString *)searchString
 {
     [self filterContentForSearchText:searchString
