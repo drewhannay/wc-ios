@@ -1,0 +1,252 @@
+[
+    {
+        "month": "August",
+        "speakers": [
+            {
+                "date": 28,
+                "title": "Academic Convocation",
+                "subtitle": "Address by Dr. Philip Ryken Preident of Wheaton College" 
+            },
+            {
+                "date": 30,
+                "title": "Dr. Stephen Kellough",
+                "subtitle": "Chaplain's Session"
+            }
+        ]
+    },
+    {
+        "month": "September",
+        "speakers": [
+            {
+                "date": 4,
+                "title": "God in My Everything - Pastor Ken Shigematsu",
+                "subtitle": "Tenth Church, Vancouver, Canada"
+            },
+            {
+                "date": 5,
+                "title": "God in My Everything - Pastor Ken Shigematsu",
+                "subtitle": "Tenth Church, Vancouver, Canada"
+            },
+            {
+                "date": 6,
+                "title": "God in My Everything - Pastor Ken Shigematsu",
+                "subtitle": "Tenth Church, Vancouver, Canada"
+            },
+            {
+                "date": 9,
+                "title": "Clayton Keenon",
+                "subtitle": "Discipleship Small Groups"
+            },
+            {
+                "date": 11,
+                "title": "Christian Service Council",
+                "subtitle": "Ministry Day"
+            },
+            {
+                "date": 13,
+                "title": "Frida Gashumba",
+                "subtitle": "World Christian Fellowship"
+            },
+            {
+                "date": 16,
+                "title": "HoneyRock",
+                "subtitle": ""
+            },
+            {
+                "date": 18,
+                "title": "'Life in the Church' - Dr. Nadine Rorem",
+                "subtitle": "Church Meet-&-Greet Day"
+            },
+            {
+                "date": 20,
+                "title": "Dr. Stephen Kellough",
+                "subtitle": "Chaplain's Session"
+            },
+            {
+                "date": 23,
+                "title": "Summer Ministries",
+                "subtitle": ""
+            },
+            {
+                "date": 25,
+                "title": "Dr. Philip Ryken",
+                "subtitle": "President's Chapel"
+            },
+            {
+                "date": 27,
+                "title": "Dr. Leighton Ford",
+                "subtitle": "Spiritual Mentoring"
+            },
+            {
+                "date": 30,
+                "title": "Dr. Paul Tripp",
+                "subtitle": "Sexuality Series"
+            }
+        ]
+    },
+    {
+        "month": "October",
+        "speakers": [
+            {
+                "date": 2,
+                "title": "Dr. Paul Tripp",
+                "subtitle": "Sexuality Series"
+            },
+            {
+                "date": 4,
+                "title": "Lisa (Maxwell Ryken '88)",
+                "subtitle": "Homecoming"
+            },
+            {
+                "date": 7,
+                "title": "Solidarity",
+                "subtitle": ""
+            },
+            {
+                "date": 9,
+                "title": "Sons of Korah",
+                "subtitle": "Worship through the Psalms"
+            },
+            {
+                "date": 11,
+                "title": "Rev. Will Graham",
+                "subtitle": "My Grandfather's Legacy"
+            },
+            {
+                "date": 14,
+                "title": "S. Joel Norman",
+                "subtitle": "Worship through Hymns"
+            },
+            {
+                "date": 16,
+                "title": "Dr. Stephen Kellough",
+                "subtitle": "Chaplain's Session"
+            },
+            {
+                "date": 18,
+                "title": "Heather Headley",
+                "subtitle": "Vocal Artist"
+            },
+            {
+                "date": 23,
+                "title": "Dr. Philip Ryken",
+                "subtitle": "President's Chapel"
+            },
+            {
+                "date": 25,
+                "title": "Pastor Sam Rodriguez",
+                "subtitle": "Inhabit Conference on Racial Unity"
+            },
+            {
+                "date": 28,
+                "title": "President Emeritus Dr. Duane Litfin",
+                "subtitle": "With Dr. Philip Ryken in Dialogue"
+            },
+            {
+                "date": 30,
+                "title": "Solidarity",
+                "subtitle": "Department Chapels"
+            }
+        ]
+    },
+    {
+        "month": "November",
+        "speakers": [
+            {
+                "date": 1,
+                "title": "Dr. Francis Su - 'Lessons Learned on Grace'",
+                "subtitle": "Professor of Mathematics, Harvey Mudd College"
+            },
+            {
+                "date": 4,
+                "title": "Student Government",
+                "subtitle": ""
+            },
+            {
+                "date": 6,
+                "title": "The Spirit's Revolution - Rev. Dr. Trygve Johnson",
+                "subtitle": "Dean of the Chapel, Hope College"
+            },
+            {
+                "date": 7,
+                "title": "The Spirit's Revolution - Rev. Dr. Trygve Johnson",
+                "subtitle": "Dean of the Chapel, Hope College"
+            },
+            {
+                "date": 8,
+                "title": "The Spirit's Revolution - Rev. Dr. Trygve Johnson",
+                "subtitle": "Dean of the Chapel, Hope College"
+            },
+            {
+                "date": 11,
+                "title": "Pastor Roy Patterson",
+                "subtitle": "With the Gospel Choir"
+            },
+            {
+                "date": 13,
+                "title": "Gary Chapman, Author",
+                "subtitle": "The Five Languages of Apology"
+            },
+            {
+                "date": 15,
+                "title": "Dr. Stephen Kellough",
+                "subtitle": "Chaplain's Session"
+            },
+            {
+                "date": 18,
+                "title": "Dr. Philip Ryken",
+                "subtitle": "President's Chapel"
+            },
+            {
+                "date": 20,
+                "title": "Class Chapels",
+                "subtitle": ""
+            },
+            {
+                "date": 22,
+                "title": "Professor Emeritus Dr. Al Nieves",
+                "subtitle": "Sociology Conference"
+            },
+            {
+                "date": 25,
+                "title": "Student Chaplains",
+                "subtitle": "With the Chapel Band"
+            }
+        ]
+    },
+    {
+        "month": "December",
+        "speakers": [
+            {
+                "date": 2,
+                "title": "Phil Vischer, Creator",
+                "subtitle": "Veggie Tales & Jelly Telly"
+            },
+            {
+                "date": 4,
+                "title": "Alathea",
+                "subtitle": "Music & Word"
+            },
+            {
+                "date": 6,
+                "title": "Conservatory",
+                "subtitle": ""
+            },
+            {
+                "date": 9,
+                "title": "Rev. Alise Barrymore",
+                "subtitle": "Advent Worship"
+            },
+            {
+                "date": 11,
+                "title": "Dr. Cherith Nordling",
+                "subtitle": "Reflections on Advent"
+            },
+            {
+                "date": 13,
+                "title": "Dr. Philip Ryken",
+                "subtitle": "President's Christmas with the Hallelujah Chorus"
+            }
+        ]
+    }
+]
