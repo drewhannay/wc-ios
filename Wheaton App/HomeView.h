@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuViewController.h"
 
 @interface HomeView : UIScrollView <UIScrollViewDelegate> {
     int totalPages;

@@ -32,7 +32,7 @@
     [c.menuBtn setHidden:NO];
 }
 
--(void)runSearch
+- (void)runSearch
 {
     searchParameter = [searchBox.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     searchParameter = [searchParameter stringByReplacingOccurrencesOfString:@" " withString:@"+"];
@@ -51,7 +51,7 @@
     });
 }
 
--(void)fetchedData:(NSData *)responseData
+- (void)fetchedData:(NSData *)responseData
 {
     [loadingView stopAnimating];
     
@@ -94,7 +94,7 @@
 }
 
 
--(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath
 {
     static NSString *cellIdentifier = @"WhoswhoTableCell";
     
@@ -153,12 +153,12 @@
     return cell;
 }
 
--(BOOL)isNullOrEmpty:(NSString *) string
+- (BOOL)isNullOrEmpty:(NSString *) string
 {
     return [string isEqual:[NSNull null]] || [string isEqualToString:@""];
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 120;
 }
@@ -180,17 +180,17 @@
     return headerView;
 }
 
--(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [searchResults count];
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
 
--(NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return @"Results";
 }

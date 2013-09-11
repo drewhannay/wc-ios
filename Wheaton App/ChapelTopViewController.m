@@ -111,38 +111,6 @@
     NSDictionary *row = [array objectAtIndex:indexPath.row];
     
     cell.titleLabel.text = [row objectForKey:@"title"];
-//    
-//    NSLog(@"HERE");
-//    NSLog(@"%@", [row objectForKey:@"subtitle"]);
-    
-//    if([[row objectForKey:@"subtitle"] isEqualToString:@""]) {
-//        NSLog(@"%@", cell.constraints);
-//        
-//        NSLayoutConstraint *constraint = [cell.constraints objectAtIndex:2];
-//        [cell removeConstraint:constraint];
-//        NSLayoutConstraint *topConstraint =[NSLayoutConstraint
-//                                           constraintWithItem:cell.titleLabel
-//                                           attribute:NSLayoutAttributeTop
-//                                           relatedBy:NSLayoutRelationEqual
-//                                           toItem:cell
-//                                           attribute:NSLayoutAttributeTop
-//                                           multiplier:1.0
-//                                           constant:17];
-//        [cell addConstraint: topConstraint];
-//    } else {
-//        NSLayoutConstraint *constraint = [cell.constraints objectAtIndex:2];
-//        [cell removeConstraint:constraint];
-//        NSLayoutConstraint *topConstraint =[NSLayoutConstraint
-//                                            constraintWithItem:cell.titleLabel
-//                                            attribute:NSLayoutAttributeTop
-//                                            relatedBy:NSLayoutRelationEqual
-//                                            toItem:cell
-//                                            attribute:NSLayoutAttributeTop
-//                                            multiplier:1.0
-//                                            constant:6];
-//        [cell addConstraint: topConstraint];
-//    }
-    
     cell.subtitleLabel.text = [row objectForKey:@"subtitle"];
     cell.dateLabel.text = [NSString stringWithFormat:@"%@", [row objectForKey:@"date"]];
     

@@ -81,12 +81,12 @@
     });
 }
 
--(BOOL)isNullOrEmpty:(NSString *) string
+- (BOOL)isNullOrEmpty:(NSString *) string
 {
     return [string isEqual:[NSNull null]] || [string isEqualToString:@""];
 }
 
--(void)addLabelWithString:(NSString *)labelText
+- (void)addLabelWithString:(NSString *)labelText
 {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, runningHeight, 240, 20)];
     label.font = [UIFont systemFontOfSize:15];
@@ -111,7 +111,7 @@
     [infoView addSubview:label];
 }
 
--(void)goBack:(id)sender
+- (void)goBack:(id)sender
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
