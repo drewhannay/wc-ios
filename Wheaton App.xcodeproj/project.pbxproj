@@ -473,7 +473,7 @@
 		2D2653CF13E069CF00DE089C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = 2D2653D213E069CF00DE089C /* Build configuration list for PBXProject "Wheaton App" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -609,7 +609,6 @@
 		2D26540713E069D000DE089C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer: John Hayward (5ST3Z235DD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Hayward (5ST3Z235DD)";
@@ -621,6 +620,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				SDKROOT = iphoneos;
@@ -631,7 +631,6 @@
 		2D26540813E069D000DE089C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer: John Hayward (5ST3Z235DD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
@@ -707,7 +706,6 @@
 		62AADA3913F983E7001BC0DA /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer: John Hayward (5ST3Z235DD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";

@@ -10,7 +10,7 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 
-@interface WhosWhoTopViewController : UINavigationController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface WhosWhoTopViewController : UINavigationController <UISearchBarDelegate>
 
 @property (strong, nonatomic) UIButton *menuBtn;
 

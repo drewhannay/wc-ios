@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="itE-Ns-nlR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4510" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="itE-Ns-nlR">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Initial Sliding View Controller-->
@@ -28,6 +29,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="NYW-UC-qao">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -35,7 +37,7 @@
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -48,9 +50,11 @@
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UW8-Mw-SOv" customClass="CustomMenuNavBar">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </navigationBar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEG-sf-8FW">
+                                <rect key="frame" x="20" y="11" width="44" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -83,6 +87,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="B8N-CF-ffj" customClass="WhoswhoSearchBar">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -93,6 +98,7 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1uW-0B-LBH">
+                                <rect key="frame" x="0.0" y="44" width="320" height="372"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="WhoswhoTableCell" rowHeight="120" id="6L7-X3-QZc" customClass="WhoswhoTableCell">
@@ -103,12 +109,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaV-8W-yh5">
+                                                    <rect key="frame" x="10" y="10" width="75" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="9jN-LD-tnV"/>
                                                         <constraint firstAttribute="width" constant="75" id="NbN-TP-HWz"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkU-eS-Gtl">
+                                                    <rect key="frame" x="98" y="25" width="202" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="202" id="5FF-nG-Yfv"/>
                                                     </constraints>
@@ -117,6 +125,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g90-Rg-qad">
+                                                    <rect key="frame" x="98" y="49" width="202" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Ink-xd-heU"/>
                                                     </constraints>
@@ -125,6 +134,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcm-Oc-TIR">
+                                                    <rect key="frame" x="98" y="73" width="202" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="oTM-9V-0Dk"/>
                                                     </constraints>
@@ -162,7 +172,9 @@
                                     <outlet property="delegate" destination="5Aw-SL-SVA" id="3eZ-uc-Lua"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="bCf-P3-Kng"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="bCf-P3-Kng">
+                                <rect key="frame" x="150" y="52" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -212,12 +224,15 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqp-ci-LZG">
+                                <rect key="frame" x="40" y="0.0" width="240" height="292"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="292" id="8cy-a6-BIF"/>
                                     <constraint firstAttribute="width" constant="240" id="jUn-0s-CQG"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKd-Wf-Y8c"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKd-Wf-Y8c">
+                                <rect key="frame" x="40" y="300" width="240" height="116"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -248,8 +263,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3g-LI-ZdZ" customClass="HomeView">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <subviews>
                                     <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueP-JF-aXn">
+                                        <rect key="frame" x="0.0" y="202" width="320" height="200"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="3L3-yl-Q0y"/>
@@ -259,6 +276,7 @@
                                         </connections>
                                     </containerView>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnl-Ru-jDN">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="160" id="GXK-sH-iTP"/>
                                         </constraints>
@@ -267,9 +285,11 @@
                                         </connections>
                                     </scrollView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="usT-hM-SKX">
+                                        <rect key="frame" x="0.0" y="130" width="320" height="36"/>
                                         <gestureRecognizers/>
                                     </pageControl>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKk-TI-ZqC">
+                                        <rect key="frame" x="15" y="167" width="290" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="F8Y-Xh-1cG"/>
                                             <constraint firstAttribute="width" constant="290" id="fY2-zv-i7O"/>
@@ -301,6 +321,7 @@
                                 </connections>
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJ3-Jr-dkc" customClass="CustomNavBar">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Home" id="cDY-F2-s4y">
                                         <barButtonItem key="leftBarButtonItem" id="Fnj-m5-sVa"/>
@@ -337,12 +358,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3m-9x-B7D">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <connections>
                                     <outlet property="delegate" destination="9CA-eS-vfL" id="Gua-OU-k96"/>
                                 </connections>
                             </mapView>
-                            <navigationBar alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ulM-GH-6mC" customClass="CustomNavBar"/>
+                            <navigationBar alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ulM-GH-6mC" customClass="CustomNavBar">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            </navigationBar>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Ke6-h2-rRA" customClass="MapSearchBar">
+                                <rect key="frame" x="44" y="0.0" width="276" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="276" id="gv9-7V-YdN"/>
                                 </constraints>
@@ -392,11 +417,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bie-zE-aML" customClass="CustomNavBar">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title=" Menu" id="YXg-a4-Xay"/>
                                 </items>
                             </navigationBar>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpb-HK-nWO">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="Mni-Tw-Ola" id="wiA-BQ-kgc"/>
@@ -431,6 +458,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dzv-xK-Xss">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventsCell" rowHeight="44" id="BRE-uP-Jx2" customClass="EventsTableCell">
@@ -441,6 +469,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5y-Lq-sZL">
+                                                    <rect key="frame" x="6" y="11" width="28" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="Hi2-nJ-jPv"/>
                                                         <constraint firstAttribute="width" constant="28" id="Km6-hr-haW"/>
@@ -450,6 +479,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="an7-6M-xGU">
+                                                    <rect key="frame" x="40" y="11" width="260" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="260" id="Jr7-Ik-EZi"/>
                                                     </constraints>
@@ -478,6 +508,7 @@
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9pL-xW-1m4" customClass="CustomNavBar">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Academic Calendar" id="fgI-5S-V1h"/>
                                 </items>
@@ -511,6 +542,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ee2-Ql-kti">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChapelCell" rowHeight="56" id="mm4-Xj-Xzc" customClass="ChapelTableCell">
@@ -521,6 +553,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mk1-Ht-gTT">
+                                                    <rect key="frame" x="6" y="17" width="28" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="NIE-P7-oA8"/>
                                                         <constraint firstAttribute="width" constant="28" id="eNW-8Z-HHI"/>
@@ -530,6 +563,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QnP-Ri-2Sm">
+                                                    <rect key="frame" x="42" y="6" width="258" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="258" id="PPm-X2-0cX"/>
                                                     </constraints>
@@ -537,6 +571,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UPW-Ff-RxO">
+                                                    <rect key="frame" x="42" y="28" width="258" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="oiJ-vP-bgx"/>
                                                     </constraints>
@@ -569,6 +604,7 @@
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhk-5d-K3X" customClass="CustomNavBar">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Chapel Schedule" id="Sx5-HI-Ynk"/>
                                 </items>
@@ -602,6 +638,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8C1-O7-QSQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="bXD-sG-Qtj"/>
@@ -621,6 +658,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="8/30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irr-2I-i71">
+                                                    <rect key="frame" x="184" y="0.0" width="51" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="51" id="Oh5-bi-jvZ"/>
                                                     </constraints>
@@ -629,11 +667,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Basketball.png" translatesAutoresizingMaskIntoConstraints="NO" id="wYn-M2-K9x">
+                                                    <rect key="frame" x="6" y="0.0" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="1iY-qx-8j4"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="7:30 pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="7kX-m0-Gub">
+                                                    <rect key="frame" x="238" y="0.0" width="67" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="67" id="bee-JK-gfM"/>
                                                     </constraints>
@@ -642,6 +682,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="W. Soccer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6z-l3-KD1">
+                                                    <rect key="frame" x="38" y="4" width="143" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="143" id="Vyz-aE-OEa"/>
                                                     </constraints>
@@ -650,6 +691,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Washington University-St. Louis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuS-f4-FWK">
+                                                    <rect key="frame" x="38" y="22" width="268" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="268" id="OoN-Tb-Rz1"/>
                                                         <constraint firstAttribute="height" constant="21" id="xn2-XP-Uke"/>
@@ -658,7 +700,9 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="House.png" translatesAutoresizingMaskIntoConstraints="NO" id="SPP-MB-U7G"/>
+                                                <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="House.png" translatesAutoresizingMaskIntoConstraints="NO" id="SPP-MB-U7G">
+                                                    <rect key="frame" x="9" y="20" width="24" height="24"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -716,155 +760,6 @@
         <image name="Basketball.png" width="24" height="24"/>
         <image name="House.png" width="24" height="24"/>
     </resources>
-    <classes>
-        <class className="ChapelTableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChapelTableCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="subtitleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ChapelTopViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChapelTopViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="revealMenu:"/>
-                <relationship kind="outlet" name="table" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CustomMenuNavBar" superclassName="UINavigationBar">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomMenuNavBar.h"/>
-        </class>
-        <class className="CustomNavBar" superclassName="UINavigationBar">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomNavBar.h"/>
-        </class>
-        <class className="ECSlidingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
-        </class>
-        <class className="EventsTableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventsTableCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EventsTopViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventsTopViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="revealMenu:"/>
-                <relationship kind="outlet" name="table" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="HomeSportsCollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeSportsCollectionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
-            </relationships>
-        </class>
-        <class className="HomeTopViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeTopViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="revealMenu:"/>
-                <relationship kind="action" name="tweet:"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="HomeView"/>
-                <relationship kind="outlet" name="sportsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tweetSend" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="HomeView" superclassName="UIScrollView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="InitialSlidingViewController" superclassName="ECSlidingViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitialSlidingViewController.h"/>
-        </class>
-        <class className="MapSearchBar" superclassName="UISearchBar">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapSearchBar.h"/>
-        </class>
-        <class className="MapTopViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapTopViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="revealMenu:"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="MenuTopViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuTopViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="revealMenu:"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="MenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SideBarTableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SideBarTableCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="icon" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="itemLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SportsCollectionCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SportsCollectionCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="home" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="opponent" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sport" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="team" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="time" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="WhosWhoDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WhosWhoDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="infoView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="WhosWhoResultsTopViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WhosWhoResultsTopViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="loadingView" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="resultsList" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="searchBox" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="WhosWhoTopViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WhosWhoTopViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="revealMenu:"/>
-            </relationships>
-        </class>
-        <class className="WhoswhoSearchBar" superclassName="UISearchBar">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WhoswhoSearchBar.h"/>
-        </class>
-        <class className="WhoswhoTableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WhoswhoTableCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="type" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="year" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
