@@ -34,6 +34,9 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    self.view.window.frame =  CGRectMake(0,0,self.view.window.frame.size.width,self.view.window.frame.size.height-20);
+    
     self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.menuBtn.frame = CGRectMake(4, 0, 44, 44);
     [self.menuBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
@@ -44,8 +47,6 @@
     [self.navigationItem setLeftBarButtonItem:anotherButton];
     
     //[self.view addSubview:self.menuBtn];
-    
-    [super viewDidLoad];
 }
 
 - (IBAction)revealMenu:(id)sender

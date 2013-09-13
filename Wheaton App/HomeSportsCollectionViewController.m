@@ -17,6 +17,7 @@
 @implementation HomeSportsCollectionViewController
 
 @synthesize collectionView, sportResults;
+@synthesize displayResults = _displayResults;
 
 - (void)viewDidLoad
 {
@@ -31,13 +32,6 @@
 - (void)fetchedData:(NSData *)responseData
 {
     if (responseData == nil) {
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Sorry"
-                                  message:@"You must be connected to the Wheaton College Wifi Network to use this feature."
-                                  delegate:self
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
-        [alertView show];
         return;
     }
     
@@ -70,7 +64,10 @@
     if([sportResults count] <= 0) {
         return 0;
     }
-    return 4;
+    if(self.displayResults <= 0) {
+        return [sportResults count];
+    }
+    return self.displayResults;
 }
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
     return 1;

@@ -37,11 +37,9 @@
     searchParameter = [searchBox.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     searchParameter = [searchParameter stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     
-//    if([searchParameter isEqualToString:@""])
-//    {
-//        [[[iToast makeText:NSLocalizedString(@"Please enter a search term", @"")] setDuration:3000] show];
-//        return;
-//    }
+    if([searchParameter isEqualToString:@""]) {
+        return;
+    }
     
     [loadingView startAnimating];
     
@@ -56,7 +54,12 @@
     [loadingView stopAnimating];
     
     if (responseData == nil) {
-//        [[[iToast makeText:@"You must be connected to the Wheaton College Wifi Network to use this feature"] setDuration:3000] show];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to fetch results"
+                                                        message:@"You must be connected to Wheaton College Wifi to use this feature."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
         return;
     }
     
@@ -70,7 +73,7 @@
         [resultsList setHidden:NO];
         [resultsList reloadData];
     } else {
-//        [[[iToast makeText:NSLocalizedString(@"No results", @"")] setDuration:3000] show];
+        //        [[[iToast makeText:NSLocalizedString(@"No results", @"")] setDuration:3000] show];
     }
 }
 #pragma mark UISearchBarDelegate
@@ -109,13 +112,13 @@
     NSDictionary *result = [searchResults objectAtIndex:indexPath.row];
     
     NSString *firstName = [result objectForKey:@"FirstName"];
-//    NSString *prefFirstName = [result objectForKey:@"PrefFirstName"];
+    //    NSString *prefFirstName = [result objectForKey:@"PrefFirstName"];
     NSString *middleName = [result objectForKey:@"MiddleName"];
     NSString *lastName = [result objectForKey:@"LastName"];
     
     NSMutableString *fullName = [[NSMutableString alloc] initWithString:firstName];
-//    if (![self isNullOrEmpty:prefFirstName])
-//        [fullName appendFormat:@" \"%@\"", prefFirstName];
+    //    if (![self isNullOrEmpty:prefFirstName])
+    //        [fullName appendFormat:@" \"%@\"", prefFirstName];
     if (![self isNullOrEmpty:middleName])
         [fullName appendFormat:@" %@", middleName];
     if (![self isNullOrEmpty:lastName])
@@ -123,9 +126,9 @@
     
     cell.name.text = fullName;
     
-//    NSString *cpo = [result objectForKey:@"CPOBox"];
-//    if (![self isNullOrEmpty:cpo])
-//        [cell addLabelWithString:[NSString stringWithFormat:@"CPO %@", cpo]];
+    //    NSString *cpo = [result objectForKey:@"CPOBox"];
+    //    if (![self isNullOrEmpty:cpo])
+    //        [cell addLabelWithString:[NSString stringWithFormat:@"CPO %@", cpo]];
     
     if ([[result objectForKey:@"Type"] isEqualToString:@"1"])
         cell.type.text = @"Faculty/Staff";
@@ -139,7 +142,7 @@
         cell.year.text = @"";
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
+    
     NSString *imagename = [result objectForKey:@"PhotoUrl"];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: imagename]]];
@@ -196,7 +199,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{  
+{
     WhosWhoDetailViewController *detailController = [segue destinationViewController];
     WhosWhoTopViewController *c = (WhosWhoTopViewController *)self.parentViewController;
     [c.menuBtn setHidden:YES];

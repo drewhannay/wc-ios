@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <Twitter/Twitter.h>
 #import "ECSlidingViewController.h"
+#import "HomeSportsCollectionViewController.h"
 #import "MenuViewController.h"
 #import "HomeView.h"
 
@@ -18,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UIView *tweetSend;
 @property (strong, nonatomic) IBOutlet HomeView *scrollView;
 @property (strong, nonatomic) IBOutlet UILabel *sportsLabel;
+@property (weak, nonatomic) HomeSportsCollectionViewController *sportsVC;
 @property (strong, nonatomic) UIButton *menuBtn;
 
 - (IBAction)revealMenu:(id)sender;

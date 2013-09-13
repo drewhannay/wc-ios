@@ -31,6 +31,7 @@ NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
                       [NSArray arrayWithObjects:@"Chapel Schedule", @"Chapel.png", @"Chapel", nil],
                       [NSArray arrayWithObjects:@"Who's Who", @"Whoswho.png", @"Whoswho", nil],
                       [NSArray arrayWithObjects:@"Academic Calendar", @"Calendar.png", @"Academic", nil],
+                      [NSArray arrayWithObjects:@"Sports", @"Sports.png", @"Sports", nil],
                       [NSArray arrayWithObjects:@"Meal Menu", @"Meal.png", @"Menu", nil], nil];
     [super awakeFromNib];
 }
@@ -41,6 +42,7 @@ NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
     
     [self.slidingViewController setAnchorRightRevealAmount:240.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
@@ -67,6 +69,17 @@ NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
 {
     NSString *identifier = [NSString stringWithFormat:@"%@Top", [[self.menuItems objectAtIndex:indexPath.row] objectAtIndex:2]];
     UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        int position = -1;
+        if([identifier isEqualToString:@"HomeTop"]) {
+            position = 0;
+        }
+        self.slidingViewController.topViewController.view.frame = CGRectMake(
+                                                                         self.slidingViewController.topViewController.view.frame.origin.x,
+                                                                         position,
+                                                                         self.slidingViewController.topViewController.view.frame.size.width,
+                                                                         self.view.window.frame.size.height + 1);
+    }
     
     [self.slidingViewController anchorTopViewOffScreenTo:ECRight animations:nil onComplete:^{
         CGRect frame = self.slidingViewController.topViewController.view.frame;

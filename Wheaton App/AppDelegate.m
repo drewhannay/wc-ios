@@ -30,6 +30,16 @@
     
     //[[UISearchBar appearance] setSearchFieldBackgroundImage:[UIImage imageNamed:@"Search.png"]forState:UIControlStateNormal];
     
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+        
+        self.window.clipsToBounds = YES;
+        
+        self.window.frame =  CGRectMake(0,20,self.window.frame.size.width,self.window.frame.size.height-20);
+        
+    }
+    
     return YES;
 }
 

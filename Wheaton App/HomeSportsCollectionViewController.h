@@ -12,5 +12,6 @@
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, retain) NSMutableArray *sportResults;
+@property NSInteger *displayResults;
 
 @end

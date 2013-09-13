@@ -14,6 +14,7 @@
 	<string></string>
 	<key>CFBundleIconFiles</key>
 	<array>
+		<string>120x120</string>
 		<string>114x114.png</string>
 		<string>57x57.png</string>
 	</array>
@@ -39,12 +40,16 @@
 	<string>iPhone</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
+	<key>UIStatusBarHidden</key>
+	<false/>
 	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleBlackTranslucent</string>
+	<string>UIStatusBarStyleBlackOpaque</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>UTExportedTypeDeclarations</key>
 	<array/>
 	<key>UTImportedTypeDeclarations</key>

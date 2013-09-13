@@ -10,7 +10,7 @@
 
 @implementation HomeTopViewController
 
-@synthesize menuBtn, scrollView, sportsLabel;
+@synthesize menuBtn, scrollView, sportsLabel, sportsVC;
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -26,8 +26,6 @@
     
     self.slidingViewController.underRightViewController = NULL;
     
-    //[scrollView flashScrollIndicators];
-    
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
@@ -38,6 +36,8 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    
     self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.menuBtn.frame = CGRectMake(4, 0, 44, 44);
     [menuBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
@@ -53,8 +53,6 @@
     [self.view addSubview:self.menuBtn];
     
     [scrollView loaded];
-    
-    [super viewDidLoad];
 }
 
 - (IBAction)revealMenu:(id)sender
@@ -79,6 +77,13 @@
                                   otherButtonTitles:nil];
         [alertView show];
         
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"EmbededSports"]) {
+        self.sportsVC = segue.destinationViewController;
+        self.sportsVC.displayResults = 4;
     }
 }
 
