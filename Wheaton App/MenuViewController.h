@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
+#import "MTReachabilityManager.h"
 
 extern NSString * const c_MapLocations;
 extern NSString * const c_Chapel;
@@ -18,5 +19,7 @@ extern NSString * const c_Events;
 extern NSString * const c_Banners;
 
 @interface MenuViewController : UIViewController <UITableViewDataSource, UITabBarControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *table;
 
 @end

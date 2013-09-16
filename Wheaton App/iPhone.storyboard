@@ -74,6 +74,9 @@
                             <constraint firstItem="NYW-UC-qao" firstAttribute="top" secondItem="UW8-Mw-SOv" secondAttribute="bottom" id="d92-RL-Ob5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="table" destination="NYW-UC-qao" id="0OQ-p6-QyJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwe-FU-nis" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,15 +237,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iqp-ci-LZG">
-                                <rect key="frame" x="40" y="38" width="240" height="292"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iqp-ci-LZG">
+                                <rect key="frame" x="40" y="62" width="240" height="292"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="292" id="8cy-a6-BIF"/>
                                     <constraint firstAttribute="width" constant="240" id="jUn-0s-CQG"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="uCk-kr-TIH"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NKd-Wf-Y8c">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NKd-Wf-Y8c">
                                 <rect key="frame" x="40" y="338" width="240" height="142"/>
                             </view>
                         </subviews>
@@ -251,9 +254,7 @@
                             <constraint firstItem="iqp-ci-LZG" firstAttribute="leading" secondItem="NKd-Wf-Y8c" secondAttribute="leading" id="9Sw-lh-bk6"/>
                             <constraint firstItem="iqp-ci-LZG" firstAttribute="trailing" secondItem="NKd-Wf-Y8c" secondAttribute="trailing" id="CQy-jK-7FT"/>
                             <constraint firstItem="NKd-Wf-Y8c" firstAttribute="bottom" secondItem="fPL-Vj-YiY" secondAttribute="bottom" id="JQd-Yq-bBY"/>
-                            <constraint firstItem="NKd-Wf-Y8c" firstAttribute="top" secondItem="iqp-ci-LZG" secondAttribute="bottom" constant="8" symbolic="YES" id="cH8-Z1-Myt"/>
                             <constraint firstItem="iqp-ci-LZG" firstAttribute="centerX" secondItem="fPL-Vj-YiY" secondAttribute="centerX" id="eNR-GC-hv8"/>
-                            <constraint firstItem="iqp-ci-LZG" firstAttribute="top" secondItem="fPL-Vj-YiY" secondAttribute="top" id="kUR-RW-4hl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TVy-UZ-Bji"/>
@@ -530,8 +531,8 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="an7-6M-xGU">
-                                                    <rect key="frame" x="40" y="12" width="260" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="an7-6M-xGU">
+                                                    <rect key="frame" x="40" y="11" width="260" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="260" id="Jr7-Ik-EZi"/>
                                                     </constraints>

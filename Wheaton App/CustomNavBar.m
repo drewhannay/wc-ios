@@ -22,6 +22,9 @@
 - (void)drawRect:(CGRect)rect {
     
     UIImage *image = [UIImage imageNamed:@"CustomNav.png"];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        image = [UIImage imageNamed:@"CustomNaviOS7.png"];
+    }
     [image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
 }
 

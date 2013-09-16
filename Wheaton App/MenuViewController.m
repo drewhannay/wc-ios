@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "SideBarTableCell.h"
+#import "MTReachabilityManager.h"
 
 NSString * const c_MapLocations = @"https://s3.amazonaws.com/wcstatic/location.json";
 NSString * const c_Chapel = @"https://s3.amazonaws.com/wcstatic/chapel.json";
@@ -22,7 +23,7 @@ NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
 @end
 
 @implementation MenuViewController
-@synthesize menuItems;
+@synthesize menuItems, table;
 
 - (void)awakeFromNib
 {
@@ -43,6 +44,7 @@ NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
     [self.slidingViewController setAnchorRightRevealAmount:240.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
+    table.backgroundColor = [UIColor whiteColor];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
@@ -62,31 +64,50 @@ NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
     cell.itemLabel.text = [[self.menuItems objectAtIndex:indexPath.row] objectAtIndex:0];
     cell.icon.image = [UIImage imageNamed:[[self.menuItems objectAtIndex:indexPath.row] objectAtIndex:1]];
     
+    if([[[self.menuItems objectAtIndex:indexPath.row] objectAtIndex:2] isEqualToString:@"Whoswho"] && ![MTReachabilityManager isReachableViaWiFi]) {
+        
+        [cell.itemLabel setTextColor:[UIColor lightGrayColor]];
+        
+    }
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *identifier = [NSString stringWithFormat:@"%@Top", [[self.menuItems objectAtIndex:indexPath.row] objectAtIndex:2]];
-    UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
-        int position = -1;
-        if([identifier isEqualToString:@"HomeTop"]) {
-            position = 0;
+    if([[[self.menuItems objectAtIndex:indexPath.row] objectAtIndex:2] isEqualToString:@"Whoswho"]
+       && ![MTReachabilityManager isReachableViaWiFi]) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to fetch results"
+                                                        message:@"You must be connected to Wheaton College Wifi to use this feature."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+    } else {
+        
+        NSString *identifier = [NSString stringWithFormat:@"%@Top", [[self.menuItems objectAtIndex:indexPath.row] objectAtIndex:2]];
+        UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+            int position = -1;
+            if([identifier isEqualToString:@"HomeTop"]) {
+                position = 0;
+            }
+            self.slidingViewController.topViewController.view.frame = CGRectMake(
+                                                                                 self.slidingViewController.topViewController.view.frame.origin.x,
+                                                                                 position,
+                                                                                 self.slidingViewController.topViewController.view.frame.size.width,
+                                                                                 self.view.window.frame.size.height + 1);
         }
-        self.slidingViewController.topViewController.view.frame = CGRectMake(
-                                                                         self.slidingViewController.topViewController.view.frame.origin.x,
-                                                                         position,
-                                                                         self.slidingViewController.topViewController.view.frame.size.width,
-                                                                         self.view.window.frame.size.height + 1);
+        
+        [self.slidingViewController anchorTopViewOffScreenTo:ECRight animations:nil onComplete:^{
+            CGRect frame = self.slidingViewController.topViewController.view.frame;
+            self.slidingViewController.topViewController = newTopViewController;
+            self.slidingViewController.topViewController.view.frame = frame;
+            [self.slidingViewController resetTopView];
+        }];
     }
-    
-    [self.slidingViewController anchorTopViewOffScreenTo:ECRight animations:nil onComplete:^{
-        CGRect frame = self.slidingViewController.topViewController.view.frame;
-        self.slidingViewController.topViewController = newTopViewController;
-        self.slidingViewController.topViewController.view.frame = frame;
-        [self.slidingViewController resetTopView];
-    }];
 }
 
 @end

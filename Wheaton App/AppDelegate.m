@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MTReachabilityManager.h"
 
 @implementation AppDelegate
 
@@ -29,6 +30,9 @@
 //    [[UISegmentedControl appearance] setDividerImage:[UIImage imageNamed:@"customSegmentDivider.png"] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
     
     //[[UISearchBar appearance] setSearchFieldBackgroundImage:[UIImage imageNamed:@"Search.png"]forState:UIControlStateNormal];
+    
+    
+    [MTReachabilityManager sharedManager];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
         
