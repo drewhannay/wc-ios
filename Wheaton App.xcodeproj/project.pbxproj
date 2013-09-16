@@ -18,6 +18,8 @@
 		2D66563213EB3F7A00645BC3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D66563113EB3F7900645BC3 /* Default.png */; };
 		2D66563413EB3F8B00645BC3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D66563313EB3F8B00645BC3 /* Default@2x.png */; };
 		2DCEB34513E2010A00787E39 /* LinksList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DCEB34413E2010A00787E39 /* LinksList.plist */; };
+		6104311E17E7BCFD00D3C72B /* EventCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6104311D17E7BCFD00D3C72B /* EventCollectionCell.m */; };
+		6104312117E7BD9D00D3C72B /* EventsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6104312017E7BD9D00D3C72B /* EventsCollectionViewController.m */; };
 		610D48CD17DD575900DE574C /* EventsTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 610D48CC17DD575900DE574C /* EventsTopViewController.m */; };
 		610D48D217DD591F00DE574C /* EventsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 610D48D117DD591F00DE574C /* EventsTableCell.m */; };
 		610D48D517DD620400DE574C /* Calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 610D48D317DD620400DE574C /* Calendar.png */; };
@@ -120,6 +122,10 @@
 		2D66563113EB3F7900645BC3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		2D66563313EB3F8B00645BC3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		2DCEB34413E2010A00787E39 /* LinksList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LinksList.plist; path = "Wheaton App.xcodeproj/LinksList.plist"; sourceTree = SOURCE_ROOT; };
+		6104311C17E7BCF400D3C72B /* EventCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCollectionCell.h; sourceTree = "<group>"; };
+		6104311D17E7BCFD00D3C72B /* EventCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCollectionCell.m; sourceTree = "<group>"; };
+		6104311F17E7BD9000D3C72B /* EventsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsCollectionViewController.h; sourceTree = "<group>"; };
+		6104312017E7BD9D00D3C72B /* EventsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsCollectionViewController.m; sourceTree = "<group>"; };
 		610D48CB17DD575900DE574C /* EventsTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTopViewController.h; sourceTree = "<group>"; };
 		610D48CC17DD575900DE574C /* EventsTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTopViewController.m; sourceTree = "<group>"; };
 		610D48D017DD591600DE574C /* EventsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableCell.h; sourceTree = "<group>"; };
@@ -429,6 +435,8 @@
 				61E4078417D04E750068AE00 /* WhosWhoDetailViewController.m */,
 				61F05ED817D399A50006CC1F /* HomeSportsCollectionViewController.h */,
 				61F05ED917D399A50006CC1F /* HomeSportsCollectionViewController.m */,
+				6104311F17E7BD9000D3C72B /* EventsCollectionViewController.h */,
+				6104312017E7BD9D00D3C72B /* EventsCollectionViewController.m */,
 				610D48CB17DD575900DE574C /* EventsTopViewController.h */,
 				610D48CC17DD575900DE574C /* EventsTopViewController.m */,
 				613890BB17E394310049FF72 /* SportsTopViewController.h */,
@@ -447,6 +455,8 @@
 				61E407A817D397620068AE00 /* SportsCollectionCell.m */,
 				61E4076E17CC5B7B0068AE00 /* ChapelTableCell.h */,
 				61E4076F17CC5B7B0068AE00 /* ChapelTableCell.m */,
+				6104311C17E7BCF400D3C72B /* EventCollectionCell.h */,
+				6104311D17E7BCFD00D3C72B /* EventCollectionCell.m */,
 				610D48D017DD591600DE574C /* EventsTableCell.h */,
 				610D48D117DD591F00DE574C /* EventsTableCell.m */,
 				61CA40AC17CA702200617623 /* iPhone.storyboard */,
@@ -620,6 +630,8 @@
 				61E407A917D3976C0068AE00 /* SportsCollectionCell.m in Sources */,
 				61F05EDA17D399A50006CC1F /* HomeSportsCollectionViewController.m in Sources */,
 				610D48CD17DD575900DE574C /* EventsTopViewController.m in Sources */,
+				6104312117E7BD9D00D3C72B /* EventsCollectionViewController.m in Sources */,
+				6104311E17E7BCFD00D3C72B /* EventCollectionCell.m in Sources */,
 				610D48D217DD591F00DE574C /* EventsTableCell.m in Sources */,
 				612BFEFD17DED11300EB2C8C /* AppDelegate.m in Sources */,
 				61E075D517E6B8B90029EFE9 /* Reachability.m in Sources */,

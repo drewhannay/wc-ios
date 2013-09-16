@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UIView *tweetSend;
 @property (strong, nonatomic) IBOutlet HomeView *scrollView;
 @property (strong, nonatomic) IBOutlet UILabel *sportsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *happeningLabel;
 @property (weak, nonatomic) HomeSportsCollectionViewController *sportsVC;
 @property (strong, nonatomic) UIButton *menuBtn;
 

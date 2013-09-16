@@ -10,7 +10,7 @@
 
 @implementation HomeTopViewController
 
-@synthesize menuBtn, scrollView, sportsLabel, sportsVC;
+@synthesize menuBtn, scrollView, sportsLabel, happeningLabel, sportsVC;
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -27,11 +27,23 @@
     self.slidingViewController.underRightViewController = NULL;
     
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+    
+    
+    
+    NSLog(@"%f", scrollView.frame.size.height);
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [self addBorder:self.sportsLabel];
+    [self addBorder:self.happeningLabel];
+    
+    CGFloat scrollViewHeight = 0.0f;
+    for (UIView* view in scrollView.subviews) {
+        scrollViewHeight += view.frame.size.height;
+    }
+    
+    [scrollView setContentSize:(CGSizeMake(320, scrollViewHeight))];
 }
 
 - (void)viewDidLoad
@@ -51,6 +63,8 @@
     [menuBtn addTarget:self action:@selector(tweet:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:self.menuBtn];
+    
+    self.scrollView.contentSize = (CGSizeMake(320, 720));
     
     [scrollView loaded];
 }

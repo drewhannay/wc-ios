@@ -72,7 +72,7 @@
     }
 }
 
--(IBAction)pageChanged:(id)sender {
+- (IBAction)pageChanged:(id)sender {
     CGRect frame = scrollView.frame;
     frame.origin.x = frame.size.width * pageControl.currentPage;
     frame.origin.y = 0;

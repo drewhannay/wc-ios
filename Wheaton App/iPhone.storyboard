@@ -275,39 +275,61 @@
                         <viewControllerLayoutGuide type="top" id="p77-nC-pUR"/>
                         <viewControllerLayoutGuide type="bottom" id="7Ek-bD-bo5"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="480" id="BbB-rT-3zm">
+                    <view key="view" contentMode="scaleToFill" id="BbB-rT-3zm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I3g-LI-ZdZ" customClass="HomeView">
-                                <rect key="frame" x="0.0" y="43" width="320" height="436"/>
+                                <rect key="frame" x="0.0" y="43" width="320" height="437"/>
                                 <subviews>
-                                    <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ueP-JF-aXn">
-                                        <rect key="frame" x="0.0" y="202" width="320" height="200"/>
+                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="720" translatesAutoresizingMaskIntoConstraints="NO" id="LeW-zm-ZUF">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="820"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ueP-JF-aXn">
+                                                <rect key="frame" x="0.0" y="542" width="320" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <segue destination="a1Q-3P-N1W" kind="embed" identifier="EmbededSports" id="KNW-Vi-PGT"/>
+                                                </connections>
+                                            </containerView>
+                                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="df3-27-aC2">
+                                                <rect key="frame" x="0.0" y="195" width="320" height="300"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <segue destination="akf-cS-UZE" kind="embed" identifier="EmbededEvents" id="b7E-vP-reW"/>
+                                                </connections>
+                                            </containerView>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="160" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnl-Ru-jDN">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="I3g-LI-ZdZ" id="rlT-4o-xaU"/>
+                                                </connections>
+                                            </scrollView>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="usT-hM-SKX">
+                                                <rect key="frame" x="0.0" y="125" width="320" height="37"/>
+                                                <gestureRecognizers/>
+                                            </pageControl>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Happening Today" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKk-TI-ZqC">
+                                                <rect key="frame" x="20" y="170" width="290" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Sports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTf-dk-aFr">
+                                                <rect key="frame" x="20" y="509" width="290" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <segue destination="a1Q-3P-N1W" kind="embed" identifier="EmbededSports" id="KNW-Vi-PGT"/>
-                                        </connections>
-                                    </containerView>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnl-Ru-jDN">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="I3g-LI-ZdZ" id="rlT-4o-xaU"/>
-                                        </connections>
-                                    </scrollView>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="usT-hM-SKX">
-                                        <rect key="frame" x="0.0" y="130" width="320" height="37"/>
-                                        <gestureRecognizers/>
-                                    </pageControl>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Sports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKk-TI-ZqC">
-                                        <rect key="frame" x="15" y="167" width="290" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </view>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <connections>
+                                    <outlet property="delegate" destination="UO2-0E-eyq" id="I81-B5-V9P"/>
                                     <outlet property="pageControl" destination="usT-hM-SKX" id="MYg-7G-WtG"/>
                                     <outlet property="scrollView" destination="Dnl-Ru-jDN" id="vK1-p4-UXB"/>
                                 </connections>
@@ -326,17 +348,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="I3g-LI-ZdZ" firstAttribute="top" secondItem="nJ3-Jr-dkc" secondAttribute="bottom" id="xfl-Bx-1gf"/>
+                            <constraint firstItem="I3g-LI-ZdZ" firstAttribute="top" secondItem="nJ3-Jr-dkc" secondAttribute="bottom" id="2FU-8B-ZYF"/>
+                            <constraint firstItem="7Ek-bD-bo5" firstAttribute="top" secondItem="I3g-LI-ZdZ" secondAttribute="bottom" id="RqJ-pY-Lwy"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="scrollView" destination="I3g-LI-ZdZ" id="kMX-7B-I5r"/>
-                        <outlet property="sportsLabel" destination="CKk-TI-ZqC" id="5Lx-a6-SXP"/>
+                        <outlet property="happeningLabel" destination="CKk-TI-ZqC" id="URy-PY-h7O"/>
+                        <outlet property="scrollView" destination="I3g-LI-ZdZ" id="iRm-FY-sTZ"/>
+                        <outlet property="sportsLabel" destination="OTf-dk-aFr" id="Wsf-7A-8gJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bjo-qA-TvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="874" y="48"/>
+            <point key="canvasLocation" x="874" y="16"/>
         </scene>
         <!--Map Top View Controller-->
         <scene sceneID="KoX-SI-unb">
@@ -496,7 +521,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DHo-D2-AiV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="874" y="721"/>
+            <point key="canvasLocation" x="874" y="796"/>
         </scene>
         <!--Events Top View Controller-->
         <scene sceneID="e3m-wv-ngU">
@@ -700,11 +725,11 @@
                         <viewControllerLayoutGuide type="bottom" id="TIS-x7-psb"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gT1-UH-9CJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8C1-O7-QSQ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="2OP-bE-6Na">
                                     <size key="itemSize" width="320" height="50"/>
@@ -815,7 +840,83 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoE-NI-5Og" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1381" y="375"/>
+            <point key="canvasLocation" x="1405" y="753"/>
+        </scene>
+        <!--Events Collection View Controller-->
+        <scene sceneID="Ehr-e9-ZWX">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="akf-cS-UZE" customClass="EventsCollectionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h9X-oB-ZlZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="rJk-Xc-ZFy"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fZ5-Ol-VaW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8QO-we-Rv3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b5e-ro-p9s">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventCollection" id="4rX-f5-4i8" customClass="EventCollectionCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JkB-gh-YGg">
+                                                    <rect key="frame" x="12" y="14" width="28" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="28" id="1p0-p1-rVo"/>
+                                                        <constraint firstAttribute="height" constant="22" id="uv7-C5-cif"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="E45-BS-ook">
+                                                    <rect key="frame" x="48" y="15" width="260" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="260" id="r3s-vV-MZD"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="E45-BS-ook" firstAttribute="top" secondItem="JkB-gh-YGg" secondAttribute="top" id="ff9-fk-hCZ"/>
+                                        </constraints>
+                                        <size key="customSize" width="320" height="50"/>
+                                        <connections>
+                                            <outlet property="time" destination="JkB-gh-YGg" id="keF-cD-wWt"/>
+                                            <outlet property="title" destination="E45-BS-ook" id="rF5-tR-Pv1"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="akf-cS-UZE" id="oIY-7n-jzn"/>
+                                    <outlet property="delegate" destination="akf-cS-UZE" id="Kxv-W6-Bv3"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T5g-RY-AQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1405" y="71"/>
         </scene>
     </scenes>
     <resources>
@@ -829,6 +930,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="SHP-WF-o72"/>
-        <segue reference="SwG-JM-HzY"/>
+        <segue reference="KNW-Vi-PGT"/>
     </inferredMetricsTieBreakers>
 </document>
