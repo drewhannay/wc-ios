@@ -27,10 +27,6 @@
     self.slidingViewController.underRightViewController = NULL;
     
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
-    
-    
-    
-    NSLog(@"%f", scrollView.frame.size.height);
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EventsCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface EventsCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, NSXMLParserDelegate> {
+    NSXMLParser *parser;
+    NSMutableDictionary *item;
+    NSMutableString *title;
+    NSMutableString *date;
+    NSString *element;
+    NSDateFormatter *dateFormatter;
+    NSCalendar *calendar;
+}
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, retain) NSMutableArray *sportResults;
+@property (nonatomic, retain) NSMutableArray *schedule;
 @property NSInteger *displayResults;
 
 @end

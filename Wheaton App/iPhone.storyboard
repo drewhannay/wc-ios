@@ -312,13 +312,13 @@
                                                 <gestureRecognizers/>
                                             </pageControl>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Happening Today" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKk-TI-ZqC">
-                                                <rect key="frame" x="20" y="170" width="290" height="30"/>
+                                                <rect key="frame" x="15" y="170" width="290" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Sports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTf-dk-aFr">
-                                                <rect key="frame" x="20" y="509" width="290" height="30"/>
+                                                <rect key="frame" x="15" y="509" width="290" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -335,7 +335,7 @@
                                 </connections>
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nJ3-Jr-dkc" customClass="CustomNavBar">
-                                <rect key="frame" x="0.0" y="-1" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="-0.99999999999999989" width="320" height="44"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
@@ -858,14 +858,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b5e-ro-p9s">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="b5e-ro-p9s">
+                                    <size key="itemSize" width="320" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventCollection" id="4rX-f5-4i8" customClass="EventCollectionCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventCollectionCell" id="4rX-f5-4i8" customClass="EventCollectionCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -873,9 +873,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JkB-gh-YGg">
-                                                    <rect key="frame" x="12" y="14" width="28" height="22"/>
+                                                    <rect key="frame" x="12" y="14" width="60" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="28" id="1p0-p1-rVo"/>
                                                         <constraint firstAttribute="height" constant="22" id="uv7-C5-cif"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -883,7 +882,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="E45-BS-ook">
-                                                    <rect key="frame" x="48" y="15" width="260" height="21"/>
+                                                    <rect key="frame" x="69" y="15" width="239" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="260" id="r3s-vV-MZD"/>
                                                     </constraints>
@@ -899,7 +898,7 @@
                                         </constraints>
                                         <size key="customSize" width="320" height="50"/>
                                         <connections>
-                                            <outlet property="time" destination="JkB-gh-YGg" id="keF-cD-wWt"/>
+                                            <outlet property="date" destination="JkB-gh-YGg" id="Hev-BZ-EfD"/>
                                             <outlet property="title" destination="E45-BS-ook" id="rF5-tR-Pv1"/>
                                         </connections>
                                     </collectionViewCell>
@@ -913,6 +912,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="collectionView" destination="8QO-we-Rv3" id="XyP-Qz-v2P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T5g-RY-AQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

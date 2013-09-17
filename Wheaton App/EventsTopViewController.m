@@ -15,9 +15,7 @@
 
 @implementation EventsTopViewController
 
-@synthesize menuBtn;
-@synthesize schedule;
-@synthesize table;
+@synthesize menuBtn, schedule, table;
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -94,7 +92,7 @@
     return [array count];
 }
 
-- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     NSString *sectionTitle = [self tableView:tableView titleForHeaderInSection:section];
     if (sectionTitle == nil) {

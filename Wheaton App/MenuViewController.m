@@ -64,11 +64,12 @@ NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
     cell.itemLabel.text = [[self.menuItems objectAtIndex:indexPath.row] objectAtIndex:0];
     cell.icon.image = [UIImage imageNamed:[[self.menuItems objectAtIndex:indexPath.row] objectAtIndex:1]];
     
-    if([[[self.menuItems objectAtIndex:indexPath.row] objectAtIndex:2] isEqualToString:@"Whoswho"] && ![MTReachabilityManager isReachableViaWiFi]) {
-        
-        [cell.itemLabel setTextColor:[UIColor lightGrayColor]];
-        
-    }
+//    if([[[self.menuItems objectAtIndex:indexPath.row] objectAtIndex:2] isEqualToString:@"Whoswho"] && ![MTReachabilityManager isReachableViaWiFi]) {
+//        
+//        Need to find different solution. Because menu is infrequently drawn need to find alternative (possible notifications)
+//        [cell.itemLabel setTextColor:[UIColor lightGrayColor]];
+//        
+//    }
     
     return cell;
 }

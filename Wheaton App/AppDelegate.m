@@ -15,23 +15,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //[[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:6/255.0f green:38/255.0f blue:63/255.0f alpha:1.0f]];
-//    [[UIBarButtonItem appearance] setBackgroundImage:[UIImage imageNamed:@"button.png"]
-//                                                      forState:UIControlStateNormal
-//                                                    barMetrics:UIBarMetricsDefault];
-//    
-//    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[UIImage imageNamed:@"button.png"]
-//                                                      forState:UIControlStateNormal
-//                                                    barMetrics:UIBarMetricsDefault];
-    
-//    
-//    [[UISegmentedControl appearance] setDividerImage:[UIImage imageNamed:@"customSegmentDivider.png"] forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-//    
-//    [[UISegmentedControl appearance] setDividerImage:[UIImage imageNamed:@"customSegmentDivider.png"] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    
-    //[[UISearchBar appearance] setSearchFieldBackgroundImage:[UIImage imageNamed:@"Search.png"]forState:UIControlStateNormal];
-    
-    
     [MTReachabilityManager sharedManager];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
