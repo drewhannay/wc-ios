@@ -62,7 +62,7 @@
 - (void)loadSchedule
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString: c_Events]];
+        NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString: c_Academic]];
         [self performSelectorOnMainThread:@selector(startParser:) withObject:data waitUntilDone:YES];
     });
 }

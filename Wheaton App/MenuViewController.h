@@ -16,6 +16,7 @@ extern NSString * const c_Whoswho;
 extern NSString * const c_Menu;
 extern NSString * const c_Sports;
 extern NSString * const c_Events;
+extern NSString * const c_Academic;
 extern NSString * const c_Banners;
 
 @interface MenuViewController : UIViewController <UITableViewDataSource, UITabBarControllerDelegate>

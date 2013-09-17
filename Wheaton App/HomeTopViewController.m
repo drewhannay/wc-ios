@@ -39,6 +39,8 @@
         scrollViewHeight += view.frame.size.height;
     }
     
+    NSLog(@"%f", scrollViewHeight);
+    
     [scrollView setContentSize:(CGSizeMake(320, scrollViewHeight))];
 }
 

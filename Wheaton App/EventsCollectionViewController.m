@@ -108,7 +108,7 @@
     NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
                                                fromDate:[row objectForKey:@"date"]];
     
-    cell.date.text = [NSString stringWithFormat:@"%d/%d", [components day], [components month]];
+    cell.date.text = [NSString stringWithFormat:@"%d/%d", [components month], [components day]];
     
     return cell;
 }
