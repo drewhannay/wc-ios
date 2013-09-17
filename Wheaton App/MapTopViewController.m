@@ -56,8 +56,10 @@
     self.searchDisplayController.searchBar.backgroundColor = [UIColor clearColor];
     self.searchDisplayController.searchBar.tintColor = [UIColor whiteColor];
     
-    UITextView *searchTextField = [self.searchDisplayController.searchBar valueForKey:@"_searchField"];
-    searchTextField.textColor = [UIColor whiteColor];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
+        UITextView *searchTextField = [self.searchDisplayController.searchBar valueForKey:@"_searchField"];
+        searchTextField.textColor = [UIColor whiteColor];
+    }
     
     for (UIView *subview in self.searchDisplayController.searchBar.subviews) {
         if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {

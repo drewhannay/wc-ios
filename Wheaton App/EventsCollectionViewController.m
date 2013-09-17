@@ -69,7 +69,11 @@
         NSDate *entryDate = [dateFormatter dateFromString:purifiedString];
         
         [item setObject:entryDate forKey:@"date"];
-        [schedule addObject:[item copy]];
+        
+        
+        if([entryDate timeIntervalSince1970] >= [[NSDate date] timeIntervalSince1970]) {
+            [schedule addObject:[item copy]];
+        }
     }
     
 }
@@ -105,10 +109,15 @@
     
     cell.title.text = [row objectForKey:@"title"];
     
-    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit
                                                fromDate:[row objectForKey:@"date"]];
     
     cell.date.text = [NSString stringWithFormat:@"%d/%d", [components month], [components day]];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"hh:mm a"];
+    
+    cell.time.text = [formatter stringFromDate:[row objectForKey:@"date"]];
     
     return cell;
 }
