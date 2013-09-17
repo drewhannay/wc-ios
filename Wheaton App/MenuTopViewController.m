@@ -50,59 +50,15 @@
     [menuBtn addTarget:self action:@selector(revealMenu:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.menuBtn];
     
-    feeds = [[NSMutableArray alloc] init];
-    
-    [self loadMenu];
-}
-
-- (void)loadMenu
-{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString:  c_Menu]];
-        [self performSelectorOnMainThread:@selector(startParser:) withObject:data waitUntilDone:YES];
-    });
-}
-
-- (void)startParser:(id)responseData
-{
-    if (responseData == nil) {
-        return;
-    }
-    parser = [[NSXMLParser alloc] initWithData:responseData];
-    [parser setDelegate:self];
-    [parser setShouldResolveExternalEntities:NO];
-    [parser parse];
+    NSString *urlAddress = c_Menu;
+    NSURL *url = [NSURL URLWithString:urlAddress];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [webView loadRequest:requestObj];
 }
 
 - (IBAction)revealMenu:(id)sender
 {
     [self.slidingViewController anchorTopViewTo:ECRight];
-}
-
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
-    element = elementName;
-    if ([element isEqualToString:@"item"]) {
-        item = [[NSMutableDictionary alloc] init];
-        htmlCode = [[NSMutableString alloc] init];
-    }
-}
-
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-        if ([elementName isEqualToString:@"item"]) {
-            [item setObject:htmlCode forKey:@"html"];
-            [feeds addObject:item];
-        }
-}
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    
-    if ([element isEqualToString:@"description"]) {
-        [htmlCode appendString:string];
-    }
-}
-
-- (void)parserDidEndDocument:(NSXMLParser *)parser {
-    [webView loadHTMLString:[[feeds objectAtIndex:0] objectForKey:@"html"] baseURL:nil];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webview  {

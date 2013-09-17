@@ -10,13 +10,7 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 
-@interface MenuTopViewController : UIViewController <NSXMLParserDelegate, UIWebViewDelegate> {
-    NSXMLParser *parser;
-    NSMutableArray *feeds;
-    NSString *element;
-    NSMutableDictionary *item;
-    NSMutableString *htmlCode;
-}
+@interface MenuTopViewController : UIViewController <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, retain) UIActivityIndicatorView * activityView;

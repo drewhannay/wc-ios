@@ -22,7 +22,6 @@
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
         
         self.window.clipsToBounds = YES;
-        
         self.window.frame =  CGRectMake(0,20,self.window.frame.size.width,self.window.frame.size.height-20);
         
     }

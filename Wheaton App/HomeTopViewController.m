@@ -31,17 +31,15 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
+    
     [self addBorder:self.sportsLabel];
     [self addBorder:self.happeningLabel];
     
-    CGFloat scrollViewHeight = 0.0f;
-    for (UIView* view in scrollView.subviews) {
-        scrollViewHeight += view.frame.size.height;
-    }
-    
-    NSLog(@"%f", scrollViewHeight);
-    
-    [scrollView setContentSize:(CGSizeMake(320, scrollViewHeight))];
+    [scrollView setDelegate:self];
+    [scrollView setScrollEnabled:YES];
+    [scrollView setAutoresizingMask:UIViewAutoresizingNone];
+    [scrollView setContentSize:(CGSizeMake(320, [self determineScrollHeight]))];
 }
 
 - (void)viewDidLoad
@@ -62,15 +60,30 @@
     
     [self.view addSubview:self.menuBtn];
     
-    self.scrollView.contentSize = (CGSizeMake(320, 720));
-    
     [scrollView loaded];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [scrollView setScrollEnabled:YES];
+//    Returns wrong amount. For now will just be using set amount.
+//    scrollView.contentSize = CGSizeMake(320, [self determineScrollHeight]);
+    scrollView.contentSize = CGSizeMake(320, 830);
+}
+
+- (float)determineScrollHeight {
+    CGFloat scrollViewHeight = 0.0f;
+    for (UIView* view in scrollView.subviews) {
+        scrollViewHeight += view.frame.size.height;
+    }
+    return scrollViewHeight;
 }
 
 - (IBAction)revealMenu:(id)sender
 {
     [self.slidingViewController anchorTopViewTo:ECRight];
 }
+
 - (IBAction)tweet:(id)sender
 {
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])

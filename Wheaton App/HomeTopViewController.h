@@ -14,7 +14,7 @@
 #import "MenuViewController.h"
 #import "HomeView.h"
 
-@interface HomeTopViewController : UIViewController
+@interface HomeTopViewController : UIViewController <UIScrollViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *tweetSend;
 @property (strong, nonatomic) IBOutlet HomeView *scrollView;
