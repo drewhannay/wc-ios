@@ -2,14 +2,17 @@
 //  main.m
 //  Wheaton App
 //
-//  Created by support on 7/27/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Chris Anderson on 3/13/13.
+//  Copyright (c) 2013 Chris Anderson. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
+#import "AppDelegate.h"
+
 int main(int argc, char *argv[])
 {
-    int retVal = UIApplicationMain(argc, argv, nil, nil);
-    return retVal;
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    }
 }
