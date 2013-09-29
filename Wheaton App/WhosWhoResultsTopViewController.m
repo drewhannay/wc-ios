@@ -206,7 +206,10 @@
     detailController.person = [searchResults objectAtIndex:resultsList.indexPathForSelectedRow.row];
 }
 
-
+- (void)viewDidUnload
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)didReceiveMemoryWarning
 {

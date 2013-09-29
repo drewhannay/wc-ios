@@ -29,6 +29,8 @@
     
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slidingViewUnderLeftWillAppear:) name:ECSlidingViewUnderLeftWillAppear object:nil];
+    
     [super viewWillAppear:animated];
 }
 
@@ -47,6 +49,11 @@
     [self.navigationItem setLeftBarButtonItem:anotherButton];
     
     //[self.view addSubview:self.menuBtn];
+}
+
+- (void)slidingViewUnderLeftWillAppear:(NSNotification *)notification {
+    [self.view endEditing:YES];
+    NSLog(@"Testing testing");
 }
 
 - (IBAction)revealMenu:(id)sender
