@@ -38,11 +38,12 @@
 {
     [super viewDidLoad];
     
+    self.screenName = @"Chapel";
+    
     self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.menuBtn.frame = CGRectMake(4, 0, 44, 44);
     [menuBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
     [menuBtn addTarget:self action:@selector(revealMenu:) forControlEvents:UIControlEventTouchUpInside];
-    
     
     [self.view addSubview:self.menuBtn];
     
@@ -96,19 +97,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"ChapelCell";
-    
-    ChapelTableCell *cell = (ChapelTableCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil)
-    {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil];
-        cell = [nib objectAtIndex:0];
-    }
+    NSString *cellIdentifier = @"ChapelCell";
+    NSString *cellFileName = @"ChapelSubtitleLineView";
     
     NSDictionary *dictionary = [schedule objectAtIndex:indexPath.section];
     NSArray *array = [dictionary objectForKey:@"speakers"];
     
     NSDictionary *row = [array objectAtIndex:indexPath.row];
+    
+    if([[row objectForKey:@"subtitle"] isEqualToString:@""]) {
+        cellIdentifier = @"ChapelSingleCell";
+        cellFileName = @"ChapelSingleLineView";
+    }
+    
+    ChapelTableCell *cell = (ChapelTableCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellFileName owner:nil options:nil];
+        cell = [nib objectAtIndex:0];
+    }
     
     cell.titleLabel.text = [row objectForKey:@"title"];
     cell.subtitleLabel.text = [row objectForKey:@"subtitle"];
@@ -128,7 +135,7 @@
     label.text = sectionTitle;
     [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:14]];
     [headerView addSubview:label];
-
+    
     [headerView setBackgroundColor:[UIColor colorWithRed:238/255.0f green:238/255.0f blue:238/255.0f alpha:1.0f]];
     [label setBackgroundColor:[UIColor clearColor]];
     return headerView;
@@ -189,13 +196,14 @@
             scheduleRowIndex = i;
         }
     }
-    if(scheduleRowIndex + 1 < [scheduleSection count])
+    if(scheduleRowIndex + 1 < [scheduleSection count]) {
         scheduleRowIndex++;
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:scheduleRowIndex inSection:scheduleSectionIndex];
-    [self.table scrollToRowAtIndexPath:indexPath
-                              atScrollPosition:UITableViewScrollPositionTop
-                                       animated:YES];
+        
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:scheduleRowIndex inSection:scheduleSectionIndex];
+        [self.table scrollToRowAtIndexPath:indexPath
+                          atScrollPosition:UITableViewScrollPositionTop
+                                  animated:YES];
+    }
 }
 
 @end

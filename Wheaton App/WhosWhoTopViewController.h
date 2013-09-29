@@ -15,6 +15,7 @@
 @property (strong, nonatomic) UIButton *menuBtn;
 
 - (IBAction)revealMenu:(id)sender;
+- (void)slidingViewUnderLeftWillAppear:(NSNotification*)notification;
 
 @end
 

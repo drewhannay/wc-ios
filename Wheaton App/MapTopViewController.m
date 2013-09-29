@@ -46,6 +46,8 @@
 {
     [super viewDidLoad];
     
+    self.screenName = @"Map";
+    
     self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.menuBtn.frame = CGRectMake(4, 0, 44, 44);
     [menuBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
@@ -69,6 +71,20 @@
     }
     
     [self loadLocations];
+}
+
+- (IBAction)resetMap:(id)sender {
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    for (Location *annotation in location) {
+        [self.mapView addAnnotation:annotation];
+    }
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = 41.870016;
+    zoomLocation.longitude= -88.098362;
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.075*METERS_PER_MILE, 0.075*METERS_PER_MILE);
+    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+    [self.mapView setRegion:adjustedRegion animated:NO];
 }
 
 - (IBAction)revealMenu:(id)sender

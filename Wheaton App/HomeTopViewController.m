@@ -39,12 +39,15 @@
     [scrollView setDelegate:self];
     [scrollView setScrollEnabled:YES];
     [scrollView setAutoresizingMask:UIViewAutoresizingNone];
-    [scrollView setContentSize:(CGSizeMake(320, [self determineScrollHeight]))];
+    [scrollView setContentSize:(CGSizeMake(320, [self determineScrollHeight]))];    
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.screenName = @"Home";
     
     self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.menuBtn.frame = CGRectMake(4, 0, 44, 44);
@@ -66,8 +69,6 @@
 - (void)viewDidLayoutSubviews
 {
     [scrollView setScrollEnabled:YES];
-//    Returns wrong amount. For now will just be using set amount.
-//    scrollView.contentSize = CGSizeMake(320, [self determineScrollHeight]);
     scrollView.contentSize = CGSizeMake(320, 830);
 }
 
