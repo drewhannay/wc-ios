@@ -11,10 +11,11 @@
 #import <Twitter/Twitter.h>
 #import "ECSlidingViewController.h"
 #import "HomeSportsCollectionViewController.h"
+#import "GAITrackedViewController.h"
 #import "MenuViewController.h"
 #import "HomeView.h"
 
-@interface HomeTopViewController : UIViewController <UIScrollViewDelegate>
+@interface HomeTopViewController : GAITrackedViewController <UIScrollViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *tweetSend;
 @property (strong, nonatomic) IBOutlet HomeView *scrollView;

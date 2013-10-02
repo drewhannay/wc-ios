@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "GAITrackedViewController.h"
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 
-@interface MapTopViewController : UIViewController <MKMapViewDelegate, UISearchBarDelegate> {
+@interface MapTopViewController : GAITrackedViewController <MKMapViewDelegate, UISearchBarDelegate> {
     NSArray *searchResults;
 }
 
@@ -20,5 +21,6 @@
 @property (strong, nonatomic) UIButton *menuBtn;
 @property (strong, nonatomic) UISearchDisplayController *searchController;
 
+- (IBAction)resetMap:(id)sender;
 - (IBAction)revealMenu:(id)sender;
 @end

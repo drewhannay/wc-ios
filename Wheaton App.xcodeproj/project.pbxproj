@@ -18,6 +18,11 @@
 		2D66563213EB3F7A00645BC3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D66563113EB3F7900645BC3 /* Default.png */; };
 		2D66563413EB3F8B00645BC3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D66563313EB3F8B00645BC3 /* Default@2x.png */; };
 		2DCEB34513E2010A00787E39 /* LinksList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DCEB34413E2010A00787E39 /* LinksList.plist */; };
+		61032B0C17F112B900CC95FA /* ChapelSingleLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61032B0B17F112B900CC95FA /* ChapelSingleLineView.xib */; };
+		61032B0E17F1157B00CC95FA /* ChapelSubtitleLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61032B0D17F1157B00CC95FA /* ChapelSubtitleLineView.xib */; };
+		61032B1917F3324200CC95FA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61032B1817F3324200CC95FA /* CoreData.framework */; };
+		61032B1B17F3325600CC95FA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 61032B1A17F3325600CC95FA /* libz.dylib */; };
+		61032B1D17F333EF00CC95FA /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61032B1C17F333EF00CC95FA /* libGoogleAnalyticsServices.a */; };
 		6104311E17E7BCFD00D3C72B /* EventCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6104311D17E7BCFD00D3C72B /* EventCollectionCell.m */; };
 		6104312117E7BD9D00D3C72B /* EventsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6104312017E7BD9D00D3C72B /* EventsCollectionViewController.m */; };
 		610D48CD17DD575900DE574C /* EventsTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 610D48CC17DD575900DE574C /* EventsTopViewController.m */; };
@@ -37,6 +42,7 @@
 		613890BD17E394310049FF72 /* SportsTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613890BC17E394310049FF72 /* SportsTopViewController.m */; };
 		613890C017E3A9C40049FF72 /* Sports.png in Resources */ = {isa = PBXBuildFile; fileRef = 613890BE17E3A9C40049FF72 /* Sports.png */; };
 		613890C117E3A9C40049FF72 /* Sports@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 613890BF17E3A9C40049FF72 /* Sports@2x.png */; };
+		614241BC17F886D0005A9742 /* Volleyball.png in Resources */ = {isa = PBXBuildFile; fileRef = 614241BB17F886D0005A9742 /* Volleyball.png */; };
 		615097F117D5221900456A9D /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 615097EF17D5221900456A9D /* back.png */; };
 		615097F217D5221900456A9D /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 615097F017D5221900456A9D /* back@2x.png */; };
 		615097F417D541CA00456A9D /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 615097F317D541CA00456A9D /* twitter@2x.png */; };
@@ -122,6 +128,18 @@
 		2D66563113EB3F7900645BC3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		2D66563313EB3F8B00645BC3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		2DCEB34413E2010A00787E39 /* LinksList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LinksList.plist; path = "Wheaton App.xcodeproj/LinksList.plist"; sourceTree = SOURCE_ROOT; };
+		61032B0B17F112B900CC95FA /* ChapelSingleLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapelSingleLineView.xib; sourceTree = "<group>"; };
+		61032B0D17F1157B00CC95FA /* ChapelSubtitleLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapelSubtitleLineView.xib; sourceTree = "<group>"; };
+		61032B1017F3321500CC95FA /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		61032B1117F3321500CC95FA /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		61032B1217F3321500CC95FA /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		61032B1317F3321500CC95FA /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		61032B1417F3321500CC95FA /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		61032B1517F3321500CC95FA /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		61032B1617F3321500CC95FA /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
+		61032B1817F3324200CC95FA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		61032B1A17F3325600CC95FA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		61032B1C17F333EF00CC95FA /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		6104311C17E7BCF400D3C72B /* EventCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCollectionCell.h; sourceTree = "<group>"; };
 		6104311D17E7BCFD00D3C72B /* EventCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCollectionCell.m; sourceTree = "<group>"; };
 		6104311F17E7BD9000D3C72B /* EventsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsCollectionViewController.h; sourceTree = "<group>"; };
@@ -151,6 +169,7 @@
 		613890BC17E394310049FF72 /* SportsTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsTopViewController.m; sourceTree = "<group>"; };
 		613890BE17E3A9C40049FF72 /* Sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sports.png; sourceTree = "<group>"; };
 		613890BF17E3A9C40049FF72 /* Sports@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sports@2x.png"; sourceTree = "<group>"; };
+		614241BB17F886D0005A9742 /* Volleyball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Volleyball.png; sourceTree = "<group>"; };
 		615097EF17D5221900456A9D /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		615097F017D5221900456A9D /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		615097F317D541CA00456A9D /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
@@ -240,7 +259,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61032B1B17F3325600CC95FA /* libz.dylib in Frameworks */,
+				61032B1917F3324200CC95FA /* CoreData.framework in Frameworks */,
 				61E075C817E6A7790029EFE9 /* SystemConfiguration.framework in Frameworks */,
+				61032B1D17F333EF00CC95FA /* libGoogleAnalyticsServices.a in Frameworks */,
 				61F05EDE17D3A4100006CC1F /* QuartzCore.framework in Frameworks */,
 				61CA40CC17CA952000617623 /* AddressBook.framework in Frameworks */,
 				61CA40C317CA8CBB00617623 /* Social.framework in Frameworks */,
@@ -277,6 +299,8 @@
 		2D2653DB13E069CF00DE089C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				61032B1A17F3325600CC95FA /* libz.dylib */,
+				61032B1817F3324200CC95FA /* CoreData.framework */,
 				61E075C717E6A7790029EFE9 /* SystemConfiguration.framework */,
 				61F05EDD17D3A4100006CC1F /* QuartzCore.framework */,
 				61CA40CB17CA951F00617623 /* AddressBook.framework */,
@@ -347,6 +371,7 @@
 		2D26540F13E069DB00DE089C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				614241BB17F886D0005A9742 /* Volleyball.png */,
 				61E075C317E69E3E0029EFE9 /* CustomNaviOS7.png */,
 				61E075C417E69E3E0029EFE9 /* CustomNaviOS7@2x.png */,
 				613890BE17E3A9C40049FF72 /* Sports.png */,
@@ -392,9 +417,25 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		61032B0F17F331FD00CC95FA /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				61032B1C17F333EF00CC95FA /* libGoogleAnalyticsServices.a */,
+				61032B1017F3321500CC95FA /* GAI.h */,
+				61032B1117F3321500CC95FA /* GAIDictionaryBuilder.h */,
+				61032B1217F3321500CC95FA /* GAIFields.h */,
+				61032B1317F3321500CC95FA /* GAILogger.h */,
+				61032B1417F3321500CC95FA /* GAITrackedViewController.h */,
+				61032B1517F3321500CC95FA /* GAITracker.h */,
+				61032B1617F3321500CC95FA /* libGoogleAnalytics_debug.a */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
 		61CA409317CA6C2A00617623 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				61032B0F17F331FD00CC95FA /* Analytics */,
 				61E075C917E6A88A0029EFE9 /* Reachability */,
 				61CA409417CA6C2A00617623 /* ECSlidingViewController */,
 			);
@@ -451,6 +492,8 @@
 				612BFEFA17DED11200EB2C8C /* SideBarTableCell.h */,
 				612BFEFB17DED11200EB2C8C /* SideBarTableCell.m */,
 				612BFEFC17DED11300EB2C8C /* SideBarTableCell.xib */,
+				61032B0B17F112B900CC95FA /* ChapelSingleLineView.xib */,
+				61032B0D17F1157B00CC95FA /* ChapelSubtitleLineView.xib */,
 				61E407A717D3975E0068AE00 /* SportsCollectionCell.h */,
 				61E407A817D397620068AE00 /* SportsCollectionCell.m */,
 				61E4076E17CC5B7B0068AE00 /* ChapelTableCell.h */,
@@ -525,7 +568,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					2D2653D713E069CF00DE089C = {
-						DevelopmentTeam = YL8VV6WZ2N;
+						DevelopmentTeam = 4KN38Z9K27;
 					};
 				};
 			};
@@ -584,6 +627,7 @@
 				61F05EF217D3B7B60006CC1F /* Tennis@2x.png in Resources */,
 				613890BA17E3619F0049FF72 /* 120x120.png in Resources */,
 				61F05EF517D41D420006CC1F /* House.png in Resources */,
+				61032B0E17F1157B00CC95FA /* ChapelSubtitleLineView.xib in Resources */,
 				61F05EF617D41D420006CC1F /* House@2x.png in Resources */,
 				613890C017E3A9C40049FF72 /* Sports.png in Resources */,
 				615097F117D5221900456A9D /* back.png in Resources */,
@@ -593,6 +637,7 @@
 				615097FC17D5477800456A9D /* Chapel@2x.png in Resources */,
 				615097FD17D5477800456A9D /* Map.png in Resources */,
 				615097FE17D5477800456A9D /* Map@2x.png in Resources */,
+				614241BC17F886D0005A9742 /* Volleyball.png in Resources */,
 				615097FF17D5477800456A9D /* Whoswho.png in Resources */,
 				6150980017D5477800456A9D /* Whoswho@2x.png in Resources */,
 				6150980217D5497200456A9D /* Meal.png in Resources */,
@@ -600,6 +645,7 @@
 				610E2B6B17DA8FA5003D5405 /* searchBar.png in Resources */,
 				610E2B6C17DA8FA5003D5405 /* searchBar@2x.png in Resources */,
 				610D48D517DD620400DE574C /* Calendar.png in Resources */,
+				61032B0C17F112B900CC95FA /* ChapelSingleLineView.xib in Resources */,
 				610D48D617DD620400DE574C /* Calendar@2x.png in Resources */,
 				612BFF0117DED11300EB2C8C /* SideBarTableCell.xib in Resources */,
 				612BFF0617DEE83D00EB2C8C /* transparent@2x.png in Resources */,
@@ -716,7 +762,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Perciante (T7TBP7XHVC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -726,10 +773,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Wheaton App\"",
+					"\\\"$(SRCROOT)/Wheaton\\ App\\\"",
+					"/Users/chrisanderson/Documents/iOS/wc-ios/Wheaton\\ App/Vendor",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0D020CE0-E42C-4941-98F5-A37E6FFED7B1";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -742,7 +790,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Perciante (T7TBP7XHVC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
@@ -751,10 +800,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Wheaton App\"",
+					"\\\"$(SRCROOT)/Wheaton\\ App\\\"",
+					"/Users/chrisanderson/Documents/iOS/wc-ios/Wheaton\\ App/Vendor",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0D020CE0-E42C-4941-98F5-A37E6FFED7B1";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
@@ -787,7 +837,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Terry Perciante (T7TBP7XHVC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
@@ -796,10 +847,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Wheaton App\"",
+					"\\\"$(SRCROOT)/Wheaton\\ App\\\"",
+					"/Users/chrisanderson/Documents/iOS/wc-ios/Wheaton\\ App/Vendor",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0D020CE0-E42C-4941-98F5-A37E6FFED7B1";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;

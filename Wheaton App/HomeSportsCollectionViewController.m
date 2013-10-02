@@ -47,15 +47,18 @@
     
     if ([results count] > 0) {
         for(NSDictionary *event in results) {
-            if([[[event objectForKey:@"date"] objectForKey:@"month"] intValue] >=  [components month]) {
-                if([[[event objectForKey:@"date"] objectForKey:@"day"] intValue] >= [components day]) {
-                    [sportResults addObject:event];
-                }
+            [components setMonth: [[[event objectForKey:@"date"] objectForKey:@"month"] intValue]];
+            [components setDay: [[[event objectForKey:@"date"] objectForKey:@"day"] intValue] >= [components day]];
+            
+            NSDate *combinedDate = [calendar dateFromComponents:components];
+            
+            if([combinedDate timeIntervalSince1970] > [currentDate timeIntervalSince1970]) {
+                [sportResults addObject:event];
             }
         }
         [collectionView reloadData];
     } else {
-        //        [[[iToast makeText:NSLocalizedString(@"No results", @"")] setDuration:3000] show];
+
     }
 }
 
@@ -88,6 +91,8 @@
         cell.sport.image = [UIImage imageNamed:@"Soccer.png"];
     else if([sport isEqualToString:@"basketball"])
         cell.sport.image = [UIImage imageNamed:@"Basketball.png"];
+    else if([sport isEqualToString:@"volleyball"])
+        cell.sport.image = [UIImage imageNamed:@"Volleyball.png"];
     else if([sport isEqualToString:@"golf"])
         cell.sport.image = [UIImage imageNamed:@"Golf.png"];
     else if([sport isEqualToString:@"football"])
@@ -97,13 +102,14 @@
     
     cell.team.text = [NSString stringWithFormat:@"%@. %@", [[[result objectForKey:@"gender"] substringToIndex:1] uppercaseString], [[result objectForKey:@"sport"] capitalizedString]];
     cell.opponent.text = [result objectForKey:@"opponent"];
-    
-    NSNumber * isHomeNumber = (NSNumber *)[result objectForKey: @"home"];
-    if(!isHomeNumber && [isHomeNumber boolValue] == NO) {
+
+    if([(NSNumber *)[result objectForKey: @"home"] isEqual: @(YES)]) {
         [cell.home setHidden:FALSE];
+    } else {
+        [cell.home setHidden:TRUE];
     }
     
-    return cell;
+    return cell; 
 }
 
 #pragma mark - UICollectionViewDelegate
