@@ -48,7 +48,7 @@
     if ([results count] > 0) {
         for(NSDictionary *event in results) {
             [components setMonth: [[[event objectForKey:@"date"] objectForKey:@"month"] intValue]];
-            [components setDay: [[[event objectForKey:@"date"] objectForKey:@"day"] intValue] >= [components day]];
+            [components setDay: [[[event objectForKey:@"date"] objectForKey:@"day"] intValue]];
             
             NSDate *combinedDate = [calendar dateFromComponents:components];
             
