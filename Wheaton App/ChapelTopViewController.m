@@ -198,12 +198,14 @@
     }
     if(scheduleRowIndex + 1 < [scheduleSection count]) {
         scheduleRowIndex++;
+    } else {
+        scheduleRowIndex = 0;
+    }
         
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:scheduleRowIndex inSection:scheduleSectionIndex];
         [self.table scrollToRowAtIndexPath:indexPath
                           atScrollPosition:UITableViewScrollPositionTop
                                   animated:YES];
-    }
 }
 
 @end
