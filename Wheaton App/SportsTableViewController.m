@@ -55,7 +55,6 @@
                 [sportResults addObject:event];
             }
         }
-        NSLog(@"%@",sportResults);
         [tableView reloadData];
     } else {
         
@@ -127,6 +126,11 @@
     }
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
 }
 
 - (void)didReceiveMemoryWarning

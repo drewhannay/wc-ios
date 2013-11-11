@@ -8,6 +8,7 @@
 
 #import "EventViewController.h"
 #import "SportsTableViewController.h"
+#import "ChapelTableViewController.h"
 
 @interface EventViewController ()
 
@@ -25,14 +26,16 @@
 //    AcademicCalendarViewController *acVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AcademicCalendar"];
     
     // Create the penalty view controller
-    SportsTableViewController *eVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SportsCalendar"];
+    SportsTableViewController *sVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SportsCalendar"];
+    ChapelTableViewController *cVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ChapelCalendar"];
     
     // Add A and B view controllers to the array
-    self.allViewControllers = [[NSArray alloc] initWithObjects:eVC, nil];
+    self.allViewControllers = [[NSArray alloc] initWithObjects:sVC, sVC, cVC, nil];
     
     // Ensure a view controller is loaded
     self.switchViewControllers.selectedSegmentIndex = 0;
     [self cycleFromViewController:self.currentViewController toViewController:[self.allViewControllers objectAtIndex:self.switchViewControllers.selectedSegmentIndex]];
+    [self.switchViewControllers addTarget:self action:@selector(indexDidChangeForSegmentedControl:) forControlEvents:UIControlEventValueChanged];
 
 }
 
@@ -45,6 +48,8 @@
     
     // Check the newVC is non-nil otherwise expect a crash: NSInvalidArgumentException
     if (newVC) {
+        
+        newVC.view.frame = CGRectMake(CGRectGetMinX(self.viewContainer.bounds), CGRectGetMinY(self.viewContainer.bounds), CGRectGetWidth(self.viewContainer.bounds), CGRectGetHeight(self.viewContainer.bounds)-self.tabBarController.tabBar.frame.size.height);
         
         // Check the oldVC is non-nil otherwise expect a crash: NSInvalidArgumentException
         if (oldVC) {

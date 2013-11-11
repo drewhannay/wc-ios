@@ -11,7 +11,6 @@
 
 @interface SportsTableViewController : UITableViewController
 
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSMutableArray *sportResults;
 @property NSInteger *displayResults;
 

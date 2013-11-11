@@ -150,14 +150,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1hc-u2-2xj" firstAttribute="top" secondItem="UPj-mJ-Frz" secondAttribute="bottom" constant="1" id="U4u-8d-m2H"/>
-                            <constraint firstItem="UPj-mJ-Frz" firstAttribute="top" secondItem="LL8-cA-Blq" secondAttribute="bottom" constant="1" id="kcN-oX-xYX"/>
+                            <constraint firstItem="1hc-u2-2xj" firstAttribute="top" secondItem="UPj-mJ-Frz" secondAttribute="bottom" id="U4u-8d-m2H"/>
+                            <constraint firstItem="UPj-mJ-Frz" firstAttribute="top" secondItem="LL8-cA-Blq" secondAttribute="bottom" id="kcN-oX-xYX"/>
                             <constraint firstItem="Gd1-FB-76H" firstAttribute="top" secondItem="7XR-Ua-9yd" secondAttribute="bottom" id="mde-Px-YJa"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Events" image="Calendar.png" id="hdM-A5-lKA"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="0mi-Bv-7Xw" id="S8h-ib-Zgd"/>
+                        <outlet property="switchViewControllers" destination="LL8-cA-Blq" id="wBd-EM-NY0"/>
                         <outlet property="viewContainer" destination="UPj-mJ-Frz" id="geI-TA-Cm9"/>
                     </connections>
                 </viewController>
@@ -173,6 +174,35 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="874" y="5469"/>
+        </scene>
+        <!--Chapel Table View Controller-->
+        <scene sceneID="keG-VH-GOg">
+            <objects>
+                <tableViewController storyboardIdentifier="ChapelCalendar" id="kZ9-h4-qVC" customClass="ChapelTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pOF-A0-RoK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iCx-ee-aEr">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iCx-ee-aEr" id="qpL-J3-cfE">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kZ9-h4-qVC" id="ADk-pf-tgh"/>
+                            <outlet property="delegate" destination="kZ9-h4-qVC" id="7o0-HJ-Kh2"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZdU-zR-6tB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1433" y="5728"/>
         </scene>
         <!--Sports Table View Controller-->
         <scene sceneID="45q-Db-iOk">
@@ -203,7 +233,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="siw-fX-PDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1300" y="5469"/>
+            <point key="canvasLocation" x="1433" y="5015"/>
         </scene>
         <!--Map Top View Controller - Map-->
         <scene sceneID="ulh-zC-H5J">

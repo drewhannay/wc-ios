@@ -28,7 +28,7 @@
     [GAI sharedInstance].dispatchInterval = 20;
     
     // Initialize tracker.
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-44326922-1"];
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-44326922-1"];
     
     return YES;
 }

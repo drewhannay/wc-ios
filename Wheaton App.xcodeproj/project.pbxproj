@@ -61,7 +61,6 @@
 		61851B3B18306529005EDE18 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61851B3A18306529005EDE18 /* EventViewController.m */; };
 		61851B3E18306762005EDE18 /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61851B3D18306762005EDE18 /* SportsTableViewController.m */; };
 		61891CD2182C09EE003F1B43 /* MasterTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61891CD0182C09EE003F1B43 /* MasterTabViewController.m */; };
-		61891CD3182C09EE003F1B43 /* MasterTabViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61891CD1182C09EE003F1B43 /* MasterTabViewController.xib */; };
 		61CA409917CA6C2A00617623 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA409617CA6C2A00617623 /* ECSlidingViewController.m */; };
 		61CA409F17CA6C8D00617623 /* InitialSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA409E17CA6C8D00617623 /* InitialSlidingViewController.m */; };
 		61CA40A817CA6F4F00617623 /* CustomNav.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40A617CA6F4F00617623 /* CustomNav.png */; };
@@ -115,6 +114,7 @@
 		61F05EF617D41D420006CC1F /* House@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61F05EF417D41D420006CC1F /* House@2x.png */; };
 		61F70D7E18309AA000345907 /* SportTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F70D7D18309AA000345907 /* SportTableCell.m */; };
 		61F70D8018309BD300345907 /* SportTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61F70D7F18309BD300345907 /* SportTableCell.xib */; };
+		61F70D8318311F7800345907 /* ChapelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F70D8218311F7800345907 /* ChapelTableViewController.m */; };
 		62AB87D517C858E300674C0D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62AB87D417C858E300674C0D /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -201,7 +201,6 @@
 		61851B3D18306762005EDE18 /* SportsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsTableViewController.m; sourceTree = "<group>"; };
 		61891CCF182C09EE003F1B43 /* MasterTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterTabViewController.h; sourceTree = "<group>"; };
 		61891CD0182C09EE003F1B43 /* MasterTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterTabViewController.m; sourceTree = "<group>"; };
-		61891CD1182C09EE003F1B43 /* MasterTabViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterTabViewController.xib; sourceTree = "<group>"; };
 		61CA409517CA6C2A00617623 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
 		61CA409617CA6C2A00617623 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
 		61CA409D17CA6C8D00617623 /* InitialSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialSlidingViewController.h; sourceTree = "<group>"; };
@@ -275,6 +274,8 @@
 		61F70D7C18309AA000345907 /* SportTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportTableCell.h; sourceTree = "<group>"; };
 		61F70D7D18309AA000345907 /* SportTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportTableCell.m; sourceTree = "<group>"; };
 		61F70D7F18309BD300345907 /* SportTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportTableCell.xib; sourceTree = "<group>"; };
+		61F70D8118311F7800345907 /* ChapelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapelTableViewController.h; sourceTree = "<group>"; };
+		61F70D8218311F7800345907 /* ChapelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapelTableViewController.m; sourceTree = "<group>"; };
 		62AB87D417C858E300674C0D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -517,11 +518,12 @@
 			children = (
 				61891CCF182C09EE003F1B43 /* MasterTabViewController.h */,
 				61891CD0182C09EE003F1B43 /* MasterTabViewController.m */,
-				61891CD1182C09EE003F1B43 /* MasterTabViewController.xib */,
 				61851B3918306529005EDE18 /* EventViewController.h */,
 				61851B3A18306529005EDE18 /* EventViewController.m */,
 				61851B3C18306762005EDE18 /* SportsTableViewController.h */,
 				61851B3D18306762005EDE18 /* SportsTableViewController.m */,
+				61F70D8118311F7800345907 /* ChapelTableViewController.h */,
+				61F70D8218311F7800345907 /* ChapelTableViewController.m */,
 				61891CC5182C08CB003F1B43 /* Old */,
 			);
 			name = Controllers;
@@ -695,7 +697,6 @@
 				6150980417D5497800456A9D /* Meal@2x.png in Resources */,
 				610E2B6B17DA8FA5003D5405 /* searchBar.png in Resources */,
 				610E2B6C17DA8FA5003D5405 /* searchBar@2x.png in Resources */,
-				61891CD3182C09EE003F1B43 /* MasterTabViewController.xib in Resources */,
 				610D48D517DD620400DE574C /* Calendar.png in Resources */,
 				61032B0C17F112B900CC95FA /* ChapelSingleLineView.xib in Resources */,
 				610D48D617DD620400DE574C /* Calendar@2x.png in Resources */,
@@ -724,6 +725,7 @@
 				61E4076B17CC3B7D0068AE00 /* ChapelTopViewController.m in Sources */,
 				61E4077017CC5B7B0068AE00 /* ChapelTableCell.m in Sources */,
 				61E4077317CE787A0068AE00 /* WhosWhoTopViewController.m in Sources */,
+				61F70D8318311F7800345907 /* ChapelTableViewController.m in Sources */,
 				61E4077617CEB9340068AE00 /* WhoswhoTableCell.m in Sources */,
 				61E4077917CECE8B0068AE00 /* WhoswhoSearchBar.m in Sources */,
 				61E4078217CEF4960068AE00 /* MenuTopViewController.m in Sources */,
