@@ -1,22 +1,21 @@
 //
-//  HomeSportsCollectionViewController.m
+//  SportsTableViewController.m
 //  Wheaton App
 //
-//  Created by Chris Anderson on 9/1/13.
+//  Created by Chris Anderson on 11/10/13.
 //
 //
 
-#import "HomeSportsCollectionViewController.h"
+#import "SportsTableViewController.h"
 #import "SportsCollectionCell.h"
-#import "MenuTopViewController.h"
 
-@interface HomeSportsCollectionViewController ()
+@interface SportsTableViewController ()
 
 @end
 
-@implementation HomeSportsCollectionViewController
+@implementation SportsTableViewController
 
-@synthesize collectionView, sportResults;
+@synthesize tableView, sportResults;
 @synthesize displayResults = _displayResults;
 
 - (void)viewDidLoad
@@ -24,7 +23,7 @@
     [super viewDidLoad];
 	
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString: c_Sports]];
+        NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString: cn_Sports]];
         [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
     });
 }
@@ -56,14 +55,24 @@
                 [sportResults addObject:event];
             }
         }
-        [collectionView reloadData];
+        NSLog(@"%@",sportResults);
+        [tableView reloadData];
     } else {
-
+        
     }
 }
 
-#pragma mark - UICollectionView Datasource
-- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
     if([sportResults count] <= 0) {
         return 0;
     }
@@ -74,11 +83,17 @@
         return [sportResults count];
     return self.displayResults;
 }
-- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
-    return 1;
-}
-- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    SportsCollectionCell *cell = (SportsCollectionCell *)[cv dequeueReusableCellWithReuseIdentifier:@"SportsCollectionCell" forIndexPath:indexPath];
+
+- (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"SportTableCell";
+    SportsCollectionCell *cell = (SportsCollectionCell *)[tv dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
     cell.backgroundColor = [UIColor whiteColor];
     
     NSDictionary *result = [sportResults objectAtIndex:indexPath.row];
@@ -104,25 +119,15 @@
     
     cell.team.text = [NSString stringWithFormat:@"%@. %@", [[[result objectForKey:@"gender"] substringToIndex:1] uppercaseString], [[result objectForKey:@"sport"] capitalizedString]];
     cell.opponent.text = [result objectForKey:@"opponent"];
-
+    
     if([(NSNumber *)[result objectForKey: @"home"] isEqual: @(YES)]) {
         [cell.home setHidden:FALSE];
     } else {
         [cell.home setHidden:TRUE];
     }
     
-    return cell; 
+    return cell;
 }
-
-#pragma mark - UICollectionViewDelegate
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    // TODO: Select Item
-}
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-    // TODO: Deselect item
-}
-
 
 - (void)didReceiveMemoryWarning
 {

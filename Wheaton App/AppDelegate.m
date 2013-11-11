@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "GAI.h"
 #import "MTReachabilityManager.h"
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @implementation AppDelegate
 
@@ -16,16 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [MTReachabilityManager sharedManager];
     
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
-        
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
-        
-        self.window.clipsToBounds = YES;
-        self.window.frame =  CGRectMake(0,20,self.window.frame.size.width,self.window.frame.size.height-20);
-        
-    }
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x00447c)];
+    
+    [MTReachabilityManager sharedManager];
     
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     

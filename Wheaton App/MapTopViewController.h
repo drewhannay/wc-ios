@@ -12,8 +12,9 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 
-@interface MapTopViewController : GAITrackedViewController <MKMapViewDelegate, UISearchBarDelegate> {
+@interface MapTopViewController : GAITrackedViewController <MKMapViewDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate> {
     NSArray *searchResults;
+    BOOL barHidden;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -22,5 +23,4 @@
 @property (strong, nonatomic) UISearchDisplayController *searchController;
 
 - (IBAction)resetMap:(id)sender;
-- (IBAction)revealMenu:(id)sender;
 @end

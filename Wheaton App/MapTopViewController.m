@@ -15,60 +15,29 @@
 
 @synthesize menuBtn, location, searchController;
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    self.view.layer.shadowOpacity = 0.75f;
-    self.view.layer.shadowRadius = 10.0f;
-    self.view.layer.shadowColor = [UIColor blackColor].CGColor;
-    
-    if (![self.slidingViewController.underLeftViewController isKindOfClass:[MenuViewController class]]) {
-        self.slidingViewController.underLeftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
-    }
-    self.slidingViewController.underRightViewController = nil;
-    
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
-}
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 41.870016;
-    zoomLocation.longitude= -88.098362;
-    
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.075*METERS_PER_MILE, 0.075*METERS_PER_MILE);
-    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
-    [self.mapView setRegion:adjustedRegion animated:NO];
+    [self resetMap:NULL];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    barHidden = NO;
     self.screenName = @"Map";
     
-    self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.menuBtn.frame = CGRectMake(4, 0, 44, 44);
-    [menuBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
-    [menuBtn addTarget:self action:@selector(revealMenu:) forControlEvents:UIControlEventTouchUpInside];
+    UITextView *searchTextField = [self.searchDisplayController.searchBar valueForKey:@"_searchField"];
+    searchTextField.textColor = [UIColor whiteColor];
     
-    [self.view addSubview:self.menuBtn];
-    
-    self.searchDisplayController.searchBar.backgroundColor = [UIColor clearColor];
-    self.searchDisplayController.searchBar.tintColor = [UIColor whiteColor];
-    
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
-        UITextView *searchTextField = [self.searchDisplayController.searchBar valueForKey:@"_searchField"];
-        searchTextField.textColor = [UIColor whiteColor];
-    }
-    
-    for (UIView *subview in self.searchDisplayController.searchBar.subviews) {
-        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
-            [subview removeFromSuperview];
-            break;
-        }
-    }
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(showNavbar:)];
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(hideNavbar:)];
+    [self.mapView addGestureRecognizer:tapGesture];
+    [panGesture setDelegate:self];
+    [self.mapView addGestureRecognizer:panGesture];
     
     [self loadLocations];
 }
@@ -80,16 +49,11 @@
     }
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = 41.870016;
-    zoomLocation.longitude= -88.098362;
+    zoomLocation.longitude = -88.098362;
     
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.075*METERS_PER_MILE, 0.075*METERS_PER_MILE);
     MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
     [self.mapView setRegion:adjustedRegion animated:NO];
-}
-
-- (IBAction)revealMenu:(id)sender
-{
-    [self.slidingViewController anchorTopViewTo:ECRight];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
@@ -111,6 +75,16 @@
     return nil;
 }
 
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+- (void)didDragMap:(UIGestureRecognizer*)gestureRecognizer {
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan){
+        NSLog(@"drag start");
+    }
+}
+
 
 - (void)loadLocations
 {
@@ -125,6 +99,32 @@
         }
         [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
     });
+}
+
+-(void) hideNavbar:(id) sender
+{
+    if (barHidden == NO) {
+        CGRect tabBarFrame = self.tabBarController.tabBar.frame;
+        tabBarFrame.origin.y += tabBarFrame.size.height;
+        
+        [UIView animateWithDuration:0.2 animations:^ {
+            [self.tabBarController.tabBar setFrame:tabBarFrame];
+        }];
+        barHidden = YES;
+    }
+}
+
+-(void) showNavbar:(id) sender
+{
+    if (barHidden == YES) {
+        CGRect tabBarFrame = self.tabBarController.tabBar.frame;
+        tabBarFrame.origin.y -= tabBarFrame.size.height;
+        
+        [UIView animateWithDuration:0.1 animations:^ {
+            [self.tabBarController.tabBar setFrame:tabBarFrame];
+        }];
+        barHidden = NO;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

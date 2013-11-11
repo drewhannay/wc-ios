@@ -15,21 +15,8 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"iPhone" bundle:nil];
     
-    self.topViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeTop"];
-//    
-//    UIViewController *newTopViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeTop"];
-//
-//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
-//         self.topViewController.view.frame = newTopViewController.view.frame = CGRectMake(
-//                                                                             newTopViewController.view.frame.origin.x,
-//                                                                             20,
-//                                                                             newTopViewController.view.frame.size.width,
-//                                                                             self.view.window.frame.size.height-20);
-//    }
-//    
-//    CGRect frame = newTopViewController.view.frame;
-//    newTopViewController.view.frame = frame;
-//    self.topViewController = newTopViewController;
+    self.topViewController = [storyboard instantiateViewControllerWithIdentifier:@"NewTop"];
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation

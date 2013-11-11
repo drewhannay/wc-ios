@@ -1,5 +1,5 @@
 //
-//  SportsCollectionCell.h
+//  SportsTableCell.h
 //  Wheaton App
 //
 //  Created by Chris Anderson on 9/1/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SportsCollectionCell : UITableViewCell
+@interface SportTableCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *date;
 @property (strong, nonatomic) IBOutlet UILabel *time;

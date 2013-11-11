@@ -16,8 +16,8 @@ NSString * const c_Menu = @"http://wheatonorientation.herokuapp.com/menu";
 NSString * const c_Whoswho = @"https://webapp.wheaton.edu/whoswho/person/searchJson?page_size=100&q=2%20";
 NSString * const c_Sports = @"https://s3.amazonaws.com/wcstatic/sports_calendar.json";
 NSString * const c_Academic = @"http://25livepub.collegenet.com/calendars/event-collections-general_calendar_wp.rss";
-NSString * const c_Events = @"http://25livepub.collegenet.com/calendars/intra-campus-calendar.rss";
 NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
+NSString * const c_Events = @"http://25livepub.collegenet.com/calendars/intra-campus-calendar.rss";
 
 @interface MenuViewController()
 @property (nonatomic, strong) NSArray *menuItems;
@@ -42,8 +42,8 @@ NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
 {
     [super viewDidLoad];
     
-    [self.slidingViewController setAnchorRightRevealAmount:240.0f];
-    self.slidingViewController.underLeftWidthLayout = ECFullWidth;
+    [self.slidingViewController setAnchorLeftRevealAmount:240.0f];
+    self.slidingViewController.underRightWidthLayout = ECFullWidth;
     
     table.backgroundColor = [UIColor whiteColor];
 }
@@ -91,19 +91,8 @@ NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
         
         NSString *identifier = [NSString stringWithFormat:@"%@Top", [[self.menuItems objectAtIndex:indexPath.row] objectAtIndex:2]];
         UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
-        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
-            int position = -1;
-            if([identifier isEqualToString:@"HomeTop"]) {
-                position = 0;
-            }
-            self.slidingViewController.topViewController.view.frame = CGRectMake(
-                                                                                 self.slidingViewController.topViewController.view.frame.origin.x,
-                                                                                 position,
-                                                                                 self.slidingViewController.topViewController.view.frame.size.width,
-                                                                                 self.view.window.frame.size.height + 1);
-        }
         
-        [self.slidingViewController anchorTopViewOffScreenTo:ECRight animations:nil onComplete:^{
+        [self.slidingViewController anchorTopViewOffScreenTo:ECLeft animations:nil onComplete:^{
             CGRect frame = self.slidingViewController.topViewController.view.frame;
             self.slidingViewController.topViewController = newTopViewController;
             self.slidingViewController.topViewController.view.frame = frame;

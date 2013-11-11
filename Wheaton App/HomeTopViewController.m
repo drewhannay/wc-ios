@@ -49,19 +49,19 @@
     
     self.screenName = @"Home";
     
-    self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.menuBtn.frame = CGRectMake(4, 0, 44, 44);
-    [menuBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
-    [menuBtn addTarget:self action:@selector(revealMenu:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:self.menuBtn];
-    
-    self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    menuBtn.frame = CGRectMake(self.view.frame.size.width-44-4, 0, 44, 44);
-    [menuBtn setBackgroundImage:[UIImage imageNamed:@"twitter.png"] forState:UIControlStateNormal];
-    [menuBtn addTarget:self action:@selector(tweet:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:self.menuBtn];
+//    self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    self.menuBtn.frame = CGRectMake(4, 0, 44, 44);
+//    [menuBtn setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];
+//    [menuBtn addTarget:self action:@selector(revealMenu:) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [self.view addSubview:self.menuBtn];
+//    
+//    self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    menuBtn.frame = CGRectMake(self.view.frame.size.width-44-4, 0, 44, 44);
+//    [menuBtn setBackgroundImage:[UIImage imageNamed:@"twitter.png"] forState:UIControlStateNormal];
+//    [menuBtn addTarget:self action:@selector(tweet:) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [self.view addSubview:self.menuBtn];
     
     [scrollView loaded];
 }
