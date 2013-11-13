@@ -10,11 +10,10 @@
 
 @interface SportTableCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UILabel *date;
 @property (strong, nonatomic) IBOutlet UILabel *time;
 @property (strong, nonatomic) IBOutlet UILabel *opponent;
 @property (strong, nonatomic) IBOutlet UILabel *team;
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *sport;
-@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *home;
+@property (unsafe_unretained, nonatomic) IBOutlet UIView *home;
 
 @end

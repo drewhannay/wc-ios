@@ -10,14 +10,14 @@
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 
-NSString * const cn_MapLocations = @"https://s3.amazonaws.com/wcstatic/location.json";
-NSString * const cn_Chapel = @"https://s3.amazonaws.com/wcstatic/chapel.json";
-NSString * const cn_Menu = @"http://wheatonorientation.herokuapp.com/menu";
-NSString * const cn_Whoswho = @"https://webapp.wheaton.edu/whoswho/person/searchJson?page_size=100&q=2%20";
-NSString * const cn_Sports = @"https://s3.amazonaws.com/wcstatic/sports_calendar.json";
-NSString * const cn_Academic = @"http://25livepub.collegenet.com/calendars/event-collections-general_calendar_wp.rss";
-NSString * const cn_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
-NSString * const cn_Events = @"http://25livepub.collegenet.com/calendars/intra-campus-calendar.rss";
+NSString * const c_MapLocations = @"https://s3.amazonaws.com/wcstatic/location.json";
+NSString * const c_Chapel = @"https://s3.amazonaws.com/wcstatic/chapel.json";
+NSString * const c_Menu = @"http://wheatonorientation.herokuapp.com/menu";
+NSString * const c_Whoswho = @"http://23.21.107.65/people?contentType=json&limit=20&name=";
+NSString * const c_Sports = @"http://23.21.107.65/events/type/sport?contentType=json";
+NSString * const c_Academic = @"http://25livepub.collegenet.com/calendars/event-collections-general_calendar_wp.rss";
+NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
+NSString * const c_Events = @"http://25livepub.collegenet.com/calendars/intra-campus-calendar.rss";
 
 @interface MasterTabViewController ()
 
@@ -39,7 +39,7 @@ NSString * const cn_Events = @"http://25livepub.collegenet.com/calendars/intra-c
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [[UITabBar appearance] setTintColor:UIColorFromRGB(0x0069aa)];
+    [[UITabBar appearance] setTintColor:UIColorFromRGB(0xe36f1e)];
     self.delegate = self;
 }
 

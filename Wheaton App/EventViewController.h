@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MasterTabViewController.h"
 
-@interface EventViewController : UIViewController
+@interface EventViewController : UIViewController <UIGestureRecognizerDelegate> {
+    int priorSegmentIndex;
+}
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *switchViewControllers;
 @property (nonatomic, copy) NSArray *allViewControllers;

@@ -22,20 +22,14 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9B-Bz-ZVX">
-                        <rect key="frame" x="32" y="9" width="166" height="21"/>
+                        <rect key="frame" x="32" y="9" width="161" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12/20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgI-Yh-H3u">
-                        <rect key="frame" x="258" y="9" width="44" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:00pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WV3-6g-hgM">
-                        <rect key="frame" x="197" y="9" width="62" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:00 pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WV3-6g-hgM">
+                        <rect key="frame" x="192" y="9" width="110" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="highlightedColor"/>
@@ -44,23 +38,26 @@
                         <rect key="frame" x="6" y="7" width="24" height="24"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="House.png" translatesAutoresizingMaskIntoConstraints="NO" id="zt6-fj-ult">
-                        <rect key="frame" x="11" y="33" width="14" height="14"/>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="89S-bb-kRZ">
+                        <rect key="frame" x="0.0" y="0.0" width="3" height="58"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
+                        <color key="backgroundColor" red="0.89019607840000003" green="0.43529411759999997" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="date" destination="kgI-Yh-H3u" id="cew-Te-5ID"/>
-                <outlet property="home" destination="zt6-fj-ult" id="3p9-3I-9vr"/>
+                <outlet property="home" destination="89S-bb-kRZ" id="Uea-ex-wEK"/>
                 <outlet property="opponent" destination="6Ge-TV-4Zr" id="bhG-ui-1f9"/>
                 <outlet property="sport" destination="pVB-r9-a5D" id="fWE-8o-4Yj"/>
                 <outlet property="team" destination="u9B-Bz-ZVX" id="f1M-zb-4KS"/>
                 <outlet property="time" destination="WV3-6g-hgM" id="hGP-3r-kWU"/>
             </connections>
         </tableViewCell>
+        <view contentMode="scaleToFill" id="v27-UE-446">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
     </objects>
-    <resources>
-        <image name="House.png" width="24" height="24"/>
-    </resources>
 </document>

@@ -29,7 +29,7 @@
 - (void)loadSchedule
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString: cn_Chapel]];
+        NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString: c_Chapel]];
         NSArray *cachesDirList = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
         NSString *cacheDir = [cachesDirList objectAtIndex:0];
         if (data != nil) {
@@ -176,7 +176,7 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:scheduleRowIndex inSection:scheduleSectionIndex];
     [self.tableView scrollToRowAtIndexPath:indexPath
                       atScrollPosition:UITableViewScrollPositionTop
-                              animated:YES];
+                              animated:NO];
 }
 
 @end

@@ -1,19 +1,20 @@
 //
-//  MapTopViewController.m
+//  MapViewController.m
 //  Wheaton App
 //
 //  Created by Chris Anderson on 3/13/13.
 //  Copyright (c) 2013 Chris Anderson. All rights reserved.
 //
 
-#import "MapTopViewController.h"
+#import "MapViewController.h"
+#import "MasterTabViewController.h"
 #import "Location.h"
 
 #define METERS_PER_MILE 1609.344
 
-@implementation MapTopViewController
+@implementation MapViewController
 
-@synthesize menuBtn, location, searchController;
+@synthesize location, searchController;
 
 
 - (void)viewDidAppear:(BOOL)animated
