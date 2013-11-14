@@ -37,29 +37,8 @@
     
     // parse out the json data
     NSError *error;
-    NSArray *results  = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
-    
-    NSDate *currentDate = [NSDate date];
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:currentDate];
-    
-    sportResults = [[NSMutableArray alloc] init];
-    
-    if ([results count] > 0) {
-        for(NSDictionary *event in results) {
-            [components setMonth: [[[event objectForKey:@"date"] objectForKey:@"month"] intValue]];
-            [components setDay: [[[event objectForKey:@"date"] objectForKey:@"day"] intValue]];
-            
-            NSDate *combinedDate = [calendar dateFromComponents:components];
-            
-            if([combinedDate timeIntervalSince1970] > [currentDate timeIntervalSince1970]) {
-                [sportResults addObject:event];
-            }
-        }
-        [collectionView reloadData];
-    } else {
-
-    }
+    sportResults  = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+    [collectionView reloadData];
 }
 
 #pragma mark - UICollectionView Datasource
@@ -70,6 +49,8 @@
     if(self.displayResults <= 0) {
         return [sportResults count];
     }
+    if(self.displayResults > [sportResults count])
+        return [sportResults count];
     return self.displayResults;
 }
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
@@ -80,30 +61,38 @@
     cell.backgroundColor = [UIColor whiteColor];
     
     NSDictionary *result = [sportResults objectAtIndex:indexPath.row];
+    NSDictionary *custom = [result objectForKey:@"custom"];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[[[result objectForKey:@"timeStamp"] objectAtIndex:0] doubleValue]];
+    NSString *sport = (NSString *)[result objectForKey:@"title"];
     
-    NSDictionary *date = [result objectForKey:@"date"];
-    cell.date.text = [NSString stringWithFormat:@"%@/%@", [date objectForKey:@"month"], [date objectForKey:@"day"]];
-    cell.time.text = [result objectForKey:@"time"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [dateFormatter setDateFormat:@"MM/dd hh:mm a"];
     
-    NSString *sport = (NSString *)[result objectForKey:@"sport"];
+    cell.time.text = [[dateFormatter stringFromDate:date] lowercaseString];
     
-    if([sport isEqualToString:@"soccer"])
+    [cell.sport setHidden:NO];
+    if([sport isEqualToString:@"Soccer"])
         cell.sport.image = [UIImage imageNamed:@"Soccer.png"];
-    else if([sport isEqualToString:@"basketball"])
+    else if([sport isEqualToString:@"Basketball"])
         cell.sport.image = [UIImage imageNamed:@"Basketball.png"];
-    else if([sport isEqualToString:@"volleyball"])
+    else if([sport isEqualToString:@"Volleyball"])
         cell.sport.image = [UIImage imageNamed:@"Volleyball.png"];
-    else if([sport isEqualToString:@"golf"])
+    else if([sport isEqualToString:@"Golf"])
         cell.sport.image = [UIImage imageNamed:@"Golf.png"];
-    else if([sport isEqualToString:@"football"])
+    else if([sport isEqualToString:@"Football"])
         cell.sport.image = [UIImage imageNamed:@"Football.png"];
-    else if([sport isEqualToString:@"tennis"])
+    else if([sport isEqualToString:@"Tennis"])
         cell.sport.image = [UIImage imageNamed:@"Tennis.png"];
+    else if([sport isEqualToString:@"Swimming"])
+        cell.sport.image = [UIImage imageNamed:@"Swimming.png"];
+    else
+        [cell.sport setHidden:YES];
     
-    cell.team.text = [NSString stringWithFormat:@"%@. %@", [[[result objectForKey:@"gender"] substringToIndex:1] uppercaseString], [[result objectForKey:@"sport"] capitalizedString]];
-    cell.opponent.text = [result objectForKey:@"opponent"];
-
-    if([(NSNumber *)[result objectForKey: @"home"] isEqual: @(YES)]) {
+    cell.team.text = [NSString stringWithFormat:@"%@. %@", [[[custom objectForKey:@"gender"] substringToIndex:1] uppercaseString], [sport capitalizedString]];
+    cell.opponent.text = [custom objectForKey:@"opponent"];
+    
+    if([(NSNumber *)[custom objectForKey: @"home"] isEqual: @(YES)]) {
         [cell.home setHidden:FALSE];
     } else {
         [cell.home setHidden:TRUE];

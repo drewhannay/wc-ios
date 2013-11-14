@@ -54,7 +54,6 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"EmbededFullSports"]) {
         self.sportsVC = segue.destinationViewController;
-        NSLog(@"The number goes here");
         self.sportsVC.displayResults = 0;
     }
 }
