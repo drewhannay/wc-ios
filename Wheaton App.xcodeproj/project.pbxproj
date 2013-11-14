@@ -41,6 +41,7 @@
 		613890C017E3A9C40049FF72 /* Sports.png in Resources */ = {isa = PBXBuildFile; fileRef = 613890BE17E3A9C40049FF72 /* Sports.png */; };
 		613890C117E3A9C40049FF72 /* Sports@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 613890BF17E3A9C40049FF72 /* Sports@2x.png */; };
 		613B955118333F9F00DEAA0E /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61032B1C17F333EF00CC95FA /* libGoogleAnalyticsServices.a */; };
+		613B9557183419C900DEAA0E /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613B9556183419C900DEAA0E /* EventsTableViewController.m */; };
 		614241BC17F886D0005A9742 /* Volleyball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 614241BB17F886D0005A9742 /* Volleyball@2x.png */; };
 		615097F117D5221900456A9D /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 615097EF17D5221900456A9D /* back.png */; };
 		615097F217D5221900456A9D /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 615097F017D5221900456A9D /* back@2x.png */; };
@@ -168,6 +169,8 @@
 		613890B917E3619F0049FF72 /* 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120x120.png; sourceTree = "<group>"; };
 		613890BE17E3A9C40049FF72 /* Sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sports.png; sourceTree = "<group>"; };
 		613890BF17E3A9C40049FF72 /* Sports@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sports@2x.png"; sourceTree = "<group>"; };
+		613B9555183419C900DEAA0E /* EventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewController.h; sourceTree = "<group>"; };
+		613B9556183419C900DEAA0E /* EventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewController.m; sourceTree = "<group>"; };
 		614241BB17F886D0005A9742 /* Volleyball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Volleyball@2x.png"; sourceTree = "<group>"; };
 		615097EF17D5221900456A9D /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		615097F017D5221900456A9D /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
@@ -474,6 +477,8 @@
 				61851B3A18306529005EDE18 /* EventViewController.m */,
 				61851B3C18306762005EDE18 /* SportsTableViewController.h */,
 				61851B3D18306762005EDE18 /* SportsTableViewController.m */,
+				613B9555183419C900DEAA0E /* EventsTableViewController.h */,
+				613B9556183419C900DEAA0E /* EventsTableViewController.m */,
 				61F70D8118311F7800345907 /* ChapelTableViewController.h */,
 				61F70D8218311F7800345907 /* ChapelTableViewController.m */,
 				61F70D841831924100345907 /* MoreTableViewController.h */,
@@ -705,6 +710,7 @@
 				61F70D8F1831E03700345907 /* HomeViewController.m in Sources */,
 				61851B3E18306762005EDE18 /* SportsTableViewController.m in Sources */,
 				612BFF0017DED11300EB2C8C /* SideBarTableCell.m in Sources */,
+				613B9557183419C900DEAA0E /* EventsTableViewController.m in Sources */,
 				612BFF0417DEE71D00EB2C8C /* MapSearchBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MasterTabViewController.h"
 
-@interface HomeViewController : UIViewController <UISearchBarDelegate> {
-    NSArray *searchResults;
+@interface HomeViewController : UIViewController <UIGestureRecognizerDelegate> {
+    int priorSegmentIndex;
 }
 
-@property (nonatomic, retain) NSMutableArray *people;
-@property (strong, nonatomic) UISearchDisplayController *searchController;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *switchViewControllers;
+@property (nonatomic, copy) NSArray *allViewControllers;
+@property (nonatomic, strong) UIViewController *currentViewController;
+@property (weak, nonatomic) IBOutlet UIView *viewContainer;
 
 @end

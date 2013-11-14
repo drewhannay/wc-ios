@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subtitleLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UIView *current;
 
 
 @end

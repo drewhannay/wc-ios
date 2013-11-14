@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChapelTableViewController : UITableViewController
+@interface ChapelTableViewController : UITableViewController {
+    int todayRow;
+    int todaySection;
+}
 
 @property (nonatomic, retain) NSMutableArray *schedule;
 

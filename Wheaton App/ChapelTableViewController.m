@@ -92,6 +92,12 @@
     cell.subtitleLabel.text = [row objectForKey:@"subtitle"];
     cell.dateLabel.text = [NSString stringWithFormat:@"%@", [row objectForKey:@"date"]];
     
+    if(todaySection == indexPath.section && todayRow == indexPath.row) {
+        [cell.current setHidden:NO];
+    } else {
+        [cell.current setHidden:YES];
+    }
+    
     return cell;
 }
 
@@ -146,7 +152,6 @@
         [schedule addObject:month];
     }
     
-    [self.tableView reloadData];
     
     NSDate *currentDate = [NSDate date];
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
@@ -173,10 +178,15 @@
         scheduleRowIndex = 0;
     }
     
+    todayRow = scheduleRowIndex;
+    todaySection = scheduleSectionIndex;
+    
+    [self.tableView reloadData];
+    
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:scheduleRowIndex inSection:scheduleSectionIndex];
     [self.tableView scrollToRowAtIndexPath:indexPath
-                      atScrollPosition:UITableViewScrollPositionTop
-                              animated:NO];
+                          atScrollPosition:UITableViewScrollPositionTop
+                                  animated:NO];
 }
 
 @end

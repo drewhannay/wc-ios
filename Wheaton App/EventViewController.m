@@ -9,6 +9,7 @@
 #import "EventViewController.h"
 #import "SportsTableViewController.h"
 #import "ChapelTableViewController.h"
+#import "EventsTableViewController.h"
 
 @interface EventViewController ()
 
@@ -28,9 +29,10 @@
     // Create the penalty view controller
     SportsTableViewController *sVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SportsCalendar"];
     ChapelTableViewController *cVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ChapelCalendar"];
+    EventsTableViewController *eVC = [self.storyboard instantiateViewControllerWithIdentifier:@"EventsCalendar"];
     
     // Add A and B view controllers to the array
-    self.allViewControllers = [[NSArray alloc] initWithObjects:sVC, sVC, cVC, sVC, nil];
+    self.allViewControllers = [[NSArray alloc] initWithObjects:sVC, sVC, cVC, eVC, nil];
     
     // Ensure a view controller is loaded
     self.switchViewControllers.selectedSegmentIndex = priorSegmentIndex = 0;
@@ -118,14 +120,14 @@
 
 - (void)handleSwipeRight:(id)swipe {
     NSUInteger index = self.switchViewControllers.selectedSegmentIndex;
-    index = priorSegmentIndex = self.switchViewControllers.selectedSegmentIndex = (index - 1) % 5;
+    index = priorSegmentIndex = self.switchViewControllers.selectedSegmentIndex = (index - 1) % 4;
     UIViewController *incomingViewController = [self.allViewControllers objectAtIndex:index];
     [self cycleFromViewController:self.currentViewController toViewController:incomingViewController direction:NO];
 }
 
 - (void)handleSwipeLeft:(id)swipe {
     NSUInteger index = self.switchViewControllers.selectedSegmentIndex;
-    index = priorSegmentIndex = self.switchViewControllers.selectedSegmentIndex = (index + 1) % 5;
+    index = priorSegmentIndex = self.switchViewControllers.selectedSegmentIndex = (index + 1) % 4;
     UIViewController *incomingViewController = [self.allViewControllers objectAtIndex:index];
     [self cycleFromViewController:self.currentViewController toViewController:incomingViewController direction:YES];
 }

@@ -67,11 +67,11 @@
     UIGraphicsEndImageContext();
     
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [UIFont systemFontOfSize:13], UITextAttributeFont,
-                                [UIColor blackColor], UITextAttributeTextColor,
+                                [UIFont systemFontOfSize:13], NSFontAttributeName,
+                                [UIColor blackColor], NSForegroundColorAttributeName,
                                 nil];
     [self setTitleTextAttributes:attributes forState:UIControlStateNormal];
-    NSDictionary *highlightedAttributes = [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:UITextAttributeTextColor];
+    NSDictionary *highlightedAttributes = [NSDictionary dictionaryWithObject:[UIColor blackColor] forKey:NSForegroundColorAttributeName];
     [self setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
     [self setTitleTextAttributes:highlightedAttributes forState:UIControlStateSelected];
     

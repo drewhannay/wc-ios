@@ -15,7 +15,7 @@
 
 @implementation SportsTableViewController
 
-@synthesize tableView, sportResults;
+@synthesize sportResults;
 @synthesize displayResults = _displayResults;
 
 - (void)viewDidLoad
@@ -37,7 +37,7 @@
     // parse out the json data
     NSError *error;
     sportResults  = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
-    [tableView reloadData];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
