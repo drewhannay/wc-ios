@@ -36,6 +36,8 @@
     [moreTable addObject:menuOption];
     
     [self.tableView reloadData];
+    
+    [self.navigationController.navigationBar setTranslucent:NO];
 }
 
 - (void)didReceiveMemoryWarning

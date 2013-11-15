@@ -1,14 +1,14 @@
 //
-//  ChapelTableCell.m
+//  EventTableCell.m
 //  Wheaton App
 //
 //  Created by Chris Anderson on 8/26/13.
 //
 //
 
-#import "ChapelTableCell.h"
+#import "EventTableCell.h"
 
-@implementation ChapelTableCell
+@implementation EventTableCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

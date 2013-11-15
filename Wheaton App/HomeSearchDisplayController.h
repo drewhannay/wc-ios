@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeSearchDisplayController : UISearchDisplayController <UISearchBarDelegate> {
+@interface HomeSearchDisplayController : UIViewController <UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDelegate> {
     NSArray *searchResults;
 }
 
 @property (nonatomic, retain) NSMutableArray *people;
+@property (strong, nonatomic) UISearchDisplayController *searchController;
 
 - (void)makeSearch:(NSString *)filter;
 

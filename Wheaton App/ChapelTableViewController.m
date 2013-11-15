@@ -8,7 +8,7 @@
 
 #import "ChapelTableViewController.h"
 #import "MasterTabViewController.h"
-#import "ChapelTableCell.h"
+#import "EventTableCell.h"
 
 @interface ChapelTableViewController ()
 
@@ -68,8 +68,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellIdentifier = @"ChapelCell";
-    NSString *cellFileName = @"ChapelSubtitleLineView";
+    NSString *cellIdentifier = @"EventCell";
+    NSString *cellFileName = @"EventSubtitleLineView";
     
     NSDictionary *dictionary = [schedule objectAtIndex:indexPath.section];
     NSArray *array = [dictionary objectForKey:@"speakers"];
@@ -77,11 +77,11 @@
     NSDictionary *row = [array objectAtIndex:indexPath.row];
     
     if([[row objectForKey:@"subtitle"] isEqualToString:@""]) {
-        cellIdentifier = @"ChapelSingleCell";
-        cellFileName = @"ChapelSingleLineView";
+        cellIdentifier = @"EventSingleCell";
+        cellFileName = @"EventSingleLineView";
     }
     
-    ChapelTableCell *cell = (ChapelTableCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    EventTableCell *cell = (EventTableCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil)
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellFileName owner:nil options:nil];

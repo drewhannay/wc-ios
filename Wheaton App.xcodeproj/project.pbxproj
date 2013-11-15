@@ -18,8 +18,8 @@
 		2D66563213EB3F7A00645BC3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D66563113EB3F7900645BC3 /* Default.png */; };
 		2D66563413EB3F8B00645BC3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D66563313EB3F8B00645BC3 /* Default@2x.png */; };
 		2DCEB34513E2010A00787E39 /* LinksList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DCEB34413E2010A00787E39 /* LinksList.plist */; };
-		61032B0C17F112B900CC95FA /* ChapelSingleLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61032B0B17F112B900CC95FA /* ChapelSingleLineView.xib */; };
-		61032B0E17F1157B00CC95FA /* ChapelSubtitleLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61032B0D17F1157B00CC95FA /* ChapelSubtitleLineView.xib */; };
+		61032B0C17F112B900CC95FA /* EventSingleLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61032B0B17F112B900CC95FA /* EventSingleLineView.xib */; };
+		61032B0E17F1157B00CC95FA /* EventSubtitleLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61032B0D17F1157B00CC95FA /* EventSubtitleLineView.xib */; };
 		61032B1917F3324200CC95FA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61032B1817F3324200CC95FA /* CoreData.framework */; };
 		61032B1B17F3325600CC95FA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 61032B1A17F3325600CC95FA /* libz.dylib */; };
 		6104311E17E7BCFD00D3C72B /* EventCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6104311D17E7BCFD00D3C72B /* EventCollectionCell.m */; };
@@ -70,6 +70,9 @@
 		61CA40CE17CB12E500617623 /* CustomMenuNavBar.m in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40CD17CB12E400617623 /* CustomMenuNavBar.m */; };
 		61CA40D217CB137600617623 /* CustomMenuNav.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40D017CB137500617623 /* CustomMenuNav.png */; };
 		61CA40D317CB137600617623 /* CustomMenuNav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40D117CB137600617623 /* CustomMenuNav@2x.png */; };
+		61DDA64B1835E37D00EBA92C /* TestScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DDA64A1835E37D00EBA92C /* TestScrollViewController.m */; };
+		61DDA64D18368F8B00EBA92C /* AcademicTableViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 61DDA64C18368F8B00EBA92C /* AcademicTableViewController.h */; };
+		61DDA64F18368F9D00EBA92C /* AcademicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DDA64E18368F9D00EBA92C /* AcademicTableViewController.m */; };
 		61DE4FFB183020AA004BBCA1 /* CustomSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DE4FFA183020AA004BBCA1 /* CustomSegmentControl.m */; };
 		61E075C517E69E3E0029EFE9 /* CustomNaviOS7.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E075C317E69E3E0029EFE9 /* CustomNaviOS7.png */; };
 		61E075C617E69E3E0029EFE9 /* CustomNaviOS7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E075C417E69E3E0029EFE9 /* CustomNaviOS7@2x.png */; };
@@ -78,7 +81,7 @@
 		61E075D517E6B8B90029EFE9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E075D417E6B8B90029EFE9 /* Reachability.m */; };
 		61E4076617CB15850068AE00 /* CustomMenuNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA40CD17CB12E400617623 /* CustomMenuNavBar.m */; };
 		61E4076817CBC9080068AE00 /* menuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E4076717CBC9080068AE00 /* menuButton@2x.png */; };
-		61E4077017CC5B7B0068AE00 /* ChapelTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4076F17CC5B7B0068AE00 /* ChapelTableCell.m */; };
+		61E4077017CC5B7B0068AE00 /* EventTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4076F17CC5B7B0068AE00 /* EventTableCell.m */; };
 		61E4077617CEB9340068AE00 /* WhoswhoTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4077517CEB9330068AE00 /* WhoswhoTableCell.m */; };
 		61E4077917CECE8B0068AE00 /* WhoswhoSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4077817CECE8A0068AE00 /* WhoswhoSearchBar.m */; };
 		61E4079917D2662D0068AE00 /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4079817D266270068AE00 /* HomeView.m */; };
@@ -134,8 +137,8 @@
 		2D66563113EB3F7900645BC3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		2D66563313EB3F8B00645BC3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		2DCEB34413E2010A00787E39 /* LinksList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LinksList.plist; path = "Wheaton App.xcodeproj/LinksList.plist"; sourceTree = SOURCE_ROOT; };
-		61032B0B17F112B900CC95FA /* ChapelSingleLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapelSingleLineView.xib; sourceTree = "<group>"; };
-		61032B0D17F1157B00CC95FA /* ChapelSubtitleLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapelSubtitleLineView.xib; sourceTree = "<group>"; };
+		61032B0B17F112B900CC95FA /* EventSingleLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventSingleLineView.xib; sourceTree = "<group>"; };
+		61032B0D17F1157B00CC95FA /* EventSubtitleLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventSubtitleLineView.xib; sourceTree = "<group>"; };
 		61032B1017F3321500CC95FA /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		61032B1117F3321500CC95FA /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		61032B1217F3321500CC95FA /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
@@ -206,6 +209,10 @@
 		61CA40CF17CB130200617623 /* CustomMenuNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMenuNavBar.h; sourceTree = "<group>"; };
 		61CA40D017CB137500617623 /* CustomMenuNav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CustomMenuNav.png; sourceTree = "<group>"; };
 		61CA40D117CB137600617623 /* CustomMenuNav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CustomMenuNav@2x.png"; sourceTree = "<group>"; };
+		61DDA6491835E37D00EBA92C /* TestScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestScrollViewController.h; sourceTree = "<group>"; };
+		61DDA64A1835E37D00EBA92C /* TestScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestScrollViewController.m; sourceTree = "<group>"; };
+		61DDA64C18368F8B00EBA92C /* AcademicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcademicTableViewController.h; sourceTree = "<group>"; };
+		61DDA64E18368F9D00EBA92C /* AcademicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcademicTableViewController.m; sourceTree = "<group>"; };
 		61DE4FF9183020AA004BBCA1 /* CustomSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegmentControl.h; sourceTree = "<group>"; };
 		61DE4FFA183020AA004BBCA1 /* CustomSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentControl.m; sourceTree = "<group>"; };
 		61E075C317E69E3E0029EFE9 /* CustomNaviOS7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CustomNaviOS7.png; sourceTree = "<group>"; };
@@ -216,8 +223,8 @@
 		61E075D317E6B8B90029EFE9 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "Wheaton App/Reachability.h"; sourceTree = SOURCE_ROOT; };
 		61E075D417E6B8B90029EFE9 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = "Wheaton App/Reachability.m"; sourceTree = SOURCE_ROOT; };
 		61E4076717CBC9080068AE00 /* menuButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuButton@2x.png"; sourceTree = "<group>"; };
-		61E4076E17CC5B7B0068AE00 /* ChapelTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChapelTableCell.h; sourceTree = "<group>"; };
-		61E4076F17CC5B7B0068AE00 /* ChapelTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChapelTableCell.m; sourceTree = "<group>"; };
+		61E4076E17CC5B7B0068AE00 /* EventTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableCell.h; sourceTree = "<group>"; };
+		61E4076F17CC5B7B0068AE00 /* EventTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableCell.m; sourceTree = "<group>"; };
 		61E4077417CEB9270068AE00 /* WhoswhoTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhoswhoTableCell.h; sourceTree = "<group>"; };
 		61E4077517CEB9330068AE00 /* WhoswhoTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhoswhoTableCell.m; sourceTree = "<group>"; };
 		61E4077717CECE8A0068AE00 /* WhoswhoSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhoswhoSearchBar.h; sourceTree = "<group>"; };
@@ -479,6 +486,8 @@
 				61851B3D18306762005EDE18 /* SportsTableViewController.m */,
 				613B9555183419C900DEAA0E /* EventsTableViewController.h */,
 				613B9556183419C900DEAA0E /* EventsTableViewController.m */,
+				61DDA64C18368F8B00EBA92C /* AcademicTableViewController.h */,
+				61DDA64E18368F9D00EBA92C /* AcademicTableViewController.m */,
 				61F70D8118311F7800345907 /* ChapelTableViewController.h */,
 				61F70D8218311F7800345907 /* ChapelTableViewController.m */,
 				61F70D841831924100345907 /* MoreTableViewController.h */,
@@ -491,6 +500,8 @@
 				61F70D8E1831E03700345907 /* HomeViewController.m */,
 				61F70D9B18330DF100345907 /* HomeSearchDisplayController.h */,
 				61F70D9C18330DF100345907 /* HomeSearchDisplayController.m */,
+				61DDA6491835E37D00EBA92C /* TestScrollViewController.h */,
+				61DDA64A1835E37D00EBA92C /* TestScrollViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -501,15 +512,15 @@
 				612BFEFA17DED11200EB2C8C /* SideBarTableCell.h */,
 				612BFEFB17DED11200EB2C8C /* SideBarTableCell.m */,
 				612BFEFC17DED11300EB2C8C /* SideBarTableCell.xib */,
-				61032B0B17F112B900CC95FA /* ChapelSingleLineView.xib */,
-				61032B0D17F1157B00CC95FA /* ChapelSubtitleLineView.xib */,
+				61032B0B17F112B900CC95FA /* EventSingleLineView.xib */,
+				61032B0D17F1157B00CC95FA /* EventSubtitleLineView.xib */,
 				61F70D7C18309AA000345907 /* SportTableCell.h */,
 				61F70D7F18309BD300345907 /* SportTableCell.xib */,
 				61F70D7D18309AA000345907 /* SportTableCell.m */,
 				61E407A717D3975E0068AE00 /* SportsCollectionCell.h */,
 				61E407A817D397620068AE00 /* SportsCollectionCell.m */,
-				61E4076E17CC5B7B0068AE00 /* ChapelTableCell.h */,
-				61E4076F17CC5B7B0068AE00 /* ChapelTableCell.m */,
+				61E4076E17CC5B7B0068AE00 /* EventTableCell.h */,
+				61E4076F17CC5B7B0068AE00 /* EventTableCell.m */,
 				6104311C17E7BCF400D3C72B /* EventCollectionCell.h */,
 				6104311D17E7BCFD00D3C72B /* EventCollectionCell.m */,
 				610D48D017DD591600DE574C /* EventsTableCell.h */,
@@ -636,6 +647,7 @@
 				61F05EEB17D3B7B60006CC1F /* Football.png in Resources */,
 				61F05EEC17D3B7B60006CC1F /* Football@2x.png in Resources */,
 				61E075C617E69E3E0029EFE9 /* CustomNaviOS7@2x.png in Resources */,
+				61DDA64D18368F8B00EBA92C /* AcademicTableViewController.h in Resources */,
 				61F05EED17D3B7B60006CC1F /* Golf.png in Resources */,
 				61F05EEE17D3B7B60006CC1F /* Golf@2x.png in Resources */,
 				610B1D5D1829B4D900E45D22 /* Notification@2x.png in Resources */,
@@ -647,7 +659,7 @@
 				61F05EF217D3B7B60006CC1F /* Tennis@2x.png in Resources */,
 				613890BA17E3619F0049FF72 /* 120x120.png in Resources */,
 				61F05EF517D41D420006CC1F /* House.png in Resources */,
-				61032B0E17F1157B00CC95FA /* ChapelSubtitleLineView.xib in Resources */,
+				61032B0E17F1157B00CC95FA /* EventSubtitleLineView.xib in Resources */,
 				61F05EF617D41D420006CC1F /* House@2x.png in Resources */,
 				613890C017E3A9C40049FF72 /* Sports.png in Resources */,
 				615097F117D5221900456A9D /* back.png in Resources */,
@@ -667,7 +679,7 @@
 				610E2B6B17DA8FA5003D5405 /* searchBar.png in Resources */,
 				610E2B6C17DA8FA5003D5405 /* searchBar@2x.png in Resources */,
 				610D48D517DD620400DE574C /* Calendar.png in Resources */,
-				61032B0C17F112B900CC95FA /* ChapelSingleLineView.xib in Resources */,
+				61032B0C17F112B900CC95FA /* EventSingleLineView.xib in Resources */,
 				61F70D951832D10000345907 /* Swimming.png in Resources */,
 				610D48D617DD620400DE574C /* Calendar@2x.png in Resources */,
 				612BFF0117DED11300EB2C8C /* SideBarTableCell.xib in Resources */,
@@ -688,17 +700,19 @@
 				2D2653EA13E069CF00DE089C /* main.m in Sources */,
 				61CA409917CA6C2A00617623 /* ECSlidingViewController.m in Sources */,
 				61E075CF17E6A9850029EFE9 /* MTReachabilityManager.m in Sources */,
+				61DDA64F18368F9D00EBA92C /* AcademicTableViewController.m in Sources */,
 				61CA40C117CA79E000617623 /* CustomNavBar.m in Sources */,
 				61F70D9D18330DF100345907 /* HomeSearchDisplayController.m in Sources */,
 				61CA40CA17CA94FB00617623 /* Location.m in Sources */,
 				61F70D8C183196B200345907 /* MapViewController.m in Sources */,
-				61E4077017CC5B7B0068AE00 /* ChapelTableCell.m in Sources */,
+				61E4077017CC5B7B0068AE00 /* EventTableCell.m in Sources */,
 				61F70D8318311F7800345907 /* ChapelTableViewController.m in Sources */,
 				61E4077617CEB9340068AE00 /* WhoswhoTableCell.m in Sources */,
 				61E4077917CECE8B0068AE00 /* WhoswhoSearchBar.m in Sources */,
 				61F70D861831924100345907 /* MoreTableViewController.m in Sources */,
 				61E4079917D2662D0068AE00 /* HomeView.m in Sources */,
 				61E407A917D3976C0068AE00 /* SportsCollectionCell.m in Sources */,
+				61DDA64B1835E37D00EBA92C /* TestScrollViewController.m in Sources */,
 				61F70D891831932E00345907 /* MenuViewController.m in Sources */,
 				61851B3B18306529005EDE18 /* EventViewController.m in Sources */,
 				61891CD2182C09EE003F1B43 /* MasterTabViewController.m in Sources */,

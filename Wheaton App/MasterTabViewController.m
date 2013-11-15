@@ -15,7 +15,7 @@ NSString * const c_Chapel = @"https://s3.amazonaws.com/wcstatic/chapel.json";
 NSString * const c_Menu = @"http://wheatonorientation.herokuapp.com/menu";
 NSString * const c_Whoswho = @"http://23.21.107.65/people?contentType=json&limit=20&name=";
 NSString * const c_Sports = @"http://23.21.107.65/events/type/sport?contentType=json";
-NSString * const c_Academic = @"http://25livepub.collegenet.com/calendars/event-collections-general_calendar_wp.rss";
+NSString * const c_Academic = @"http://23.21.107.65/events/type/academic?contentType=json";
 NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
 NSString * const c_Events = @"http://23.21.107.65/events/type/event?contentType=json";
 //NSString * const c_Events = @"http://25livepub.collegenet.com/calendars/intra-campus-calendar.rss";

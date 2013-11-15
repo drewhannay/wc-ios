@@ -12,11 +12,11 @@
 
 @implementation HomeSearchDisplayController
 
-@synthesize people;
+@synthesize people, searchController;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [people count];
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,7 +78,7 @@
         [people addObject:person];
     }
     
-    [self.searchResultsTableView reloadData];
+    [searchController.searchResultsTableView reloadData];
 }
 
 #pragma mark - UISearchDisplayController delegate methods

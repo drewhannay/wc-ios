@@ -10,6 +10,7 @@
 #import "SportsTableViewController.h"
 #import "ChapelTableViewController.h"
 #import "EventsTableViewController.h"
+#import "AcademicTableViewController.h"
 
 @interface EventViewController ()
 
@@ -23,16 +24,13 @@
 {
     [super viewDidLoad];
     
-//    // Create the score view controller
-//    AcademicCalendarViewController *acVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AcademicCalendar"];
-    
-    // Create the penalty view controller
     SportsTableViewController *sVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SportsCalendar"];
     ChapelTableViewController *cVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ChapelCalendar"];
     EventsTableViewController *eVC = [self.storyboard instantiateViewControllerWithIdentifier:@"EventsCalendar"];
+    AcademicTableViewController *aVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AcademicCalendar"];
     
     // Add A and B view controllers to the array
-    self.allViewControllers = [[NSArray alloc] initWithObjects:sVC, sVC, cVC, eVC, nil];
+    self.allViewControllers = [[NSArray alloc] initWithObjects:cVC, sVC, aVC, eVC, nil];
     
     // Ensure a view controller is loaded
     self.switchViewControllers.selectedSegmentIndex = priorSegmentIndex = 0;
