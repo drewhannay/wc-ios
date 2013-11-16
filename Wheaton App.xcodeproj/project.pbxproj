@@ -42,6 +42,8 @@
 		613890C117E3A9C40049FF72 /* Sports@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 613890BF17E3A9C40049FF72 /* Sports@2x.png */; };
 		613B955118333F9F00DEAA0E /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61032B1C17F333EF00CC95FA /* libGoogleAnalyticsServices.a */; };
 		613B9557183419C900DEAA0E /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613B9556183419C900DEAA0E /* EventsTableViewController.m */; };
+		6141152B18374EDB00B71051 /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6141152A18374EDB00B71051 /* NotificationsViewController.m */; };
+		6141152E18374F7E00B71051 /* PushNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 6141152D18374F7E00B71051 /* PushNotification.m */; };
 		614241BC17F886D0005A9742 /* Volleyball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 614241BB17F886D0005A9742 /* Volleyball@2x.png */; };
 		615097F117D5221900456A9D /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 615097EF17D5221900456A9D /* back.png */; };
 		615097F217D5221900456A9D /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 615097F017D5221900456A9D /* back@2x.png */; };
@@ -174,6 +176,10 @@
 		613890BF17E3A9C40049FF72 /* Sports@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sports@2x.png"; sourceTree = "<group>"; };
 		613B9555183419C900DEAA0E /* EventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewController.h; sourceTree = "<group>"; };
 		613B9556183419C900DEAA0E /* EventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewController.m; sourceTree = "<group>"; };
+		6141152918374EDB00B71051 /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
+		6141152A18374EDB00B71051 /* NotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
+		6141152C18374F7E00B71051 /* PushNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotification.h; sourceTree = "<group>"; };
+		6141152D18374F7E00B71051 /* PushNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotification.m; sourceTree = "<group>"; };
 		614241BB17F886D0005A9742 /* Volleyball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Volleyball@2x.png"; sourceTree = "<group>"; };
 		615097EF17D5221900456A9D /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		615097F017D5221900456A9D /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
@@ -502,6 +508,8 @@
 				61F70D9C18330DF100345907 /* HomeSearchDisplayController.m */,
 				61DDA6491835E37D00EBA92C /* TestScrollViewController.h */,
 				61DDA64A1835E37D00EBA92C /* TestScrollViewController.m */,
+				6141152918374EDB00B71051 /* NotificationsViewController.h */,
+				6141152A18374EDB00B71051 /* NotificationsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -551,6 +559,8 @@
 				61CA40C917CA94FA00617623 /* Location.m */,
 				61F70D901831F12700345907 /* Person.h */,
 				61F70D911831F12700345907 /* Person.m */,
+				6141152C18374F7E00B71051 /* PushNotification.h */,
+				6141152D18374F7E00B71051 /* PushNotification.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -696,11 +706,13 @@
 			files = (
 				61DE4FFB183020AA004BBCA1 /* CustomSegmentControl.m in Sources */,
 				61E4076617CB15850068AE00 /* CustomMenuNavBar.m in Sources */,
+				6141152B18374EDB00B71051 /* NotificationsViewController.m in Sources */,
 				61F70D921831F12700345907 /* Person.m in Sources */,
 				2D2653EA13E069CF00DE089C /* main.m in Sources */,
 				61CA409917CA6C2A00617623 /* ECSlidingViewController.m in Sources */,
 				61E075CF17E6A9850029EFE9 /* MTReachabilityManager.m in Sources */,
 				61DDA64F18368F9D00EBA92C /* AcademicTableViewController.m in Sources */,
+				6141152E18374F7E00B71051 /* PushNotification.m in Sources */,
 				61CA40C117CA79E000617623 /* CustomNavBar.m in Sources */,
 				61F70D9D18330DF100345907 /* HomeSearchDisplayController.m in Sources */,
 				61CA40CA17CA94FB00617623 /* Location.m in Sources */,
@@ -809,7 +821,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "127D9B80-85A8-4E64-8F2A-91FCEB0C70DA";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -832,7 +844,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "127D9B80-85A8-4E64-8F2A-91FCEB0C70DA";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
@@ -875,7 +887,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "127D9B80-85A8-4E64-8F2A-91FCEB0C70DA";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
