@@ -16,7 +16,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (nonatomic, retain) NSMutableArray *location;
+@property (nonatomic, retain) NSMutableArray *locations;
 @property (strong, nonatomic) UISearchDisplayController *searchController;
 
 - (IBAction)resetMap:(id)sender;

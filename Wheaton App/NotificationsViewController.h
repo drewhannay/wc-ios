@@ -12,4 +12,6 @@
 
 @property (nonatomic, retain) NSMutableArray *pushNotifications;
 
+- (void)addPushNotification:(NSDictionary *)notification;
+
 @end

@@ -14,7 +14,7 @@
 
 @implementation MapViewController
 
-@synthesize location, searchController;
+@synthesize locations, searchController;
 
 
 - (void)viewDidAppear:(BOOL)animated
@@ -45,7 +45,7 @@
 
 - (IBAction)resetMap:(id)sender {
     [self.mapView removeAnnotations:self.mapView.annotations];
-    for (Location *annotation in location) {
+    for (Location *annotation in locations) {
         [self.mapView addAnnotation:annotation];
     }
     CLLocationCoordinate2D zoomLocation;
@@ -165,16 +165,16 @@
         return;
     }
     NSError* error;
-    NSDictionary *locationDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
-    location = [[NSMutableArray alloc] init];
-    NSArray *locationArray = (NSArray*)[locationDictionary objectForKey:@"locations"];
+    NSArray *locationArray = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+    locations = [[NSMutableArray alloc] init];
     
     for (NSDictionary* dic in locationArray) {
         
-        NSNumber * latitude = [dic objectForKey:@"latitude"];
-        NSNumber * longitude = [dic objectForKey:@"longitude"];
+        NSDictionary *location = [dic objectForKey:@"location"];
+        NSNumber * latitude = [location objectForKey:@"latitude"];
+        NSNumber * longitude = [location objectForKey:@"longitude"];
         NSString * name = [dic objectForKey:@"name"];
-        NSString * address = [dic objectForKey:@"address"];
+        NSString * address = @"";
         
         CLLocationCoordinate2D coordinate;
         coordinate.latitude = latitude.doubleValue;
@@ -182,7 +182,7 @@
         Location *annotation = [[Location alloc] initWithName:name address:address coordinate:coordinate];
         if([[dic objectForKey:@"type"] isEqualToString:@"building"])
             [self.mapView addAnnotation:annotation];
-        [location addObject:annotation];
+        [locations addObject:annotation];
     }
 }
 
@@ -192,7 +192,7 @@
                                     predicateWithFormat:@"title contains[cd] %@",
                                     searchText];
     
-    searchResults = [location filteredArrayUsingPredicate:resultPredicate];
+    searchResults = [locations filteredArrayUsingPredicate:resultPredicate];
 }
 
 #pragma mark - UISearchDisplayController delegate methods

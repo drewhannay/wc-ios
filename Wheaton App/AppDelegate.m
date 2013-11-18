@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "GAI.h"
 #import "MTReachabilityManager.h"
+#import "NotificationsViewController.h"
+
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @implementation AppDelegate
@@ -30,8 +32,19 @@
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     
     NSDictionary *payload = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-    
+    if(payload) {
+       [self addNotification:payload];
+    }
     return YES;
+}
+
+- (void)addNotification:(NSDictionary *)notification
+{
+    UITabBarController *rootViewController = (UITabBarController *)self.window.rootViewController;
+    NSLog(@"%@", notification);
+    UINavigationController *nnc = (UINavigationController *)rootViewController.childViewControllers[3];
+    NotificationsViewController *nvc = (NotificationsViewController *)[[nnc viewControllers] lastObject];
+    [nvc addPushNotification:notification];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -81,6 +94,13 @@
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
 {
 	NSLog(@"Failed to get token, error: %@", error);
+}
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)payment {
+    // Detect if APN is received on Background or Foreground state
+    if (application.applicationState == UIApplicationStateInactive)
+        [self addNotification:payment];
+    else if (application.applicationState == UIApplicationStateActive)
+        [self addNotification:payment];
 }
 
 

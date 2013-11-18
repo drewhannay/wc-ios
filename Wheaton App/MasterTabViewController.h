@@ -16,6 +16,7 @@ extern NSString * const c_Sports;
 extern NSString * const c_Events;
 extern NSString * const c_Academic;
 extern NSString * const c_Banners;
+extern NSString * const c_PushOptions;
 
 @interface MasterTabViewController : UITabBarController <UITabBarControllerDelegate>
 

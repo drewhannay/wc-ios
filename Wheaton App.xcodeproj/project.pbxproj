@@ -59,6 +59,7 @@
 		61851B3B18306529005EDE18 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61851B3A18306529005EDE18 /* EventViewController.m */; };
 		61851B3E18306762005EDE18 /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61851B3D18306762005EDE18 /* SportsTableViewController.m */; };
 		61891CD2182C09EE003F1B43 /* MasterTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61891CD0182C09EE003F1B43 /* MasterTabViewController.m */; };
+		61C25FD518397C7D005E6A89 /* NotificationOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C25FD418397C7D005E6A89 /* NotificationOptionsTableViewController.m */; };
 		61CA409917CA6C2A00617623 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA409617CA6C2A00617623 /* ECSlidingViewController.m */; };
 		61CA40A817CA6F4F00617623 /* CustomNav.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40A617CA6F4F00617623 /* CustomNav.png */; };
 		61CA40A917CA6F4F00617623 /* CustomNav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40A717CA6F4F00617623 /* CustomNav@2x.png */; };
@@ -72,7 +73,7 @@
 		61CA40CE17CB12E500617623 /* CustomMenuNavBar.m in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40CD17CB12E400617623 /* CustomMenuNavBar.m */; };
 		61CA40D217CB137600617623 /* CustomMenuNav.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40D017CB137500617623 /* CustomMenuNav.png */; };
 		61CA40D317CB137600617623 /* CustomMenuNav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40D117CB137600617623 /* CustomMenuNav@2x.png */; };
-		61DDA64B1835E37D00EBA92C /* TestScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DDA64A1835E37D00EBA92C /* TestScrollViewController.m */; };
+		61DDA64B1835E37D00EBA92C /* HomeScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DDA64A1835E37D00EBA92C /* HomeScrollViewController.m */; };
 		61DDA64D18368F8B00EBA92C /* AcademicTableViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 61DDA64C18368F8B00EBA92C /* AcademicTableViewController.h */; };
 		61DDA64F18368F9D00EBA92C /* AcademicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DDA64E18368F9D00EBA92C /* AcademicTableViewController.m */; };
 		61DE4FFB183020AA004BBCA1 /* CustomSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DE4FFA183020AA004BBCA1 /* CustomSegmentControl.m */; };
@@ -198,6 +199,8 @@
 		61851B3D18306762005EDE18 /* SportsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsTableViewController.m; sourceTree = "<group>"; };
 		61891CCF182C09EE003F1B43 /* MasterTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterTabViewController.h; sourceTree = "<group>"; };
 		61891CD0182C09EE003F1B43 /* MasterTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterTabViewController.m; sourceTree = "<group>"; };
+		61C25FD318397C7D005E6A89 /* NotificationOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationOptionsTableViewController.h; sourceTree = "<group>"; };
+		61C25FD418397C7D005E6A89 /* NotificationOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationOptionsTableViewController.m; sourceTree = "<group>"; };
 		61CA409517CA6C2A00617623 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
 		61CA409617CA6C2A00617623 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
 		61CA40A617CA6F4F00617623 /* CustomNav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CustomNav.png; sourceTree = "<group>"; };
@@ -215,8 +218,8 @@
 		61CA40CF17CB130200617623 /* CustomMenuNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMenuNavBar.h; sourceTree = "<group>"; };
 		61CA40D017CB137500617623 /* CustomMenuNav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CustomMenuNav.png; sourceTree = "<group>"; };
 		61CA40D117CB137600617623 /* CustomMenuNav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CustomMenuNav@2x.png"; sourceTree = "<group>"; };
-		61DDA6491835E37D00EBA92C /* TestScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestScrollViewController.h; sourceTree = "<group>"; };
-		61DDA64A1835E37D00EBA92C /* TestScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestScrollViewController.m; sourceTree = "<group>"; };
+		61DDA6491835E37D00EBA92C /* HomeScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScrollViewController.h; sourceTree = "<group>"; };
+		61DDA64A1835E37D00EBA92C /* HomeScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScrollViewController.m; sourceTree = "<group>"; };
 		61DDA64C18368F8B00EBA92C /* AcademicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcademicTableViewController.h; sourceTree = "<group>"; };
 		61DDA64E18368F9D00EBA92C /* AcademicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcademicTableViewController.m; sourceTree = "<group>"; };
 		61DE4FF9183020AA004BBCA1 /* CustomSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegmentControl.h; sourceTree = "<group>"; };
@@ -506,10 +509,12 @@
 				61F70D8E1831E03700345907 /* HomeViewController.m */,
 				61F70D9B18330DF100345907 /* HomeSearchDisplayController.h */,
 				61F70D9C18330DF100345907 /* HomeSearchDisplayController.m */,
-				61DDA6491835E37D00EBA92C /* TestScrollViewController.h */,
-				61DDA64A1835E37D00EBA92C /* TestScrollViewController.m */,
+				61DDA6491835E37D00EBA92C /* HomeScrollViewController.h */,
+				61DDA64A1835E37D00EBA92C /* HomeScrollViewController.m */,
 				6141152918374EDB00B71051 /* NotificationsViewController.h */,
 				6141152A18374EDB00B71051 /* NotificationsViewController.m */,
+				61C25FD318397C7D005E6A89 /* NotificationOptionsTableViewController.h */,
+				61C25FD418397C7D005E6A89 /* NotificationOptionsTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -715,6 +720,7 @@
 				6141152E18374F7E00B71051 /* PushNotification.m in Sources */,
 				61CA40C117CA79E000617623 /* CustomNavBar.m in Sources */,
 				61F70D9D18330DF100345907 /* HomeSearchDisplayController.m in Sources */,
+				61C25FD518397C7D005E6A89 /* NotificationOptionsTableViewController.m in Sources */,
 				61CA40CA17CA94FB00617623 /* Location.m in Sources */,
 				61F70D8C183196B200345907 /* MapViewController.m in Sources */,
 				61E4077017CC5B7B0068AE00 /* EventTableCell.m in Sources */,
@@ -724,7 +730,7 @@
 				61F70D861831924100345907 /* MoreTableViewController.m in Sources */,
 				61E4079917D2662D0068AE00 /* HomeView.m in Sources */,
 				61E407A917D3976C0068AE00 /* SportsCollectionCell.m in Sources */,
-				61DDA64B1835E37D00EBA92C /* TestScrollViewController.m in Sources */,
+				61DDA64B1835E37D00EBA92C /* HomeScrollViewController.m in Sources */,
 				61F70D891831932E00345907 /* MenuViewController.m in Sources */,
 				61851B3B18306529005EDE18 /* EventViewController.m in Sources */,
 				61891CD2182C09EE003F1B43 /* MasterTabViewController.m in Sources */,

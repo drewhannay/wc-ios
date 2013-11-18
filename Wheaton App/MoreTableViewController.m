@@ -7,7 +7,6 @@
 //
 
 #import "MoreTableViewController.h"
-#import "MenuViewController.h"
 
 @interface MoreTableViewController ()
 
@@ -15,7 +14,7 @@
 
 @implementation MoreTableViewController
 
-@synthesize moreTable;
+@synthesize moreTable, moreHeaders;
 
 - (void)viewDidLoad
 {
@@ -28,12 +27,22 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     NSMutableDictionary *menuOption = [[NSMutableDictionary alloc] init];
-    MenuViewController *mVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
+    UIViewController *mVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     [menuOption setValue:mVC forKey:@"controller"];
     [menuOption setValue:@"Meal Menu" forKey:@"name"];
     
+    NSMutableDictionary *notificationOption = [[NSMutableDictionary alloc] init];
+    UIViewController *nVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NotificationOptions"];
+    [notificationOption setValue:nVC forKey:@"controller"];
+    [notificationOption setValue:@"Notification Toggles" forKey:@"name"];
+    
+    
     moreTable = [[NSMutableArray alloc] init];
+    moreHeaders = [[NSMutableArray alloc] init];
+    
     [moreTable addObject:menuOption];
+    [moreTable addObject:notificationOption];
+    [moreHeaders addObject:@"Options"];
     
     [self.tableView reloadData];
     
