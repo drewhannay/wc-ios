@@ -89,6 +89,10 @@
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
 	NSLog(@"My token is: %@", deviceToken);
+    if(deviceToken){
+        [[NSUserDefaults standardUserDefaults] setObject:deviceToken forKey:@"token"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error

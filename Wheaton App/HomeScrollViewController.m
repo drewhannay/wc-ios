@@ -27,8 +27,8 @@
 
     scrollView.contentSize = CGSizeMake(320, 800);
 
-    NSLog(@"TEST SCROLLL");
-    NSLog(@"%@", scrollView);
+   // NSLog(@"TEST SCROLLL");
+    //NSLog(@"%@", scrollView);
     
     //            float sizeOfContent = 0;
     //            UIView *lLast = [scrollView.subviews lastObject];
@@ -42,7 +42,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender
 {
-    NSLog(@"DID SCROLL");
+    //NSLog(@"DID SCROLL");
     
     // do whatever you need to with scrollDirection here.
 }

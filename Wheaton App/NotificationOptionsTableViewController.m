@@ -22,15 +22,21 @@
     [super viewDidLoad];
     
     notificationOptions = [[NSMutableArray alloc] init];
+    id token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    
+    NSString *url = [NSString stringWithFormat:@"%@?device=%@",c_PushOptions, token];
+    url = [url stringByAddingPercentEscapesUsingEncoding: NSASCIIStringEncoding];
+    
+    NSLog(@"%@", url);
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString: c_PushOptions]];
+        NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString: url]];
         [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
     });
 }
 
 - (void)fetchedData:(NSData *)responseData
-{
+{  
     if (responseData == nil) {
         return;
     }

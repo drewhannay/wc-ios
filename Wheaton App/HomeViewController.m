@@ -101,15 +101,15 @@
             newVC.view.frame = CGRectMake(CGRectGetMinX(self.viewContainer.bounds), CGRectGetMinY(self.viewContainer.bounds), CGRectGetWidth(self.viewContainer.bounds), CGRectGetHeight(self.viewContainer.bounds)-10);
             
             
-            NSLog(@"%@", newVC.view);
-            NSLog(@"%f", ((UIScrollView *)newVC.view).contentSize.height);
-
-            
-            NSLog(@"%@", [((UIScrollView *)newVC.view).subviews objectAtIndex:0]);
-            NSLog(@"%f", ((UIScrollView *)newVC.view).contentSize.height);
-            
-            
-            NSLog(@"%@", newVC.view);
+//            NSLog(@"%@", newVC.view);
+//            NSLog(@"%f", ((UIScrollView *)newVC.view).contentSize.height);
+//
+//            
+//            NSLog(@"%@", [((UIScrollView *)newVC.view).subviews objectAtIndex:0]);
+//            NSLog(@"%f", ((UIScrollView *)newVC.view).contentSize.height);
+//            
+//            
+//            NSLog(@"%@", newVC.view);
             
             // Otherwise we are adding a view controller for the first time
             // Start the view controller transition
