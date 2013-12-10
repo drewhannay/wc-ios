@@ -56,6 +56,9 @@
 		6150980017D5477800456A9D /* Whoswho@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 615097FA17D5477800456A9D /* Whoswho@2x.png */; };
 		6150980217D5497200456A9D /* Meal.png in Resources */ = {isa = PBXBuildFile; fileRef = 6150980117D5497200456A9D /* Meal.png */; };
 		6150980417D5497800456A9D /* Meal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6150980317D5497800456A9D /* Meal@2x.png */; };
+		616DD25718525DD700AC53C3 /* WhosWhoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 616DD25618525DD700AC53C3 /* WhosWhoTableViewController.m */; };
+		616DD2591852AB7E00AC53C3 /* WhoswhoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 616DD2581852AB7E00AC53C3 /* WhoswhoTableCell.xib */; };
+		616DD25C1852B4D300AC53C3 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 616DD25B1852B4D300AC53C3 /* EventDetailViewController.m */; };
 		61851B3B18306529005EDE18 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61851B3A18306529005EDE18 /* EventViewController.m */; };
 		61851B3E18306762005EDE18 /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61851B3D18306762005EDE18 /* SportsTableViewController.m */; };
 		61891CD2182C09EE003F1B43 /* MasterTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61891CD0182C09EE003F1B43 /* MasterTabViewController.m */; };
@@ -193,6 +196,11 @@
 		615097FA17D5477800456A9D /* Whoswho@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Whoswho@2x.png"; sourceTree = "<group>"; };
 		6150980117D5497200456A9D /* Meal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Meal.png; sourceTree = "<group>"; };
 		6150980317D5497800456A9D /* Meal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Meal@2x.png"; sourceTree = "<group>"; };
+		616DD25518525DD700AC53C3 /* WhosWhoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhosWhoTableViewController.h; sourceTree = "<group>"; };
+		616DD25618525DD700AC53C3 /* WhosWhoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhosWhoTableViewController.m; sourceTree = "<group>"; };
+		616DD2581852AB7E00AC53C3 /* WhoswhoTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhoswhoTableCell.xib; sourceTree = "<group>"; };
+		616DD25A1852B4D300AC53C3 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
+		616DD25B1852B4D300AC53C3 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
 		61851B3918306529005EDE18 /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
 		61851B3A18306529005EDE18 /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 		61851B3C18306762005EDE18 /* SportsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsTableViewController.h; sourceTree = "<group>"; };
@@ -349,6 +357,7 @@
 				61CA40AB17CA6FE900617623 /* GUI */,
 				612BFEF417DED11200EB2C8C /* AppDelegate.h */,
 				612BFEF517DED11200EB2C8C /* AppDelegate.m */,
+				61CA40AC17CA702200617623 /* iPhone.storyboard */,
 				61CA409C17CA6C6300617623 /* Controllers */,
 				2D2653E313E069CF00DE089C /* Supporting Files */,
 				61CA409317CA6C2A00617623 /* Vendor */,
@@ -495,6 +504,8 @@
 				61851B3D18306762005EDE18 /* SportsTableViewController.m */,
 				613B9555183419C900DEAA0E /* EventsTableViewController.h */,
 				613B9556183419C900DEAA0E /* EventsTableViewController.m */,
+				616DD25A1852B4D300AC53C3 /* EventDetailViewController.h */,
+				616DD25B1852B4D300AC53C3 /* EventDetailViewController.m */,
 				61DDA64C18368F8B00EBA92C /* AcademicTableViewController.h */,
 				61DDA64E18368F9D00EBA92C /* AcademicTableViewController.m */,
 				61F70D8118311F7800345907 /* ChapelTableViewController.h */,
@@ -505,6 +516,8 @@
 				61F70D881831932E00345907 /* MenuViewController.m */,
 				61F70D8A183196B200345907 /* MapViewController.h */,
 				61F70D8B183196B200345907 /* MapViewController.m */,
+				616DD25518525DD700AC53C3 /* WhosWhoTableViewController.h */,
+				616DD25618525DD700AC53C3 /* WhosWhoTableViewController.m */,
 				61F70D8D1831E03700345907 /* HomeViewController.h */,
 				61F70D8E1831E03700345907 /* HomeViewController.m */,
 				61F70D9B18330DF100345907 /* HomeSearchDisplayController.h */,
@@ -538,12 +551,12 @@
 				6104311D17E7BCFD00D3C72B /* EventCollectionCell.m */,
 				610D48D017DD591600DE574C /* EventsTableCell.h */,
 				610D48D117DD591F00DE574C /* EventsTableCell.m */,
-				61CA40AC17CA702200617623 /* iPhone.storyboard */,
 				61CA40BF17CA79E000617623 /* CustomNavBar.h */,
 				61CA40C017CA79E000617623 /* CustomNavBar.m */,
 				61CA40CF17CB130200617623 /* CustomMenuNavBar.h */,
 				61CA40CD17CB12E400617623 /* CustomMenuNavBar.m */,
 				61E4077417CEB9270068AE00 /* WhoswhoTableCell.h */,
+				616DD2581852AB7E00AC53C3 /* WhoswhoTableCell.xib */,
 				61E4077517CEB9330068AE00 /* WhoswhoTableCell.m */,
 				61E4077717CECE8A0068AE00 /* WhoswhoSearchBar.h */,
 				61E4077817CECE8A0068AE00 /* WhoswhoSearchBar.m */,
@@ -664,6 +677,7 @@
 				61E075C617E69E3E0029EFE9 /* CustomNaviOS7@2x.png in Resources */,
 				61DDA64D18368F8B00EBA92C /* AcademicTableViewController.h in Resources */,
 				61F05EED17D3B7B60006CC1F /* Golf.png in Resources */,
+				616DD2591852AB7E00AC53C3 /* WhoswhoTableCell.xib in Resources */,
 				61F05EEE17D3B7B60006CC1F /* Golf@2x.png in Resources */,
 				610B1D5D1829B4D900E45D22 /* Notification@2x.png in Resources */,
 				61F05EEF17D3B7B60006CC1F /* Soccer.png in Resources */,
@@ -719,9 +733,11 @@
 				61DDA64F18368F9D00EBA92C /* AcademicTableViewController.m in Sources */,
 				6141152E18374F7E00B71051 /* PushNotification.m in Sources */,
 				61CA40C117CA79E000617623 /* CustomNavBar.m in Sources */,
+				616DD25C1852B4D300AC53C3 /* EventDetailViewController.m in Sources */,
 				61F70D9D18330DF100345907 /* HomeSearchDisplayController.m in Sources */,
 				61C25FD518397C7D005E6A89 /* NotificationOptionsTableViewController.m in Sources */,
 				61CA40CA17CA94FB00617623 /* Location.m in Sources */,
+				616DD25718525DD700AC53C3 /* WhosWhoTableViewController.m in Sources */,
 				61F70D8C183196B200345907 /* MapViewController.m in Sources */,
 				61E4077017CC5B7B0068AE00 /* EventTableCell.m in Sources */,
 				61F70D8318311F7800345907 /* ChapelTableViewController.m in Sources */,

@@ -67,7 +67,7 @@
         newVC.view.frame = CGRectMake(newStartX,
                                       CGRectGetMinY(self.viewContainer.bounds),
                                       CGRectGetWidth(self.viewContainer.bounds),
-                                      CGRectGetHeight(self.viewContainer.bounds)-self.tabBarController.tabBar.frame.size.height);
+                                      CGRectGetHeight(self.viewContainer.bounds));
         
         // Check the oldVC is non-nil otherwise expect a crash: NSInvalidArgumentException
         if (oldVC) {
@@ -87,7 +87,7 @@
                                         oldVC.view.frame = CGRectMake(oldEndX,
                                                                       CGRectGetMinY(self.viewContainer.bounds),
                                                                       CGRectGetWidth(self.viewContainer.bounds),
-                                                                      CGRectGetHeight(self.viewContainer.bounds)-self.tabBarController.tabBar.frame.size.height);
+                                                                      CGRectGetHeight(self.viewContainer.bounds));
                                     }
                                     completion:^(BOOL finished) {
                                         // Finish both the view controller transitions
@@ -99,7 +99,7 @@
             
         } else {
             
-            newVC.view.frame = CGRectMake(CGRectGetMinX(self.viewContainer.bounds), CGRectGetMinY(self.viewContainer.bounds), CGRectGetWidth(self.viewContainer.bounds), CGRectGetHeight(self.viewContainer.bounds)-self.tabBarController.tabBar.frame.size.height);
+            newVC.view.frame = CGRectMake(CGRectGetMinX(self.viewContainer.bounds), CGRectGetMinY(self.viewContainer.bounds), CGRectGetWidth(self.viewContainer.bounds), CGRectGetHeight(self.viewContainer.bounds));
             
             // Otherwise we are adding a view controller for the first time
             // Start the view controller transition

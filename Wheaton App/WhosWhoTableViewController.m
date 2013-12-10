@@ -1,34 +1,80 @@
 //
-//  HomeSearchDisplayController.m
+//  WhosWhoTableViewController.m
 //  Wheaton App
 //
-//  Created by Chris Anderson on 11/12/13.
+//  Created by Chris Anderson on 12/6/13.
 //
 //
 
-#import "HomeSearchDisplayController.h"
+#import "WhosWhoTableViewController.h"
 #import "MasterTabViewController.h"
+#import "WhoswhoTableCell.h"
 #import "Person.h"
 
-@implementation HomeSearchDisplayController
+@interface WhosWhoTableViewController ()
 
-@synthesize people, searchController;
+@end
+
+@implementation WhosWhoTableViewController
+
+@synthesize people, searchController, searchBar;
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    
+    [super viewDidLoad];
+
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return [people count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    static NSString *cellIdentifier = @"WhoswhoTableCell";
+    WhoswhoTableCell *cell = (WhoswhoTableCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil];
+        cell = [nib objectAtIndex:0];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [(Person *)[people objectAtIndex:indexPath.row] fullName]];
+    Person *person = (Person *)[people objectAtIndex:indexPath.row];
+    
+    cell.firstName.text = [NSString stringWithFormat:@"%@", [person fullName]];
+    
+    NSString *imagename = person.photo;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: imagename]]];
+        if (image) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.profileImage.image = image;
+            });
+        }
+    });
     
     return cell;
 }
@@ -36,9 +82,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    [self.navigationController setNavigationBarHidden:NO];
     // presentViewController::animated:completion is always full screen (see problem below)
 }
+
 
 - (void)makeSearch:(NSString *)filter
 {
@@ -71,22 +117,26 @@
         
         NSDictionary *name = [dic objectForKey:@"name"];
         
+        NSLog(@"%@", dic);
+        
         person.firstName = [name objectForKey:@"first"];
         person.lastName = [name objectForKey:@"last"];
         person.email = [dic objectForKey:@"email"];
+        person.photo = [[[dic objectForKey:@"image"] objectForKey:@"url"] objectForKey:@"medium"];
         
-        NSLog(@"%@", [name objectForKey:@"last"]);
+        NSLog(@"%@", [[[dic objectForKey:@"image"] objectForKey:@"url"] objectForKey:@"medium"]);
         
         [people addObject:person];
     }
-    
-    [searchController.searchResultsTableView reloadData];
+    [self.tableView reloadData];
 }
 
 #pragma mark - UISearchDisplayController delegate methods
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
+    NSLog(@"THIS");
     [self makeSearch:searchString];
+    NSLog(@"THIS");
     
     return YES;
 }

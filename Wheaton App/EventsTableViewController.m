@@ -8,6 +8,7 @@
 
 #import "EventsTableViewController.h"
 #import "MasterTabViewController.h"
+#import "EventDetailViewController.h"
 
 @interface EventsTableViewController ()
 
@@ -84,11 +85,27 @@
     
     NSDictionary *result = [eventResults objectAtIndex:indexPath.row];
     
+    NSLog(@"%@", result);
+    
     // Configure the cell...
     
     cell.textLabel.text = [result objectForKey:@"title"];
     
     return cell;
 }
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"EventDetailView" sender:indexPath];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    EventDetailViewController *detailViewController = [segue destinationViewController];
+    NSIndexPath *indexPath = sender;
+    detailViewController.urlString = [[[eventResults objectAtIndex:indexPath.row] objectForKey:@"custom"] objectForKey:@"link"];
+
+}
+
+
 
 @end

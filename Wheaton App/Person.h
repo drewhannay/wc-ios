@@ -13,6 +13,7 @@
 @property NSString *firstName;
 @property NSString *lastName;
 @property NSString *email;
+@property NSString *photo;
 
 - (NSString *)fullName;
 

@@ -11,6 +11,6 @@
 @interface MenuViewController : UIViewController <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView * activityView;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityView;
 
 @end

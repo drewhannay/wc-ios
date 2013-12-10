@@ -11,7 +11,8 @@
 @implementation WhoswhoTableCell
 
 @synthesize profileImage;
-@synthesize name;
+@synthesize firstName;
+@synthesize lastName;
 @synthesize type;
 @synthesize year;
 
@@ -22,11 +23,5 @@
     // Configure the view for the selected state
 }
 
--(void)resetCell
-{
-    for (UILabel *label in labels)
-        [label removeFromSuperview];
-    [labels removeAllObjects];
-}
 
 @end
