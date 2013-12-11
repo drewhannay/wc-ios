@@ -411,10 +411,10 @@
             </objects>
             <point key="canvasLocation" x="3022" y="5469"/>
         </scene>
-        <!--Event Detail View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="e6t-Oo-RcW">
             <objects>
-                <viewController id="3SJ-PI-y4a" customClass="EventDetailViewController" sceneMemberID="viewController">
+                <viewController id="3SJ-PI-y4a" customClass="WebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZYo-od-wYu"/>
                         <viewControllerLayoutGuide type="bottom" id="2JP-c8-J26"/>
@@ -563,10 +563,10 @@
             </objects>
             <point key="canvasLocation" x="874" y="6871"/>
         </scene>
-        <!--Menu View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="Y3o-6N-Qbw">
             <objects>
-                <viewController storyboardIdentifier="Menu" id="2SK-Ur-VNq" customClass="MenuViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Menu" id="2SK-Ur-VNq" customClass="WebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BPK-P5-7v3"/>
                         <viewControllerLayoutGuide type="bottom" id="c34-gs-IxA"/>

@@ -7,6 +7,8 @@
 //
 
 #import "MoreTableViewController.h"
+#import "MasterTabViewController.h"
+#import "WebViewController.h"
 
 @interface MoreTableViewController ()
 
@@ -19,20 +21,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     NSMutableDictionary *menuOption = [[NSMutableDictionary alloc] init];
-    UIViewController *mVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
-    [menuOption setValue:mVC forKey:@"controller"];
+    WebViewController *mVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
+    mVC.urlString = c_Menu;
     [menuOption setValue:@"Meal Menu" forKey:@"name"];
+    [menuOption setValue:mVC forKey:@"controller"];
     
     NSMutableDictionary *notificationOption = [[NSMutableDictionary alloc] init];
     UIViewController *nVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NotificationOptions"];
+    nVC.title = @"Notification Toggles";
     [notificationOption setValue:nVC forKey:@"controller"];
     [notificationOption setValue:@"Notification Toggles" forKey:@"name"];
     
@@ -85,8 +83,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *selected = [[moreTable objectAtIndex:indexPath.row] objectForKey:@"controller"];
-    selected.title = [[moreTable objectAtIndex:indexPath.row] objectForKey:@"name"];
+    NSDictionary *dic = [moreTable objectAtIndex:indexPath.row];
+    UIViewController *selected = [dic objectForKey:@"controller"];
+    selected.title = [dic objectForKey:@"name"];
     [self.navigationController
      pushViewController:selected
      animated:YES];

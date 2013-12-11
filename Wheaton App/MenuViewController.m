@@ -39,6 +39,9 @@
     [activityView stopAnimating];
 }
 
+- (void)viewDidLayoutSubviews {
+    webView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+}
 
 - (void)didReceiveMemoryWarning
 {

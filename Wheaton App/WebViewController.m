@@ -1,18 +1,18 @@
 //
-//  EventDetailViewController.m
+//  WebViewController.m
 //  Wheaton App
 //
 //  Created by Chris Anderson on 12/6/13.
 //
 //
 
-#import "EventDetailViewController.h"
+#import "WebViewController.h"
 
-@interface EventDetailViewController ()
+@interface WebViewController ()
 
 @end
 
-@implementation EventDetailViewController
+@implementation WebViewController
 
 @synthesize webView, activityView, urlString;
 
@@ -25,13 +25,19 @@
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [webView loadRequest:requestObj];
 }
+
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     [activityView startAnimating];
 }
+
 - (void)webViewDidFinishLoad:(UIWebView *)webview  {
     if (webview.isLoading)
         return;
     [activityView stopAnimating];
+}
+
+- (void)viewDidLayoutSubviews {
+    webView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 }
 
 

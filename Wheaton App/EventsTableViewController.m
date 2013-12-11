@@ -8,7 +8,7 @@
 
 #import "EventsTableViewController.h"
 #import "MasterTabViewController.h"
-#import "EventDetailViewController.h"
+#import "WebViewController.h"
 
 @interface EventsTableViewController ()
 
@@ -100,7 +100,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    EventDetailViewController *detailViewController = [segue destinationViewController];
+    WebViewController *detailViewController = [segue destinationViewController];
     NSIndexPath *indexPath = sender;
     detailViewController.urlString = [[[eventResults objectAtIndex:indexPath.row] objectForKey:@"custom"] objectForKey:@"link"];
 

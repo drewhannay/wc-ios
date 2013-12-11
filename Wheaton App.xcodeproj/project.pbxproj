@@ -58,7 +58,7 @@
 		6150980417D5497800456A9D /* Meal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6150980317D5497800456A9D /* Meal@2x.png */; };
 		616DD25718525DD700AC53C3 /* WhosWhoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 616DD25618525DD700AC53C3 /* WhosWhoTableViewController.m */; };
 		616DD2591852AB7E00AC53C3 /* WhoswhoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 616DD2581852AB7E00AC53C3 /* WhoswhoTableCell.xib */; };
-		616DD25C1852B4D300AC53C3 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 616DD25B1852B4D300AC53C3 /* EventDetailViewController.m */; };
+		616DD25C1852B4D300AC53C3 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 616DD25B1852B4D300AC53C3 /* WebViewController.m */; };
 		61851B3B18306529005EDE18 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61851B3A18306529005EDE18 /* EventViewController.m */; };
 		61851B3E18306762005EDE18 /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61851B3D18306762005EDE18 /* SportsTableViewController.m */; };
 		61891CD2182C09EE003F1B43 /* MasterTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61891CD0182C09EE003F1B43 /* MasterTabViewController.m */; };
@@ -95,6 +95,7 @@
 		61E4079D17D27EA40068AE00 /* banner2.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E4079C17D27EA40068AE00 /* banner2.png */; };
 		61E407A317D2A9D10068AE00 /* Basketball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E407A217D2A9D00068AE00 /* Basketball@2x.png */; };
 		61E407A917D3976C0068AE00 /* SportsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E407A817D397620068AE00 /* SportsCollectionCell.m */; };
+		61E68D1118583825009F0977 /* SportScoreTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61E68D1018583825009F0977 /* SportScoreTableCell.xib */; };
 		61F05EDC17D39DAE0006CC1F /* Basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 61F05EDB17D39DAE0006CC1F /* Basketball.png */; };
 		61F05EDE17D3A4100006CC1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F05EDD17D3A4100006CC1F /* QuartzCore.framework */; };
 		61F05EE917D3B7B60006CC1F /* Baseball.png in Resources */ = {isa = PBXBuildFile; fileRef = 61F05EDF17D3B7B60006CC1F /* Baseball.png */; };
@@ -199,8 +200,8 @@
 		616DD25518525DD700AC53C3 /* WhosWhoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhosWhoTableViewController.h; sourceTree = "<group>"; };
 		616DD25618525DD700AC53C3 /* WhosWhoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhosWhoTableViewController.m; sourceTree = "<group>"; };
 		616DD2581852AB7E00AC53C3 /* WhoswhoTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhoswhoTableCell.xib; sourceTree = "<group>"; };
-		616DD25A1852B4D300AC53C3 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
-		616DD25B1852B4D300AC53C3 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
+		616DD25A1852B4D300AC53C3 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		616DD25B1852B4D300AC53C3 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		61851B3918306529005EDE18 /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
 		61851B3A18306529005EDE18 /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 		61851B3C18306762005EDE18 /* SportsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsTableViewController.h; sourceTree = "<group>"; };
@@ -253,6 +254,7 @@
 		61E407A217D2A9D00068AE00 /* Basketball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Basketball@2x.png"; sourceTree = "<group>"; };
 		61E407A717D3975E0068AE00 /* SportsCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsCollectionCell.h; sourceTree = "<group>"; };
 		61E407A817D397620068AE00 /* SportsCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsCollectionCell.m; sourceTree = "<group>"; };
+		61E68D1018583825009F0977 /* SportScoreTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportScoreTableCell.xib; sourceTree = "<group>"; };
 		61F05EDB17D39DAE0006CC1F /* Basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Basketball.png; sourceTree = "<group>"; };
 		61F05EDD17D3A4100006CC1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		61F05EDF17D3B7B60006CC1F /* Baseball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Baseball.png; sourceTree = "<group>"; };
@@ -504,8 +506,8 @@
 				61851B3D18306762005EDE18 /* SportsTableViewController.m */,
 				613B9555183419C900DEAA0E /* EventsTableViewController.h */,
 				613B9556183419C900DEAA0E /* EventsTableViewController.m */,
-				616DD25A1852B4D300AC53C3 /* EventDetailViewController.h */,
-				616DD25B1852B4D300AC53C3 /* EventDetailViewController.m */,
+				616DD25A1852B4D300AC53C3 /* WebViewController.h */,
+				616DD25B1852B4D300AC53C3 /* WebViewController.m */,
 				61DDA64C18368F8B00EBA92C /* AcademicTableViewController.h */,
 				61DDA64E18368F9D00EBA92C /* AcademicTableViewController.m */,
 				61F70D8118311F7800345907 /* ChapelTableViewController.h */,
@@ -542,6 +544,7 @@
 				61032B0D17F1157B00CC95FA /* EventSubtitleLineView.xib */,
 				61F70D7C18309AA000345907 /* SportTableCell.h */,
 				61F70D7F18309BD300345907 /* SportTableCell.xib */,
+				61E68D1018583825009F0977 /* SportScoreTableCell.xib */,
 				61F70D7D18309AA000345907 /* SportTableCell.m */,
 				61E407A717D3975E0068AE00 /* SportsCollectionCell.h */,
 				61E407A817D397620068AE00 /* SportsCollectionCell.m */,
@@ -713,6 +716,7 @@
 				610D48D617DD620400DE574C /* Calendar@2x.png in Resources */,
 				612BFF0117DED11300EB2C8C /* SideBarTableCell.xib in Resources */,
 				612BFF0617DEE83D00EB2C8C /* transparent@2x.png in Resources */,
+				61E68D1118583825009F0977 /* SportScoreTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,7 +737,7 @@
 				61DDA64F18368F9D00EBA92C /* AcademicTableViewController.m in Sources */,
 				6141152E18374F7E00B71051 /* PushNotification.m in Sources */,
 				61CA40C117CA79E000617623 /* CustomNavBar.m in Sources */,
-				616DD25C1852B4D300AC53C3 /* EventDetailViewController.m in Sources */,
+				616DD25C1852B4D300AC53C3 /* WebViewController.m in Sources */,
 				61F70D9D18330DF100345907 /* HomeSearchDisplayController.m in Sources */,
 				61C25FD518397C7D005E6A89 /* NotificationOptionsTableViewController.m in Sources */,
 				61CA40CA17CA94FB00617623 /* Location.m in Sources */,

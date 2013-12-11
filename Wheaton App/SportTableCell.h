@@ -13,6 +13,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *time;
 @property (strong, nonatomic) IBOutlet UILabel *opponent;
 @property (strong, nonatomic) IBOutlet UILabel *team;
+@property (strong, nonatomic) IBOutlet UILabel *scoreOpponent;
+@property (strong, nonatomic) IBOutlet UILabel *scoreSchool;
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *sport;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *home;
 

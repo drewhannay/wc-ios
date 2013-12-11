@@ -11,7 +11,7 @@
 
 @interface SportsTableViewController : UITableViewController
 
-@property (nonatomic, retain) NSMutableArray *sportResults;
+@property (nonatomic, retain) NSMutableDictionary *sportResults;
 @property NSInteger *displayResults;
 
 @end
