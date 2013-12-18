@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pgY-OL-D89">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pgY-OL-D89">
     <dependencies>
         <deployment version="1792" defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller - Home-->
+        <scene sceneID="iCf-x7-e5B">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="X0J-WS-jIm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="House.png" id="0YY-av-iBF"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="5zT-r8-v2m">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="z4V-p7-EP0" kind="relationship" relationship="rootViewController" id="bzg-ag-G3f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9zq-dZ-HjQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="874" y="4082"/>
+        </scene>
         <!--Home View Controller - Home-->
         <scene sceneID="qwx-eO-5Ja">
             <objects>
@@ -14,21 +33,16 @@
                         <viewControllerLayoutGuide type="bottom" id="IsI-WR-UH9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MvZ-Va-giK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView autoresizesSubviews="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jS6-fH-S0v">
-                                <rect key="frame" x="0.0" y="92" width="320" height="427"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="427"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </containerView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="blf-v8-zBS">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.26666666666666666" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="t53-OR-YNa" customClass="CustomSegmentControl">
-                                <rect key="frame" x="0.0" y="64" width="320" height="29"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Past"/>
@@ -39,12 +53,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IsI-WR-UH9" firstAttribute="top" secondItem="jS6-fH-S0v" secondAttribute="bottom" id="jq5-XX-Jlf"/>
-                            <constraint firstItem="jS6-fH-S0v" firstAttribute="top" secondItem="t53-OR-YNa" secondAttribute="bottom" id="oV1-7z-kMC"/>
+                            <constraint firstItem="IsI-WR-UH9" firstAttribute="top" secondItem="jS6-fH-S0v" secondAttribute="bottom" id="99p-IQ-X1k"/>
+                            <constraint firstItem="jS6-fH-S0v" firstAttribute="top" secondItem="t53-OR-YNa" secondAttribute="bottom" id="FZn-8L-Fnt"/>
+                            <constraint firstItem="t53-OR-YNa" firstAttribute="top" secondItem="SZ7-KF-Dua" secondAttribute="bottom" id="VoY-Nv-4bx"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="House.png" id="EPA-YY-fKr"/>
-                    <navigationItem key="navigationItem" id="pc3-1Z-uBZ"/>
+                    <navigationItem key="navigationItem" title="Home" id="pc3-1Z-uBZ"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="65u-po-XZ3" id="Gi2-ja-eEj"/>
                         <outlet property="switchViewControllers" destination="t53-OR-YNa" id="W7m-nf-2LI"/>
@@ -61,7 +76,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="874" y="4082"/>
+            <point key="canvasLocation" x="1376" y="4082"/>
         </scene>
         <!--Whos Who View Controller-->
         <scene sceneID="Fyp-bV-BXR">
@@ -81,45 +96,37 @@
             </objects>
             <point key="canvasLocation" x="1810" y="4082"/>
         </scene>
-        <!--Home Scroll View Controller-->
-        <scene sceneID="T43-Ad-GFd">
+        <!--Home Past View Controller-->
+        <scene sceneID="OsJ-3Z-gYG">
             <objects>
-                <viewController storyboardIdentifier="PastHome" id="kNv-RN-8Sg" customClass="HomeScrollViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="huW-b3-FaY"/>
-                        <viewControllerLayoutGuide type="bottom" id="CSt-OA-f6y"/>
-                    </layoutGuides>
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="DwK-xI-ifB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="980"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PTI-63-GDo">
-                                <rect key="frame" x="0.0" y="20" width="320" height="960"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banner1.png" translatesAutoresizingMaskIntoConstraints="NO" id="z4x-Kr-XDc">
-                                        <rect key="frame" x="0.0" y="69" width="320" height="160"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="PTI-63-GDo" firstAttribute="top" secondItem="huW-b3-FaY" secondAttribute="bottom" id="uiK-MI-rmW"/>
-                        </constraints>
+                <tableViewController storyboardIdentifier="PastHome" id="ue9-NN-MlI" customClass="HomePastViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="aO4-Nk-8uq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner1.png" id="HEx-gS-GqI">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aRy-og-nYy">
+                                <rect key="frame" x="0.0" y="215" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aRy-og-nYy" id="los-2C-PRs">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
-                            <outlet property="delegate" destination="kNv-RN-8Sg" id="0nM-Zi-KrC"/>
+                            <outlet property="dataSource" destination="ue9-NN-MlI" id="TyL-Ls-0N9"/>
+                            <outlet property="delegate" destination="ue9-NN-MlI" id="j01-2v-CbS"/>
                         </connections>
-                    </scrollView>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <outlet property="scrollView" destination="DwK-xI-ifB" id="wn5-NZ-y3q"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0pk-rQ-xcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ceL-0b-z8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2227" y="3670"/>
+            <point key="canvasLocation" x="2277" y="4082"/>
         </scene>
         <!--Master Tab View Controller-->
         <scene sceneID="bCk-9r-hGH">
@@ -133,7 +140,7 @@
                         <color key="tintColor" red="0.0" green="0.2666666667" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="z4V-p7-EP0" kind="relationship" relationship="viewControllers" id="12h-KD-WVU"/>
+                        <segue destination="X0J-WS-jIm" kind="relationship" relationship="viewControllers" id="gGV-f4-RWB"/>
                         <segue destination="I9i-a1-JXq" kind="relationship" relationship="viewControllers" id="9Xh-uK-CFb"/>
                         <segue destination="cz6-6G-Qwz" kind="relationship" relationship="viewControllers" id="Tuz-XO-kmo"/>
                         <segue destination="eK1-T2-mdY" kind="relationship" relationship="viewControllers" id="0Bf-Oq-ugH"/>
@@ -157,7 +164,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LL8-cA-Blq" customClass="CustomSegmentControl">
-                                <rect key="frame" x="0.0" y="64" width="322" height="29"/>
+                                <rect key="frame" x="0.0" y="0.0" width="322" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Chapel"/>
@@ -167,7 +174,7 @@
                                 </segments>
                             </segmentedControl>
                             <containerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UPj-mJ-Frz">
-                                <rect key="frame" x="0.0" y="93" width="320" height="425"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="426"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </containerView>
@@ -334,6 +341,7 @@
                     <tabBarItem key="tabBarItem" title="Events" image="Calendar.png" id="SU2-6n-2gh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="1ax-rz-CwR">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>

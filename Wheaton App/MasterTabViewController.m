@@ -9,7 +9,7 @@
 #import "MasterTabViewController.h"
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
-
+NSString * const c_Home = @"http://23.21.107.65/home";
 NSString * const c_MapLocations = @"http://23.21.107.65/locations?contentType=json";
 NSString * const c_Chapel = @"https://s3.amazonaws.com/wcstatic/chapel.json";
 NSString * const c_Menu = @"http://wheatonorientation.herokuapp.com/menu";

@@ -19,6 +19,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.activityView.hidesWhenStopped = YES;
 
     NSString *urlAddress = urlString;
     NSURL *url = [NSURL URLWithString:urlAddress];

@@ -32,8 +32,8 @@
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     
     NSDictionary *payload = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-    if(payload) {
-       [self addNotification:payload];
+    if (payload) {
+       //[self addNotification:payload];
     }
     return YES;
 }
@@ -41,7 +41,6 @@
 - (void)addNotification:(NSDictionary *)notification
 {
     UITabBarController *rootViewController = (UITabBarController *)self.window.rootViewController;
-    NSLog(@"%@", notification);
     UINavigationController *nnc = (UINavigationController *)rootViewController.childViewControllers[3];
     NotificationsViewController *nvc = (NotificationsViewController *)[[nnc viewControllers] lastObject];
     [nvc addPushNotification:notification];
@@ -89,7 +88,7 @@
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
 	NSLog(@"My token is: %@", deviceToken);
-    if(deviceToken){
+    if (deviceToken) {
         [[NSUserDefaults standardUserDefaults] setObject:deviceToken forKey:@"token"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
@@ -99,6 +98,7 @@
 {
 	NSLog(@"Failed to get token, error: %@", error);
 }
+
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)payment {
     // Detect if APN is received on Background or Foreground state
     if (application.applicationState == UIApplicationStateInactive)

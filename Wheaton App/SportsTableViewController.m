@@ -8,6 +8,7 @@
 
 #import "SportsTableViewController.h"
 #import "SportTableCell.h"
+#import "Sport.h"
 
 @interface SportsTableViewController ()
 
@@ -40,8 +41,17 @@
     }
     
     NSError *error;
-    [sportResults setObject:[NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error]
-                     forKey:@"1"];
+    
+    NSMutableArray *upcomingSports = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+    NSMutableArray *sports = [[NSMutableArray alloc] init];
+    for (NSDictionary *s in upcomingSports) {
+        Sport *sport = [[Sport alloc] init];
+        [sport jsonToSport:s];
+        [sports addObject: sport];
+    }
+    
+    
+    [sportResults setObject:sports forKey:@"1"];
     [self.tableView reloadData];
     
     NSString *completedSportsUrl = [NSString stringWithFormat:@"%@&direction=-1&pivot=before&limit=10",c_Sports];
@@ -59,14 +69,16 @@
     
     NSError *error;
     
-    NSArray *pastSportsEvents = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
-    NSMutableArray *reversedEvents = [NSMutableArray arrayWithCapacity:[pastSportsEvents count]];
-    NSEnumerator * reverseEnumerator = [pastSportsEvents reverseObjectEnumerator];
+    NSArray *pastSports = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+    NSMutableArray *reversedSports = [NSMutableArray arrayWithCapacity:[pastSports count]];
+    NSEnumerator *reverseEnumerator = [pastSports reverseObjectEnumerator];
     for (id object in reverseEnumerator) {
-        [reversedEvents addObject:object];
+        Sport *sport = [[Sport alloc] init];
+        [sport jsonToSport:object];
+        [reversedSports addObject:sport];
     }
     
-    [sportResults setObject:reversedEvents forKey:@"0"];
+    [sportResults setObject:reversedSports forKey:@"0"];
     [self.tableView reloadData];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
@@ -112,66 +124,23 @@
     return [[sportResults objectForKey:[NSString stringWithFormat:@"%d", section]] count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *result = [[sportResults objectForKey:[NSString stringWithFormat:@"%d", indexPath.section]] objectAtIndex:indexPath.row];
-    NSDictionary *custom = [result objectForKey:@"custom"];
-    NSDictionary *score = [custom objectForKey:@"score"];
+    Sport *sport = [[sportResults objectForKey:[NSString stringWithFormat:@"%d", indexPath.section]] objectAtIndex:indexPath.row];
     
     NSString *cellIdentifier = @"SportTableCell";
     
-    if ([score count] > 0 && ![[score objectForKey:@"school"] isEqual: @""]) {
+    if ([sport.score count] > 0 && ![[sport.score objectForKey:@"school"] isEqual: @""]) {
         cellIdentifier = @"SportScoreTableCell";
     }
     
-    SportTableCell *cell = (SportTableCell *)[tv dequeueReusableCellWithIdentifier:cellIdentifier];
+    SportTableCell *cell = (SportTableCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil];
         cell = [nib objectAtIndex:0];
     }
     
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[[[result objectForKey:@"timeStamp"] objectAtIndex:0] doubleValue]];
-    NSString *sport = (NSString *)[result objectForKey:@"title"];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
-    [dateFormatter setDateFormat:@"MM/dd hh:mm a"];
-    
-    cell.time.text = [[dateFormatter stringFromDate:date] lowercaseString];
-    
-    [cell.sport setHidden:NO];
-    if ([sport isEqualToString:@"Soccer"])
-        cell.sport.image = [UIImage imageNamed:@"Soccer.png"];
-    else if ([sport isEqualToString:@"Basketball"])
-        cell.sport.image = [UIImage imageNamed:@"Basketball.png"];
-    else if ([sport isEqualToString:@"Volleyball"])
-        cell.sport.image = [UIImage imageNamed:@"Volleyball.png"];
-    else if ([sport isEqualToString:@"Golf"])
-        cell.sport.image = [UIImage imageNamed:@"Golf.png"];
-    else if ([sport isEqualToString:@"Football"])
-        cell.sport.image = [UIImage imageNamed:@"Football.png"];
-    else if ([sport isEqualToString:@"Tennis"])
-        cell.sport.image = [UIImage imageNamed:@"Tennis.png"];
-    else if ([sport isEqualToString:@"Swimming"])
-        cell.sport.image = [UIImage imageNamed:@"Swimming.png"];
-    else
-        [cell.sport setHidden:YES];
-    
-    cell.team.text = [NSString stringWithFormat:@"%@. %@", [[[custom objectForKey:@"gender"] substringToIndex:1] uppercaseString], [sport capitalizedString]];
-    cell.opponent.text = [custom objectForKey:@"opponent"];
-    
-    if ([(NSNumber *)[custom objectForKey: @"home"] isEqual: @(YES)]) {
-        [cell.home setHidden:FALSE];
-    } else {
-        [cell.home setHidden:TRUE];
-    }
-
-    if ([score count] > 0) {
-        cell.scoreOpponent.text = [score objectForKey:@"other"];
-        cell.scoreSchool.text = [score objectForKey:@"school"];
-    }
-    
-    return cell;
+    return [sport generateCell:cell];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

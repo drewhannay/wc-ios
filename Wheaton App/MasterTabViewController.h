@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString * const c_Home;
 extern NSString * const c_MapLocations;
 extern NSString * const c_Chapel;
 extern NSString * const c_Whoswho;

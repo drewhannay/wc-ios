@@ -22,25 +22,29 @@
 {
     [super viewDidLoad];
     
+    moreTable = [[NSMutableArray alloc] init];
+    moreHeaders = [[NSMutableArray alloc] init];
+    
+    [moreHeaders addObject:@"Options"];
+    
     NSMutableDictionary *menuOption = [[NSMutableDictionary alloc] init];
     WebViewController *mVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     mVC.urlString = c_Menu;
     [menuOption setValue:@"Meal Menu" forKey:@"name"];
     [menuOption setValue:mVC forKey:@"controller"];
     
-    NSMutableDictionary *notificationOption = [[NSMutableDictionary alloc] init];
-    UIViewController *nVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NotificationOptions"];
-    nVC.title = @"Notification Toggles";
-    [notificationOption setValue:nVC forKey:@"controller"];
-    [notificationOption setValue:@"Notification Toggles" forKey:@"name"];
-    
-    
-    moreTable = [[NSMutableArray alloc] init];
-    moreHeaders = [[NSMutableArray alloc] init];
-    
     [moreTable addObject:menuOption];
-    [moreTable addObject:notificationOption];
-    [moreHeaders addObject:@"Options"];
+    
+    UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
+    if (types != UIRemoteNotificationTypeNone) {
+        NSMutableDictionary *notificationOption = [[NSMutableDictionary alloc] init];
+        UIViewController *nVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NotificationOptions"];
+        nVC.title = @"Notification Toggles";
+        [notificationOption setValue:nVC forKey:@"controller"];
+        [notificationOption setValue:@"Notification Toggles" forKey:@"name"];
+        
+        [moreTable addObject:notificationOption];
+    }
     
     [self.tableView reloadData];
     
@@ -69,7 +73,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {

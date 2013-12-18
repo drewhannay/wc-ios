@@ -94,8 +94,9 @@
 		61E4079B17D27DBF0068AE00 /* banner1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E4079A17D27DBF0068AE00 /* banner1@2x.png */; };
 		61E4079D17D27EA40068AE00 /* banner2.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E4079C17D27EA40068AE00 /* banner2.png */; };
 		61E407A317D2A9D10068AE00 /* Basketball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E407A217D2A9D00068AE00 /* Basketball@2x.png */; };
-		61E407A917D3976C0068AE00 /* SportsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E407A817D397620068AE00 /* SportsCollectionCell.m */; };
 		61E68D1118583825009F0977 /* SportScoreTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61E68D1018583825009F0977 /* SportScoreTableCell.xib */; };
+		61E68D17185D52A9009F0977 /* HomePastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E68D16185D52A9009F0977 /* HomePastViewController.m */; };
+		61E68D1B185D5566009F0977 /* Sport.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E68D1A185D5566009F0977 /* Sport.m */; };
 		61F05EDC17D39DAE0006CC1F /* Basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 61F05EDB17D39DAE0006CC1F /* Basketball.png */; };
 		61F05EDE17D3A4100006CC1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F05EDD17D3A4100006CC1F /* QuartzCore.framework */; };
 		61F05EE917D3B7B60006CC1F /* Baseball.png in Resources */ = {isa = PBXBuildFile; fileRef = 61F05EDF17D3B7B60006CC1F /* Baseball.png */; };
@@ -252,9 +253,11 @@
 		61E4079A17D27DBF0068AE00 /* banner1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "banner1@2x.png"; sourceTree = "<group>"; };
 		61E4079C17D27EA40068AE00 /* banner2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner2.png; sourceTree = "<group>"; };
 		61E407A217D2A9D00068AE00 /* Basketball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Basketball@2x.png"; sourceTree = "<group>"; };
-		61E407A717D3975E0068AE00 /* SportsCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsCollectionCell.h; sourceTree = "<group>"; };
-		61E407A817D397620068AE00 /* SportsCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsCollectionCell.m; sourceTree = "<group>"; };
 		61E68D1018583825009F0977 /* SportScoreTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportScoreTableCell.xib; sourceTree = "<group>"; };
+		61E68D15185D52A9009F0977 /* HomePastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePastViewController.h; path = ../HomePastViewController.h; sourceTree = "<group>"; };
+		61E68D16185D52A9009F0977 /* HomePastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePastViewController.m; path = ../HomePastViewController.m; sourceTree = "<group>"; };
+		61E68D19185D5566009F0977 /* Sport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sport.h; sourceTree = "<group>"; };
+		61E68D1A185D5566009F0977 /* Sport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sport.m; sourceTree = "<group>"; };
 		61F05EDB17D39DAE0006CC1F /* Basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Basketball.png; sourceTree = "<group>"; };
 		61F05EDD17D3A4100006CC1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		61F05EDF17D3B7B60006CC1F /* Baseball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Baseball.png; sourceTree = "<group>"; };
@@ -522,6 +525,8 @@
 				616DD25618525DD700AC53C3 /* WhosWhoTableViewController.m */,
 				61F70D8D1831E03700345907 /* HomeViewController.h */,
 				61F70D8E1831E03700345907 /* HomeViewController.m */,
+				61E68D15185D52A9009F0977 /* HomePastViewController.h */,
+				61E68D16185D52A9009F0977 /* HomePastViewController.m */,
 				61F70D9B18330DF100345907 /* HomeSearchDisplayController.h */,
 				61F70D9C18330DF100345907 /* HomeSearchDisplayController.m */,
 				61DDA6491835E37D00EBA92C /* HomeScrollViewController.h */,
@@ -546,8 +551,6 @@
 				61F70D7F18309BD300345907 /* SportTableCell.xib */,
 				61E68D1018583825009F0977 /* SportScoreTableCell.xib */,
 				61F70D7D18309AA000345907 /* SportTableCell.m */,
-				61E407A717D3975E0068AE00 /* SportsCollectionCell.h */,
-				61E407A817D397620068AE00 /* SportsCollectionCell.m */,
 				61E4076E17CC5B7B0068AE00 /* EventTableCell.h */,
 				61E4076F17CC5B7B0068AE00 /* EventTableCell.m */,
 				6104311C17E7BCF400D3C72B /* EventCollectionCell.h */,
@@ -582,6 +585,8 @@
 				61F70D911831F12700345907 /* Person.m */,
 				6141152C18374F7E00B71051 /* PushNotification.h */,
 				6141152D18374F7E00B71051 /* PushNotification.m */,
+				61E68D19185D5566009F0977 /* Sport.h */,
+				61E68D1A185D5566009F0977 /* Sport.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -727,6 +732,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61E68D1B185D5566009F0977 /* Sport.m in Sources */,
 				61DE4FFB183020AA004BBCA1 /* CustomSegmentControl.m in Sources */,
 				61E4076617CB15850068AE00 /* CustomMenuNavBar.m in Sources */,
 				6141152B18374EDB00B71051 /* NotificationsViewController.m in Sources */,
@@ -749,7 +755,6 @@
 				61E4077917CECE8B0068AE00 /* WhoswhoSearchBar.m in Sources */,
 				61F70D861831924100345907 /* MoreTableViewController.m in Sources */,
 				61E4079917D2662D0068AE00 /* HomeView.m in Sources */,
-				61E407A917D3976C0068AE00 /* SportsCollectionCell.m in Sources */,
 				61DDA64B1835E37D00EBA92C /* HomeScrollViewController.m in Sources */,
 				61F70D891831932E00345907 /* MenuViewController.m in Sources */,
 				61851B3B18306529005EDE18 /* EventViewController.m in Sources */,
@@ -760,6 +765,7 @@
 				612BFEFD17DED11300EB2C8C /* AppDelegate.m in Sources */,
 				61E075D517E6B8B90029EFE9 /* Reachability.m in Sources */,
 				61F70D8F1831E03700345907 /* HomeViewController.m in Sources */,
+				61E68D17185D52A9009F0977 /* HomePastViewController.m in Sources */,
 				61851B3E18306762005EDE18 /* SportsTableViewController.m in Sources */,
 				612BFF0017DED11300EB2C8C /* SideBarTableCell.m in Sources */,
 				613B9557183419C900DEAA0E /* EventsTableViewController.m in Sources */,
@@ -836,7 +842,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Anderson (J5M43YTT72)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -847,7 +853,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "127D9B80-85A8-4E64-8F2A-91FCEB0C70DA";
+				PROVISIONING_PROFILE = "22F2634A-B84F-4CA7-BAEF-DE2B29716CDE";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -860,7 +866,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Anderson (J5M43YTT72)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -870,7 +876,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "127D9B80-85A8-4E64-8F2A-91FCEB0C70DA";
+				PROVISIONING_PROFILE = "22F2634A-B84F-4CA7-BAEF-DE2B29716CDE";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
@@ -903,7 +909,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Anderson (J5M43YTT72)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -913,7 +919,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "127D9B80-85A8-4E64-8F2A-91FCEB0C70DA";
+				PROVISIONING_PROFILE = "22F2634A-B84F-4CA7-BAEF-DE2B29716CDE";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;

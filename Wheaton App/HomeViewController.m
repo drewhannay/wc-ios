@@ -17,7 +17,7 @@
 
 @implementation HomeViewController
 
-@synthesize switchViewControllers, allViewControllers, currentViewController;
+@synthesize switchViewControllers, allViewControllers, currentViewController, viewContainer;
 
 - (void)viewDidLoad
 {
@@ -51,6 +51,8 @@
 
 - (void)cycleFromViewController:(UIViewController*)oldVC toViewController:(UIViewController*)newVC direction:(BOOL)dir {
     
+    int distance = 0;
+    
     // Do nothing if we are attempting to swap to the same view controller
     if (newVC == oldVC) return;
     
@@ -64,9 +66,9 @@
         }
         
         newVC.view.frame = CGRectMake(newStartX,
-                                      CGRectGetMinY(self.viewContainer.bounds),
+                                      -distance,
                                       CGRectGetWidth(self.viewContainer.bounds),
-                                      CGRectGetHeight(self.viewContainer.bounds)-self.tabBarController.tabBar.frame.size.height);
+                                      CGRectGetHeight(self.viewContainer.bounds)+distance);
         
         // Check the oldVC is non-nil otherwise expect a crash: NSInvalidArgumentException
         if (oldVC) {
@@ -84,9 +86,9 @@
                                     animations:^{
                                         newVC.view.frame = oldVC.view.frame;
                                         oldVC.view.frame = CGRectMake(oldEndX,
-                                                                      CGRectGetMinY(self.viewContainer.bounds),
+                                                                      -distance,
                                                                       CGRectGetWidth(self.viewContainer.bounds),
-                                                                      CGRectGetHeight(self.viewContainer.bounds)-self.tabBarController.tabBar.frame.size.height);
+                                                                      CGRectGetHeight(self.viewContainer.bounds)+distance);
                                     }
                                     completion:^(BOOL finished) {
                                         // Finish both the view controller transitions
@@ -98,7 +100,10 @@
             
         } else {
             
-            newVC.view.frame = CGRectMake(CGRectGetMinX(self.viewContainer.bounds), CGRectGetMinY(self.viewContainer.bounds), CGRectGetWidth(self.viewContainer.bounds), CGRectGetHeight(self.viewContainer.bounds)-10);
+            newVC.view.frame = CGRectMake(CGRectGetMinX(self.viewContainer.bounds),
+                                          -distance,
+                                          CGRectGetWidth(self.viewContainer.bounds),
+                                          CGRectGetHeight(self.viewContainer.bounds)+distance);
             
             
 //            NSLog(@"%@", newVC.view);
