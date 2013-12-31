@@ -1,3 +1,4 @@
 *.DS_Store
 *.xcuserstate
 Wheaton\ App.xcodeproj/xcuserdata/*
+Pods/**/*

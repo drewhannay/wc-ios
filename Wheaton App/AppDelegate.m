@@ -10,6 +10,7 @@
 #import "GAI.h"
 #import "MTReachabilityManager.h"
 #import "NotificationsViewController.h"
+#import "AFNetworking.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -30,11 +31,13 @@
     
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
     NSDictionary *payload = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     if (payload) {
        //[self addNotification:payload];
     }
+    
     return YES;
 }
 
@@ -91,6 +94,15 @@
     if (deviceToken) {
         [[NSUserDefaults standardUserDefaults] setObject:deviceToken forKey:@"token"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        
+        NSDictionary *parameters = @{@"foo": @"bar"};
+        [manager POST:@"http://example.com/resources.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"JSON: %@", responseObject);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
     }
 }
 

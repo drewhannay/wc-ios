@@ -17,7 +17,7 @@
 
 @implementation WhosWhoTableViewController
 
-@synthesize people, searchController, searchBar;
+@synthesize people, searchController, searchBar, searchResults;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -48,7 +48,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [people count];
+    if ([searchResults count] < 20)
+        return [searchResults count];
+    else
+        return 20;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,7 +65,7 @@
         cell = [nib objectAtIndex:0];
     }
     
-    Person *person = (Person *)[people objectAtIndex:indexPath.row];
+    Person *person = (Person *)[searchResults objectAtIndex:indexPath.row];
     
     cell.firstName.text = [NSString stringWithFormat:@"%@", [person fullName]];
     
@@ -90,7 +93,6 @@
 {
     NSString *searchParameter = [filter stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     searchParameter = [searchParameter stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-    
     if([searchParameter isEqualToString:@""]) {
         return;
     }
@@ -123,20 +125,37 @@
         person.lastName = [name objectForKey:@"last"];
         person.email = [dic objectForKey:@"email"];
         person.photo = [[[dic objectForKey:@"image"] objectForKey:@"url"] objectForKey:@"medium"];
-        
-        NSLog(@"%@", [[[dic objectForKey:@"image"] objectForKey:@"url"] objectForKey:@"medium"]);
-        
         [people addObject:person];
     }
+    
+    searchResults = people;
+    NSLog(@"%d", [people count]);
+    
     [self.tableView reloadData];
+}
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate
+                                    predicateWithFormat:@"entireName contains[cd] %@",
+                                    searchText];
+    
+    searchResults = [people filteredArrayUsingPredicate:resultPredicate];
 }
 
 #pragma mark - UISearchDisplayController delegate methods
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-    NSLog(@"THIS");
-    [self makeSearch:searchString];
-    NSLog(@"THIS");
+    if ([searchString length] > 3) {
+        return NO;
+    } else if ([searchString length] == 3) {
+        [self filterContentForSearchText:searchString
+                                   scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                          objectAtIndex:[self.searchDisplayController.searchBar
+                                                         selectedScopeButtonIndex]]];
+    } else {
+        [self makeSearch:searchString];
+    }
     
     return YES;
 }

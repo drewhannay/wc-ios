@@ -13,7 +13,7 @@ NSString * const c_Home = @"http://23.21.107.65/home";
 NSString * const c_MapLocations = @"http://23.21.107.65/locations?contentType=json";
 NSString * const c_Chapel = @"https://s3.amazonaws.com/wcstatic/chapel.json";
 NSString * const c_Menu = @"http://wheatonorientation.herokuapp.com/menu";
-NSString * const c_Whoswho = @"http://23.21.107.65/people?contentType=json&limit=20&name=";
+NSString * const c_Whoswho = @"http://162.243.197.6/people?limit=250&contentType=json&name=";
 NSString * const c_Sports = @"http://23.21.107.65/events/type/sport?contentType=json";
 NSString * const c_Academic = @"http://23.21.107.65/events/type/academic?contentType=json";
 NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
