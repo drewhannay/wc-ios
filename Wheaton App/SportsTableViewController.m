@@ -54,7 +54,7 @@
     [sportResults setObject:sports forKey:@"1"];
     [self.tableView reloadData];
     
-    NSString *completedSportsUrl = [NSString stringWithFormat:@"%@&direction=-1&pivot=before&limit=10",c_Sports];
+    NSString *completedSportsUrl = [NSString stringWithFormat:@"%@/scores",c_Sports];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString: completedSportsUrl]];
         [self performSelectorOnMainThread:@selector(fetchedDataCompleted:) withObject:data waitUntilDone:YES];

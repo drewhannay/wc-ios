@@ -152,15 +152,16 @@
         [schedule addObject:month];
     }
     
-    
-    
     NSDate *currentDate = [NSDate date];
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:currentDate];
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     NSString *monthName = [[df monthSymbols] objectAtIndex:([components month]-1)];
     
-    int scheduleSectionIndex, scheduleRowIndex, i;
+    int scheduleSectionIndex = 0;
+    int scheduleRowIndex = 0;
+    int i;
+    
     NSArray *scheduleSection;
     for(i = 0; i < [schedule count]; i++) {
         if([[[schedule objectAtIndex:i] objectForKey:@"month"] isEqualToString:monthName]) {

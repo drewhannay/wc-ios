@@ -9,16 +9,17 @@
 #import "MasterTabViewController.h"
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
+
 NSString * const c_Home = @"http://23.21.107.65/home";
-NSString * const c_MapLocations = @"http://23.21.107.65/locations?contentType=json";
+NSString * const c_MapLocations = @"http://162.243.197.6/wheaton/locations";
 NSString * const c_Chapel = @"https://s3.amazonaws.com/wcstatic/chapel.json";
-NSString * const c_Menu = @"http://wheatonorientation.herokuapp.com/menu";
-NSString * const c_Whoswho = @"http://162.243.197.6/people?limit=250&contentType=json&name=";
-NSString * const c_Sports = @"http://23.21.107.65/events/type/sport?contentType=json";
-NSString * const c_Academic = @"http://23.21.107.65/events/type/academic?contentType=json";
+NSString * const c_Menu = @"http://162.243.197.6/wheaton/menu";
+NSString * const c_Whoswho = @"http://162.243.197.6/wheaton/person";
+NSString * const c_Sports = @"http://162.243.197.6/wheaton/sports";
+NSString * const c_Academic = @"http://162.243.197.6/wheaton/academic";
 NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
-NSString * const c_Events = @"http://23.21.107.65/events/type/event?contentType=json";
-NSString * const c_PushOptions = @"http://23.21.107.65/apn";
+NSString * const c_Events = @"http://162.243.197.6/wheaton/events";
+NSString * const c_PushOptions = @"http://162.243.197.6/apn";
 //NSString * const c_Events = @"http://25livepub.collegenet.com/calendars/intra-campus-calendar.rss";
 
 @interface MasterTabViewController ()

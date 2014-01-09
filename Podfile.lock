@@ -17,11 +17,17 @@ PODS:
   - AFNetworking/Serialization (2.0.3)
   - AFNetworking/UIKit (2.0.3):
     - AFNetworking/NSURLConnection
+  - GoogleAnalytics-iOS-SDK (3.0.2)
+  - LVDebounce (0.0.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - GoogleAnalytics-iOS-SDK (~> 3.0.2)
+  - LVDebounce
 
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
+  GoogleAnalytics-iOS-SDK: 86393b99f7328ae8d8e975fcaa8632a39dafafe8
+  LVDebounce: 70385cb1a3c2fba8382fd943ac1230aa9b399f91
 
 COCOAPODS: 0.29.0

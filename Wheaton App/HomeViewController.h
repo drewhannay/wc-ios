@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "MasterTabViewController.h"
 #import "HomeSearchDisplayController.h"
+#import "AFNetworking.h"
+#import "LVDebounce.h"
 
-@interface HomeViewController : UIViewController {
+@interface HomeViewController : UIViewController <UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDelegate, UITableViewDataSource> {
     int priorSegmentIndex;
 }
 
@@ -18,5 +20,8 @@
 @property (nonatomic, copy) NSArray *allViewControllers;
 @property (nonatomic, strong) UIViewController *currentViewController;
 @property (weak, nonatomic) IBOutlet UIView *viewContainer;
+@property (nonatomic, retain) NSMutableArray *searchResults;
+
+- (void)performSearch:(NSTimer *)timer;
 
 @end

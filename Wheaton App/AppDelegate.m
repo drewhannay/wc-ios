@@ -31,7 +31,6 @@
     
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
-    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
     NSDictionary *payload = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
     if (payload) {

@@ -50,34 +50,39 @@
                                     <segment title="Coming Up"/>
                                 </segments>
                             </segmentedControl>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3RH-91-HHg">
+                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="giX-iX-TMH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="z4V-p7-EP0" id="Tv8-ID-FVK"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="giX-iX-TMH" firstAttribute="top" secondItem="SZ7-KF-Dua" secondAttribute="bottom" id="01j-7s-z7y"/>
+                            <constraint firstItem="t53-OR-YNa" firstAttribute="top" secondItem="giX-iX-TMH" secondAttribute="bottom" id="19I-iP-ATT"/>
                             <constraint firstItem="IsI-WR-UH9" firstAttribute="top" secondItem="jS6-fH-S0v" secondAttribute="bottom" id="99p-IQ-X1k"/>
                             <constraint firstItem="jS6-fH-S0v" firstAttribute="top" secondItem="t53-OR-YNa" secondAttribute="bottom" id="FZn-8L-Fnt"/>
-                            <constraint firstItem="t53-OR-YNa" firstAttribute="top" secondItem="SZ7-KF-Dua" secondAttribute="bottom" id="VoY-Nv-4bx"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="House.png" id="EPA-YY-fKr"/>
                     <navigationItem key="navigationItem" title="Home" id="pc3-1Z-uBZ"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="65u-po-XZ3" id="Gi2-ja-eEj"/>
+                        <outlet property="searchDisplayController" destination="sXz-hY-mUe" id="BtM-dL-ndi"/>
                         <outlet property="switchViewControllers" destination="t53-OR-YNa" id="W7m-nf-2LI"/>
                         <outlet property="viewContainer" destination="jS6-fH-S0v" id="XGf-0E-tQp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJG-Hf-Mhk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="65u-po-XZ3">
+                <searchDisplayController id="sXz-hY-mUe">
                     <connections>
-                        <outlet property="delegate" destination="z4V-p7-EP0" id="nZc-Tw-L8x"/>
-                        <outlet property="searchContentsController" destination="z4V-p7-EP0" id="fwb-WW-Qoi"/>
-                        <outlet property="searchResultsDataSource" destination="z4V-p7-EP0" id="oTy-EQ-zVv"/>
-                        <outlet property="searchResultsDelegate" destination="z4V-p7-EP0" id="eyR-Yy-IWP"/>
+                        <outlet property="delegate" destination="z4V-p7-EP0" id="q7D-KM-sgy"/>
+                        <outlet property="searchBar" destination="giX-iX-TMH" id="w6T-lS-0TO"/>
+                        <outlet property="searchContentsController" destination="z4V-p7-EP0" id="98f-nL-9D4"/>
+                        <outlet property="searchResultsDataSource" destination="z4V-p7-EP0" id="LQ4-vN-RAt"/>
+                        <outlet property="searchResultsDelegate" destination="z4V-p7-EP0" id="qaU-AW-xZw"/>
                     </connections>
                 </searchDisplayController>
             </objects>
@@ -148,7 +153,6 @@
                         <segue destination="X0J-WS-jIm" kind="relationship" relationship="viewControllers" id="gGV-f4-RWB"/>
                         <segue destination="I9i-a1-JXq" kind="relationship" relationship="viewControllers" id="9Xh-uK-CFb"/>
                         <segue destination="cz6-6G-Qwz" kind="relationship" relationship="viewControllers" id="Tuz-XO-kmo"/>
-                        <segue destination="eK1-T2-mdY" kind="relationship" relationship="viewControllers" id="0Bf-Oq-ugH"/>
                         <segue destination="Gxj-4n-eEk" kind="relationship" relationship="viewControllers" id="Xq2-p9-GI2"/>
                     </connections>
                 </tabBarController>
@@ -210,71 +214,6 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1433" y="5469"/>
-        </scene>
-        <!--Whos Who Table View Controller - Whos Who-->
-        <scene sceneID="45t-Sw-aUx">
-            <objects>
-                <tableViewController id="CkI-xr-iYD" customClass="WhosWhoTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yjU-HF-G7Q">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="QqA-K7-Rje">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="CkI-xr-iYD" id="INW-YB-sXH"/>
-                            </connections>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="uIa-WZ-E6V">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uIa-WZ-E6V" id="H4N-9C-pUJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Whos Who" id="wpJ-48-c7j"/>
-                    <connections>
-                        <outlet property="searchBar" destination="QqA-K7-Rje" id="RQ4-Rw-b8U"/>
-                        <outlet property="searchDisplayController" destination="zUY-Y0-N0b" id="OLP-BR-DHG"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OtM-cI-Mmw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="zUY-Y0-N0b">
-                    <connections>
-                        <outlet property="delegate" destination="CkI-xr-iYD" id="yoe-74-JYI"/>
-                        <outlet property="searchBar" destination="QqA-K7-Rje" id="zHp-TI-6bI"/>
-                        <outlet property="searchContentsController" destination="CkI-xr-iYD" id="Pf0-Nm-qJy"/>
-                        <outlet property="searchResultsDataSource" destination="CkI-xr-iYD" id="MmJ-Mo-9bK"/>
-                        <outlet property="searchResultsDelegate" destination="CkI-xr-iYD" id="YH6-D2-hk0"/>
-                    </connections>
-                </searchDisplayController>
-            </objects>
-            <point key="canvasLocation" x="1433" y="6177"/>
-        </scene>
-        <!--Navigation Controller - Whos Who-->
-        <scene sceneID="A0B-50-4oc">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="eK1-T2-mdY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Whos Who" image="Whoswho.png" id="AuF-pq-6Mv"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="EoN-Ay-kvF">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="CkI-xr-iYD" kind="relationship" relationship="rootViewController" id="Uwd-bU-dkJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GHN-Jn-8qY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="874" y="6177"/>
         </scene>
         <!--Chapel Table View Controller-->
         <scene sceneID="keG-VH-GOg">
@@ -652,7 +591,6 @@
         <image name="House.png" width="24" height="24"/>
         <image name="Map.png" width="24" height="24"/>
         <image name="Menu.png" width="24" height="24"/>
-        <image name="Whoswho.png" width="24" height="24"/>
         <image name="banner1.png" width="320" height="160"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

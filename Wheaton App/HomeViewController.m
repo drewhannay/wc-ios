@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "MasterTabViewController.h"
+#import "WhoswhoTableCell.h"
 #import "Person.h"
 
 
@@ -17,7 +18,7 @@
 
 @implementation HomeViewController
 
-@synthesize switchViewControllers, allViewControllers, currentViewController, viewContainer;
+@synthesize switchViewControllers, allViewControllers, currentViewController, viewContainer, searchResults;
 
 - (void)viewDidLoad
 {
@@ -160,6 +161,87 @@
     priorSegmentIndex = index;
     
 }
+
+
+
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [LVDebounce fireAfter:0.5 target:self selector:@selector(performSearch:) userInfo:searchString];
+    return YES;
+}
+
+- (void)performSearch:(NSTimer *)timer
+{
+    NSString *searchString = [timer userInfo];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSDictionary *parameters = @{ @"name": searchString };
+    [manager GET:c_Whoswho parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *resultsArray = responseObject;
+        searchResults = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary* dic in resultsArray) {
+            
+            Person *person = [[Person alloc] init];
+            
+            NSDictionary *name = [dic objectForKey:@"name"];
+            
+            NSLog(@"%@", dic);
+            
+            person.firstName = [name objectForKey:@"first"];
+            person.lastName = [name objectForKey:@"last"];
+            person.email = [dic objectForKey:@"email"];
+            person.photo = [[[dic objectForKey:@"image"] objectForKey:@"url"] objectForKey:@"medium"];
+            [searchResults addObject:person];
+        }
+        
+        [self.searchDisplayController.searchResultsTableView reloadData];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
+
+
+
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+        return [searchResults count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    static NSString *cellIdentifier = @"WhoswhoTableCell";
+    WhoswhoTableCell *cell = (WhoswhoTableCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    Person *person = (Person *)[searchResults objectAtIndex:indexPath.row];
+    
+    cell.firstName.text = [NSString stringWithFormat:@"%@", [person fullName]];
+    
+    NSString *imagename = person.photo;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: imagename]]];
+        if (image) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.profileImage.image = image;
+            });
+        }
+    });
+    
+    return cell;
+}
+
+
 
 
 
