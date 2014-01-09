@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AFNetworking.h"
 
 @interface ChapelTableViewController : UITableViewController {
     int todayRow;
     int todaySection;
+    NSCalendar *cal;
 }
 
 @property (nonatomic, retain) NSMutableArray *schedule;

@@ -18,48 +18,50 @@
 
 @implementation HomePastViewController
 
-@synthesize past;
+@synthesize home;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    past = [[NSMutableArray alloc] init];
-    [self loadTable];
+    home = [[NSMutableArray alloc] init];
+    
+    NSMutableArray *chapelSection = [[NSMutableArray alloc] init];
+    [home addObject:chapelSection];
+    
+    NSMutableArray *sportSection = [[NSMutableArray alloc] init];
+    [home addObject:sportSection];
+    
+    [self load];
 }
 
-- (void)loadTable
+- (void)load
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString: c_Home]];
-        [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
-    });
-}
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSDictionary *parametersChapel = @{ @"limit": @"1", @"next": @"yes" };
+    [manager GET:c_Chapel parameters:parametersChapel success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *chapelArray = responseObject;
+        if ([chapelArray count] > 0) {
+            [[home objectAtIndex:0] addObject:[chapelArray objectAtIndex:0]];
+        }
+        [self.tableView reloadData];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+    NSDictionary *parametersSports = @{ @"limit": @"5" };
+    [manager GET:c_Sports parameters:parametersSports success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *sportArray = responseObject;
+        for (NSDictionary *s in sportArray) {
+            Sport *sport = [[Sport alloc] init];
+            [sport jsonToSport:s];
+            [[home objectAtIndex:1] addObject:sport];
+            [self.tableView reloadData];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 
-- (void)fetchedData:(NSData *)responseData
-{
-    if (responseData == nil) {
-        return;
-    }
-    
-    
-    // parse out the json data
-    NSError *error;
-    NSDictionary *pastJson = [[NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error] objectForKey:@"present"];
-    
-    NSArray *chapelSection = [pastJson objectForKey:@"chapel"];
-    [past addObject:chapelSection];
-    
-    NSArray *sportSection = [pastJson objectForKey:@"sports"];
-    NSMutableArray *sports = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *s in sportSection) {
-        Sport *sport = [[Sport alloc] init];
-        [sport jsonToSport:s];
-        [sports addObject: sport];
-    }
-    [past addObject:sports];
-    
-    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,14 +74,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [past count];
+    return [home count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"%lu", (unsigned long)[[past objectAtIndex:section] count]);
-    return [[past objectAtIndex:section] count];
+    return [[home objectAtIndex:section] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)sectionIndex {
@@ -101,7 +102,7 @@
         NSString *cellIdentifier = @"EventCell";
         NSString *cellFileName = @"EventSubtitleLineView";
         
-        NSDictionary *row = [[past objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+        NSDictionary *row = [[home objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         
         if([[row objectForKey:@"subtitle"] isEqualToString:@""]) {
             cellIdentifier = @"EventSingleCell";
@@ -115,13 +116,20 @@
         }
         
         eventCell.titleLabel.text = [row objectForKey:@"title"];
-        eventCell.subtitleLabel.text = [row objectForKey:@"subtitle"];
-        eventCell.dateLabel.text = [NSString stringWithFormat:@"%@", [row objectForKey:@"date"]];
+        eventCell.subtitleLabel.text = [row objectForKey:@"description"];
+        
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[[[row objectForKey:@"timeStamp"] objectAtIndex:0] doubleValue]];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+        [dateFormatter setDateFormat:@"dd"];
+
+        
+        eventCell.dateLabel.text = [dateFormatter stringFromDate:date];
         
         cell = eventCell;
     } else if (indexPath.section == 1) {
     
-        Sport *sport = [[past objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+        Sport *sport = [[home objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         
         NSString *cellIdentifier = @"SportTableCell";
         

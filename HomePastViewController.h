@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AFNetworking.h"
 
 @interface HomePastViewController : UITableViewController
 
-@property (nonatomic, retain) NSMutableArray *past;
+@property (nonatomic, retain) NSMutableArray *home;
 
 @end

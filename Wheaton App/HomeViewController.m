@@ -45,6 +45,16 @@
     [rightRecognizer setDirection: UISwipeGestureRecognizerDirectionRight];
     [[self view] addGestureRecognizer:rightRecognizer];
     
+    self.searchDisplayController.searchBar.placeholder = @"Who's Who";
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    UITextView *searchTextField = [self.searchDisplayController.searchBar valueForKey:@"_searchField"];
+    searchTextField.textColor = [UIColor whiteColor];
+    
+}
+
+- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
+{
+    return UIBarPositionTopAttached;
 }
 
 

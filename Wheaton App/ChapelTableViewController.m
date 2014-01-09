@@ -23,22 +23,49 @@
 {
     [super viewDidLoad];
     
+    cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    schedule = [[NSMutableArray alloc] init];
     [self loadSchedule];
 }
 
 - (void)loadSchedule
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString: c_Chapel]];
-        NSArray *cachesDirList = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-        NSString *cacheDir = [cachesDirList objectAtIndex:0];
-        if (data != nil) {
-            [data writeToURL:[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@%@", cacheDir, @"chapel.json"]] atomically:YES];
-        } else {
-            data = [NSData dataWithContentsOfURL: [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@%@", cacheDir, @"chapel.json"]]];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    [manager GET:c_Chapel parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *eventsArray = responseObject;
+        
+        for(NSDictionary *entry in eventsArray) {
+            NSDate *entryDate = [NSDate dateWithTimeIntervalSince1970:
+                                 [[[entry objectForKey:@"timeStamp"] objectAtIndex:0] doubleValue]];
+            
+            NSDateComponents *components = [cal components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                                  fromDate:entryDate];
+            
+            Boolean found = NO;
+            for(NSMutableDictionary *category in schedule) {
+                if([[category objectForKey:@"year"] intValue] == [components year]
+                   && [[category objectForKey:@"month"] intValue] == [components month]) {
+                    NSMutableArray *events = [category objectForKey:@"events"];
+                    [events addObject:entry];
+                    found = YES;
+                }
+            }
+            if(found == NO) {
+                NSMutableDictionary *category = [[NSMutableDictionary alloc] init];
+                [category setObject:[NSString stringWithFormat:@"%d", [components year]] forKey:@"year"];
+                [category setObject:[NSString stringWithFormat:@"%d", [components month]] forKey:@"month"];
+                NSMutableArray *events = [[NSMutableArray alloc] init];
+                [events addObject:entry];
+                [category setObject:events forKey:@"events"];
+                [schedule addObject:category];
+            }
         }
-        [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
-    });
+        [self.tableView reloadData];
+        [self moveToCorrectRow];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,13 +85,20 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
 {
     NSDictionary *dictionary = [schedule objectAtIndex:sectionIndex];
-    NSArray *array = [dictionary objectForKey:@"speakers"];
+    NSArray *array = [dictionary objectForKey:@"events"];
     return [array count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)sectionIndex {
-    return [[schedule objectAtIndex:sectionIndex] objectForKey:@"month"];
+    NSDictionary *entry = [schedule objectAtIndex:sectionIndex];
+    int month = [[entry objectForKey:@"month"] intValue];
+    
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    NSString *monthName = [[df monthSymbols] objectAtIndex:(month-1)];
+    
+    return [NSString stringWithFormat:@"%@", monthName];
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -72,27 +106,33 @@
     NSString *cellFileName = @"EventSubtitleLineView";
     
     NSDictionary *dictionary = [schedule objectAtIndex:indexPath.section];
-    NSArray *array = [dictionary objectForKey:@"speakers"];
+    NSArray *array = [dictionary objectForKey:@"events"];
     
     NSDictionary *row = [array objectAtIndex:indexPath.row];
     
-    if([[row objectForKey:@"subtitle"] isEqualToString:@""]) {
+    if ([[row objectForKey:@"description"] isEqualToString:@""]) {
         cellIdentifier = @"EventSingleCell";
         cellFileName = @"EventSingleLineView";
     }
     
     EventTableCell *cell = (EventTableCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil)
-    {
+    if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellFileName owner:nil options:nil];
         cell = [nib objectAtIndex:0];
     }
     
     cell.titleLabel.text = [row objectForKey:@"title"];
-    cell.subtitleLabel.text = [row objectForKey:@"subtitle"];
-    cell.dateLabel.text = [NSString stringWithFormat:@"%@", [row objectForKey:@"date"]];
+    cell.subtitleLabel.text = [row objectForKey:@"description"];
     
-    if(todaySection == indexPath.section && todayRow == indexPath.row) {
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[[[row objectForKey:@"timeStamp"] objectAtIndex:0] doubleValue]];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [dateFormatter setDateFormat:@"dd"];
+    
+    cell.dateLabel.text = [[dateFormatter stringFromDate:date] lowercaseString];
+    
+    if (todaySection == indexPath.section && todayRow == indexPath.row) {
         [cell.current setHidden:NO];
     } else {
         [cell.current setHidden:YES];
@@ -123,35 +163,8 @@
     return 56;
 }
 
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void) moveToCorrectRow
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
-
-
--(void)fetchedData:(id)responseData
-{
-    if (responseData == nil) {
-        return;
-    }
-    NSError* error;
-    NSDictionary *chapelDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
-    NSArray* chapelArray = (NSArray*)chapelDictionary;
-    
-    self.schedule = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary* month in chapelArray) {
-        [schedule addObject:month];
-    }
-    
     NSDate *currentDate = [NSDate date];
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:currentDate];
@@ -163,18 +176,23 @@
     int i;
     
     NSArray *scheduleSection;
-    for(i = 0; i < [schedule count]; i++) {
+    for (i = 0; i < [schedule count]; i++) {
         if([[[schedule objectAtIndex:i] objectForKey:@"month"] isEqualToString:monthName]) {
             scheduleSectionIndex = i;
-            scheduleSection = [[schedule objectAtIndex:i] objectForKey:@"speakers"];
+            scheduleSection = [[schedule objectAtIndex:i] objectForKey:@"events"];
         }
     }
-    for(i = 0; i < [scheduleSection count]; i++) {
-        if([[[scheduleSection objectAtIndex:i] objectForKey:@"date"] intValue] < [components day]) {
+    for (i = 0; i < [scheduleSection count]; i++) {
+        NSDate *entryDate = [NSDate dateWithTimeIntervalSince1970:
+                             [[[[[schedule objectAtIndex:scheduleSectionIndex] objectAtIndex:i] objectForKey:@"timeStamp"] objectAtIndex:0] doubleValue]];
+        
+        NSDateComponents *c = [cal components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                              fromDate:entryDate];
+        if([c day] < [components day]) {
             scheduleRowIndex = i;
         }
     }
-    if(scheduleRowIndex + 1 < [scheduleSection count]) {
+    if (scheduleRowIndex + 1 < [scheduleSection count]) {
         scheduleRowIndex++;
     } else {
         scheduleRowIndex = 0;
@@ -189,6 +207,7 @@
     [self.tableView scrollToRowAtIndexPath:indexPath
                           atScrollPosition:UITableViewScrollPositionTop
                                   animated:NO];
+
 }
 
 @end

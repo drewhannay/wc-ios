@@ -105,6 +105,7 @@
 -(void) hideNavbar:(id) sender
 {
     if (barHidden == NO) {
+        self.tabBarController.tabBar.translucent = YES;
         CGRect tabBarFrame = self.tabBarController.tabBar.frame;
         tabBarFrame.origin.y += tabBarFrame.size.height;
         
@@ -124,6 +125,7 @@
         [UIView animateWithDuration:0.1 animations:^ {
             [self.tabBarController.tabBar setFrame:tabBarFrame];
         }];
+        self.tabBarController.tabBar.translucent = NO;
         barHidden = NO;
     }
 }

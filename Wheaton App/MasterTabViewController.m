@@ -12,7 +12,7 @@
 
 NSString * const c_Home = @"http://23.21.107.65/home";
 NSString * const c_MapLocations = @"http://162.243.197.6/wheaton/locations";
-NSString * const c_Chapel = @"https://s3.amazonaws.com/wcstatic/chapel.json";
+NSString * const c_Chapel = @"http://162.243.197.6/wheaton/chapel";
 NSString * const c_Menu = @"http://162.243.197.6/wheaton/menu";
 NSString * const c_Whoswho = @"http://162.243.197.6/wheaton/person";
 NSString * const c_Sports = @"http://162.243.197.6/wheaton/sports";
