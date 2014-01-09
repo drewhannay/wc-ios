@@ -27,23 +27,32 @@
     
     UIViewController *pVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PastHome"];
     
-    // Add A and B view controllers to the array
-    self.allViewControllers = [[NSArray alloc] initWithObjects:pVC,pVC,pVC, nil];
+    pVC.view.frame = CGRectMake(0,
+                                  0,
+                                  CGRectGetWidth(self.viewContainer.bounds),
+                                  CGRectGetHeight(self.viewContainer.bounds));
     
-    // Ensure a view controller is loaded
-    self.switchViewControllers.selectedSegmentIndex = priorSegmentIndex = 0;
-    [self cycleFromViewController:self.currentViewController toViewController:[self.allViewControllers objectAtIndex:self.switchViewControllers.selectedSegmentIndex] direction:YES];
-    [self.switchViewControllers addTarget:self action:@selector(indexDidChangeForSegmentedControl:) forControlEvents:UIControlEventValueChanged];
+    [self addChildViewController:pVC];
+    [self.viewContainer addSubview:pVC.view];
     
-    UISwipeGestureRecognizer *leftRecognizer;
-    leftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeft:)];
-    [leftRecognizer setDirection: UISwipeGestureRecognizerDirectionLeft];
-    [[self view] addGestureRecognizer:leftRecognizer];
     
-    UISwipeGestureRecognizer *rightRecognizer;
-    rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRight:)];
-    [rightRecognizer setDirection: UISwipeGestureRecognizerDirectionRight];
-    [[self view] addGestureRecognizer:rightRecognizer];
+//    // Add A and B view controllers to the array
+//    self.allViewControllers = [[NSArray alloc] initWithObjects:pVC,pVC,pVC, nil];
+//    
+//    // Ensure a view controller is loaded
+//    self.switchViewControllers.selectedSegmentIndex = priorSegmentIndex = 0;
+//    [self cycleFromViewController:self.currentViewController toViewController:[self.allViewControllers objectAtIndex:self.switchViewControllers.selectedSegmentIndex] direction:YES];
+//    [self.switchViewControllers addTarget:self action:@selector(indexDidChangeForSegmentedControl:) forControlEvents:UIControlEventValueChanged];
+//    
+//    UISwipeGestureRecognizer *leftRecognizer;
+//    leftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeft:)];
+//    [leftRecognizer setDirection: UISwipeGestureRecognizerDirectionLeft];
+//    [[self view] addGestureRecognizer:leftRecognizer];
+//    
+//    UISwipeGestureRecognizer *rightRecognizer;
+//    rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRight:)];
+//    [rightRecognizer setDirection: UISwipeGestureRecognizerDirectionRight];
+//    [[self view] addGestureRecognizer:rightRecognizer];
     
     self.searchDisplayController.searchBar.placeholder = @"Who's Who";
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -193,13 +202,9 @@
         searchResults = [[NSMutableArray alloc] init];
         
         for (NSDictionary* dic in resultsArray) {
-            
-            Person *person = [[Person alloc] init];
-            
             NSDictionary *name = [dic objectForKey:@"name"];
             
-            NSLog(@"%@", dic);
-            
+            Person *person = [[Person alloc] init];
             person.firstName = [name objectForKey:@"first"];
             person.lastName = [name objectForKey:@"last"];
             person.email = [dic objectForKey:@"email"];

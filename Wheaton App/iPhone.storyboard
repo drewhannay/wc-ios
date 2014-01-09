@@ -37,19 +37,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView autoresizesSubviews="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jS6-fH-S0v">
-                                <rect key="frame" x="0.0" y="73" width="320" height="382"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="411"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </containerView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="t53-OR-YNa" customClass="CustomSegmentControl">
-                                <rect key="frame" x="0.0" y="44" width="320" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Past"/>
-                                    <segment title="Now"/>
-                                    <segment title="Coming Up"/>
-                                </segments>
-                            </segmentedControl>
                             <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" searchBarStyle="minimal" placeholder="Who's Who" translatesAutoresizingMaskIntoConstraints="NO" id="giX-iX-TMH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -64,17 +55,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="t53-OR-YNa" firstAttribute="top" secondItem="giX-iX-TMH" secondAttribute="bottom" id="19I-iP-ATT"/>
                             <constraint firstItem="IsI-WR-UH9" firstAttribute="top" secondItem="jS6-fH-S0v" secondAttribute="bottom" id="99p-IQ-X1k"/>
-                            <constraint firstItem="jS6-fH-S0v" firstAttribute="top" secondItem="t53-OR-YNa" secondAttribute="bottom" id="FZn-8L-Fnt"/>
                             <constraint firstItem="SZ7-KF-Dua" firstAttribute="top" secondItem="giX-iX-TMH" secondAttribute="bottom" constant="-44" id="Sw9-zF-ram"/>
+                            <constraint firstItem="jS6-fH-S0v" firstAttribute="top" secondItem="giX-iX-TMH" secondAttribute="bottom" id="WM9-Wc-oUV"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="House.png" id="EPA-YY-fKr"/>
                     <navigationItem key="navigationItem" title="Home" id="pc3-1Z-uBZ"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="sXz-hY-mUe" id="BtM-dL-ndi"/>
-                        <outlet property="switchViewControllers" destination="t53-OR-YNa" id="W7m-nf-2LI"/>
                         <outlet property="viewContainer" destination="jS6-fH-S0v" id="XGf-0E-tQp"/>
                     </connections>
                 </viewController>
@@ -113,7 +102,7 @@
         <scene sceneID="OsJ-3Z-gYG">
             <objects>
                 <tableViewController storyboardIdentifier="PastHome" id="ue9-NN-MlI" customClass="HomePastViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="aO4-Nk-8uq">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="aO4-Nk-8uq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -122,7 +111,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aRy-og-nYy">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aRy-og-nYy">
                                 <rect key="frame" x="0.0" y="215" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aRy-og-nYy" id="los-2C-PRs">
