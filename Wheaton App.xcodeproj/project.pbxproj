@@ -84,6 +84,7 @@
 		61E075C817E6A7790029EFE9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E075C717E6A7790029EFE9 /* SystemConfiguration.framework */; };
 		61E075CF17E6A9850029EFE9 /* MTReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E075CE17E6A9850029EFE9 /* MTReachabilityManager.m */; };
 		61E075D517E6B8B90029EFE9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E075D417E6B8B90029EFE9 /* Reachability.m */; };
+		61E2E91B187F236800E97AD7 /* WhosWhoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E2E91A187F236800E97AD7 /* WhosWhoDetailViewController.m */; };
 		61E4076617CB15850068AE00 /* CustomMenuNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA40CD17CB12E400617623 /* CustomMenuNavBar.m */; };
 		61E4076817CBC9080068AE00 /* menuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E4076717CBC9080068AE00 /* menuButton@2x.png */; };
 		61E4077017CC5B7B0068AE00 /* EventTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4076F17CC5B7B0068AE00 /* EventTableCell.m */; };
@@ -234,6 +235,8 @@
 		61E075CE17E6A9850029EFE9 /* MTReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTReachabilityManager.m; path = ../MTReachabilityManager.m; sourceTree = "<group>"; };
 		61E075D317E6B8B90029EFE9 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "Wheaton App/Reachability.h"; sourceTree = SOURCE_ROOT; };
 		61E075D417E6B8B90029EFE9 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = "Wheaton App/Reachability.m"; sourceTree = SOURCE_ROOT; };
+		61E2E919187F236800E97AD7 /* WhosWhoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhosWhoDetailViewController.h; sourceTree = "<group>"; };
+		61E2E91A187F236800E97AD7 /* WhosWhoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhosWhoDetailViewController.m; sourceTree = "<group>"; };
 		61E4076717CBC9080068AE00 /* menuButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menuButton@2x.png"; sourceTree = "<group>"; };
 		61E4076E17CC5B7B0068AE00 /* EventTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableCell.h; sourceTree = "<group>"; };
 		61E4076F17CC5B7B0068AE00 /* EventTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableCell.m; sourceTree = "<group>"; };
@@ -501,6 +504,8 @@
 				61F70D881831932E00345907 /* MenuViewController.m */,
 				61F70D8A183196B200345907 /* MapViewController.h */,
 				61F70D8B183196B200345907 /* MapViewController.m */,
+				61E2E919187F236800E97AD7 /* WhosWhoDetailViewController.h */,
+				61E2E91A187F236800E97AD7 /* WhosWhoDetailViewController.m */,
 				616DD25518525DD700AC53C3 /* WhosWhoTableViewController.h */,
 				616DD25618525DD700AC53C3 /* WhosWhoTableViewController.m */,
 				61F70D8D1831E03700345907 /* HomeViewController.h */,
@@ -770,6 +775,7 @@
 				61E4077917CECE8B0068AE00 /* WhoswhoSearchBar.m in Sources */,
 				61F70D861831924100345907 /* MoreTableViewController.m in Sources */,
 				61E4079917D2662D0068AE00 /* HomeView.m in Sources */,
+				61E2E91B187F236800E97AD7 /* WhosWhoDetailViewController.m in Sources */,
 				61DDA64B1835E37D00EBA92C /* HomeScrollViewController.m in Sources */,
 				61F70D891831932E00345907 /* MenuViewController.m in Sources */,
 				61851B3B18306529005EDE18 /* EventViewController.m in Sources */,

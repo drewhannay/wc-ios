@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "MasterTabViewController.h"
+#import "WhosWhoDetailViewController.h"
 #import "WhoswhoTableCell.h"
 #import "Person.h"
 
@@ -254,6 +255,19 @@
     });
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        Person *selectedPerson = (Person *)[self.searchResults objectAtIndex:indexPath.row];
+            
+        WhosWhoDetailViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"WhosWhoDetail"];
+        detail.title = selectedPerson.firstName;
+        detail.person = selectedPerson;
+            
+        [self.navigationController pushViewController:detail animated:YES];
+    }
 }
 
 

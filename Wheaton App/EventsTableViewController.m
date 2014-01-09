@@ -103,7 +103,6 @@
     WebViewController *detailViewController = [segue destinationViewController];
     NSIndexPath *indexPath = sender;
     detailViewController.urlString = [[[eventResults objectAtIndex:indexPath.row] objectForKey:@"custom"] objectForKey:@"link"];
-
 }
 
 
