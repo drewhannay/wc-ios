@@ -17,11 +17,6 @@
 @synthesize locations, searchController;
 
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [self resetMap:NULL];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -43,7 +38,30 @@
     [self loadLocations];
 }
 
-- (IBAction)resetMap:(id)sender {
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self resetMap:NULL];
+    CGRect mapViewFrame = self.mapView.frame;
+    CGRect tabBarFrame = self.tabBarController.tabBar.frame;
+    mapViewFrame.size.height += tabBarFrame.size.height;
+    [self.mapView setFrame:mapViewFrame];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    CGRect mapViewFrame = self.mapView.frame;
+    CGRect tabBarFrame = self.tabBarController.tabBar.frame;
+    mapViewFrame.size.height -= tabBarFrame.size.height;
+    [self.mapView setFrame:mapViewFrame];
+}
+
+- (void)tapped
+{
+    [self resetMap:NULL];
+}
+
+- (IBAction)resetMap:(id)sender
+{
     [self.mapView removeAnnotations:self.mapView.annotations];
     for (Location *annotation in locations) {
         [self.mapView addAnnotation:annotation];
@@ -57,7 +75,8 @@
     [self.mapView setRegion:adjustedRegion animated:NO];
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
     static NSString *identifier = @"Location";
     
     if ([annotation isKindOfClass:[Location class]]) {
@@ -76,16 +95,10 @@
     return nil;
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
     return YES;
 }
-
-- (void)didDragMap:(UIGestureRecognizer*)gestureRecognizer {
-    if (gestureRecognizer.state == UIGestureRecognizerStateBegan){
-        NSLog(@"drag start");
-    }
-}
-
 
 - (void)loadLocations
 {
@@ -102,10 +115,9 @@
     });
 }
 
--(void) hideNavbar:(id) sender
+- (void) hideNavbar:(id)sender
 {
     if (barHidden == NO) {
-        self.tabBarController.tabBar.translucent = YES;
         CGRect tabBarFrame = self.tabBarController.tabBar.frame;
         tabBarFrame.origin.y += tabBarFrame.size.height;
         
@@ -116,7 +128,7 @@
     }
 }
 
--(void) showNavbar:(id) sender
+- (void) showNavbar:(id)sender
 {
     if (barHidden == YES) {
         CGRect tabBarFrame = self.tabBarController.tabBar.frame;
@@ -125,7 +137,7 @@
         [UIView animateWithDuration:0.1 animations:^ {
             [self.tabBarController.tabBar setFrame:tabBarFrame];
         }];
-        self.tabBarController.tabBar.translucent = NO;
+        
         barHidden = NO;
     }
 }

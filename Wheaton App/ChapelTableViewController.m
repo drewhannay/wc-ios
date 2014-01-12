@@ -165,41 +165,19 @@
 
 - (void) moveToCorrectRow
 {
-    NSDate *currentDate = [NSDate date];
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:currentDate];
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    NSString *monthName = [[df monthSymbols] objectAtIndex:([components month]-1)];
     
     int scheduleSectionIndex = 0;
     int scheduleRowIndex = 0;
-    int i;
     
-    NSArray *scheduleSection;
-    for (i = 0; i < [schedule count]; i++) {
-        if([[[schedule objectAtIndex:i] objectForKey:@"month"] isEqualToString:monthName]) {
-            scheduleSectionIndex = i;
-            scheduleSection = [[schedule objectAtIndex:i] objectForKey:@"events"];
+    for (int i = 0; i < [schedule count]; i++) {
+        NSArray *section = [[schedule objectAtIndex:i] objectForKey:@"events"];
+        for (int j = 0; j < [section count]; j++) {
+            if ([[[[section objectAtIndex:j] objectForKey:@"timeStamp"] objectAtIndex:0] doubleValue] < [[NSDate date] timeIntervalSince1970]) {
+                scheduleSectionIndex = i;
+                scheduleRowIndex = j;
+            }
         }
     }
-    for (i = 0; i < [scheduleSection count]; i++) {
-        NSDate *entryDate = [NSDate dateWithTimeIntervalSince1970:
-                             [[[[[schedule objectAtIndex:scheduleSectionIndex] objectAtIndex:i] objectForKey:@"timeStamp"] objectAtIndex:0] doubleValue]];
-        
-        NSDateComponents *c = [cal components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
-                                              fromDate:entryDate];
-        if([c day] < [components day]) {
-            scheduleRowIndex = i;
-        }
-    }
-    if (scheduleRowIndex + 1 < [scheduleSection count]) {
-        scheduleRowIndex++;
-    } else {
-        scheduleRowIndex = 0;
-    }
-    
-    todayRow = scheduleRowIndex;
-    todaySection = scheduleSectionIndex;
     
     [self.tableView reloadData];
     

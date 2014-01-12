@@ -20,4 +20,6 @@
 @property (strong, nonatomic) UISearchDisplayController *searchController;
 
 - (IBAction)resetMap:(id)sender;
+- (void)tapped;
+
 @end

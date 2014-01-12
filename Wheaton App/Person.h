@@ -12,9 +12,12 @@
 
 @property NSString *firstName;
 @property NSString *lastName;
+@property NSString *prefName;
+@property NSString *classification;
 @property NSString *email;
 @property NSString *photo;
 
 - (NSString *)fullName;
+- (NSString *)fullNameWithPref;
 
 @end

@@ -56,6 +56,7 @@
 //    [[self view] addGestureRecognizer:rightRecognizer];
     
     self.searchDisplayController.searchBar.placeholder = @"Who's Who";
+    self.searchDisplayController.searchBar.clipsToBounds = YES;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     UITextView *searchTextField = [self.searchDisplayController.searchBar valueForKey:@"_searchField"];
     searchTextField.textColor = [UIColor whiteColor];
@@ -195,20 +196,26 @@
 {
     NSString *searchString = [timer userInfo];
     
+    NSLog(@"Perform Search");
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    NSDictionary *parameters = @{ @"name": searchString };
+    NSDictionary *parameters = @{ @"name": searchString, @"limit": @"15" };
     [manager GET:c_Whoswho parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *resultsArray = responseObject;
         searchResults = [[NSMutableArray alloc] init];
+        
+        NSLog(@"Got Results @d", [searchResults count]);
         
         for (NSDictionary* dic in resultsArray) {
             NSDictionary *name = [dic objectForKey:@"name"];
             
             Person *person = [[Person alloc] init];
             person.firstName = [name objectForKey:@"first"];
+            person.prefName = [name objectForKey:@"preferred"];
             person.lastName = [name objectForKey:@"last"];
             person.email = [dic objectForKey:@"email"];
+            person.classification = [dic objectForKey:@"classification"];
             person.photo = [[[dic objectForKey:@"image"] objectForKey:@"url"] objectForKey:@"medium"];
             [searchResults addObject:person];
         }
@@ -245,14 +252,17 @@
     cell.firstName.text = [NSString stringWithFormat:@"%@", [person fullName]];
     
     NSString *imagename = person.photo;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: imagename]]];
-        if (image) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                cell.profileImage.image = image;
-            });
-        }
-    });
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:imagename]
+                                             cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                         timeoutInterval:60.0];
+    
+    [cell.profileImage setImageWithURLRequest:request
+                     placeholderImage:[UIImage imageNamed:@"default-image"]
+                              success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                  cell.profileImage.image = image;
+                              }
+                              failure:nil];
     
     return cell;
 }

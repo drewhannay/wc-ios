@@ -19,6 +19,8 @@ extern NSString * const c_Academic;
 extern NSString * const c_Banners;
 extern NSString * const c_PushOptions;
 
-@interface MasterTabViewController : UITabBarController <UITabBarControllerDelegate>
+@interface MasterTabViewController : UITabBarController <UITabBarControllerDelegate> {
+    int index;
+}
 
 @end

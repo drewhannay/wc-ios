@@ -10,6 +10,7 @@
 #import "MasterTabViewController.h"
 #import "HomeSearchDisplayController.h"
 #import "AFNetworking.h"
+#import "UIImageView+AFNetworking.h"
 #import "LVDebounce.h"
 
 @interface HomeViewController : UIViewController <UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDelegate, UITableViewDataSource> {

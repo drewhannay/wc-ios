@@ -75,6 +75,7 @@
 		61CA40CE17CB12E500617623 /* CustomMenuNavBar.m in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40CD17CB12E400617623 /* CustomMenuNavBar.m */; };
 		61CA40D217CB137600617623 /* CustomMenuNav.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40D017CB137500617623 /* CustomMenuNav.png */; };
 		61CA40D317CB137600617623 /* CustomMenuNav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40D117CB137600617623 /* CustomMenuNav@2x.png */; };
+		61CE5FC1188355AB007B66AB /* default-image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CE5FC0188355AB007B66AB /* default-image@2x.png */; };
 		61DDA64B1835E37D00EBA92C /* HomeScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DDA64A1835E37D00EBA92C /* HomeScrollViewController.m */; };
 		61DDA64D18368F8B00EBA92C /* AcademicTableViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 61DDA64C18368F8B00EBA92C /* AcademicTableViewController.h */; };
 		61DDA64F18368F9D00EBA92C /* AcademicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DDA64E18368F9D00EBA92C /* AcademicTableViewController.m */; };
@@ -222,6 +223,7 @@
 		61CA40CF17CB130200617623 /* CustomMenuNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMenuNavBar.h; sourceTree = "<group>"; };
 		61CA40D017CB137500617623 /* CustomMenuNav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CustomMenuNav.png; sourceTree = "<group>"; };
 		61CA40D117CB137600617623 /* CustomMenuNav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CustomMenuNav@2x.png"; sourceTree = "<group>"; };
+		61CE5FC0188355AB007B66AB /* default-image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-image@2x.png"; sourceTree = "<group>"; };
 		61DDA6491835E37D00EBA92C /* HomeScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScrollViewController.h; sourceTree = "<group>"; };
 		61DDA64A1835E37D00EBA92C /* HomeScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScrollViewController.m; sourceTree = "<group>"; };
 		61DDA64C18368F8B00EBA92C /* AcademicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcademicTableViewController.h; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 		2D26540F13E069DB00DE089C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				61CE5FC0188355AB007B66AB /* default-image@2x.png */,
 				61F70D931832D10000345907 /* Swimming.png */,
 				61F70D941832D10000345907 /* Swimming@2x.png */,
 				610B1D5A1829B4D900E45D22 /* Notification.png */,
@@ -690,6 +693,7 @@
 				615097F217D5221900456A9D /* back@2x.png in Resources */,
 				615097F417D541CA00456A9D /* twitter@2x.png in Resources */,
 				615097FB17D5477800456A9D /* Chapel.png in Resources */,
+				61CE5FC1188355AB007B66AB /* default-image@2x.png in Resources */,
 				615097FC17D5477800456A9D /* Chapel@2x.png in Resources */,
 				615097FD17D5477800456A9D /* Map.png in Resources */,
 				615097FE17D5477800456A9D /* Map@2x.png in Resources */,
@@ -875,7 +879,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "127D9B80-85A8-4E64-8F2A-91FCEB0C70DA";
+				PROVISIONING_PROFILE = "EEC1EF1B-E019-4D66-8D96-973B8BB4315B";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -899,7 +903,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "127D9B80-85A8-4E64-8F2A-91FCEB0C70DA";
+				PROVISIONING_PROFILE = "EEC1EF1B-E019-4D66-8D96-973B8BB4315B";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
@@ -943,7 +947,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "127D9B80-85A8-4E64-8F2A-91FCEB0C70DA";
+				PROVISIONING_PROFILE = "EEC1EF1B-E019-4D66-8D96-973B8BB4315B";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;

@@ -13,5 +13,8 @@
 - (NSString *)fullName {
     return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
 }
+- (NSString *)fullNameWithPref {
+    return [NSString stringWithFormat:@"%@ (%@) %@", self.firstName, self.prefName, self.lastName];
+}
 
 @end
