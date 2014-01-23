@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AFNetworking.h"
 
-@interface NotificationOptionsTableViewController : UITableViewController
+@interface NotificationOptionsTableViewController : UITableViewController {
+    AFHTTPRequestOperationManager *manager;
+}
 
 @property (nonatomic, retain) NSMutableArray *notificationOptions;
 

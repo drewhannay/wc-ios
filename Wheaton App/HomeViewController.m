@@ -7,7 +7,6 @@
 //
 
 #import "HomeViewController.h"
-#import "MasterTabViewController.h"
 #import "WhosWhoDetailViewController.h"
 #import "WhoswhoTableCell.h"
 #import "Person.h"
@@ -29,9 +28,9 @@
     UIViewController *pVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PastHome"];
     
     pVC.view.frame = CGRectMake(0,
-                                  0,
-                                  CGRectGetWidth(self.viewContainer.bounds),
-                                  CGRectGetHeight(self.viewContainer.bounds));
+                                0,
+                                CGRectGetWidth(self.viewContainer.bounds),
+                                CGRectGetHeight(self.viewContainer.bounds));
     
     [self addChildViewController:pVC];
     [self.viewContainer addSubview:pVC.view];
@@ -61,6 +60,14 @@
     UITextView *searchTextField = [self.searchDisplayController.searchBar valueForKey:@"_searchField"];
     searchTextField.textColor = [UIColor whiteColor];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (![MTReachabilityManager isReachableViaWiFi]) {
+        [self.searchDisplayController.searchBar setUserInteractionEnabled:NO];
+        [self.searchDisplayController.searchBar setPlaceholder:@"Please Connect to Campus Network"];
+    }
 }
 
 - (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
@@ -196,16 +203,16 @@
 {
     NSString *searchString = [timer userInfo];
     
-    NSLog(@"Perform Search");
+    //NSLog(@"Perform Search");
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    NSDictionary *parameters = @{ @"name": searchString, @"limit": @"15" };
+    NSDictionary *parameters = @{ @"name": searchString, @"limit": @"20" };
     [manager GET:c_Whoswho parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *resultsArray = responseObject;
         searchResults = [[NSMutableArray alloc] init];
         
-        NSLog(@"Got Results @d", [searchResults count]);
+        //NSLog(@"Got Results %d", [resultsArray count]);
         
         for (NSDictionary* dic in resultsArray) {
             NSDictionary *name = [dic objectForKey:@"name"];
@@ -215,7 +222,10 @@
             person.prefName = [name objectForKey:@"preferred"];
             person.lastName = [name objectForKey:@"last"];
             person.email = [dic objectForKey:@"email"];
-            person.classification = [dic objectForKey:@"classification"];
+            person.classification = @"N/A";
+            if (![person.classification isEqual:[NSNull null]]) {
+                person.classification = [dic objectForKey:@"classification"];
+            }
             person.photo = [[[dic objectForKey:@"image"] objectForKey:@"url"] objectForKey:@"medium"];
             [searchResults addObject:person];
         }
@@ -230,6 +240,24 @@
 
 
 
+- (void)searchDisplayController:(UISearchDisplayController *)controller didHideSearchResultsTableView:(UITableView *)tableView
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller willShowSearchResultsTableView:(UITableView *)tableView
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void) keyboardWillHide
+{
+    UITableView *tableView = [[self searchDisplayController] searchResultsTableView];
+    
+    [tableView setContentInset:UIEdgeInsetsZero];
+    [tableView setScrollIndicatorInsets:UIEdgeInsetsZero];
+    
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

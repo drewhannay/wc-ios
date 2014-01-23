@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityView;
-@property (strong, nonatomic) NSString *urlString;
+@property (strong, nonatomic) NSURL *url;
+@property BOOL allowZoom;
+@property BOOL allowResize;
+@property BOOL refresh;
 
 @end

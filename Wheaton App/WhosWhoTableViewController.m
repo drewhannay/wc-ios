@@ -7,7 +7,6 @@
 //
 
 #import "WhosWhoTableViewController.h"
-#import "MasterTabViewController.h"
 #import "WhoswhoTableCell.h"
 #import "Person.h"
 

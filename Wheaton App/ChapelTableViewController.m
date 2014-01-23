@@ -7,7 +7,6 @@
 //
 
 #import "ChapelTableViewController.h"
-#import "MasterTabViewController.h"
 #import "EventTableCell.h"
 
 @interface ChapelTableViewController ()
@@ -25,6 +24,7 @@
     
     cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     schedule = [[NSMutableArray alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
     [self loadSchedule];
 }
 
@@ -32,7 +32,7 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    [manager GET:c_Chapel parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:c_Chapel parameters:@{@"limit":@"100"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *eventsArray = responseObject;
         
         for(NSDictionary *entry in eventsArray) {
@@ -66,6 +66,11 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
+}
+
+- (void)refreshView:(UIRefreshControl *)sender {
+    [self loadSchedule];
+    [sender endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,7 +7,6 @@
 //
 
 #import "AcademicTableViewController.h"
-#import "MasterTabViewController.h"
 #import "EventTableCell.h"
 
 @interface AcademicTableViewController ()
@@ -79,6 +78,7 @@
 }
 
 - (void)refreshView:(UIRefreshControl *)sender {
+    [self loadCalendar];
     [sender endRefreshing];
 }
 

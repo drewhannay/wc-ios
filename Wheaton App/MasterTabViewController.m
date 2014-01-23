@@ -8,17 +8,8 @@
 
 #import "MasterTabViewController.h"
 #import "MapViewController.h"
+#import "WebViewController.h"
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-
-NSString * const c_MapLocations = @"https://isoncamp.us/wheaton/locations";
-NSString * const c_Chapel = @"https://isoncamp.us/wheaton/chapel";
-NSString * const c_Menu = @"https://isoncamp.us/wheaton/menu";
-NSString * const c_Whoswho = @"https://isoncamp.us/wheaton/person";
-NSString * const c_Sports = @"https://isoncamp.us/wheaton/sports";
-NSString * const c_Academic = @"https://isoncamp.us/wheaton/academic";
-NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
-NSString * const c_Events = @"https://isoncamp.us/wheaton/events";
-NSString * const c_PushOptions = @"https://isoncamp.us/apn";
 
 //NSString * const c_MapLocations = @"http://localhost:3000/wheaton/locations";
 //NSString * const c_Chapel = @"http://localhost:3000/wheaton/chapel";
@@ -42,6 +33,10 @@ NSString * const c_PushOptions = @"https://isoncamp.us/apn";
     // Do any additional setup after loading the view from its nib.
     
     [[UITabBar appearance] setTintColor:UIColorFromRGB(0xe36f1e)];
+    
+    WebViewController *mealMenu = (WebViewController *)[self.viewControllers objectAtIndex:2];
+    mealMenu.url = [NSURL URLWithString:c_Menu];
+    mealMenu.allowResize = NO;
     self.delegate = self;
 }
 
@@ -52,7 +47,7 @@ NSString * const c_PushOptions = @"https://isoncamp.us/apn";
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
-    if ([self selectedIndex] == 1) {
+    if ([self selectedIndex] == 3) {
         [((MapViewController *)[self selectedViewController]) tapped];
     }
     index = [self selectedIndex];

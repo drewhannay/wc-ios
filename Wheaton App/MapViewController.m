@@ -7,7 +7,6 @@
 //
 
 #import "MapViewController.h"
-#import "MasterTabViewController.h"
 #import "Location.h"
 
 #define METERS_PER_MILE 1609.344
@@ -41,18 +40,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [self resetMap:NULL];
-    CGRect mapViewFrame = self.mapView.frame;
-    CGRect tabBarFrame = self.tabBarController.tabBar.frame;
-    mapViewFrame.size.height += tabBarFrame.size.height;
-    [self.mapView setFrame:mapViewFrame];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    CGRect mapViewFrame = self.mapView.frame;
-    CGRect tabBarFrame = self.tabBarController.tabBar.frame;
-    mapViewFrame.size.height -= tabBarFrame.size.height;
-    [self.mapView setFrame:mapViewFrame];
 }
 
 - (void)tapped
@@ -117,29 +104,29 @@
 
 - (void) hideNavbar:(id)sender
 {
-    if (barHidden == NO) {
-        CGRect tabBarFrame = self.tabBarController.tabBar.frame;
-        tabBarFrame.origin.y += tabBarFrame.size.height;
-        
-        [UIView animateWithDuration:0.2 animations:^ {
-            [self.tabBarController.tabBar setFrame:tabBarFrame];
-        }];
-        barHidden = YES;
-    }
+//    if (barHidden == NO) {
+//        CGRect tabBarFrame = self.tabBarController.tabBar.frame;
+//        tabBarFrame.origin.y += tabBarFrame.size.height;
+//        
+//        [UIView animateWithDuration:0.2 animations:^ {
+//            [self.tabBarController.tabBar setFrame:tabBarFrame];
+//        }];
+//        barHidden = YES;
+//    }
 }
 
 - (void) showNavbar:(id)sender
 {
-    if (barHidden == YES) {
-        CGRect tabBarFrame = self.tabBarController.tabBar.frame;
-        tabBarFrame.origin.y -= tabBarFrame.size.height;
-        
-        [UIView animateWithDuration:0.1 animations:^ {
-            [self.tabBarController.tabBar setFrame:tabBarFrame];
-        }];
-        
-        barHidden = NO;
-    }
+//    if (barHidden == YES) {
+//        CGRect tabBarFrame = self.tabBarController.tabBar.frame;
+//        tabBarFrame.origin.y -= tabBarFrame.size.height;
+//        
+//        [UIView animateWithDuration:0.1 animations:^ {
+//            [self.tabBarController.tabBar setFrame:tabBarFrame];
+//        }];
+//        
+//        barHidden = NO;
+//    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -219,6 +206,27 @@ shouldReloadTableForSearchString:(NSString *)searchString
                                                      selectedScopeButtonIndex]]];
     
     return YES;
+}
+
+
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller didHideSearchResultsTableView:(UITableView *)tableView {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller willShowSearchResultsTableView:(UITableView *)tableView {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide) name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+- (void) keyboardWillHide {
+    UITableView *tableView = [[self searchDisplayController] searchResultsTableView];
+    
+    [tableView setContentInset:UIEdgeInsetsZero];
+    [tableView setScrollIndicatorInsets:UIEdgeInsetsZero];
+    
 }
 
 - (void)viewDidUnload {

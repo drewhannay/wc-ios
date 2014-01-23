@@ -7,7 +7,6 @@
 //
 
 #import "HomePastViewController.h"
-#import "MasterTabViewController.h"
 #import "SportTableCell.h"
 #import "EventTableCell.h"
 #import "Sport.h"
@@ -18,7 +17,7 @@
 
 @implementation HomePastViewController
 
-@synthesize home;
+@synthesize home, scrollView;
 
 - (void)viewDidLoad
 {
@@ -31,11 +30,25 @@
     NSMutableArray *sportSection = [[NSMutableArray alloc] init];
     [home addObject:sportSection];
     
+    [scrollView loaded];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    
+    [scrollView setDelegate:self];
+    [scrollView setScrollEnabled:YES];
+    [scrollView setAutoresizingMask:UIViewAutoresizingNone];
+
     [self load];
 }
 
 - (void)load
 {
+    [[home objectAtIndex:0] removeAllObjects];
+    [[home objectAtIndex:1] removeAllObjects];
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     NSDictionary *parametersChapel = @{ @"limit": @"1", @"next": @"yes" };
@@ -104,7 +117,7 @@
         
         NSDictionary *row = [[home objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
         
-        if([[row objectForKey:@"subtitle"] isEqualToString:@""]) {
+        if ([[row objectForKey:@"description"] isEqualToString:@""]) {
             cellIdentifier = @"EventSingleCell";
             cellFileName = @"EventSingleLineView";
         }

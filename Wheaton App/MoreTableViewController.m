@@ -7,7 +7,6 @@
 //
 
 #import "MoreTableViewController.h"
-#import "MasterTabViewController.h"
 #import "WebViewController.h"
 
 @interface MoreTableViewController ()
@@ -27,13 +26,22 @@
     
     [moreHeaders addObject:@"Options"];
     
-    NSMutableDictionary *menuOption = [[NSMutableDictionary alloc] init];
-    WebViewController *mVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
-    mVC.urlString = c_Menu;
-    [menuOption setValue:@"Meal Menu" forKey:@"name"];
-    [menuOption setValue:mVC forKey:@"controller"];
+//    NSMutableDictionary *menuOption = [[NSMutableDictionary alloc] init];
+//    WebViewController *mVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WebView"];
+//    mVC.url = [NSURL URLWithString:c_Menu];
+//    [menuOption setValue:@"Meal Menu" forKey:@"name"];
+//    [menuOption setValue:mVC forKey:@"controller"];
+//    [moreTable addObject:menuOption];
     
-    [moreTable addObject:menuOption];
+    NSMutableDictionary *chapelOption = [[NSMutableDictionary alloc] init];
+    WebViewController *cVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WebView"];
+    cVC.allowZoom = YES;
+    cVC.url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"chapel" ofType:@"pdf"]];
+    [chapelOption setValue:@"Chapel Seat Layout" forKey:@"name"];
+    [chapelOption setValue:cVC forKey:@"controller"];
+    [moreTable addObject:chapelOption];
+    
+    
     
     UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
     if (types != UIRemoteNotificationTypeNone) {
@@ -45,6 +53,13 @@
         
         [moreTable addObject:notificationOption];
     }
+    
+    NSMutableDictionary *aboutOption = [[NSMutableDictionary alloc] init];
+    WebViewController *aVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WebView"];
+    aVC.url = [NSURL URLWithString:c_About];
+    [aboutOption setValue:@"About" forKey:@"name"];
+    [aboutOption setValue:aVC forKey:@"controller"];
+    [moreTable addObject:aboutOption];
     
     [self.tableView reloadData];
     

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Constants.h"
 
 @interface WhosWhoTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 

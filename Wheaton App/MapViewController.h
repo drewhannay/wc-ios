@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "GAITrackedViewController.h"
+#import "Constants.h"
 
 @interface MapViewController : GAITrackedViewController <MKMapViewDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate> {
     NSArray *searchResults;

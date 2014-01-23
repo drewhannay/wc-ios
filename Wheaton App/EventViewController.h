@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MasterTabViewController.h"
+#import "Constants.h"
 
 @interface EventViewController : UIViewController <UIGestureRecognizerDelegate> {
     int priorSegmentIndex;

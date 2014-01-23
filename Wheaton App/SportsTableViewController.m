@@ -27,11 +27,27 @@
     
     [sportResults setObject:[[NSArray alloc] init] forKey:@"0"];
     [sportResults setObject:[[NSArray alloc] init] forKey:@"1"];
-	
+    
+    [self.refreshControl addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
+    
+    [self loadSports];
+}
+
+- (void)loadSports
+{
+    [sportResults setObject:[[NSArray alloc] init] forKey:@"0"];
+    [sportResults setObject:[[NSArray alloc] init] forKey:@"1"];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString: c_Sports]];
         [self performSelectorOnMainThread:@selector(fetchedDataToCome:) withObject:data waitUntilDone:YES];
     });
+}
+
+- (void)refreshView:(UIRefreshControl *)sender {
+    NSLog(@"SPORTS REFRESHED");
+    [self loadSports];
+    [sender endRefreshing];
 }
 
 - (void)fetchedDataToCome:(NSData *)responseData
@@ -141,6 +157,14 @@
     }
     
     return [sport generateCell:cell];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Sport *sport = [[sportResults objectForKey:[NSString stringWithFormat:@"%d", indexPath.section]] objectAtIndex:indexPath.row];
+    if ([[sport.score objectForKey:@"other"] intValue] < [[sport.score objectForKey:@"school"] intValue]) {
+        [cell setBackgroundColor:[UIColor colorWithRed:255/255.0f green:106/255.0f blue:0.0f alpha:.15f]];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

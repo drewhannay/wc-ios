@@ -42,10 +42,12 @@
 
 - (void)addNotification:(NSDictionary *)notification
 {
-    UITabBarController *rootViewController = (UITabBarController *)self.window.rootViewController;
-    UINavigationController *nnc = (UINavigationController *)rootViewController.childViewControllers[3];
-    NotificationsViewController *nvc = (NotificationsViewController *)[[nnc viewControllers] lastObject];
-    [nvc addPushNotification:notification];
+//    UITabBarController *rootViewController = (UITabBarController *)self.window.rootViewController;
+//    UINavigationController *nnc = (UINavigationController *)rootViewController.childViewControllers[3];
+//    NotificationsViewController *nvc = (NotificationsViewController *)[[nnc viewControllers] lastObject];
+//    [nvc addPushNotification:notification];
+    
+    NSLog(@"%@", notification);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -96,8 +98,9 @@
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         
-        NSDictionary *parameters = @{@"foo": @"bar"};
-        [manager POST:@"http://example.com/resources.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *parameters = @{@"token": deviceToken};
+        NSString *url = [NSString stringWithFormat:@"%@/add", c_PushOptions];
+        [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"JSON: %@", responseObject);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);

@@ -7,6 +7,7 @@
 //
 
 #import "HomeView.h"
+#import "Constants.h"
 
 @implementation HomeView
 
@@ -17,8 +18,12 @@
     [scrollView setAutoresizingMask:UIViewAutoresizingNone];
     [pageControl setTag:12];
     [pageControl setAutoresizingMask:UIViewAutoresizingNone];
+    [scrollView setPagingEnabled:YES];
+    [scrollView setShowsHorizontalScrollIndicator:NO];
+    [scrollView setShowsVerticalScrollIndicator:NO];
     
-    NSURL *URL = [NSURL URLWithString: @"http://thing.com"];
+    
+    NSURL *URL = [NSURL URLWithString: c_Banners];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSData *data = [NSData dataWithContentsOfURL: URL];
