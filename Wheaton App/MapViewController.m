@@ -35,6 +35,9 @@
     [self.mapView addGestureRecognizer:panGesture];
     
     [self loadLocations];
+    
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Opened Map" properties:@{}];
 }
 
 - (void)viewDidAppear:(BOOL)animated

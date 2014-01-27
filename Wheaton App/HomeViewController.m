@@ -60,6 +60,9 @@
     UITextView *searchTextField = [self.searchDisplayController.searchBar valueForKey:@"_searchField"];
     searchTextField.textColor = [UIColor whiteColor];
     
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Opened Home" properties:@{}];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -67,6 +70,9 @@
     if (![MTReachabilityManager isReachableViaWiFi]) {
         [self.searchDisplayController.searchBar setUserInteractionEnabled:NO];
         [self.searchDisplayController.searchBar setPlaceholder:@"Please Connect to Campus Network"];
+    } else {
+        [self.searchDisplayController.searchBar setUserInteractionEnabled:YES];
+        [self.searchDisplayController.searchBar setPlaceholder:@"Who's Who"];
     }
 }
 
@@ -160,19 +166,19 @@
     }
 }
 
-- (void)handleSwipeRight:(id)swipe {
-    NSUInteger index = self.switchViewControllers.selectedSegmentIndex;
-    index = priorSegmentIndex = self.switchViewControllers.selectedSegmentIndex = (index - 1) % 3;
-    UIViewController *incomingViewController = [self.allViewControllers objectAtIndex:index];
-    [self cycleFromViewController:self.currentViewController toViewController:incomingViewController direction:NO];
-}
-
-- (void)handleSwipeLeft:(id)swipe {
-    NSUInteger index = self.switchViewControllers.selectedSegmentIndex;
-    index = priorSegmentIndex = self.switchViewControllers.selectedSegmentIndex = (index + 1) % 3;
-    UIViewController *incomingViewController = [self.allViewControllers objectAtIndex:index];
-    [self cycleFromViewController:self.currentViewController toViewController:incomingViewController direction:YES];
-}
+//- (void)handleSwipeRight:(id)swipe {
+//    NSUInteger index = self.switchViewControllers.selectedSegmentIndex;
+//    index = priorSegmentIndex = self.switchViewControllers.selectedSegmentIndex = (index - 1) % 3;
+//    UIViewController *incomingViewController = [self.allViewControllers objectAtIndex:index];
+//    [self cycleFromViewController:self.currentViewController toViewController:incomingViewController direction:NO];
+//}
+//
+//- (void)handleSwipeLeft:(id)swipe {
+//    NSUInteger index = self.switchViewControllers.selectedSegmentIndex;
+//    index = priorSegmentIndex = self.switchViewControllers.selectedSegmentIndex = (index + 1) % 3;
+//    UIViewController *incomingViewController = [self.allViewControllers objectAtIndex:index];
+//    [self cycleFromViewController:self.currentViewController toViewController:incomingViewController direction:YES];
+//}
 
 - (IBAction)indexDidChangeForSegmentedControl:(UISegmentedControl *)sender {
     

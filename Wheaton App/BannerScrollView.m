@@ -1,15 +1,15 @@
 //
-//  HomeView.m
+//  BannerScrollView.m
 //  Wheaton App
 //
 //  Created by Chris Anderson on 8/31/13.
 //
 //
 
-#import "HomeView.h"
+#import "BannerScrollView.h"
 #import "Constants.h"
 
-@implementation HomeView
+@implementation BannerScrollView
 
 @synthesize scrollView, pageControl;
 

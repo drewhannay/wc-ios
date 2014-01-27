@@ -92,7 +92,7 @@
 		61E4077017CC5B7B0068AE00 /* EventTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4076F17CC5B7B0068AE00 /* EventTableCell.m */; };
 		61E4077617CEB9340068AE00 /* WhoswhoTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4077517CEB9330068AE00 /* WhoswhoTableCell.m */; };
 		61E4077917CECE8B0068AE00 /* WhoswhoSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4077817CECE8A0068AE00 /* WhoswhoSearchBar.m */; };
-		61E4079917D2662D0068AE00 /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4079817D266270068AE00 /* HomeView.m */; };
+		61E4079917D2662D0068AE00 /* BannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4079817D266270068AE00 /* BannerScrollView.m */; };
 		61E4079B17D27DBF0068AE00 /* banner1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E4079A17D27DBF0068AE00 /* banner1@2x.png */; };
 		61E4079D17D27EA40068AE00 /* banner2.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E4079C17D27EA40068AE00 /* banner2.png */; };
 		61E407A317D2A9D10068AE00 /* Basketball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E407A217D2A9D00068AE00 /* Basketball@2x.png */; };
@@ -247,8 +247,8 @@
 		61E4077517CEB9330068AE00 /* WhoswhoTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhoswhoTableCell.m; sourceTree = "<group>"; };
 		61E4077717CECE8A0068AE00 /* WhoswhoSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhoswhoSearchBar.h; sourceTree = "<group>"; };
 		61E4077817CECE8A0068AE00 /* WhoswhoSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhoswhoSearchBar.m; sourceTree = "<group>"; };
-		61E4079717D266240068AE00 /* HomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
-		61E4079817D266270068AE00 /* HomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
+		61E4079717D266240068AE00 /* BannerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerScrollView.h; sourceTree = "<group>"; };
+		61E4079817D266270068AE00 /* BannerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerScrollView.m; sourceTree = "<group>"; };
 		61E4079A17D27DBF0068AE00 /* banner1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "banner1@2x.png"; sourceTree = "<group>"; };
 		61E4079C17D27EA40068AE00 /* banner2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner2.png; sourceTree = "<group>"; };
 		61E407A217D2A9D00068AE00 /* Basketball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Basketball@2x.png"; sourceTree = "<group>"; };
@@ -548,8 +548,8 @@
 				61E4077517CEB9330068AE00 /* WhoswhoTableCell.m */,
 				61E4077717CECE8A0068AE00 /* WhoswhoSearchBar.h */,
 				61E4077817CECE8A0068AE00 /* WhoswhoSearchBar.m */,
-				61E4079717D266240068AE00 /* HomeView.h */,
-				61E4079817D266270068AE00 /* HomeView.m */,
+				61E4079717D266240068AE00 /* BannerScrollView.h */,
+				61E4079817D266270068AE00 /* BannerScrollView.m */,
 				612BFF0217DEE71D00EB2C8C /* MapSearchBar.h */,
 				612BFF0317DEE71D00EB2C8C /* MapSearchBar.m */,
 				61DE4FF9183020AA004BBCA1 /* CustomSegmentControl.h */,
@@ -781,7 +781,7 @@
 				61E4077617CEB9340068AE00 /* WhoswhoTableCell.m in Sources */,
 				61E4077917CECE8B0068AE00 /* WhoswhoSearchBar.m in Sources */,
 				61F70D861831924100345907 /* MoreTableViewController.m in Sources */,
-				61E4079917D2662D0068AE00 /* HomeView.m in Sources */,
+				61E4079917D2662D0068AE00 /* BannerScrollView.m in Sources */,
 				61E2E91B187F236800E97AD7 /* WhosWhoDetailViewController.m in Sources */,
 				61DDA64B1835E37D00EBA92C /* HomeScrollViewController.m in Sources */,
 				61851B3B18306529005EDE18 /* EventViewController.m in Sources */,

@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "AFNetworking.h"
 #import "Constants.h"
-#import "HomeView.h"
+#import "BannerScrollView.h"
 
 @interface HomePastViewController : UITableViewController
 
 @property (nonatomic, retain) NSMutableArray *home;
-@property (strong, nonatomic) IBOutlet HomeView *scrollView;
+@property (strong, nonatomic) IBOutlet BannerScrollView *scrollView;
 
 @end

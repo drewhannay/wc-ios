@@ -26,6 +26,9 @@
     schedule = [[NSMutableArray alloc] init];
     [self.refreshControl addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
     [self loadSchedule];
+    
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Opened Chapel" properties:@{}];
 }
 
 - (void)loadSchedule

@@ -31,6 +31,9 @@
     [self.refreshControl addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
     
     [self loadSports];
+    
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Opened Sports" properties:@{}];
 }
 
 - (void)loadSports
@@ -45,7 +48,6 @@
 }
 
 - (void)refreshView:(UIRefreshControl *)sender {
-    NSLog(@"SPORTS REFRESHED");
     [self loadSports];
     [sender endRefreshing];
 }
