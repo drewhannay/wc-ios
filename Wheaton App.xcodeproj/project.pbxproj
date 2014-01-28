@@ -62,17 +62,14 @@
 		61BCE0FD1883A5E600C7AB12 /* chapel.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 61BCE0FC1883A5E600C7AB12 /* chapel.pdf */; };
 		61BCE1041885E18600C7AB12 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BCE1031885E18600C7AB12 /* Constants.m */; };
 		61C25FD518397C7D005E6A89 /* NotificationOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C25FD418397C7D005E6A89 /* NotificationOptionsTableViewController.m */; };
-		61CA409917CA6C2A00617623 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA409617CA6C2A00617623 /* ECSlidingViewController.m */; };
 		61CA40A817CA6F4F00617623 /* CustomNav.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40A617CA6F4F00617623 /* CustomNav.png */; };
 		61CA40A917CA6F4F00617623 /* CustomNav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40A717CA6F4F00617623 /* CustomNav@2x.png */; };
 		61CA40AD17CA702200617623 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40AC17CA702200617623 /* iPhone.storyboard */; };
 		61CA40BC17CA798100617623 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CA40BB17CA798100617623 /* Twitter.framework */; };
 		61CA40BE17CA799F00617623 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CA40BD17CA799F00617623 /* CoreLocation.framework */; };
-		61CA40C117CA79E000617623 /* CustomNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA40C017CA79E000617623 /* CustomNavBar.m */; };
 		61CA40C317CA8CBB00617623 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CA40C217CA8CBB00617623 /* Social.framework */; };
 		61CA40CA17CA94FB00617623 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA40C917CA94FA00617623 /* Location.m */; };
 		61CA40CC17CA952000617623 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CA40CB17CA951F00617623 /* AddressBook.framework */; };
-		61CA40CE17CB12E500617623 /* CustomMenuNavBar.m in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40CD17CB12E400617623 /* CustomMenuNavBar.m */; };
 		61CA40D217CB137600617623 /* CustomMenuNav.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40D017CB137500617623 /* CustomMenuNav.png */; };
 		61CA40D317CB137600617623 /* CustomMenuNav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40D117CB137600617623 /* CustomMenuNav@2x.png */; };
 		61CE5FC1188355AB007B66AB /* default-image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61CE5FC0188355AB007B66AB /* default-image@2x.png */; };
@@ -87,7 +84,6 @@
 		61E075CF17E6A9850029EFE9 /* MTReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E075CE17E6A9850029EFE9 /* MTReachabilityManager.m */; };
 		61E075D517E6B8B90029EFE9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E075D417E6B8B90029EFE9 /* Reachability.m */; };
 		61E2E91B187F236800E97AD7 /* WhosWhoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E2E91A187F236800E97AD7 /* WhosWhoDetailViewController.m */; };
-		61E4076617CB15850068AE00 /* CustomMenuNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA40CD17CB12E400617623 /* CustomMenuNavBar.m */; };
 		61E4076817CBC9080068AE00 /* menuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E4076717CBC9080068AE00 /* menuButton@2x.png */; };
 		61E4077017CC5B7B0068AE00 /* EventTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4076F17CC5B7B0068AE00 /* EventTableCell.m */; };
 		61E4077617CEB9340068AE00 /* WhoswhoTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4077517CEB9330068AE00 /* WhoswhoTableCell.m */; };
@@ -205,21 +201,15 @@
 		61BCE1031885E18600C7AB12 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		61C25FD318397C7D005E6A89 /* NotificationOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationOptionsTableViewController.h; sourceTree = "<group>"; };
 		61C25FD418397C7D005E6A89 /* NotificationOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationOptionsTableViewController.m; sourceTree = "<group>"; };
-		61CA409517CA6C2A00617623 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
-		61CA409617CA6C2A00617623 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
 		61CA40A617CA6F4F00617623 /* CustomNav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CustomNav.png; sourceTree = "<group>"; };
 		61CA40A717CA6F4F00617623 /* CustomNav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CustomNav@2x.png"; sourceTree = "<group>"; };
 		61CA40AC17CA702200617623 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		61CA40BB17CA798100617623 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		61CA40BD17CA799F00617623 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		61CA40BF17CA79E000617623 /* CustomNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavBar.h; sourceTree = "<group>"; };
-		61CA40C017CA79E000617623 /* CustomNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavBar.m; sourceTree = "<group>"; };
 		61CA40C217CA8CBB00617623 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		61CA40C817CA94FA00617623 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		61CA40C917CA94FA00617623 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		61CA40CB17CA951F00617623 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		61CA40CD17CB12E400617623 /* CustomMenuNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMenuNavBar.m; sourceTree = "<group>"; };
-		61CA40CF17CB130200617623 /* CustomMenuNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMenuNavBar.h; sourceTree = "<group>"; };
 		61CA40D017CB137500617623 /* CustomMenuNav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CustomMenuNav.png; sourceTree = "<group>"; };
 		61CA40D117CB137600617623 /* CustomMenuNav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CustomMenuNav@2x.png"; sourceTree = "<group>"; };
 		61CE5FC0188355AB007B66AB /* default-image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-image@2x.png"; sourceTree = "<group>"; };
@@ -470,18 +460,8 @@
 			isa = PBXGroup;
 			children = (
 				61E075C917E6A88A0029EFE9 /* Reachability */,
-				61CA409417CA6C2A00617623 /* ECSlidingViewController */,
 			);
 			path = Vendor;
-			sourceTree = "<group>";
-		};
-		61CA409417CA6C2A00617623 /* ECSlidingViewController */ = {
-			isa = PBXGroup;
-			children = (
-				61CA409517CA6C2A00617623 /* ECSlidingViewController.h */,
-				61CA409617CA6C2A00617623 /* ECSlidingViewController.m */,
-			);
-			path = ECSlidingViewController;
 			sourceTree = "<group>";
 		};
 		61CA409C17CA6C6300617623 /* Controllers */ = {
@@ -539,10 +519,6 @@
 				6104311D17E7BCFD00D3C72B /* EventCollectionCell.m */,
 				610D48D017DD591600DE574C /* EventsTableCell.h */,
 				610D48D117DD591F00DE574C /* EventsTableCell.m */,
-				61CA40BF17CA79E000617623 /* CustomNavBar.h */,
-				61CA40C017CA79E000617623 /* CustomNavBar.m */,
-				61CA40CF17CB130200617623 /* CustomMenuNavBar.h */,
-				61CA40CD17CB12E400617623 /* CustomMenuNavBar.m */,
 				61E4077417CEB9270068AE00 /* WhoswhoTableCell.h */,
 				616DD2581852AB7E00AC53C3 /* WhoswhoTableCell.xib */,
 				61E4077517CEB9330068AE00 /* WhoswhoTableCell.m */,
@@ -662,7 +638,6 @@
 				610B1D571829B26900E45D22 /* Menu.png in Resources */,
 				61CA40A917CA6F4F00617623 /* CustomNav@2x.png in Resources */,
 				61CA40AD17CA702200617623 /* iPhone.storyboard in Resources */,
-				61CA40CE17CB12E500617623 /* CustomMenuNavBar.m in Resources */,
 				61BCE0FD1883A5E600C7AB12 /* chapel.pdf in Resources */,
 				61CA40D217CB137600617623 /* CustomMenuNav.png in Resources */,
 				61CA40D317CB137600617623 /* CustomMenuNav@2x.png in Resources */,
@@ -761,15 +736,12 @@
 			files = (
 				61E68D1B185D5566009F0977 /* Sport.m in Sources */,
 				61DE4FFB183020AA004BBCA1 /* CustomSegmentControl.m in Sources */,
-				61E4076617CB15850068AE00 /* CustomMenuNavBar.m in Sources */,
 				6141152B18374EDB00B71051 /* NotificationsViewController.m in Sources */,
 				61F70D921831F12700345907 /* Person.m in Sources */,
 				2D2653EA13E069CF00DE089C /* main.m in Sources */,
-				61CA409917CA6C2A00617623 /* ECSlidingViewController.m in Sources */,
 				61E075CF17E6A9850029EFE9 /* MTReachabilityManager.m in Sources */,
 				61DDA64F18368F9D00EBA92C /* AcademicTableViewController.m in Sources */,
 				6141152E18374F7E00B71051 /* PushNotification.m in Sources */,
-				61CA40C117CA79E000617623 /* CustomNavBar.m in Sources */,
 				61CE5FC5188359D1007B66AB /* HomePastViewController.m in Sources */,
 				616DD25C1852B4D300AC53C3 /* WebViewController.m in Sources */,
 				61C25FD518397C7D005E6A89 /* NotificationOptionsTableViewController.m in Sources */,
