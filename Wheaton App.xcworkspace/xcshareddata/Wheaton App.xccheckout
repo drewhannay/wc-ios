@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>7A27038C-4975-43BD-8B63-97EB3054303F</string>
+	<string>5B98B645-6E41-43EC-8928-C3360834C941</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Wheaton App</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>FAB97408-D90C-4B79-BD5A-B66728587AA4</key>
-		<string>https://github.com/whyohwhyamihere/wc-ios.git</string>
+		<key>084B757E-2E06-493A-B589-DDA7304D6FB3</key>
+		<string>https://github.com/drewhannay/wc-ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Wheaton App.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>FAB97408-D90C-4B79-BD5A-B66728587AA4</key>
+		<key>084B757E-2E06-493A-B589-DDA7304D6FB3</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/whyohwhyamihere/wc-ios.git</string>
+	<string>https://github.com/drewhannay/wc-ios.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>FAB97408-D90C-4B79-BD5A-B66728587AA4</string>
+	<string>084B757E-2E06-493A-B589-DDA7304D6FB3</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>FAB97408-D90C-4B79-BD5A-B66728587AA4</string>
+			<string>084B757E-2E06-493A-B589-DDA7304D6FB3</string>
 			<key>IDESourceControlWCCName</key>
 			<string>wc-ios</string>
 		</dict>
