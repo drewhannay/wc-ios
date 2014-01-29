@@ -9,6 +9,11 @@
 #import "AppDelegate.h"
 #import "GAI.h"
 #import "MTReachabilityManager.h"
+#import "NotificationsViewController.h"
+#import "AFNetworking.h"
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define MIXPANEL_TOKEN @"ba1c3c53b3cd538357b7f85ff033c648"
 
 @implementation AppDelegate
 
@@ -16,26 +21,42 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x00447c)];
+    
     [MTReachabilityManager sharedManager];
     
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) {
-        
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
-        
-        self.window.clipsToBounds = YES;
-        self.window.frame =  CGRectMake(0,20,self.window.frame.size.width,self.window.frame.size.height-20);
-        
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [GAI sharedInstance].dispatchInterval = 20;
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-44326922-1"];
+    
+    self.mixpanel = [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
+    
+    self.mixpanel.checkForSurveysOnActive = YES;
+    self.mixpanel.showSurveyOnActive = YES;
+    
+    self.mixpanel.checkForNotificationsOnActive = YES;
+    self.mixpanel.showNotificationOnActive = YES;
+    
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    
+    NSDictionary *payload = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (payload) {
+       //[self addNotification:payload];
     }
     
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
-    
-    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
-    [GAI sharedInstance].dispatchInterval = 20;
-    
-    // Initialize tracker.
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-44326922-1"];
-    
     return YES;
+}
+
+- (void)addNotification:(NSDictionary *)notification
+{
+//    UITabBarController *rootViewController = (UITabBarController *)self.window.rootViewController;
+//    UINavigationController *nnc = (UINavigationController *)rootViewController.childViewControllers[3];
+//    NotificationsViewController *nvc = (NotificationsViewController *)[[nnc viewControllers] lastObject];
+//    [nvc addPushNotification:notification];
+    
+    NSLog(@"%@", notification);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -75,6 +96,41 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+	NSLog(@"My token is: %@", deviceToken);
+    if (deviceToken) {
+        [[NSUserDefaults standardUserDefaults] setObject:deviceToken forKey:@"token"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        
+        NSDictionary *parameters = @{@"token": deviceToken};
+        NSString *url = [NSString stringWithFormat:@"%@/add", c_PushOptions];
+        [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"JSON: %@", responseObject);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+        
+        [self.mixpanel identify:[NSString stringWithFormat:@"%@", deviceToken]];
+        [self.mixpanel.people addPushDeviceToken:deviceToken];
+    }
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+	NSLog(@"Failed to get token, error: %@", error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)payload {
+    // Detect if APN is received on Background or Foreground state
+    if (application.applicationState == UIApplicationStateInactive)
+        [self addNotification:payload];
+    else if (application.applicationState == UIApplicationStateActive)
+        [self addNotification:payload];
 }
 
 

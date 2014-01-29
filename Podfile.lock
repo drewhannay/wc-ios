@@ -1,0 +1,42 @@
+PODS:
+  - AFNetworking (2.1.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking/NSURLConnection (2.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.1.0):
+    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (2.1.0)
+  - AFNetworking/Security (2.1.0)
+  - AFNetworking/Serialization (2.1.0)
+  - AFNetworking/UIKit (2.1.0):
+    - AFNetworking/NSURLConnection
+  - GoogleAnalytics-iOS-SDK (3.0.3)
+  - iOS-blur (0.0.3)
+  - LVDebounce (0.0.4)
+  - Mixpanel (2.3.0)
+  - UIView+AutoLayout (1.1.0)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.0)
+  - GoogleAnalytics-iOS-SDK (~> 3.0.2)
+  - iOS-blur
+  - LVDebounce
+  - Mixpanel
+  - UIView+AutoLayout
+
+SPEC CHECKSUMS:
+  AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
+  GoogleAnalytics-iOS-SDK: 7b0e55cfe5e70d60478a7b105f15ac71e8bc373e
+  iOS-blur: 7c8087858e7a685072cf8af52dd08dd3e115531b
+  LVDebounce: 70385cb1a3c2fba8382fd943ac1230aa9b399f91
+  Mixpanel: a3536b6bf7f88bd8a6113392f91e9dc689c58434
+  UIView+AutoLayout: 94cea4d2f3ed095434afdf6ed2a6d288f7f2d611
+
+COCOAPODS: 0.29.0
