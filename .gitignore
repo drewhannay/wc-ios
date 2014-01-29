@@ -2,3 +2,7 @@
 *.xcuserstate
 *.xccheckout
 Wheaton\ App.xcodeproj/xcuserdata/*
+Wheaton\ App.app
+Wheaton\ App.app/*/**
+Wheaton\ App.xarchive
+Pods/**/*
