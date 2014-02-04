@@ -228,9 +228,15 @@
             person.prefName = [name objectForKey:@"preferred"];
             person.lastName = [name objectForKey:@"last"];
             person.email = [dic objectForKey:@"email"];
+            
             person.classification = @"N/A";
-            if (![person.classification isEqual:[NSNull null]]) {
+            if (![[dic objectForKey:@"classification"] isEqual:[NSNull null]]) {
                 person.classification = [dic objectForKey:@"classification"];
+            }
+            
+            person.cpo = @"N/A";
+            if (![[dic objectForKey:@"address"] isEqual:[NSNull null]]) {
+                person.cpo = [dic objectForKey:@"address"];
             }
             person.photo = [[[dic objectForKey:@"image"] objectForKey:@"url"] objectForKey:@"medium"];
             [searchResults addObject:person];

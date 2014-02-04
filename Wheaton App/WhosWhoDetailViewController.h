@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *name;
 @property (strong, nonatomic) IBOutlet UILabel *email;
 @property (strong, nonatomic) IBOutlet UILabel *classification;
+@property (strong, nonatomic) IBOutlet UILabel *cpo;
 @property (strong, nonatomic) IBOutlet UIView *bottomBlur;
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *profileImage;
 @property (strong, nonatomic) UIImage *image;

@@ -14,7 +14,7 @@
 
 @implementation WhosWhoDetailViewController
 
-@synthesize person, name, classification, email, profileImage, bottomBlur, image, blurView;
+@synthesize person, name, classification, email, cpo, profileImage, bottomBlur, image, blurView;
 
 - (void)viewDidLoad
 {
@@ -23,15 +23,20 @@
     name.text = [person fullNameWithPref];
     email.text = person.email;
     classification.text = person.classification;
+    cpo.text = [NSString stringWithFormat:@"CPO: %@",person.cpo];
     
     [self setFrameByImage];
-    
-    blurView = [AMBlurView new];
-    [blurView setFrame:CGRectMake(0,
+    @try {
+        blurView = [AMBlurView new];
+        [blurView setFrame:CGRectMake(0,
                                   bottomBlur.frame.origin.y-bottomBlur.frame.size.height,
                                   bottomBlur.frame.size.width,
                                   bottomBlur.frame.size.height)];
-    [self.view insertSubview:blurView belowSubview:(UIView *)bottomBlur];
+        [self.view insertSubview:blurView belowSubview:(UIView *)bottomBlur];
+    }
+    @catch (NSException * e) {
+        NSLog(@"Exception: %@", e);
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -48,7 +53,6 @@
     if (image) {
         profileImage.image = image;
         [self setFrameByImage];
-        NSLog(@"%f", profileImage.frame.origin.y);
     }
     [super viewDidAppear:NO];
     
