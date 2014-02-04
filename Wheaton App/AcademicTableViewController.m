@@ -47,6 +47,8 @@
     NSError *error;
     NSArray *eventsArray = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
     
+    [calendar removeAllObjects];
+    
     for(NSDictionary *entry in eventsArray) {
         NSDate *entryDate = [NSDate dateWithTimeIntervalSince1970:
                              [[[entry objectForKey:@"timeStamp"] objectAtIndex:0] doubleValue]];

@@ -16,6 +16,7 @@
 @property NSString *classification;
 @property NSString *email;
 @property NSString *photo;
+@property NSString *cpo;
 
 - (NSString *)fullName;
 - (NSString *)fullNameWithPref;
