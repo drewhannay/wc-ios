@@ -19,7 +19,7 @@
 		<string>57x57.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>io.chrisanderson.collegeapp</string>
+	<string>edu.wheaton.wcapp</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
