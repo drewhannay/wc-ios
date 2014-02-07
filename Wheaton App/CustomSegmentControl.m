@@ -45,6 +45,7 @@
     UIGraphicsBeginImageContext(rect.size);
     context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, backgroundColor);
+    CGColorRelease(backgroundColor);
     CGContextFillRect(context, rect);
     [self setBorder:context withRect:rect usingColor:dividerColor];
     UIImage *backgroundImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -55,6 +56,7 @@
     CGContextSetFillColorWithColor(context, dividerColor);
     CGContextFillRect(context, rect);
     [self setBorder:context withRect:rect usingColor:borderBottomColor];
+    CGColorRelease(borderBottomColor);
     UIImage *backgroundHighlightedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -62,6 +64,7 @@
     UIGraphicsBeginImageContext(divider.size);
     context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, dividerColor);
+    CGColorRelease(dividerColor);
     CGContextFillRect(context, rect);
     UIImage *dividerImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
