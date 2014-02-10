@@ -67,8 +67,8 @@
         }
         if(found == NO) {
             NSMutableDictionary *category = [[NSMutableDictionary alloc] init];
-            [category setObject:[NSString stringWithFormat:@"%d", [components year]] forKey:@"year"];
-            [category setObject:[NSString stringWithFormat:@"%d", [components month]] forKey:@"month"];
+            [category setObject:[NSString stringWithFormat:@"%ld", (long)[components year]] forKey:@"year"];
+            [category setObject:[NSString stringWithFormat:@"%ld", (long)[components month]] forKey:@"month"];
             NSMutableArray *events = [[NSMutableArray alloc] init];
             [events addObject:entry];
             [category setObject:events forKey:@"events"];

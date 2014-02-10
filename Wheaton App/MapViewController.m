@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "MapDetailViewController.h"
 #import "Location.h"
 
 #define METERS_PER_MILE 1609.344
@@ -38,11 +39,13 @@
     
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
     [mixpanel track:@"Opened Map" properties:@{}];
+    
+    [self resetMap:NULL];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [self resetMap:NULL];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)tapped
@@ -54,7 +57,9 @@
 {
     [self.mapView removeAnnotations:self.mapView.annotations];
     for (Location *annotation in locations) {
-        [self.mapView addAnnotation:annotation];
+        if ([annotation.type isEqualToString:@"building"]) {
+            [self.mapView addAnnotation:annotation];
+        }
     }
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = 41.870016;
@@ -76,6 +81,7 @@
             annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
+            annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         } else {
             annotationView.annotation = annotation;
         }
@@ -83,6 +89,17 @@
         return annotationView;
     }
     return nil;
+}
+- (void)mapView:(MKMapView *)mv annotationView:(MKAnnotationView *)pin calloutAccessoryControlTapped:(UIControl *)control {
+    Location *loc = pin.annotation;
+    [self performSegueWithIdentifier:@"MapDetailView" sender:loc];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    MapDetailViewController *detailViewController = [segue destinationViewController];
+    NSLog(@"%@", sender);
+    detailViewController.building = sender;
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
@@ -175,17 +192,26 @@
     for (NSDictionary* dic in locationArray) {
         
         NSDictionary *location = [dic objectForKey:@"location"];
-        NSNumber * latitude = [location objectForKey:@"latitude"];
-        NSNumber * longitude = [location objectForKey:@"longitude"];
-        NSString * name = [dic objectForKey:@"name"];
-        NSString * address = @"";
+        NSNumber *latitude = [location objectForKey:@"latitude"];
+        NSNumber *longitude = [location objectForKey:@"longitude"];
+        NSString *name = [dic objectForKey:@"name"];
+        NSString *description = [dic objectForKey:@"description"];
+        NSString *type = [dic objectForKey:@"type"];
+        NSString *image = @"";
+        if (![[[dic objectForKey:@"image"] objectForKey:@"url"] isEqual:[NSNull null]]) {
+            image = [[[dic objectForKey:@"image"] objectForKey:@"url"] objectForKey:@"medium"];
+        }
         
         CLLocationCoordinate2D coordinate;
         coordinate.latitude = latitude.doubleValue;
         coordinate.longitude = longitude.doubleValue;
-        Location *annotation = [[Location alloc] initWithName:name address:address coordinate:coordinate];
-        if([[dic objectForKey:@"type"] isEqualToString:@"building"])
+        Location *annotation = [[Location alloc] initWithName:name coordinate:coordinate];
+        annotation.image = image;
+        annotation.description = description;
+        annotation.type = type;
+        if ([[dic objectForKey:@"type"] isEqualToString:@"building"]) {
             [self.mapView addAnnotation:annotation];
+        }
         [locations addObject:annotation];
     }
 }

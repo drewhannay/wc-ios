@@ -48,7 +48,7 @@
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
     if ([self selectedIndex] == 3) {
-        [((MapViewController *)[self selectedViewController]) tapped];
+        [([[(MapViewController *)[self selectedViewController] childViewControllers] objectAtIndex:0]) tapped];
     }
     index = [self selectedIndex];
 }

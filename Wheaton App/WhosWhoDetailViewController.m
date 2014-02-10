@@ -62,7 +62,6 @@
             image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: imagename]]];
             
             if (image) {
-                
                 [self setFrameByImage];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{

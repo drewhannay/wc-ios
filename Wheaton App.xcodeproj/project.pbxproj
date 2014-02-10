@@ -38,6 +38,7 @@
 		613890BA17E3619F0049FF72 /* 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 613890B917E3619F0049FF72 /* 120x120.png */; };
 		613890C017E3A9C40049FF72 /* Sports.png in Resources */ = {isa = PBXBuildFile; fileRef = 613890BE17E3A9C40049FF72 /* Sports.png */; };
 		613890C117E3A9C40049FF72 /* Sports@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 613890BF17E3A9C40049FF72 /* Sports@2x.png */; };
+		613961E718A870E600669034 /* MapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613961E618A870E600669034 /* MapDetailViewController.m */; };
 		613B9557183419C900DEAA0E /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613B9556183419C900DEAA0E /* EventsTableViewController.m */; };
 		6141152B18374EDB00B71051 /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6141152A18374EDB00B71051 /* NotificationsViewController.m */; };
 		6141152E18374F7E00B71051 /* PushNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 6141152D18374F7E00B71051 /* PushNotification.m */; };
@@ -51,7 +52,6 @@
 		6150980017D5477800456A9D /* Whoswho@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 615097FA17D5477800456A9D /* Whoswho@2x.png */; };
 		6150980217D5497200456A9D /* Meal.png in Resources */ = {isa = PBXBuildFile; fileRef = 6150980117D5497200456A9D /* Meal.png */; };
 		6150980417D5497800456A9D /* Meal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6150980317D5497800456A9D /* Meal@2x.png */; };
-		616DD25718525DD700AC53C3 /* WhosWhoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 616DD25618525DD700AC53C3 /* WhosWhoTableViewController.m */; };
 		616DD2591852AB7E00AC53C3 /* WhoswhoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 616DD2581852AB7E00AC53C3 /* WhoswhoTableCell.xib */; };
 		616DD25C1852B4D300AC53C3 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 616DD25B1852B4D300AC53C3 /* WebViewController.m */; };
 		61851B3B18306529005EDE18 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61851B3A18306529005EDE18 /* EventViewController.m */; };
@@ -165,6 +165,8 @@
 		613890B917E3619F0049FF72 /* 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120x120.png; sourceTree = "<group>"; };
 		613890BE17E3A9C40049FF72 /* Sports.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sports.png; sourceTree = "<group>"; };
 		613890BF17E3A9C40049FF72 /* Sports@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sports@2x.png"; sourceTree = "<group>"; };
+		613961E518A870E600669034 /* MapDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDetailViewController.h; sourceTree = "<group>"; };
+		613961E618A870E600669034 /* MapDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDetailViewController.m; sourceTree = "<group>"; };
 		613B9555183419C900DEAA0E /* EventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewController.h; sourceTree = "<group>"; };
 		613B9556183419C900DEAA0E /* EventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewController.m; sourceTree = "<group>"; };
 		6141152918374EDB00B71051 /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
@@ -181,8 +183,6 @@
 		615097FA17D5477800456A9D /* Whoswho@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Whoswho@2x.png"; sourceTree = "<group>"; };
 		6150980117D5497200456A9D /* Meal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Meal.png; sourceTree = "<group>"; };
 		6150980317D5497800456A9D /* Meal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Meal@2x.png"; sourceTree = "<group>"; };
-		616DD25518525DD700AC53C3 /* WhosWhoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhosWhoTableViewController.h; sourceTree = "<group>"; };
-		616DD25618525DD700AC53C3 /* WhosWhoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhosWhoTableViewController.m; sourceTree = "<group>"; };
 		616DD2581852AB7E00AC53C3 /* WhoswhoTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhoswhoTableCell.xib; sourceTree = "<group>"; };
 		616DD25A1852B4D300AC53C3 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		616DD25B1852B4D300AC53C3 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
@@ -480,10 +480,10 @@
 				61F70D851831924100345907 /* MoreTableViewController.m */,
 				61F70D8A183196B200345907 /* MapViewController.h */,
 				61F70D8B183196B200345907 /* MapViewController.m */,
+				613961E518A870E600669034 /* MapDetailViewController.h */,
+				613961E618A870E600669034 /* MapDetailViewController.m */,
 				61E2E919187F236800E97AD7 /* WhosWhoDetailViewController.h */,
 				61E2E91A187F236800E97AD7 /* WhosWhoDetailViewController.m */,
-				616DD25518525DD700AC53C3 /* WhosWhoTableViewController.h */,
-				616DD25618525DD700AC53C3 /* WhosWhoTableViewController.m */,
 				61F70D8D1831E03700345907 /* HomeViewController.h */,
 				61F70D8E1831E03700345907 /* HomeViewController.m */,
 				61CE5FC2188359D1007B66AB /* HomePastViewController.h */,
@@ -738,7 +738,7 @@
 				616DD25C1852B4D300AC53C3 /* WebViewController.m in Sources */,
 				61C25FD518397C7D005E6A89 /* NotificationOptionsTableViewController.m in Sources */,
 				61CA40CA17CA94FB00617623 /* Location.m in Sources */,
-				616DD25718525DD700AC53C3 /* WhosWhoTableViewController.m in Sources */,
+				613961E718A870E600669034 /* MapDetailViewController.m in Sources */,
 				61F70D8C183196B200345907 /* MapViewController.m in Sources */,
 				61E4077017CC5B7B0068AE00 /* EventTableCell.m in Sources */,
 				61F70D8318311F7800345907 /* ChapelTableViewController.m in Sources */,
