@@ -48,6 +48,7 @@
 {
     [[home objectAtIndex:0] removeAllObjects];
     [[home objectAtIndex:1] removeAllObjects];
+    [self.tableView reloadData];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
@@ -157,8 +158,6 @@
         }
         
         cell = [sport generateCell:sportCell];
-    } else if (indexPath.section == 2) {
-        NSLog(@"IN HERE");
     }
     return cell;
 }
