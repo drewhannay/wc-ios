@@ -45,6 +45,7 @@
         profileImage.image = image;
         [self setFrameByImage];
     }
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [super viewWillAppear:NO];
 }
 

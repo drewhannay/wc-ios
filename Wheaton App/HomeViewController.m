@@ -74,6 +74,7 @@
         [self.searchDisplayController.searchBar setUserInteractionEnabled:YES];
         [self.searchDisplayController.searchBar setPlaceholder:@"Who's Who"];
     }
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar

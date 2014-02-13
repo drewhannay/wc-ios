@@ -69,11 +69,5 @@
                 <outlet property="time" destination="WV3-6g-hgM" id="hGP-3r-kWU"/>
             </connections>
         </tableViewCell>
-        <view contentMode="scaleToFill" id="v27-UE-446">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-        </view>
     </objects>
 </document>

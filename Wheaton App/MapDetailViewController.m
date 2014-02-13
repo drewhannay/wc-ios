@@ -21,7 +21,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
     
     self.name.text = building.title;
     self.description.text = building.description;
@@ -41,7 +40,6 @@
     
     @try {
         blurView = [AMBlurView new];
-        NSLog(@"%f", bottomBlur.frame.origin.y);
         [blurView setFrame:CGRectMake(0,
                                       bottomBlur.frame.origin.y-self.navigationController.navigationBar.frame.size.height+14,
                                       bottomBlur.frame.size.width,
@@ -51,6 +49,12 @@
     @catch (NSException * e) {
         NSLog(@"Exception: %@", e);
     }
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

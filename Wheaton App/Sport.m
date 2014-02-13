@@ -19,7 +19,7 @@
 @synthesize home;
 @synthesize gender;
 
-- (UITableViewCell *)generateCell:(SportTableCell *)cell {
+- (SportTableCell *)generateCell:(SportTableCell *)cell {
     
     cell.time.text = [time lowercaseString];
     

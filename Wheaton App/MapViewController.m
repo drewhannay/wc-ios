@@ -45,7 +45,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)tapped
@@ -98,7 +98,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     MapDetailViewController *detailViewController = [segue destinationViewController];
-    NSLog(@"%@", sender);
     detailViewController.building = sender;
 }
 

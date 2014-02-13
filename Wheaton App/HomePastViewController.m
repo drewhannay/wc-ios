@@ -158,7 +158,7 @@
         
         cell = [sport generateCell:sportCell];
     } else if (indexPath.section == 2) {
-        
+        NSLog(@"IN HERE");
     }
     return cell;
 }
