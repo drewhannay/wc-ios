@@ -10,15 +10,15 @@
 #import "AMBlurView.h"
 #import "Location.h"
 
-@interface MapDetailViewController : UIViewController
+@interface MapDetailViewController : UITableViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *name;
-@property (strong, nonatomic) IBOutlet UILabel *description;
+@property (strong, nonatomic) IBOutlet UIView *detailView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *buildingImage;
-@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *buildingImageBlur;
 @property (strong, nonatomic) IBOutlet UIView *bottomBlur;
 @property (strong, nonatomic) AMBlurView *blurView;
 
 @property (strong, nonatomic) Location *building;
+@property (strong, nonatomic) NSMutableArray *buildingTable;
 
 @end

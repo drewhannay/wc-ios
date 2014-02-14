@@ -9,6 +9,7 @@
 #import "MapDetailViewController.h"
 #import "AFNetworking.h"
 #import "UIImageView+AFNetworking.h"
+#import "AutoTableViewCell.h"
 
 @interface MapDetailViewController ()
 
@@ -16,16 +17,13 @@
 
 @implementation MapDetailViewController
 
-@synthesize name, buildingImage, buildingImageBlur, blurView, bottomBlur, building;
+static NSString *cellIdentifier = @"AutoTableViewCell";
+
+@synthesize name, buildingImage, blurView, bottomBlur, building, detailView, buildingTable;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.name.text = building.title;
-    self.description.text = building.description;
-    [self.description setNumberOfLines:0];
-    
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:building.image]
                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
                                          timeoutInterval:60.0];
@@ -34,22 +32,42 @@
                              placeholderImage:[UIImage imageNamed:@"default-image"]
                                       success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
                                           buildingImage.image = image;
-                                          buildingImageBlur.image = image;
                                       }
                                       failure:nil];
     
     @try {
         blurView = [AMBlurView new];
         [blurView setFrame:CGRectMake(0,
-                                      bottomBlur.frame.origin.y-self.navigationController.navigationBar.frame.size.height+14,
+                                      bottomBlur.frame.origin.y,
                                       bottomBlur.frame.size.width,
                                       50)];
-        [self.view insertSubview:blurView belowSubview:(UIView *)bottomBlur];
+        [self.detailView insertSubview:blurView belowSubview:bottomBlur];
+        [self.view bringSubviewToFront:name];
     }
     @catch (NSException * e) {
         NSLog(@"Exception: %@", e);
     }
     
+    self.name.text = building.title;
+    
+    buildingTable = [[NSMutableArray alloc] init];
+    
+    NSMutableArray *descriptionSection = [[NSMutableArray alloc] init];
+    if (![building.description isEqual:[NSNull null]]) {
+        [buildingTable addObject:descriptionSection];
+    }
+    
+    NSMutableArray *hoursSection = [[NSMutableArray alloc] init];
+    [buildingTable addObject:hoursSection];
+    
+    for (NSDictionary *block in building.hours) {
+        for (NSString *key in [block allKeys]) {
+            NSString *day = [key stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[key substringToIndex:1] uppercaseString]];
+            [hoursSection addObject:[NSString stringWithFormat:@"%@: %@", day, [[block objectForKey:key] componentsJoinedByString:@", "]]];
+        }
+    }
+    
+    [self.tableView registerClass:[AutoTableViewCell class] forCellReuseIdentifier:cellIdentifier];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -61,6 +79,93 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [buildingTable count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [[buildingTable objectAtIndex:section] count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)sectionIndex {
+    if (sectionIndex == 0) {
+        return @"About";
+    } else if(sectionIndex == 1) {
+        return @"Hours";
+    } else {
+        return @"Other";
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    AutoTableViewCell *cell = (AutoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    [cell updateFonts];
+    
+    cell.bodyLabel.text = (NSString *)[[buildingTable objectAtIndex: indexPath.section] objectAtIndex:indexPath.row];
+    
+    // Make sure the constraints have been added to this cell, since it may have just been created from scratch
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    
+    return cell;
+}
+
+
+- (void)contentSizeCategoryChanged:(NSNotification *)notification
+{
+    [self.tableView reloadData];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AutoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    // Configure the cell for this indexPath
+    [cell updateFonts];
+    cell.bodyLabel.text = (NSString *)[[buildingTable objectAtIndex: indexPath.section] objectAtIndex:indexPath.row];
+    
+    // Make sure the constraints have been added to this cell, since it may have just been created from scratch
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    
+    // Set the width of the cell to match the width of the table view. This is important so that we'll get the
+    // correct height for different table view widths, since our cell's height depends on its width due to
+    // the multi-line UILabel word wrapping. Don't need to do this above in -[tableView:cellForRowAtIndexPath]
+    // because it happens automatically when the cell is used in the table view.
+    cell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(cell.bounds));
+    
+    // Do the layout pass on the cell, which will calculate the frames for all the views based on the constraints
+    // (Note that the preferredMaxLayoutWidth is set on multi-line UILabels inside the -[layoutSubviews] method
+    // in the UITableViewCell subclass
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    
+    // Get the actual height required for the cell
+    CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    
+    // Add an extra point to the height to account for the cell separator, which is added between the bottom
+    // of the cell's contentView and the bottom of the table view cell.
+    height += 1;
+    
+    return height;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 500.0f;
 }
 
 /*

@@ -69,7 +69,7 @@
 {
     if (![MTReachabilityManager isReachableViaWiFi]) {
         [self.searchDisplayController.searchBar setUserInteractionEnabled:NO];
-        [self.searchDisplayController.searchBar setPlaceholder:@"Please Connect to Campus Network"];
+        [self.searchDisplayController.searchBar setPlaceholder:@"Who's Who: Connect to Campus WiFi"];
     } else {
         [self.searchDisplayController.searchBar setUserInteractionEnabled:YES];
         [self.searchDisplayController.searchBar setPlaceholder:@"Who's Who"];

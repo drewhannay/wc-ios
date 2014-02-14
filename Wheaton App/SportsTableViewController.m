@@ -139,12 +139,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[sportResults objectForKey:[NSString stringWithFormat:@"%d", section]] count];
+    return [[sportResults objectForKey:[NSString stringWithFormat:@"%ld", (long)section]] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Sport *sport = [[sportResults objectForKey:[NSString stringWithFormat:@"%d", indexPath.section]] objectAtIndex:indexPath.row];
+    Sport *sport = [[sportResults objectForKey:[NSString stringWithFormat:@"%ld", (long)indexPath.section]] objectAtIndex:indexPath.row];
     
     NSString *cellIdentifier = @"SportTableCell";
     
@@ -163,7 +163,7 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Sport *sport = [[sportResults objectForKey:[NSString stringWithFormat:@"%d", indexPath.section]] objectAtIndex:indexPath.row];
+    Sport *sport = [[sportResults objectForKey:[NSString stringWithFormat:@"%ld", (long)indexPath.section]] objectAtIndex:indexPath.row];
     if ([[sport.score objectForKey:@"other"] intValue] < [[sport.score objectForKey:@"school"] intValue]) {
         [cell setBackgroundColor:[UIColor colorWithRed:255/255.0f green:106/255.0f blue:0.0f alpha:.15f]];
     }

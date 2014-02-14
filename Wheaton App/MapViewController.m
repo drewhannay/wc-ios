@@ -190,28 +190,29 @@
     
     for (NSDictionary* dic in locationArray) {
         
-        NSDictionary *location = [dic objectForKey:@"location"];
-        NSNumber *latitude = [location objectForKey:@"latitude"];
-        NSNumber *longitude = [location objectForKey:@"longitude"];
-        NSString *name = [dic objectForKey:@"name"];
-        NSString *description = [dic objectForKey:@"description"];
-        NSString *type = [dic objectForKey:@"type"];
-        NSString *image = @"";
-        if (![[[dic objectForKey:@"image"] objectForKey:@"url"] isEqual:[NSNull null]]) {
-            image = [[[dic objectForKey:@"image"] objectForKey:@"url"] objectForKey:@"medium"];
-        }
-        
-        CLLocationCoordinate2D coordinate;
-        coordinate.latitude = latitude.doubleValue;
-        coordinate.longitude = longitude.doubleValue;
-        Location *annotation = [[Location alloc] initWithName:name coordinate:coordinate];
-        annotation.image = image;
-        annotation.description = description;
-        annotation.type = type;
-        if ([[dic objectForKey:@"type"] isEqualToString:@"building"]) {
-            [self.mapView addAnnotation:annotation];
-        }
-        [locations addObject:annotation];
+        @try {
+            NSDictionary *location = [dic objectForKey:@"location"];
+            NSNumber *latitude = [location objectForKey:@"latitude"];
+            NSNumber *longitude = [location objectForKey:@"longitude"];
+            
+            CLLocationCoordinate2D coordinate;
+            coordinate.latitude = latitude.doubleValue;
+            coordinate.longitude = longitude.doubleValue;
+            
+            Location *annotation = [[Location alloc] initWithName:[dic objectForKey:@"name"] coordinate:coordinate];
+            annotation.image = @"";
+            if (![[[dic objectForKey:@"image"] objectForKey:@"url"] isEqual:[NSNull null]]) {
+                annotation.image = [[[dic objectForKey:@"image"] objectForKey:@"url"] objectForKey:@"medium"];
+            }
+            annotation.description = [dic objectForKey:@"description"];
+            annotation.type = [dic objectForKey:@"type"];
+            annotation.hours = [dic objectForKey:@"hours"];
+            
+            if ([[dic objectForKey:@"type"] isEqualToString:@"building"]) {
+                [self.mapView addAnnotation:annotation];
+            }
+            [locations addObject:annotation];
+        } @catch (NSException * e) { }
     }
 }
 
