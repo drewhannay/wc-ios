@@ -293,7 +293,6 @@
     cell.firstName.text = [NSString stringWithFormat:@"%@", [person fullName]];
     
     NSString *imagename = person.photo;
-    
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:imagename]
                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
                                          timeoutInterval:60.0];

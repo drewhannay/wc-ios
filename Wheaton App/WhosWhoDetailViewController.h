@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AMBlurView.h"
 #import "Person.h"
+#import "UIImage_Scale.h"
 
 @interface WhosWhoDetailViewController : UIViewController
 
@@ -22,7 +23,5 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *profileImage;
 @property (strong, nonatomic) UIImage *image;
 @property (strong, nonatomic) AMBlurView *blurView;
-
-- (void)setFrameByImage;
 
 @end

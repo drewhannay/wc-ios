@@ -23,15 +23,16 @@
     name.text = [person fullNameWithPref];
     email.text = person.email;
     classification.text = person.classification;
-    cpo.text = [NSString stringWithFormat:@"CPO: %@",person.cpo];
+    cpo.text = [NSString stringWithFormat:@"CPO: %@", person.cpo];
     
-    [self setFrameByImage];
+    profileImage.contentMode = UIViewContentModeTop;
+
     @try {
         blurView = [AMBlurView new];
         [blurView setFrame:CGRectMake(0,
-                                  bottomBlur.frame.origin.y-bottomBlur.frame.size.height,
-                                  bottomBlur.frame.size.width,
-                                  bottomBlur.frame.size.height)];
+                                      self.view.frame.size.height-190,
+                                      320,
+                                      100)];
         [self.view insertSubview:blurView belowSubview:(UIView *)bottomBlur];
     }
     @catch (NSException * e) {
@@ -41,59 +42,28 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    if (image) {
-        profileImage.image = image;
-        [self setFrameByImage];
-    }
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [super viewWillAppear:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    if (image) {
-        profileImage.image = image;
-        [self setFrameByImage];
-    }
     [super viewDidAppear:NO];
     
     NSString *imagename = person.photo;
-    if (!image) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: imagename]]];
-            
-            if (image) {
-                [self setFrameByImage];
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    profileImage.image = image;
-                });
-            }
-        });
-    } else {
-        [self setFrameByImage];
-    }
-}
-
-- (void)setFrameByImage
-{
-    if (image) {
-        CGSize imgSize = image.size;
-        float imageHeight = imgSize.height;
-        float imageWidth = imgSize.width;
-        
-        float ratio = 320 / imageWidth;
-        float scaledHeight = imageHeight * ratio;
-        
-        if(scaledHeight < self.view.frame.size.height) {
-            profileImage.frame = CGRectMake(0,
-                                            0,
-                                            320,
-                                            scaledHeight);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: imagename]]];
+        if (self.view.frame.size.height < 400) {
+            image = [image scaleToWidth:320.0 constraint:self.view.frame.size.height-50];
         } else {
-            profileImage.frame = CGRectMake(0, 0, 320, 300);
+            image = [image scaleToWidth:320.0 constraint:self.view.frame.size.height];
         }
-    }
+        if (image) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                profileImage.image = image;
+            });
+        }
+    });
 }
 
 

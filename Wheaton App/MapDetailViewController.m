@@ -29,11 +29,11 @@ static NSString *cellIdentifier = @"AutoTableViewCell";
                                          timeoutInterval:60.0];
     
     [self.buildingImage setImageWithURLRequest:request
-                             placeholderImage:[UIImage imageNamed:@"default-image"]
-                                      success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                          buildingImage.image = image;
-                                      }
-                                      failure:nil];
+                              placeholderImage:[UIImage imageNamed:@"default-image"]
+                                       success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                           buildingImage.image = image;
+                                       }
+                                       failure:nil];
     
     @try {
         blurView = [AMBlurView new];
@@ -53,18 +53,22 @@ static NSString *cellIdentifier = @"AutoTableViewCell";
     buildingTable = [[NSMutableArray alloc] init];
     
     NSMutableArray *descriptionSection = [[NSMutableArray alloc] init];
-    if (![building.description isEqual:[NSNull null]]) {
+    
+    if (!(building.description == (id)[NSNull null] || building.description.length == 0)) {
+        [descriptionSection addObject:building.description];
         [buildingTable addObject:descriptionSection];
     }
     
     NSMutableArray *hoursSection = [[NSMutableArray alloc] init];
-    [buildingTable addObject:hoursSection];
     
-    for (NSDictionary *block in building.hours) {
-        for (NSString *key in [block allKeys]) {
-            NSString *day = [key stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[key substringToIndex:1] uppercaseString]];
-            [hoursSection addObject:[NSString stringWithFormat:@"%@: %@", day, [[block objectForKey:key] componentsJoinedByString:@", "]]];
+    if (![building.hours isEqual:[NSNull null]] && [building.hours count] > 0) {
+        for (NSDictionary *block in building.hours) {
+            for (NSString *key in [block allKeys]) {
+                NSString *day = [key stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:[[key substringToIndex:1] uppercaseString]];
+                [hoursSection addObject:[NSString stringWithFormat:@"%@: %@", day, [[block objectForKey:key] componentsJoinedByString:@", "]]];
+            }
         }
+        [buildingTable addObject:hoursSection];
     }
     
     [self.tableView registerClass:[AutoTableViewCell class] forCellReuseIdentifier:cellIdentifier];
@@ -116,7 +120,6 @@ static NSString *cellIdentifier = @"AutoTableViewCell";
     
     cell.bodyLabel.text = (NSString *)[[buildingTable objectAtIndex: indexPath.section] objectAtIndex:indexPath.row];
     
-    // Make sure the constraints have been added to this cell, since it may have just been created from scratch
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
     
@@ -169,14 +172,14 @@ static NSString *cellIdentifier = @"AutoTableViewCell";
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

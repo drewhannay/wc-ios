@@ -27,14 +27,6 @@
     UITextView *searchTextField = [self.searchDisplayController.searchBar valueForKey:@"_searchField"];
     searchTextField.textColor = [UIColor whiteColor];
     
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]
-                                          initWithTarget:self action:@selector(showNavbar:)];
-    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]
-                                          initWithTarget:self action:@selector(hideNavbar:)];
-    [self.mapView addGestureRecognizer:tapGesture];
-    [panGesture setDelegate:self];
-    [self.mapView addGestureRecognizer:panGesture];
-    
     [self loadLocations];
     
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
@@ -80,8 +72,14 @@
         if (annotationView == nil) {
             annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             annotationView.enabled = YES;
+            annotationView.animatesDrop = YES;
             annotationView.canShowCallout = YES;
-            annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            if ((annotation.description != (id)[NSNull null])
+                && (annotation.description.length > 0)) {
+                annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            } else {
+                annotationView.rightCalloutAccessoryView = NULL;
+            }
         } else {
             annotationView.annotation = annotation;
         }
@@ -119,33 +117,6 @@
         }
         [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
     });
-}
-
-- (void) hideNavbar:(id)sender
-{
-//    if (barHidden == NO) {
-//        CGRect tabBarFrame = self.tabBarController.tabBar.frame;
-//        tabBarFrame.origin.y += tabBarFrame.size.height;
-//        
-//        [UIView animateWithDuration:0.2 animations:^ {
-//            [self.tabBarController.tabBar setFrame:tabBarFrame];
-//        }];
-//        barHidden = YES;
-//    }
-}
-
-- (void) showNavbar:(id)sender
-{
-//    if (barHidden == YES) {
-//        CGRect tabBarFrame = self.tabBarController.tabBar.frame;
-//        tabBarFrame.origin.y -= tabBarFrame.size.height;
-//        
-//        [UIView animateWithDuration:0.1 animations:^ {
-//            [self.tabBarController.tabBar setFrame:tabBarFrame];
-//        }];
-//        
-//        barHidden = NO;
-//    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -204,7 +175,10 @@
             if (![[[dic objectForKey:@"image"] objectForKey:@"url"] isEqual:[NSNull null]]) {
                 annotation.image = [[[dic objectForKey:@"image"] objectForKey:@"url"] objectForKey:@"medium"];
             }
-            annotation.description = [dic objectForKey:@"description"];
+            annotation.description = @"Blank";
+            if (![[dic objectForKey:@"description"] isEqual:[NSNull null]]) {
+                annotation.description = [dic objectForKey:@"description"];
+            }
             annotation.type = [dic objectForKey:@"type"];
             annotation.hours = [dic objectForKey:@"hours"];
             
