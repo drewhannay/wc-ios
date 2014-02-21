@@ -50,8 +50,13 @@
         nVC.title = @"Notification Toggles";
         [notificationOption setValue:nVC forKey:@"controller"];
         [notificationOption setValue:@"Notification Toggles" forKey:@"name"];
-        
         [moreTable addObject:notificationOption];
+        
+        NSMutableDictionary *bannerOption = [[NSMutableDictionary alloc] init];
+        UIViewController *bVC = [self.storyboard instantiateViewControllerWithIdentifier:@"BannerLogin"];
+        [bannerOption setValue:@"Banner Login" forKey:@"name"];
+        [bannerOption setValue:bVC forKey:@"controller"];
+        [moreTable addObject:bannerOption];
     }
     
     NSMutableDictionary *aboutOption = [[NSMutableDictionary alloc] init];

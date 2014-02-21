@@ -45,6 +45,16 @@
        //[self addNotification:payload];
     }
     
+    NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"uuid"];
+    if (!UUID) {
+        CFUUIDRef uuid = CFUUIDCreate(NULL);
+        UUID = (__bridge_transfer NSString *)CFUUIDCreateString(NULL, uuid);
+        CFRelease(uuid);
+        
+        [[NSUserDefaults standardUserDefaults] setObject:UUID forKey:@"uuid"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
     return YES;
 }
 
@@ -99,7 +109,7 @@
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
-	NSLog(@"My token is: %@", deviceToken);
+	//NSLog(@"My token is: %@", deviceToken);
     if (deviceToken) {
         [[NSUserDefaults standardUserDefaults] setObject:deviceToken forKey:@"token"];
         [[NSUserDefaults standardUserDefaults] synchronize];

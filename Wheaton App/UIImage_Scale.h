@@ -10,7 +10,7 @@
 
 @interface UIImage (Scale)
 
--(UIImage *)scaleToWidth:(CGFloat)width constraint:(CGFloat)height;
+- (UIImage *)scaleToWidth:(CGFloat)width constraint:(CGFloat)height;
 
 @end
 
