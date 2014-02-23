@@ -9,6 +9,7 @@
 #import "HomePastViewController.h"
 #import "SportTableCell.h"
 #import "EventTableCell.h"
+#import "MetraTableViewCell.h"
 #import "Banner.h"
 #import "Sport.h"
 
@@ -33,6 +34,9 @@
     NSMutableArray *sportSection = [[NSMutableArray alloc] init];
     [home addObject:sportSection];
     
+    NSMutableArray *metraSection = [[NSMutableArray alloc] init];
+    [home addObject:metraSection];
+    
     [scrollView loaded];
 }
 
@@ -51,6 +55,7 @@
 {
     [[home objectAtIndex:0] removeAllObjects];
     [[home objectAtIndex:1] removeAllObjects];
+    [[home objectAtIndex:2] removeAllObjects];
     [self.tableView reloadData];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -75,6 +80,17 @@
             [[home objectAtIndex:1] addObject:sport];
             [self.tableView reloadData];
         }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+    [manager GET:c_Metra parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *metraArray = responseObject;
+        
+        for (NSDictionary *m in metraArray) {
+            [[home objectAtIndex:2] addObject:m];
+        }
+        [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -136,7 +152,7 @@
     } else if(section == 1) {
         return @"Sports";
     } else {
-        return @"Events";
+        return @"Metra";
     }
 }
 
@@ -201,6 +217,27 @@
         }
         
         cell = [sport generateCell:sportCell];
+    } else if (indexPath.section == 2) {
+        
+        NSString *cellIdentifier = @"MetraCell";
+        NSString *cellFileName = @"MetraTableViewCell";
+        
+        NSDictionary *inbound = [[[home objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectForKey:@"inbound"];
+        NSDictionary *outbound = [[[home objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] objectForKey:@"outbound"];
+        
+        MetraTableViewCell *eventCell = (MetraTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (eventCell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellFileName owner:nil options:nil];
+            eventCell = [nib objectAtIndex:0];
+        }
+        
+        eventCell.origin.text = [inbound objectForKey:@"origin"];
+        eventCell.destination.text = [inbound objectForKey:@"destination"];
+        
+        eventCell.departureTimeInbound.text = [inbound objectForKey:@"departure"];
+        eventCell.departureTimeOutbound.text = [outbound objectForKey:@"departure"];
+        
+        cell = eventCell;
     }
     return cell;
 }
