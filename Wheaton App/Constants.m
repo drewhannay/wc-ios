@@ -8,7 +8,7 @@
 
 #import "Constants.h"
 
-
+NSString * const c_Home = @"http://dev.isoncamp.us/wheaton/home";
 NSString * const c_MapLocations = @"http://dev.isoncamp.us/wheaton/locations";
 NSString * const c_Chapel = @"https://isoncamp.us/wheaton/chapel";
 NSString * const c_Menu = @"https://isoncamp.us/wheaton/menu";
