@@ -53,43 +53,33 @@
 
 - (void)load
 {
-    [[home objectAtIndex:0] removeAllObjects];
-    [[home objectAtIndex:1] removeAllObjects];
-    [[home objectAtIndex:2] removeAllObjects];
-    [self.tableView reloadData];
-    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    NSDictionary *parametersChapel = @{ @"limit": @"1", @"next": @"yes" };
-    [manager GET:c_Chapel parameters:parametersChapel success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSArray *chapelArray = responseObject;
+
+    [manager GET:c_Home parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *dic = responseObject;
+        
+        [[home objectAtIndex:0] removeAllObjects];
+        [[home objectAtIndex:1] removeAllObjects];
+        [[home objectAtIndex:2] removeAllObjects];
+        
+        NSArray *chapelArray = [dic objectForKey:@"chapel"];
         if ([chapelArray count] > 0) {
             [[home objectAtIndex:0] addObject:[chapelArray objectAtIndex:0]];
         }
-        [self.tableView reloadData];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    
-    NSDictionary *parametersSports = @{ @"limit": @"5" };
-    [manager GET:c_Sports parameters:parametersSports success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSArray *sportArray = responseObject;
+        
+        NSArray *sportArray = [dic objectForKey:@"sports"];
         for (NSDictionary *s in sportArray) {
             Sport *sport = [[Sport alloc] init];
             [sport jsonToSport:s];
             [[home objectAtIndex:1] addObject:sport];
             [self.tableView reloadData];
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    
-    [manager GET:c_Metra parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSArray *metraArray = responseObject;
         
+        NSArray *metraArray = [dic objectForKey:@"train"];
         for (NSDictionary *m in metraArray) {
             [[home objectAtIndex:2] addObject:m];
         }
+        
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
