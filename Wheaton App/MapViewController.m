@@ -72,7 +72,7 @@
         if (annotationView == nil) {
             annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             annotationView.enabled = YES;
-            annotationView.animatesDrop = YES;
+            annotationView.animatesDrop = NO;
             annotationView.canShowCallout = YES;
             if ((annotation.description != (id)[NSNull null])
                 && (annotation.description.length > 0)) {
