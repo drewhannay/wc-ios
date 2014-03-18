@@ -10,7 +10,7 @@
 #import "Constants.h"
 #import "AFNetworking.h"
 
-@interface BannerLoginViewController : UIViewController <UITextFieldDelegate>
+@interface BannerLoginViewController : UITableViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *password;

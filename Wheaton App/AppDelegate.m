@@ -55,6 +55,8 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     
+    NSLog(@"My other token is: %@", UUID);
+    
     return YES;
 }
 
@@ -109,7 +111,7 @@
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
-	//NSLog(@"My token is: %@", deviceToken);
+	NSLog(@"My token is: %@", deviceToken);
     if (deviceToken) {
         [[NSUserDefaults standardUserDefaults] setObject:deviceToken forKey:@"token"];
         [[NSUserDefaults standardUserDefaults] synchronize];

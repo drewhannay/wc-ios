@@ -38,6 +38,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return 1;
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (email.text.length <= 0 && password.text.length <= 0) {
         return NO;

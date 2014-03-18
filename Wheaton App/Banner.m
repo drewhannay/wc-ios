@@ -7,6 +7,8 @@
 //
 
 #import "Banner.h"
+#import "Course.h"
+#import "CourseRequirement.h"
 
 @implementation Banner
 
@@ -48,9 +50,39 @@
     }
 }
 
-+ (void)getDegree:(void (^)(NSDictionary *degree))success failure:(void (^)(NSError *err))failure
++ (void)getDegree:(void (^)(NSArray *degree))success failure:(void (^)(NSError *err))failure
 {
-    
+    if([Banner hasLoggedIn]) {
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        
+        NSString *url = [NSString stringWithFormat:@"%@/degree", c_Banner];
+        
+        [manager POST:url parameters:[Banner getUser] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSArray *dic = responseObject;
+            
+            NSMutableArray *requirements = [[NSMutableArray alloc] init];
+            
+            for (NSDictionary *requirement in dic) {
+                CourseRequirement *cr = [[CourseRequirement alloc] init];
+                cr.met = [requirement objectForKey:@"sectionMet"];
+                cr.type = [requirement objectForKey:@"sectionType"];
+                
+                NSMutableArray *courses = [[NSMutableArray alloc] init];
+                
+                for (NSDictionary *course in [requirement objectForKey:@"classes"]) {
+                    Course *c = [[Course alloc] init];
+                    [c jsonParse:course];
+                    [courses addObject:c];
+                }
+                cr.courses = courses;
+                [requirements addObject:cr];
+            }
+            
+            success(requirements);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            failure(error);
+        }];
+    }
 }
 
 + (BOOL)hasLoggedIn

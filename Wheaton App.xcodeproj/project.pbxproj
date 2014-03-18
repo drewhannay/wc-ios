@@ -39,6 +39,9 @@
 		613890C117E3A9C40049FF72 /* Sports@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 613890BF17E3A9C40049FF72 /* Sports@2x.png */; };
 		613961E718A870E600669034 /* MapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613961E618A870E600669034 /* MapDetailViewController.m */; };
 		613B9557183419C900DEAA0E /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613B9556183419C900DEAA0E /* EventsTableViewController.m */; };
+		613CF94418D8D43D005156A8 /* DegreeEvaluationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613CF94318D8D43D005156A8 /* DegreeEvaluationTableViewController.m */; };
+		613CF94718D8D737005156A8 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 613CF94618D8D737005156A8 /* Course.m */; };
+		613CF94A18D8D882005156A8 /* CourseRequirement.m in Sources */ = {isa = PBXBuildFile; fileRef = 613CF94918D8D882005156A8 /* CourseRequirement.m */; };
 		6141152E18374F7E00B71051 /* PushNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 6141152D18374F7E00B71051 /* PushNotification.m */; };
 		614241BC17F886D0005A9742 /* Volleyball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 614241BB17F886D0005A9742 /* Volleyball@2x.png */; };
 		6147B49418AD531A00110753 /* AutoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6147B49318AD531A00110753 /* AutoTableViewCell.m */; };
@@ -169,6 +172,12 @@
 		613961E618A870E600669034 /* MapDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDetailViewController.m; sourceTree = "<group>"; };
 		613B9555183419C900DEAA0E /* EventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewController.h; sourceTree = "<group>"; };
 		613B9556183419C900DEAA0E /* EventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewController.m; sourceTree = "<group>"; };
+		613CF94218D8D43D005156A8 /* DegreeEvaluationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DegreeEvaluationTableViewController.h; sourceTree = "<group>"; };
+		613CF94318D8D43D005156A8 /* DegreeEvaluationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DegreeEvaluationTableViewController.m; sourceTree = "<group>"; };
+		613CF94518D8D737005156A8 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		613CF94618D8D737005156A8 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		613CF94818D8D882005156A8 /* CourseRequirement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseRequirement.h; sourceTree = "<group>"; };
+		613CF94918D8D882005156A8 /* CourseRequirement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseRequirement.m; sourceTree = "<group>"; };
 		6141152C18374F7E00B71051 /* PushNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotification.h; sourceTree = "<group>"; };
 		6141152D18374F7E00B71051 /* PushNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotification.m; sourceTree = "<group>"; };
 		614241BB17F886D0005A9742 /* Volleyball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Volleyball@2x.png"; sourceTree = "<group>"; };
@@ -508,6 +517,8 @@
 				61B04AFA18B4605600CC509A /* NotificationOptionsTableViewController.m */,
 				61B04AFC18B5C90C00CC509A /* BannerLoginViewController.h */,
 				61B04AFD18B5C90C00CC509A /* BannerLoginViewController.m */,
+				613CF94218D8D43D005156A8 /* DegreeEvaluationTableViewController.h */,
+				613CF94318D8D43D005156A8 /* DegreeEvaluationTableViewController.m */,
 				61B04AFF18B6876500CC509A /* Banner.h */,
 				61B04B0018B6876500CC509A /* Banner.m */,
 				61C6193A18B29F8B00357869 /* UIImage_Scale.h */,
@@ -561,6 +572,10 @@
 				6141152D18374F7E00B71051 /* PushNotification.m */,
 				61E68D19185D5566009F0977 /* Sport.h */,
 				61E68D1A185D5566009F0977 /* Sport.m */,
+				613CF94518D8D737005156A8 /* Course.h */,
+				613CF94618D8D737005156A8 /* Course.m */,
+				613CF94818D8D882005156A8 /* CourseRequirement.h */,
+				613CF94918D8D882005156A8 /* CourseRequirement.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -747,12 +762,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				61E68D1B185D5566009F0977 /* Sport.m in Sources */,
+				613CF94718D8D737005156A8 /* Course.m in Sources */,
 				61B04B0918B8728800CC509A /* MetraTableViewCell.m in Sources */,
 				61DE4FFB183020AA004BBCA1 /* CustomSegmentControl.m in Sources */,
 				61F70D921831F12700345907 /* Person.m in Sources */,
 				2D2653EA13E069CF00DE089C /* main.m in Sources */,
 				61E075CF17E6A9850029EFE9 /* MTReachabilityManager.m in Sources */,
 				61DDA64F18368F9D00EBA92C /* AcademicTableViewController.m in Sources */,
+				613CF94A18D8D882005156A8 /* CourseRequirement.m in Sources */,
 				6141152E18374F7E00B71051 /* PushNotification.m in Sources */,
 				61CE5FC5188359D1007B66AB /* HomePastViewController.m in Sources */,
 				616DD25C1852B4D300AC53C3 /* WebViewController.m in Sources */,
@@ -775,6 +792,7 @@
 				61B04B0118B6876500CC509A /* Banner.m in Sources */,
 				61B04AFE18B5C90C00CC509A /* BannerLoginViewController.m in Sources */,
 				612BFEFD17DED11300EB2C8C /* AppDelegate.m in Sources */,
+				613CF94418D8D43D005156A8 /* DegreeEvaluationTableViewController.m in Sources */,
 				61E075D517E6B8B90029EFE9 /* Reachability.m in Sources */,
 				61F70D8F1831E03700345907 /* HomeViewController.m in Sources */,
 				61851B3E18306762005EDE18 /* SportsTableViewController.m in Sources */,

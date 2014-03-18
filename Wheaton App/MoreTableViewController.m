@@ -57,6 +57,12 @@
         [bannerOption setValue:@"Banner Login" forKey:@"name"];
         [bannerOption setValue:bVC forKey:@"controller"];
         [moreTable addObject:bannerOption];
+        
+        NSMutableDictionary *degreeOption = [[NSMutableDictionary alloc] init];
+        UIViewController *dVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DegreeEvaluation"];
+        [degreeOption setValue:@"Degree Evaluation" forKey:@"name"];
+        [degreeOption setValue:dVC forKey:@"controller"];
+        [moreTable addObject:degreeOption];
     }
     
     NSMutableDictionary *aboutOption = [[NSMutableDictionary alloc] init];
