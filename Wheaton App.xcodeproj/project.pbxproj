@@ -42,6 +42,7 @@
 		613CF94418D8D43D005156A8 /* DegreeEvaluationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613CF94318D8D43D005156A8 /* DegreeEvaluationTableViewController.m */; };
 		613CF94718D8D737005156A8 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 613CF94618D8D737005156A8 /* Course.m */; };
 		613CF94A18D8D882005156A8 /* CourseRequirement.m in Sources */ = {isa = PBXBuildFile; fileRef = 613CF94918D8D882005156A8 /* CourseRequirement.m */; };
+		613CF99218DB79A3005156A8 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613CF99118DB79A3005156A8 /* EventKit.framework */; };
 		6141152E18374F7E00B71051 /* PushNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 6141152D18374F7E00B71051 /* PushNotification.m */; };
 		614241BC17F886D0005A9742 /* Volleyball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 614241BB17F886D0005A9742 /* Volleyball@2x.png */; };
 		6147B49418AD531A00110753 /* AutoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6147B49318AD531A00110753 /* AutoTableViewCell.m */; };
@@ -178,6 +179,7 @@
 		613CF94618D8D737005156A8 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		613CF94818D8D882005156A8 /* CourseRequirement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseRequirement.h; sourceTree = "<group>"; };
 		613CF94918D8D882005156A8 /* CourseRequirement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseRequirement.m; sourceTree = "<group>"; };
+		613CF99118DB79A3005156A8 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		6141152C18374F7E00B71051 /* PushNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotification.h; sourceTree = "<group>"; };
 		6141152D18374F7E00B71051 /* PushNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotification.m; sourceTree = "<group>"; };
 		614241BB17F886D0005A9742 /* Volleyball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Volleyball@2x.png"; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				613CF99218DB79A3005156A8 /* EventKit.framework in Frameworks */,
 				61032B1B17F3325600CC95FA /* libz.dylib in Frameworks */,
 				61032B1917F3324200CC95FA /* CoreData.framework in Frameworks */,
 				61E075C817E6A7790029EFE9 /* SystemConfiguration.framework in Frameworks */,
@@ -338,6 +341,7 @@
 		2D2653DB13E069CF00DE089C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				613CF99118DB79A3005156A8 /* EventKit.framework */,
 				61032B1A17F3325600CC95FA /* libz.dylib */,
 				61032B1817F3324200CC95FA /* CoreData.framework */,
 				61E075C717E6A7790029EFE9 /* SystemConfiguration.framework */,
@@ -885,7 +889,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "127D9B80-85A8-4E64-8F2A-91FCEB0C70DA";
+				PROVISIONING_PROFILE = "609BF96E-D8B1-450F-8C5D-6FEF91A881FE";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -909,7 +913,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "127D9B80-85A8-4E64-8F2A-91FCEB0C70DA";
+				PROVISIONING_PROFILE = "609BF96E-D8B1-450F-8C5D-6FEF91A881FE";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
@@ -953,7 +957,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "127D9B80-85A8-4E64-8F2A-91FCEB0C70DA";
+				PROVISIONING_PROFILE = "609BF96E-D8B1-450F-8C5D-6FEF91A881FE";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;

@@ -85,14 +85,74 @@
     }
 }
 
++ (void)importCalendar:(void (^)(NSArray *schedule))success failure:(void (^)(NSError *err))failure
+{
+    if([Banner hasLoggedIn]) {
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        
+        NSString *url = [NSString stringWithFormat:@"%@/schedule", c_Banner];
+        
+        [manager GET:url parameters:[Banner getUser] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            EKEventStore *store = [[EKEventStore alloc] init];
+            
+            NSArray *schedule = responseObject;
+            
+            [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (error) {
+                    } else if (!granted) {
+                    } else {
+                        EKEventStore *store = [[EKEventStore alloc] init];
+                        
+                        for (NSDictionary *class in schedule) {
+                            EKEvent *event  = [EKEvent eventWithEventStore:store];
+                            event.title = [class objectForKey:@"title"];
+                            event.location = [class objectForKey:@"location"];
+                            
+                            event.startDate = [NSDate dateWithTimeIntervalSince1970: [[class objectForKey:@"timeStart"] doubleValue]];
+                            event.endDate = [NSDate dateWithTimeIntervalSince1970: [[class objectForKey:@"timeStop"] doubleValue]];
+                            
+                            NSDate *end = [NSDate dateWithTimeIntervalSince1970: [[class objectForKey:@"recurringStop"] doubleValue]];
+                            
+                            EKRecurrenceEnd *ekEnd = [EKRecurrenceEnd recurrenceEndWithEndDate:end];
+                            
+                            EKRecurrenceRule *er = [[EKRecurrenceRule alloc] initRecurrenceWithFrequency:EKRecurrenceFrequencyWeekly interval:1
+                                                                                           daysOfTheWeek:nil
+                                                                                          daysOfTheMonth:nil
+                                                                                         monthsOfTheYear:nil
+                                                                                          weeksOfTheYear:nil
+                                                                                           daysOfTheYear:nil
+                                                                                            setPositions:nil
+                                                                                                     end:ekEnd];
+                            event.recurrenceRules = @[er];
+                            event.availability = EKEventAvailabilityBusy;
+                            
+                            [event setCalendar:[store defaultCalendarForNewEvents]];
+                            
+                            NSError *err;
+                            [store saveEvent:event span:EKSpanThisEvent error:&err];
+                            
+                            NSLog(@"%@", err);
+                            NSLog(@"%@", event.title);
+                            NSLog(@"%@", event.startDate);
+                            NSLog(@"%@", event.endDate);
+                        }
+                    }
+                });
+            }];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            failure(error);
+        }];
+    }
+}
+
 + (BOOL)hasLoggedIn
 {
     UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
     if (types
         && [[NSUserDefaults standardUserDefaults] boolForKey:@"login"]
         && [[NSUserDefaults standardUserDefaults] objectForKey:@"uuid"]
-        && [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
-        ) {
+        && [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]) {
         return YES;
     }
     return NO;

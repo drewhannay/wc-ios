@@ -35,8 +35,8 @@
 - (void)drawRect:(CGRect)rect
 {
     CGColorRef borderBottomColor = CGColorRetain([UIColorFromRGB(0x7e8083) CGColor]);
-    CGColorRef dividerColor = CGColorRetain([UIColorFromRGB(0xe6e6e6) CGColor]);
-    CGColorRef backgroundColor = CGColorRetain([UIColorFromRGB(0xf1f1f1) CGColor]);
+    CGColorRef dividerColor = CGColorRetain([UIColorFromRGB(0xe1e1e1) CGColor]);
+    CGColorRef backgroundColor = CGColorRetain([UIColorFromRGB(0xe8e8e8) CGColor]);
     
     CGContextRef context;
 

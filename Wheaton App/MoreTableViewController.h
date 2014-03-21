@@ -11,7 +11,4 @@
 
 @interface MoreTableViewController : UITableViewController
 
-@property (nonatomic, retain) NSMutableArray *moreTable;
-@property (nonatomic, retain) NSMutableArray *moreHeaders;
-
 @end

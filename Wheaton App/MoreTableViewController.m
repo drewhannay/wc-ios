@@ -8,30 +8,26 @@
 
 #import "MoreTableViewController.h"
 #import "WebViewController.h"
+#import "Banner.h"
 
 @interface MoreTableViewController ()
 
 @end
 
-@implementation MoreTableViewController
-
-@synthesize moreTable, moreHeaders;
+@implementation MoreTableViewController {
+    NSMutableArray *moreTable;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     moreTable = [[NSMutableArray alloc] init];
-    moreHeaders = [[NSMutableArray alloc] init];
     
-    [moreHeaders addObject:@"Options"];
+    NSMutableDictionary *optionsDictionary = [[NSMutableDictionary alloc] init];
+    NSMutableArray *optionsArray = [[NSMutableArray alloc] init];
     
-//    NSMutableDictionary *menuOption = [[NSMutableDictionary alloc] init];
-//    WebViewController *mVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WebView"];
-//    mVC.url = [NSURL URLWithString:c_Menu];
-//    [menuOption setValue:@"Meal Menu" forKey:@"name"];
-//    [menuOption setValue:mVC forKey:@"controller"];
-//    [moreTable addObject:menuOption];
+    [optionsDictionary setObject:@"Options" forKey:@"header"];
     
     NSMutableDictionary *chapelOption = [[NSMutableDictionary alloc] init];
     WebViewController *cVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WebView"];
@@ -39,9 +35,7 @@
     cVC.url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"chapel" ofType:@"pdf"]];
     [chapelOption setValue:@"Chapel Seat Layout" forKey:@"name"];
     [chapelOption setValue:cVC forKey:@"controller"];
-    [moreTable addObject:chapelOption];
-    
-    
+    [optionsArray addObject:chapelOption];
     
     UIRemoteNotificationType types = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
     if (types != UIRemoteNotificationTypeNone) {
@@ -51,29 +45,57 @@
         [notificationOption setValue:nVC forKey:@"controller"];
         [notificationOption setValue:@"Notification Toggles" forKey:@"name"];
         [moreTable addObject:notificationOption];
+    }
+    
+    [optionsDictionary setObject:optionsArray forKey:@"array"];
+    [moreTable addObject:optionsDictionary];
+    
+    if (types != UIRemoteNotificationTypeNone) {
+        NSMutableDictionary *bannerDictionary = [[NSMutableDictionary alloc] init];
+        NSMutableArray *bannerArray = [[NSMutableArray alloc] init];
+        
+        [bannerDictionary setObject:@"Banner" forKey:@"header"];
         
         NSMutableDictionary *bannerOption = [[NSMutableDictionary alloc] init];
         UIViewController *bVC = [self.storyboard instantiateViewControllerWithIdentifier:@"BannerLogin"];
-        [bannerOption setValue:@"Banner Login" forKey:@"name"];
+        [bannerOption setValue:@"Login" forKey:@"name"];
         [bannerOption setValue:bVC forKey:@"controller"];
-        [moreTable addObject:bannerOption];
+        [bannerArray addObject:bannerOption];
         
-        NSMutableDictionary *degreeOption = [[NSMutableDictionary alloc] init];
-        UIViewController *dVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DegreeEvaluation"];
-        [degreeOption setValue:@"Degree Evaluation" forKey:@"name"];
-        [degreeOption setValue:dVC forKey:@"controller"];
-        [moreTable addObject:degreeOption];
+        if ([Banner hasLoggedIn]) {
+            NSMutableDictionary *degreeOption = [[NSMutableDictionary alloc] init];
+            UIViewController *dVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DegreeEvaluation"];
+            [degreeOption setValue:@"Degree Evaluation (Beta)" forKey:@"name"];
+            [degreeOption setValue:dVC forKey:@"controller"];
+            [bannerArray addObject:degreeOption];
+            
+            NSMutableDictionary *calendarOption = [[NSMutableDictionary alloc] init];
+            //UIViewController *calVC = [self.storyboard instantiateViewControllerWithIdentifier:@"BannerLogin"];
+            [calendarOption setValue:@"Import Class Schedule" forKey:@"name"];
+            //[bannerOption setValue:bVC forKey:@"controller"];
+            [bannerArray addObject:calendarOption];
+        }
+        
+        [bannerDictionary setObject:bannerArray forKey:@"array"];
+        [moreTable addObject:bannerDictionary];
     }
+    
+    NSMutableDictionary *endDictionary = [[NSMutableDictionary alloc] init];
+    NSMutableArray *endArray = [[NSMutableArray alloc] init];
+    
+    [endDictionary setObject:@"" forKey:@"header"];
     
     NSMutableDictionary *aboutOption = [[NSMutableDictionary alloc] init];
     WebViewController *aVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WebView"];
     aVC.url = [NSURL URLWithString:c_About];
     [aboutOption setValue:@"About" forKey:@"name"];
     [aboutOption setValue:aVC forKey:@"controller"];
-    [moreTable addObject:aboutOption];
+    [endArray addObject:aboutOption];
+    
+    [endDictionary setObject:endArray forKey:@"array"];
+    [moreTable addObject:endDictionary];
     
     [self.tableView reloadData];
-    
     [self.navigationController.navigationBar setTranslucent:NO];
 }
 
@@ -88,13 +110,19 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [moreTable count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [moreTable count];
+    return [[moreTable objectAtIndex:section] count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)sectionIndex {
+    NSDictionary *entry = [moreTable objectAtIndex:sectionIndex];
+    
+    return [entry objectForKey:@"header"];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,25 +140,14 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *dic = [moreTable objectAtIndex:indexPath.row];
+    NSDictionary *dic = [[[moreTable objectAtIndex:indexPath.section]
+                          objectForKey:@"array"]
+                         objectAtIndex:indexPath.row];
     UIViewController *selected = [dic objectForKey:@"controller"];
     selected.title = [dic objectForKey:@"name"];
     [self.navigationController
      pushViewController:selected
      animated:YES];
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

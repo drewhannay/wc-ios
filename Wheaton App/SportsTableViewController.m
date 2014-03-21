@@ -132,7 +132,7 @@
     [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:14]];
     [headerView addSubview:label];
     
-    [headerView setBackgroundColor:[UIColor colorWithRed:238/255.0f green:238/255.0f blue:238/255.0f alpha:1.0f]];
+    [headerView setBackgroundColor:[UIColor colorWithRed:245/255.0f green:245/255.0f blue:245/255.0f alpha:1.0f]];
     [label setBackgroundColor:[UIColor clearColor]];
     return headerView;
 }
