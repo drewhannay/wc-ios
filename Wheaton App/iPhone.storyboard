@@ -834,6 +834,24 @@
             </objects>
             <point key="canvasLocation" x="-843" y="5627"/>
         </scene>
+        <!--Import Calendar View Controller-->
+        <scene sceneID="UgC-LI-TvA">
+            <objects>
+                <viewController storyboardIdentifier="ImportCalendar" id="Sm4-0u-Id0" customClass="ImportCalendarViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FtX-5s-hFc"/>
+                        <viewControllerLayoutGuide type="bottom" id="aoa-yX-bQ6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZJJ-lw-Heg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHu-8H-55o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-453" y="5627"/>
+        </scene>
         <!--Banner Login View Controller-->
         <scene sceneID="mxG-Wd-SjY">
             <objects>

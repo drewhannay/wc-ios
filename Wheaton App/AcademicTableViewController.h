@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Constants.h"
+#import "CustomTableViewController.h"
 
-@interface AcademicTableViewController : UITableViewController {
+@interface AcademicTableViewController : CustomTableViewController {
     NSCalendar *cal;
 }
 

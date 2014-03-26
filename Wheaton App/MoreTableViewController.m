@@ -22,12 +22,14 @@
 {
     [super viewDidLoad];
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     moreTable = [[NSMutableArray alloc] init];
     
     NSMutableDictionary *optionsDictionary = [[NSMutableDictionary alloc] init];
     NSMutableArray *optionsArray = [[NSMutableArray alloc] init];
     
-    [optionsDictionary setObject:@"Options" forKey:@"header"];
+    [optionsDictionary setObject:@"Extra" forKey:@"header"];
     
     NSMutableDictionary *chapelOption = [[NSMutableDictionary alloc] init];
     WebViewController *cVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WebView"];
@@ -44,7 +46,7 @@
         nVC.title = @"Notification Toggles";
         [notificationOption setValue:nVC forKey:@"controller"];
         [notificationOption setValue:@"Notification Toggles" forKey:@"name"];
-        [moreTable addObject:notificationOption];
+        [optionsArray addObject:notificationOption];
     }
     
     [optionsDictionary setObject:optionsArray forKey:@"array"];
@@ -70,9 +72,9 @@
             [bannerArray addObject:degreeOption];
             
             NSMutableDictionary *calendarOption = [[NSMutableDictionary alloc] init];
-            //UIViewController *calVC = [self.storyboard instantiateViewControllerWithIdentifier:@"BannerLogin"];
+            UIViewController *calVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ImportCalendar"];
             [calendarOption setValue:@"Import Class Schedule" forKey:@"name"];
-            //[bannerOption setValue:bVC forKey:@"controller"];
+            [calendarOption setValue:calVC forKey:@"controller"];
             [bannerArray addObject:calendarOption];
         }
         
@@ -116,7 +118,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [[moreTable objectAtIndex:section] count];
+    return [[[moreTable objectAtIndex:section] objectForKey:@"array"] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)sectionIndex {
@@ -127,19 +129,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSArray *array = [[moreTable objectAtIndex:indexPath.section] objectForKey:@"array"];
+    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [[moreTable objectAtIndex:indexPath.row] objectForKey:@"name"];
+    cell.textLabel.text = [[array objectAtIndex:indexPath.row] objectForKey:@"name"];
     // Configure the cell...
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSDictionary *dic = [[[moreTable objectAtIndex:indexPath.section]
                           objectForKey:@"array"]
                          objectAtIndex:indexPath.row];

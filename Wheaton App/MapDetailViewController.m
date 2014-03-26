@@ -29,7 +29,7 @@ static NSString *cellIdentifier = @"AutoTableViewCell";
                                          timeoutInterval:60.0];
     
     [self.buildingImage setImageWithURLRequest:request
-                              placeholderImage:[UIImage imageNamed:@"default-image"]
+                              placeholderImage:[UIImage imageNamed:@"building-default"]
                                        success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
                                            buildingImage.image = image;
                                        }
@@ -41,6 +41,7 @@ static NSString *cellIdentifier = @"AutoTableViewCell";
                                       bottomBlur.frame.origin.y,
                                       bottomBlur.frame.size.width,
                                       50)];
+        blurView.alpha = 0.95;
         [self.detailView insertSubview:blurView belowSubview:bottomBlur];
         [self.view bringSubviewToFront:name];
     }

@@ -54,6 +54,9 @@
 		6150980017D5477800456A9D /* Whoswho@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 615097FA17D5477800456A9D /* Whoswho@2x.png */; };
 		6150980217D5497200456A9D /* Meal.png in Resources */ = {isa = PBXBuildFile; fileRef = 6150980117D5497200456A9D /* Meal.png */; };
 		6150980417D5497800456A9D /* Meal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6150980317D5497800456A9D /* Meal@2x.png */; };
+		615CA71D18DCE7E50002279F /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 615CA71C18DCE7E50002279F /* CustomTableViewController.m */; };
+		615CA72118DCED920002279F /* building-default.png in Resources */ = {isa = PBXBuildFile; fileRef = 615CA72018DCED920002279F /* building-default.png */; };
+		615CA72418DCF02A0002279F /* ImportCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 615CA72318DCF02A0002279F /* ImportCalendarViewController.m */; };
 		616DD2591852AB7E00AC53C3 /* WhoswhoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 616DD2581852AB7E00AC53C3 /* WhoswhoTableCell.xib */; };
 		616DD25C1852B4D300AC53C3 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 616DD25B1852B4D300AC53C3 /* WebViewController.m */; };
 		61851B3B18306529005EDE18 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61851B3A18306529005EDE18 /* EventViewController.m */; };
@@ -193,6 +196,11 @@
 		615097FA17D5477800456A9D /* Whoswho@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Whoswho@2x.png"; sourceTree = "<group>"; };
 		6150980117D5497200456A9D /* Meal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Meal.png; sourceTree = "<group>"; };
 		6150980317D5497800456A9D /* Meal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Meal@2x.png"; sourceTree = "<group>"; };
+		615CA71B18DCE7E50002279F /* CustomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewController.h; sourceTree = "<group>"; };
+		615CA71C18DCE7E50002279F /* CustomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewController.m; sourceTree = "<group>"; };
+		615CA72018DCED920002279F /* building-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "building-default.png"; sourceTree = "<group>"; };
+		615CA72218DCF02A0002279F /* ImportCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportCalendarViewController.h; sourceTree = "<group>"; };
+		615CA72318DCF02A0002279F /* ImportCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportCalendarViewController.m; sourceTree = "<group>"; };
 		616DD2581852AB7E00AC53C3 /* WhoswhoTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhoswhoTableCell.xib; sourceTree = "<group>"; };
 		616DD25A1852B4D300AC53C3 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		616DD25B1852B4D300AC53C3 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
@@ -419,6 +427,7 @@
 		2D26540F13E069DB00DE089C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				615CA72018DCED920002279F /* building-default.png */,
 				61BB609218B9C03100CC9A17 /* Sports */,
 				61B04B1418B8884700CC509A /* University@2x.png */,
 				61B04B1218B886F100CC509A /* City@2x.png */,
@@ -489,6 +498,8 @@
 			isa = PBXGroup;
 			children = (
 				61CE5FC4188359D1007B66AB /* Pods */,
+				615CA71B18DCE7E50002279F /* CustomTableViewController.h */,
+				615CA71C18DCE7E50002279F /* CustomTableViewController.m */,
 				61891CCF182C09EE003F1B43 /* MasterTabViewController.h */,
 				61891CD0182C09EE003F1B43 /* MasterTabViewController.m */,
 				61851B3918306529005EDE18 /* EventViewController.h */,
@@ -523,6 +534,8 @@
 				61B04AFD18B5C90C00CC509A /* BannerLoginViewController.m */,
 				613CF94218D8D43D005156A8 /* DegreeEvaluationTableViewController.h */,
 				613CF94318D8D43D005156A8 /* DegreeEvaluationTableViewController.m */,
+				615CA72218DCF02A0002279F /* ImportCalendarViewController.h */,
+				615CA72318DCF02A0002279F /* ImportCalendarViewController.m */,
 				61B04AFF18B6876500CC509A /* Banner.h */,
 				61B04B0018B6876500CC509A /* Banner.m */,
 				61C6193A18B29F8B00357869 /* UIImage_Scale.h */,
@@ -692,6 +705,7 @@
 				61B04B0318B6CD3200CC509A /* banner@2x.png in Resources */,
 				61F05EF017D3B7B60006CC1F /* Soccer@2x.png in Resources */,
 				61F05EF117D3B7B60006CC1F /* Tennis.png in Resources */,
+				615CA72118DCED920002279F /* building-default.png in Resources */,
 				613890C117E3A9C40049FF72 /* Sports@2x.png in Resources */,
 				61F70D961832D10000345907 /* Swimming@2x.png in Resources */,
 				61F05EF217D3B7B60006CC1F /* Tennis@2x.png in Resources */,
@@ -770,6 +784,7 @@
 				61B04B0918B8728800CC509A /* MetraTableViewCell.m in Sources */,
 				61DE4FFB183020AA004BBCA1 /* CustomSegmentControl.m in Sources */,
 				61F70D921831F12700345907 /* Person.m in Sources */,
+				615CA72418DCF02A0002279F /* ImportCalendarViewController.m in Sources */,
 				2D2653EA13E069CF00DE089C /* main.m in Sources */,
 				61E075CF17E6A9850029EFE9 /* MTReachabilityManager.m in Sources */,
 				61DDA64F18368F9D00EBA92C /* AcademicTableViewController.m in Sources */,
@@ -786,6 +801,7 @@
 				61E4077917CECE8B0068AE00 /* WhoswhoSearchBar.m in Sources */,
 				61F70D861831924100345907 /* MoreTableViewController.m in Sources */,
 				61E4079917D2662D0068AE00 /* BannerScrollView.m in Sources */,
+				615CA71D18DCE7E50002279F /* CustomTableViewController.m in Sources */,
 				61E2E91B187F236800E97AD7 /* WhosWhoDetailViewController.m in Sources */,
 				61DDA64B1835E37D00EBA92C /* HomeScrollViewController.m in Sources */,
 				61851B3B18306529005EDE18 /* EventViewController.m in Sources */,

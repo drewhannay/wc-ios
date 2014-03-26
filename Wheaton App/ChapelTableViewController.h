@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Constants.h"
 #import "AFNetworking.h"
+#import "CustomTableViewController.h"
 
-@interface ChapelTableViewController : UITableViewController {
+@interface ChapelTableViewController : CustomTableViewController {
     int todayRow;
     int todaySection;
     NSCalendar *cal;
