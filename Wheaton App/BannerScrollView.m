@@ -8,12 +8,18 @@
 
 #import "BannerScrollView.h"
 #import "Constants.h"
+#import "WebViewController.h"
 
-@implementation BannerScrollView
+@implementation BannerScrollView {
+    int totalPages;
+    NSMutableArray *bannerImages;
+    UIViewController *parentController;
+}
 
 @synthesize scrollView, pageControl;
 
-- (void)loaded {
+- (void)loaded:(UIViewController *)parent {
+    parentController = parent;
     [scrollView setTag:1];
     [scrollView setAutoresizingMask:UIViewAutoresizingNone];
     [pageControl setTag:12];
@@ -21,6 +27,9 @@
     [scrollView setPagingEnabled:YES];
     [scrollView setShowsHorizontalScrollIndicator:NO];
     [scrollView setShowsVerticalScrollIndicator:NO];
+    
+    UITapGestureRecognizer *tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedImage:)];
+    [self addGestureRecognizer:tapped];
     
     
     NSURL *URL = [NSURL URLWithString: c_Banners];
@@ -49,7 +58,29 @@
     });
 }
 
-- (void)addImage:(UIImage *)image index:(int)i {
+- (void)tappedImage: (UITapGestureRecognizer *)recognizer {
+    int page = pageControl.currentPage;
+    NSLog(@"%d", page);
+    
+    [self openURL];
+}
+
+- (void)openURL
+{
+    WebViewController *vc = [parentController.storyboard instantiateViewControllerWithIdentifier:@"WebView"];
+    vc.allowZoom = YES;
+    vc.url = [NSURL URLWithString:@"http://google.com"];
+
+    vc.title = @"Banner Ad";
+    [parentController.navigationController
+     pushViewController:vc
+     animated:YES];
+    
+    [vc.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+- (void)addImage:(UIImage *)image index:(int)i
+{
     UIImageView *imgV = [[UIImageView alloc] initWithFrame:CGRectMake(i * scrollView.frame.size.width, 0, scrollView.frame.size.width, scrollView.frame.size.height)];
     imgV.contentMode = UIViewContentModeScaleToFill;
     [imgV setImage:image];
@@ -58,14 +89,17 @@
     totalPages++;
 }
 
-- (void)setupScrollView {
+- (void)setupScrollView
+{
     [pageControl setNumberOfPages:totalPages];
     [scrollView setContentSize:CGSizeMake(scrollView.frame.size.width * totalPages, scrollView.frame.size.height)];
     [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(scrollingTimer) userInfo:nil repeats:YES];
 }
 
-- (void)scrollingTimer {
+- (void)scrollingTimer
+{
     CGFloat contentOffset = scrollView.contentOffset.x;
+    
     // calculate next page to display
     int nextPage = (int)(contentOffset/scrollView.frame.size.width) + 1;
     if(nextPage != totalPages)  {
@@ -77,14 +111,16 @@
     }
 }
 
-- (IBAction)pageChanged:(id)sender {
+- (IBAction)pageChanged:(id)sender
+{
     CGRect frame = scrollView.frame;
     frame.origin.x = frame.size.width * pageControl.currentPage;
     frame.origin.y = 0;
     [scrollView scrollRectToVisible:frame animated:YES];
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)sender {
+- (void)scrollViewDidScroll:(UIScrollView *)sender
+{
     // Update the page when more than 50% of the previous/next page is visible
     CGFloat pageWidth = self.scrollView.frame.size.width;
     int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;

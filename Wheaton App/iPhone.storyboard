@@ -104,6 +104,9 @@
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="izN-Uy-pIw">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="ZDk-j6-Hk6" id="P5t-0X-1Qp"/>
+                                    </connections>
                                 </scrollView>
                                 <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="CqE-8N-tio">
                                     <rect key="frame" x="141" y="122" width="39" height="37"/>
@@ -112,7 +115,6 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <connections>
-                                <outlet property="delegate" destination="izN-Uy-pIw" id="cjU-sv-Qcz"/>
                                 <outlet property="pageControl" destination="CqE-8N-tio" id="YSJ-XO-67s"/>
                                 <outlet property="scrollView" destination="izN-Uy-pIw" id="ANL-b3-QPp"/>
                             </connections>

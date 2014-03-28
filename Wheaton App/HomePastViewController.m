@@ -37,7 +37,7 @@
     NSMutableArray *metraSection = [[NSMutableArray alloc] init];
     [home addObject:metraSection];
     
-    [scrollView loaded];
+    [scrollView loaded:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -1,5 +1,6 @@
 platform :ios, '7.0'
 pod "AFNetworking", "~> 2.0"
+pod "Reachability"
 pod "LVDebounce"
 pod "iOS-blur"
 pod "Mixpanel"

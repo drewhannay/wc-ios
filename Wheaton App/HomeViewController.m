@@ -35,25 +35,6 @@
     [self addChildViewController:pVC];
     [self.viewContainer addSubview:pVC.view];
     
-    
-//    // Add A and B view controllers to the array
-//    self.allViewControllers = [[NSArray alloc] initWithObjects:pVC,pVC,pVC, nil];
-//    
-//    // Ensure a view controller is loaded
-//    self.switchViewControllers.selectedSegmentIndex = priorSegmentIndex = 0;
-//    [self cycleFromViewController:self.currentViewController toViewController:[self.allViewControllers objectAtIndex:self.switchViewControllers.selectedSegmentIndex] direction:YES];
-//    [self.switchViewControllers addTarget:self action:@selector(indexDidChangeForSegmentedControl:) forControlEvents:UIControlEventValueChanged];
-//    
-//    UISwipeGestureRecognizer *leftRecognizer;
-//    leftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeft:)];
-//    [leftRecognizer setDirection: UISwipeGestureRecognizerDirectionLeft];
-//    [[self view] addGestureRecognizer:leftRecognizer];
-//    
-//    UISwipeGestureRecognizer *rightRecognizer;
-//    rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRight:)];
-//    [rightRecognizer setDirection: UISwipeGestureRecognizerDirectionRight];
-//    [[self view] addGestureRecognizer:rightRecognizer];
-    
     self.searchDisplayController.searchBar.placeholder = @"Who's Who";
     self.searchDisplayController.searchBar.clipsToBounds = YES;
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -63,18 +44,33 @@
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
     [mixpanel track:@"Opened Home" properties:@{}];
     
+    [[MTReachabilityManager sharedManager] reachability].reachableBlock = ^(Reachability*reach) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self showWhosWho:YES];
+        });
+    };
+    [[MTReachabilityManager sharedManager] reachability].unreachableBlock = ^(Reachability*reach) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self showWhosWho:NO];
+        });
+    };
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    if (![MTReachabilityManager isReachableViaWiFi]) {
-        [self.searchDisplayController.searchBar setUserInteractionEnabled:NO];
-        [self.searchDisplayController.searchBar setPlaceholder:@"Who's Who: Connect to Campus WiFi"];
-    } else {
+    [self showWhosWho:[MTReachabilityManager isReachableViaWiFi]];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)showWhosWho:(BOOL)show
+{
+    if (show) {
         [self.searchDisplayController.searchBar setUserInteractionEnabled:YES];
         [self.searchDisplayController.searchBar setPlaceholder:@"Who's Who"];
+    } else {
+        [self.searchDisplayController.searchBar setUserInteractionEnabled:NO];
+        [self.searchDisplayController.searchBar setPlaceholder:@"Who's Who: Connect to Campus WiFi"];
     }
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
@@ -142,15 +138,15 @@
                                           CGRectGetHeight(self.viewContainer.bounds)+distance);
             
             
-//            NSLog(@"%@", newVC.view);
-//            NSLog(@"%f", ((UIScrollView *)newVC.view).contentSize.height);
-//
-//            
-//            NSLog(@"%@", [((UIScrollView *)newVC.view).subviews objectAtIndex:0]);
-//            NSLog(@"%f", ((UIScrollView *)newVC.view).contentSize.height);
-//            
-//            
-//            NSLog(@"%@", newVC.view);
+            //            NSLog(@"%@", newVC.view);
+            //            NSLog(@"%f", ((UIScrollView *)newVC.view).contentSize.height);
+            //
+            //
+            //            NSLog(@"%@", [((UIScrollView *)newVC.view).subviews objectAtIndex:0]);
+            //            NSLog(@"%f", ((UIScrollView *)newVC.view).contentSize.height);
+            //
+            //
+            //            NSLog(@"%@", newVC.view);
             
             // Otherwise we are adding a view controller for the first time
             // Start the view controller transition
@@ -274,7 +270,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-        return [searchResults count];
+    return [searchResults count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -298,11 +294,11 @@
                                          timeoutInterval:60.0];
     
     [cell.profileImage setImageWithURLRequest:request
-                     placeholderImage:[UIImage imageNamed:@"default-image"]
-                              success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                  cell.profileImage.image = image;
-                              }
-                              failure:nil];
+                             placeholderImage:[UIImage imageNamed:@"default-image"]
+                                      success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                          cell.profileImage.image = image;
+                                      }
+                                      failure:nil];
     
     return cell;
 }
@@ -311,11 +307,11 @@
 {
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         Person *selectedPerson = (Person *)[self.searchResults objectAtIndex:indexPath.row];
-            
+        
         WhosWhoDetailViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"WhosWhoDetail"];
         detail.title = selectedPerson.firstName;
         detail.person = selectedPerson;
-            
+        
         [self.navigationController pushViewController:detail animated:YES];
     }
 }
