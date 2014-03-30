@@ -30,8 +30,9 @@
 {
     [super viewDidLoad];
     
-    [Banner getDegree:^(NSArray *attendance) {
-        self.degree = attendance;        
+    [Banner getDegree:^(NSArray *degree) {
+        self.degree = degree;
+        NSLog(@"%@", degree);
         [self.tableView reloadData];
     } failure:^(NSError *error) {
         NSLog(@"Error: %@", error);
@@ -55,23 +56,45 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     CourseRequirement *cr = [self.degree objectAtIndex:section];
-    return [cr.courses count];
+    return [cr.courses count] + [cr.missing count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    CourseRequirement *cr = [self.degree objectAtIndex:indexPath.section];
+    
+    NSString *cellIdentifier = @"CourseTableCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (indexPath.row < [cr.missing count]) {
+        cellIdentifier = @"CourseTableCell";
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        }
+    } else {
+        if (cell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil];
+            cell = [nib objectAtIndex:0];
+        }
     }
     
-    CourseRequirement *cr = [self.degree objectAtIndex:indexPath.section];
-    Course *c = [cr.courses objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%@: %@", c.number, c.name];
+    if (indexPath.row < [cr.missing count]) {
+        NSLog(@"NOT THIS HAPPENED");
+        NSString *warning = [cr.missing objectAtIndex:indexPath.row];
+        cell.textLabel.text = warning;
+    } else {
+        NSLog(@"THIS HAPPENED");
+        Course *c = [cr.courses objectAtIndex:(indexPath.row - [cr.missing count])];
+        cell = [c generateCell:(CourseTableCell *)cell];
+    }
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)sectionIndex {

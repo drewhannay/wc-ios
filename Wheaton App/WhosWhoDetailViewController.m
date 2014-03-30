@@ -50,6 +50,9 @@
 {
     [super viewDidAppear:NO];
     
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Whos Who" properties:@{ @"query": person.fullName }];
+    
     NSString *imagename = person.photo;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: imagename]]];

@@ -66,6 +66,8 @@
 		61E68D1B185D5566009F0977 /* Sport.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E68D1A185D5566009F0977 /* Sport.m */; };
 		61E89E12188F7C89002F6241 /* EventAutoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E89E10188F7C89002F6241 /* EventAutoTableViewCell.m */; };
 		61F05EDE17D3A4100006CC1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F05EDD17D3A4100006CC1F /* QuartzCore.framework */; };
+		61F6E4DF18E618E300E95093 /* CourseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F6E4DD18E618E300E95093 /* CourseTableCell.m */; };
+		61F6E4E018E618E300E95093 /* CourseTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61F6E4DE18E618E300E95093 /* CourseTableCell.xib */; };
 		61F70D7E18309AA000345907 /* SportTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F70D7D18309AA000345907 /* SportTableCell.m */; };
 		61F70D8018309BD300345907 /* SportTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61F70D7F18309BD300345907 /* SportTableCell.xib */; };
 		61F70D8318311F7800345907 /* ChapelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F70D8218311F7800345907 /* ChapelTableViewController.m */; };
@@ -179,6 +181,9 @@
 		61E89E0F188F7C89002F6241 /* EventAutoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventAutoTableViewCell.h; sourceTree = "<group>"; };
 		61E89E10188F7C89002F6241 /* EventAutoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventAutoTableViewCell.m; sourceTree = "<group>"; };
 		61F05EDD17D3A4100006CC1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		61F6E4DC18E618E300E95093 /* CourseTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTableCell.h; sourceTree = "<group>"; };
+		61F6E4DD18E618E300E95093 /* CourseTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTableCell.m; sourceTree = "<group>"; };
+		61F6E4DE18E618E300E95093 /* CourseTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseTableCell.xib; sourceTree = "<group>"; };
 		61F70D7C18309AA000345907 /* SportTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportTableCell.h; sourceTree = "<group>"; };
 		61F70D7D18309AA000345907 /* SportTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportTableCell.m; sourceTree = "<group>"; };
 		61F70D7F18309BD300345907 /* SportTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportTableCell.xib; sourceTree = "<group>"; };
@@ -526,6 +531,9 @@
 				61DE4FFA183020AA004BBCA1 /* CustomSegmentControl.m */,
 				6147B49218AD530F00110753 /* AutoTableViewCell.h */,
 				6147B49318AD531A00110753 /* AutoTableViewCell.m */,
+				61F6E4DC18E618E300E95093 /* CourseTableCell.h */,
+				61F6E4DD18E618E300E95093 /* CourseTableCell.m */,
+				61F6E4DE18E618E300E95093 /* CourseTableCell.xib */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -618,6 +626,7 @@
 				2D2653E713E069CF00DE089C /* InfoPlist.strings in Resources */,
 				2DCEB34513E2010A00787E39 /* LinksList.plist in Resources */,
 				61CA40AD17CA702200617623 /* iPhone.storyboard in Resources */,
+				61F6E4E018E618E300E95093 /* CourseTableCell.xib in Resources */,
 				61BCE0FD1883A5E600C7AB12 /* chapel.pdf in Resources */,
 				613E6CF518E4BF5F00445FFE /* Media.xcassets in Resources */,
 				61DDA64D18368F8B00EBA92C /* AcademicTableViewController.h in Resources */,
@@ -690,6 +699,7 @@
 				61F70D8318311F7800345907 /* ChapelTableViewController.m in Sources */,
 				61E4077617CEB9340068AE00 /* WhoswhoTableCell.m in Sources */,
 				61E4077917CECE8B0068AE00 /* WhoswhoSearchBar.m in Sources */,
+				61F6E4DF18E618E300E95093 /* CourseTableCell.m in Sources */,
 				61F70D861831924100345907 /* MoreTableViewController.m in Sources */,
 				61E4079917D2662D0068AE00 /* BannerScrollView.m in Sources */,
 				615CA71D18DCE7E50002279F /* CustomTableViewController.m in Sources */,

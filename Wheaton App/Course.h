@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CourseTableCell.h"
 
 @interface Course : NSObject
 
@@ -18,6 +19,7 @@
 @property NSString *credits;
 @property NSString *grade;
 
+- (CourseTableCell *)generateCell:(CourseTableCell *)cell;
 - (void)jsonParse:(NSDictionary *)json;
 
 @end

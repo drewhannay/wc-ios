@@ -111,7 +111,7 @@
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
-	NSLog(@"My token is: %@", deviceToken);
+	//NSLog(@"My token is: %@", deviceToken);
     if (deviceToken) {
         [[NSUserDefaults standardUserDefaults] setObject:deviceToken forKey:@"token"];
         [[NSUserDefaults standardUserDefaults] synchronize];
@@ -121,7 +121,7 @@
         NSDictionary *parameters = @{@"token": deviceToken};
         NSString *url = [NSString stringWithFormat:@"%@/add", c_PushOptions];
         [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"JSON: %@", responseObject);
+            //NSLog(@"JSON: %@", responseObject);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
         }];

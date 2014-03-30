@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CourseTableCell.h"
 
 @interface DegreeEvaluationTableViewController : UITableViewController
 

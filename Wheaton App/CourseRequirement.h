@@ -13,5 +13,6 @@
 @property NSString *type;
 @property NSString *met;
 @property NSArray *courses;
+@property NSArray *missing;
 
 @end

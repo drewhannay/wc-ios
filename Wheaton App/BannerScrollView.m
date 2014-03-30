@@ -12,7 +12,7 @@
 
 @implementation BannerScrollView {
     int totalPages;
-    NSMutableArray *bannerImages;
+    NSArray *bannerImages;
     UIViewController *parentController;
 }
 
@@ -42,7 +42,7 @@
             NSError *error;
             NSArray *images = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
             
-            bannerImages = [[NSMutableArray alloc] initWithCapacity:[images count]];
+            bannerImages = images;
             for (int i = 0; i < [images count]; i++)
             {
                 NSURL *imageURL = [NSURL URLWithString: [[images objectAtIndex:i] objectForKey:@"src"]];
@@ -59,24 +59,27 @@
 }
 
 - (void)tappedImage: (UITapGestureRecognizer *)recognizer {
-    int page = pageControl.currentPage;
-    NSLog(@"%d", page);
-    
-    [self openURL];
+    [self openURL:[[bannerImages objectAtIndex:pageControl.currentPage] objectForKey:@"url"]];
 }
 
-- (void)openURL
+- (void)openURL:(NSString *)url
 {
-    WebViewController *vc = [parentController.storyboard instantiateViewControllerWithIdentifier:@"WebView"];
-    vc.allowZoom = YES;
-    vc.url = [NSURL URLWithString:@"http://google.com"];
-
-    vc.title = @"Banner Ad";
-    [parentController.navigationController
-     pushViewController:vc
-     animated:YES];
-    
-    [vc.navigationController setNavigationBarHidden:NO animated:YES];
+    if ([url length] != 0) {
+        
+        WebViewController *vc = [parentController.storyboard instantiateViewControllerWithIdentifier:@"WebView"];
+        vc.allowZoom = YES;
+        vc.url = [NSURL URLWithString:url];
+        
+        Mixpanel *mixpanel = [Mixpanel sharedInstance];
+        [mixpanel track:@"Viewed Ad" properties:@{ @"URL": url }];
+        
+        vc.title = @"Banner Ad";
+        [parentController.navigationController
+         pushViewController:vc
+         animated:YES];
+        
+        [vc.navigationController setNavigationBarHidden:NO animated:YES];
+    }
 }
 
 - (void)addImage:(UIImage *)image index:(int)i

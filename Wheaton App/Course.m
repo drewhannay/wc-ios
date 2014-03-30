@@ -10,6 +10,17 @@
 
 @implementation Course
 
+- (CourseTableCell *)generateCell:(CourseTableCell *)cell {
+    
+    NSLog(@"%@", _subject);
+    
+    cell.courseLabel.text = [NSString stringWithFormat:@"%@ %@", _subject, _number];
+    cell.nameLabel.text = _name;
+    cell.creditsLabel.text = _credits;
+
+    return cell;
+}
+
 - (void)jsonParse:(NSDictionary *)json {
     NSDictionary *result = json;
     

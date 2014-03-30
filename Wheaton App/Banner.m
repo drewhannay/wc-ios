@@ -60,6 +60,8 @@
         [manager POST:url parameters:[Banner getUser] success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSArray *dic = responseObject;
             
+            NSLog(@"%@", dic);
+            
             NSMutableArray *requirements = [[NSMutableArray alloc] init];
             
             for (NSDictionary *requirement in dic) {
@@ -74,7 +76,9 @@
                     [c jsonParse:course];
                     [courses addObject:c];
                 }
+                
                 cr.courses = courses;
+                cr.missing = [requirement objectForKey:@"warnings"];
                 [requirements addObject:cr];
             }
             
@@ -130,11 +134,11 @@
                             [event setCalendar:[store defaultCalendarForNewEvents]];
                             
                             NSError *err;
-                            [store saveEvent:event span:EKSpanThisEvent error:&err];
+                            //[store saveEvent:event span:EKSpanThisEvent error:&err];
                             
                             NSLog(@"%@", err);
                             NSLog(@"%@", event.title);
-                            NSLog(@"%@", event.startDate);
+                            NSLog(@"%@", [self convertToSystemTimezone:event.startDate]);
                             NSLog(@"%@", event.endDate);
                         }
                     }
@@ -144,6 +148,27 @@
             failure(error);
         }];
     }
+}
+
++ (NSDate*) convertToSystemTimezone:(NSDate*)sourceDate {
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    [calendar setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    
+    NSUInteger flags = (NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit);
+    NSDateComponents *dateComponents = [calendar components:flags fromDate:sourceDate];
+    
+    NSTimeZone *tempTimeZone = [dateComponents timeZone];
+    NSString *timeZone;
+    if ([tempTimeZone isDaylightSavingTimeForDate:[[NSDate alloc]init]]) {
+        timeZone = @"CDT";
+    } else {
+        timeZone = @"CST";
+    }
+    
+    [calendar setTimeZone:[NSTimeZone timeZoneWithName:timeZone]];
+
+    NSDate *myDate = [calendar dateFromComponents:dateComponents];
+    return myDate;
 }
 
 + (BOOL)hasLoggedIn
