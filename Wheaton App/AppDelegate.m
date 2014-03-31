@@ -55,6 +55,10 @@
     return YES;
 }
 
+- (void)serviceStarted {
+    NSLog(@"#########STARTED");
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*

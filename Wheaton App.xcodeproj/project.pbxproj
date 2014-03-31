@@ -28,17 +28,17 @@
 		613CF94A18D8D882005156A8 /* CourseRequirement.m in Sources */ = {isa = PBXBuildFile; fileRef = 613CF94918D8D882005156A8 /* CourseRequirement.m */; };
 		613CF99218DB79A3005156A8 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613CF99118DB79A3005156A8 /* EventKit.framework */; };
 		613E6CF518E4BF5F00445FFE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 613E6CF418E4BF5F00445FFE /* Media.xcassets */; };
-		613E6D0D18E9160B00445FFE /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613E6D0918E915E800445FFE /* FYX.framework */; };
-		613E6D0E18E9162300445FFE /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613E6CFC18E915E800445FFE /* Common.framework */; };
-		613E6D0F18E9163500445FFE /* ContextCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613E6CFF18E915E800445FFE /* ContextCore.framework */; };
-		613E6D1018E9164100445FFE /* ContextLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613E6D0218E915E800445FFE /* ContextLocation.framework */; };
-		613E6D1118E9165200445FFE /* ContextProfiling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613E6D0618E915E800445FFE /* ContextProfiling.framework */; };
-		613E6D1218E9165C00445FFE /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613E6D0B18E915E800445FFE /* NetworkServices.framework */; };
 		613E6D1518E91A5A00445FFE /* ApplicationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 613E6D1418E91A5A00445FFE /* ApplicationContext.m */; };
 		613E6D1818E91A9000445FFE /* UserSettingsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 613E6D1718E91A9000445FFE /* UserSettingsRepository.m */; };
-		613E6D1B18E91AD500445FFE /* Transmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 613E6D1A18E91AD500445FFE /* Transmitter.m */; };
 		6141152E18374F7E00B71051 /* PushNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 6141152D18374F7E00B71051 /* PushNotification.m */; };
 		6147B49418AD531A00110753 /* AutoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6147B49318AD531A00110753 /* AutoTableViewCell.m */; };
+		614C42AD18E9250300C88C3D /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 614C429F18E9250300C88C3D /* Common.framework */; };
+		614C42AE18E9250300C88C3D /* ContextCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 614C42A118E9250300C88C3D /* ContextCore.framework */; };
+		614C42AF18E9250300C88C3D /* ContextLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 614C42A318E9250300C88C3D /* ContextLocation.framework */; };
+		614C42B018E9250300C88C3D /* DataModels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 614C42A518E9250300C88C3D /* DataModels.bundle */; };
+		614C42B118E9250300C88C3D /* ContextProfiling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 614C42A718E9250300C88C3D /* ContextProfiling.framework */; };
+		614C42B218E9250300C88C3D /* rules.txt in Resources */ = {isa = PBXBuildFile; fileRef = 614C42A918E9250300C88C3D /* rules.txt */; };
+		614C42B418E9250300C88C3D /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 614C42AC18E9250300C88C3D /* NetworkServices.framework */; };
 		615CA71D18DCE7E50002279F /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 615CA71C18DCE7E50002279F /* CustomTableViewController.m */; };
 		615CA72418DCF02A0002279F /* ImportCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 615CA72318DCF02A0002279F /* ImportCalendarViewController.m */; };
 		616DD2591852AB7E00AC53C3 /* WhoswhoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 616DD2581852AB7E00AC53C3 /* WhoswhoTableCell.xib */; };
@@ -51,6 +51,8 @@
 		61B04B0118B6876500CC509A /* Banner.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B04B0018B6876500CC509A /* Banner.m */; };
 		61B04B0918B8728800CC509A /* MetraTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B04B0718B8728800CC509A /* MetraTableViewCell.m */; };
 		61B04B0A18B8728800CC509A /* MetraTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61B04B0818B8728800CC509A /* MetraTableViewCell.xib */; };
+		61B3FCB218E92877009F58CD /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 614C42AA18E9250300C88C3D /* FYX.framework */; };
+		61B3FCB418E92A95009F58CD /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B3FCB318E92A95009F58CD /* CoreBluetooth.framework */; };
 		61BCE0FD1883A5E600C7AB12 /* chapel.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 61BCE0FC1883A5E600C7AB12 /* chapel.pdf */; };
 		61BCE1041885E18600C7AB12 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BCE1031885E18600C7AB12 /* Constants.m */; };
 		61CA40AD17CA702200617623 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40AC17CA702200617623 /* iPhone.storyboard */; };
@@ -126,24 +128,22 @@
 		613CF94918D8D882005156A8 /* CourseRequirement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseRequirement.m; sourceTree = "<group>"; };
 		613CF99118DB79A3005156A8 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		613E6CF418E4BF5F00445FFE /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		613E6CFC18E915E800445FFE /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
-		613E6CFF18E915E800445FFE /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextCore.framework; sourceTree = "<group>"; };
-		613E6D0218E915E800445FFE /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextLocation.framework; sourceTree = "<group>"; };
-		613E6D0418E915E800445FFE /* DataModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DataModels.bundle; sourceTree = "<group>"; };
-		613E6D0618E915E800445FFE /* ContextProfiling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextProfiling.framework; sourceTree = "<group>"; };
-		613E6D0818E915E800445FFE /* rules.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
-		613E6D0918E915E800445FFE /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = "Wheaton App/Vendor/FYX.framework"; sourceTree = "<group>"; };
-		613E6D0B18E915E800445FFE /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
 		613E6D1318E91A5A00445FFE /* ApplicationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationContext.h; sourceTree = "<group>"; };
 		613E6D1418E91A5A00445FFE /* ApplicationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationContext.m; sourceTree = "<group>"; };
 		613E6D1618E91A9000445FFE /* UserSettingsRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSettingsRepository.h; sourceTree = "<group>"; };
 		613E6D1718E91A9000445FFE /* UserSettingsRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSettingsRepository.m; sourceTree = "<group>"; };
-		613E6D1918E91AD500445FFE /* Transmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transmitter.h; sourceTree = "<group>"; };
-		613E6D1A18E91AD500445FFE /* Transmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transmitter.m; sourceTree = "<group>"; };
 		6141152C18374F7E00B71051 /* PushNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotification.h; sourceTree = "<group>"; };
 		6141152D18374F7E00B71051 /* PushNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotification.m; sourceTree = "<group>"; };
 		6147B49218AD530F00110753 /* AutoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoTableViewCell.h; sourceTree = "<group>"; };
 		6147B49318AD531A00110753 /* AutoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoTableViewCell.m; sourceTree = "<group>"; };
+		614C429F18E9250300C88C3D /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
+		614C42A118E9250300C88C3D /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextCore.framework; sourceTree = "<group>"; };
+		614C42A318E9250300C88C3D /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextLocation.framework; sourceTree = "<group>"; };
+		614C42A518E9250300C88C3D /* DataModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DataModels.bundle; sourceTree = "<group>"; };
+		614C42A718E9250300C88C3D /* ContextProfiling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextProfiling.framework; sourceTree = "<group>"; };
+		614C42A918E9250300C88C3D /* rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
+		614C42AA18E9250300C88C3D /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = "Wheaton App/Vendor/FYX.framework"; sourceTree = "<group>"; };
+		614C42AC18E9250300C88C3D /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
 		615CA71B18DCE7E50002279F /* CustomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewController.h; sourceTree = "<group>"; };
 		615CA71C18DCE7E50002279F /* CustomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewController.m; sourceTree = "<group>"; };
 		615CA72218DCF02A0002279F /* ImportCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportCalendarViewController.h; sourceTree = "<group>"; };
@@ -166,6 +166,7 @@
 		61B04B0618B8728800CC509A /* MetraTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetraTableViewCell.h; sourceTree = "<group>"; };
 		61B04B0718B8728800CC509A /* MetraTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetraTableViewCell.m; sourceTree = "<group>"; };
 		61B04B0818B8728800CC509A /* MetraTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MetraTableViewCell.xib; sourceTree = "<group>"; };
+		61B3FCB318E92A95009F58CD /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		61BCE0FC1883A5E600C7AB12 /* chapel.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = chapel.pdf; sourceTree = "<group>"; };
 		61BCE1021885DFF600C7AB12 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		61BCE1031885E18600C7AB12 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
@@ -228,20 +229,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				613E6D1218E9165C00445FFE /* NetworkServices.framework in Frameworks */,
-				613E6D1118E9165200445FFE /* ContextProfiling.framework in Frameworks */,
-				613E6D1018E9164100445FFE /* ContextLocation.framework in Frameworks */,
-				613E6D0F18E9163500445FFE /* ContextCore.framework in Frameworks */,
-				613E6D0E18E9162300445FFE /* Common.framework in Frameworks */,
-				613E6D0D18E9160B00445FFE /* FYX.framework in Frameworks */,
+				61B3FCB418E92A95009F58CD /* CoreBluetooth.framework in Frameworks */,
 				613CF99218DB79A3005156A8 /* EventKit.framework in Frameworks */,
 				61032B1B17F3325600CC95FA /* libz.dylib in Frameworks */,
+				61B3FCB218E92877009F58CD /* FYX.framework in Frameworks */,
 				61032B1917F3324200CC95FA /* CoreData.framework in Frameworks */,
 				61E075C817E6A7790029EFE9 /* SystemConfiguration.framework in Frameworks */,
 				61F05EDE17D3A4100006CC1F /* QuartzCore.framework in Frameworks */,
 				61CA40CC17CA952000617623 /* AddressBook.framework in Frameworks */,
+				614C42B118E9250300C88C3D /* ContextProfiling.framework in Frameworks */,
+				614C42AF18E9250300C88C3D /* ContextLocation.framework in Frameworks */,
+				614C42AD18E9250300C88C3D /* Common.framework in Frameworks */,
+				614C42AE18E9250300C88C3D /* ContextCore.framework in Frameworks */,
 				61CA40C317CA8CBB00617623 /* Social.framework in Frameworks */,
 				61CA40BE17CA799F00617623 /* CoreLocation.framework in Frameworks */,
+				614C42B418E9250300C88C3D /* NetworkServices.framework in Frameworks */,
 				61CA40BC17CA798100617623 /* Twitter.framework in Frameworks */,
 				2D26546F13E0AA7E00DE089C /* MapKit.framework in Frameworks */,
 				2D2653DD13E069CF00DE089C /* UIKit.framework in Frameworks */,
@@ -276,12 +278,13 @@
 		2D2653DB13E069CF00DE089C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				613E6CFB18E915E800445FFE /* Common.embeddedframework */,
-				613E6CFE18E915E800445FFE /* ContextCore.embeddedframework */,
-				613E6D0118E915E800445FFE /* ContextLocation.embeddedframework */,
-				613E6D0518E915E800445FFE /* ContextProfiling.embeddedframework */,
-				613E6D0918E915E800445FFE /* FYX.framework */,
-				613E6D0A18E915E800445FFE /* NetworkServices.embeddedframework */,
+				61B3FCB318E92A95009F58CD /* CoreBluetooth.framework */,
+				614C429E18E9250300C88C3D /* Common.embeddedframework */,
+				614C42A018E9250300C88C3D /* ContextCore.embeddedframework */,
+				614C42A218E9250300C88C3D /* ContextLocation.embeddedframework */,
+				614C42A618E9250300C88C3D /* ContextProfiling.embeddedframework */,
+				614C42AA18E9250300C88C3D /* FYX.framework */,
+				614C42AB18E9250300C88C3D /* NetworkServices.embeddedframework */,
 				613CF99118DB79A3005156A8 /* EventKit.framework */,
 				61032B1A17F3325600CC95FA /* libz.dylib */,
 				61032B1817F3324200CC95FA /* CoreData.framework */,
@@ -303,8 +306,6 @@
 		2D2653E213E069CF00DE089C /* Wheaton App */ = {
 			isa = PBXGroup;
 			children = (
-				613E6D1918E91AD500445FFE /* Transmitter.h */,
-				613E6D1A18E91AD500445FFE /* Transmitter.m */,
 				613E6D1318E91A5A00445FFE /* ApplicationContext.h */,
 				613E6D1418E91A5A00445FFE /* ApplicationContext.m */,
 				613E6D1618E91A9000445FFE /* UserSettingsRepository.h */,
@@ -534,91 +535,67 @@
 			name = Push;
 			sourceTree = "<group>";
 		};
-		613E6CFB18E915E800445FFE /* Common.embeddedframework */ = {
+		614C429E18E9250300C88C3D /* Common.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
-				613E6CFC18E915E800445FFE /* Common.framework */,
-				613E6CFD18E915E800445FFE /* Resources */,
+				614C429F18E9250300C88C3D /* Common.framework */,
 			);
 			name = Common.embeddedframework;
 			path = "Wheaton App/Vendor/Common.embeddedframework";
 			sourceTree = "<group>";
 		};
-		613E6CFD18E915E800445FFE /* Resources */ = {
+		614C42A018E9250300C88C3D /* ContextCore.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		613E6CFE18E915E800445FFE /* ContextCore.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				613E6CFF18E915E800445FFE /* ContextCore.framework */,
-				613E6D0018E915E800445FFE /* Resources */,
+				614C42A118E9250300C88C3D /* ContextCore.framework */,
 			);
 			name = ContextCore.embeddedframework;
 			path = "Wheaton App/Vendor/ContextCore.embeddedframework";
 			sourceTree = "<group>";
 		};
-		613E6D0018E915E800445FFE /* Resources */ = {
+		614C42A218E9250300C88C3D /* ContextLocation.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		613E6D0118E915E800445FFE /* ContextLocation.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				613E6D0218E915E800445FFE /* ContextLocation.framework */,
-				613E6D0318E915E800445FFE /* Resources */,
+				614C42A318E9250300C88C3D /* ContextLocation.framework */,
+				614C42A418E9250300C88C3D /* Resources */,
 			);
 			name = ContextLocation.embeddedframework;
 			path = "Wheaton App/Vendor/ContextLocation.embeddedframework";
 			sourceTree = "<group>";
 		};
-		613E6D0318E915E800445FFE /* Resources */ = {
+		614C42A418E9250300C88C3D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				613E6D0418E915E800445FFE /* DataModels.bundle */,
+				614C42A518E9250300C88C3D /* DataModels.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		613E6D0518E915E800445FFE /* ContextProfiling.embeddedframework */ = {
+		614C42A618E9250300C88C3D /* ContextProfiling.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
-				613E6D0618E915E800445FFE /* ContextProfiling.framework */,
-				613E6D0718E915E800445FFE /* Resources */,
+				614C42A718E9250300C88C3D /* ContextProfiling.framework */,
+				614C42A818E9250300C88C3D /* Resources */,
 			);
 			name = ContextProfiling.embeddedframework;
 			path = "Wheaton App/Vendor/ContextProfiling.embeddedframework";
 			sourceTree = "<group>";
 		};
-		613E6D0718E915E800445FFE /* Resources */ = {
+		614C42A818E9250300C88C3D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				613E6D0818E915E800445FFE /* rules.txt */,
+				614C42A918E9250300C88C3D /* rules.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		613E6D0A18E915E800445FFE /* NetworkServices.embeddedframework */ = {
+		614C42AB18E9250300C88C3D /* NetworkServices.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
-				613E6D0B18E915E800445FFE /* NetworkServices.framework */,
-				613E6D0C18E915E800445FFE /* Resources */,
+				614C42AC18E9250300C88C3D /* NetworkServices.framework */,
 			);
 			name = NetworkServices.embeddedframework;
 			path = "Wheaton App/Vendor/NetworkServices.embeddedframework";
-			sourceTree = "<group>";
-		};
-		613E6D0C18E915E800445FFE /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		61CA409317CA6C2A00617623 /* Vendor */ = {
@@ -756,9 +733,11 @@
 				61CA40AD17CA702200617623 /* iPhone.storyboard in Resources */,
 				61F6E4E018E618E300E95093 /* CourseTableCell.xib in Resources */,
 				61BCE0FD1883A5E600C7AB12 /* chapel.pdf in Resources */,
+				614C42B018E9250300C88C3D /* DataModels.bundle in Resources */,
 				613E6CF518E4BF5F00445FFE /* Media.xcassets in Resources */,
 				61DDA64D18368F8B00EBA92C /* AcademicTableViewController.h in Resources */,
 				616DD2591852AB7E00AC53C3 /* WhoswhoTableCell.xib in Resources */,
+				614C42B218E9250300C88C3D /* rules.txt in Resources */,
 				61032B0E17F1157B00CC95FA /* EventSubtitleLineView.xib in Resources */,
 				61F70D8018309BD300345907 /* SportTableCell.xib in Resources */,
 				61B04B0A18B8728800CC509A /* MetraTableViewCell.xib in Resources */,
@@ -840,7 +819,6 @@
 				61F70D7E18309AA000345907 /* SportTableCell.m in Sources */,
 				61E89E12188F7C89002F6241 /* EventAutoTableViewCell.m in Sources */,
 				610D48D217DD591F00DE574C /* EventsTableCell.m in Sources */,
-				613E6D1B18E91AD500445FFE /* Transmitter.m in Sources */,
 				61B04B0118B6876500CC509A /* Banner.m in Sources */,
 				61B04AFE18B5C90C00CC509A /* BannerLoginViewController.m in Sources */,
 				612BFEFD17DED11300EB2C8C /* AppDelegate.m in Sources */,
@@ -932,19 +910,9 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor,
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor/Common.embeddedframework,
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor/ContextCore.embeddedframework,
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor/ContextLocation.embeddedframework,
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor/ContextProfiling.embeddedframework,
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor/NetworkServices.embeddedframework,
+					"$(SRCROOT)/**",
 				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
@@ -974,18 +942,7 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor,
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor/Common.embeddedframework,
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor/ContextCore.embeddedframework,
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor/ContextLocation.embeddedframework,
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor/ContextProfiling.embeddedframework,
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor/NetworkServices.embeddedframework,
+					"$(SRCROOT)/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
@@ -1035,18 +992,7 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor,
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor/Common.embeddedframework,
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor/ContextCore.embeddedframework,
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor/ContextLocation.embeddedframework,
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor/ContextProfiling.embeddedframework,
-					"$(PROJECT_DIR)/Wheaton",
-					App/Vendor/NetworkServices.embeddedframework,
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";

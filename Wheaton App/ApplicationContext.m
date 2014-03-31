@@ -37,12 +37,16 @@ static ApplicationContext *sharedInstance = nil;
     return self;
 }
 
-- (void) initializeFyxService {
+- (void)initializeFyxService {
     //Replace with your own Application-ID and Application-Secret to see your
     //activated beacons
     [FYX setAppId:@"73681eef9f4fe5bdd7c0c64b658610d5f52c5dd5a56b806fbb1e2f7c6e123e03"
          appSecret:@"ac3c3df423ee40d0eec289c177465871acd66ca35ca832485af547807ddf132d"
-         callbackUrl:@"thunderstruck://com.centerdialstudio.proximity"];
+         callbackUrl:@"wcapp://com.centerdialstudio.proximity"];
+    
+    FYXVisitManager *visitManager = [[FYXVisitManager alloc] init];
+    visitManager.delegate = self;
+    [visitManager start];
     [FYXLogging setLogLevel:FYX_LOG_LEVEL_INFO];
 }
 
