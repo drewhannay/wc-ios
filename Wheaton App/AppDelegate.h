@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FYX/FYX.h>
 #import "Constants.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, MixpanelDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, MixpanelDelegate, FYXServiceDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) Mixpanel *mixpanel;

@@ -28,6 +28,15 @@
 		613CF94A18D8D882005156A8 /* CourseRequirement.m in Sources */ = {isa = PBXBuildFile; fileRef = 613CF94918D8D882005156A8 /* CourseRequirement.m */; };
 		613CF99218DB79A3005156A8 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613CF99118DB79A3005156A8 /* EventKit.framework */; };
 		613E6CF518E4BF5F00445FFE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 613E6CF418E4BF5F00445FFE /* Media.xcassets */; };
+		613E6D0D18E9160B00445FFE /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613E6D0918E915E800445FFE /* FYX.framework */; };
+		613E6D0E18E9162300445FFE /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613E6CFC18E915E800445FFE /* Common.framework */; };
+		613E6D0F18E9163500445FFE /* ContextCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613E6CFF18E915E800445FFE /* ContextCore.framework */; };
+		613E6D1018E9164100445FFE /* ContextLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613E6D0218E915E800445FFE /* ContextLocation.framework */; };
+		613E6D1118E9165200445FFE /* ContextProfiling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613E6D0618E915E800445FFE /* ContextProfiling.framework */; };
+		613E6D1218E9165C00445FFE /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613E6D0B18E915E800445FFE /* NetworkServices.framework */; };
+		613E6D1518E91A5A00445FFE /* ApplicationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 613E6D1418E91A5A00445FFE /* ApplicationContext.m */; };
+		613E6D1818E91A9000445FFE /* UserSettingsRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 613E6D1718E91A9000445FFE /* UserSettingsRepository.m */; };
+		613E6D1B18E91AD500445FFE /* Transmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 613E6D1A18E91AD500445FFE /* Transmitter.m */; };
 		6141152E18374F7E00B71051 /* PushNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 6141152D18374F7E00B71051 /* PushNotification.m */; };
 		6147B49418AD531A00110753 /* AutoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6147B49318AD531A00110753 /* AutoTableViewCell.m */; };
 		615CA71D18DCE7E50002279F /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 615CA71C18DCE7E50002279F /* CustomTableViewController.m */; };
@@ -117,6 +126,20 @@
 		613CF94918D8D882005156A8 /* CourseRequirement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseRequirement.m; sourceTree = "<group>"; };
 		613CF99118DB79A3005156A8 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		613E6CF418E4BF5F00445FFE /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		613E6CFC18E915E800445FFE /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
+		613E6CFF18E915E800445FFE /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextCore.framework; sourceTree = "<group>"; };
+		613E6D0218E915E800445FFE /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextLocation.framework; sourceTree = "<group>"; };
+		613E6D0418E915E800445FFE /* DataModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DataModels.bundle; sourceTree = "<group>"; };
+		613E6D0618E915E800445FFE /* ContextProfiling.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextProfiling.framework; sourceTree = "<group>"; };
+		613E6D0818E915E800445FFE /* rules.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
+		613E6D0918E915E800445FFE /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = "Wheaton App/Vendor/FYX.framework"; sourceTree = "<group>"; };
+		613E6D0B18E915E800445FFE /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
+		613E6D1318E91A5A00445FFE /* ApplicationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationContext.h; sourceTree = "<group>"; };
+		613E6D1418E91A5A00445FFE /* ApplicationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationContext.m; sourceTree = "<group>"; };
+		613E6D1618E91A9000445FFE /* UserSettingsRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSettingsRepository.h; sourceTree = "<group>"; };
+		613E6D1718E91A9000445FFE /* UserSettingsRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSettingsRepository.m; sourceTree = "<group>"; };
+		613E6D1918E91AD500445FFE /* Transmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transmitter.h; sourceTree = "<group>"; };
+		613E6D1A18E91AD500445FFE /* Transmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transmitter.m; sourceTree = "<group>"; };
 		6141152C18374F7E00B71051 /* PushNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotification.h; sourceTree = "<group>"; };
 		6141152D18374F7E00B71051 /* PushNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotification.m; sourceTree = "<group>"; };
 		6147B49218AD530F00110753 /* AutoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoTableViewCell.h; sourceTree = "<group>"; };
@@ -205,6 +228,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				613E6D1218E9165C00445FFE /* NetworkServices.framework in Frameworks */,
+				613E6D1118E9165200445FFE /* ContextProfiling.framework in Frameworks */,
+				613E6D1018E9164100445FFE /* ContextLocation.framework in Frameworks */,
+				613E6D0F18E9163500445FFE /* ContextCore.framework in Frameworks */,
+				613E6D0E18E9162300445FFE /* Common.framework in Frameworks */,
+				613E6D0D18E9160B00445FFE /* FYX.framework in Frameworks */,
 				613CF99218DB79A3005156A8 /* EventKit.framework in Frameworks */,
 				61032B1B17F3325600CC95FA /* libz.dylib in Frameworks */,
 				61032B1917F3324200CC95FA /* CoreData.framework in Frameworks */,
@@ -247,6 +276,12 @@
 		2D2653DB13E069CF00DE089C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				613E6CFB18E915E800445FFE /* Common.embeddedframework */,
+				613E6CFE18E915E800445FFE /* ContextCore.embeddedframework */,
+				613E6D0118E915E800445FFE /* ContextLocation.embeddedframework */,
+				613E6D0518E915E800445FFE /* ContextProfiling.embeddedframework */,
+				613E6D0918E915E800445FFE /* FYX.framework */,
+				613E6D0A18E915E800445FFE /* NetworkServices.embeddedframework */,
 				613CF99118DB79A3005156A8 /* EventKit.framework */,
 				61032B1A17F3325600CC95FA /* libz.dylib */,
 				61032B1817F3324200CC95FA /* CoreData.framework */,
@@ -268,6 +303,12 @@
 		2D2653E213E069CF00DE089C /* Wheaton App */ = {
 			isa = PBXGroup;
 			children = (
+				613E6D1918E91AD500445FFE /* Transmitter.h */,
+				613E6D1A18E91AD500445FFE /* Transmitter.m */,
+				613E6D1318E91A5A00445FFE /* ApplicationContext.h */,
+				613E6D1418E91A5A00445FFE /* ApplicationContext.m */,
+				613E6D1618E91A9000445FFE /* UserSettingsRepository.h */,
+				613E6D1718E91A9000445FFE /* UserSettingsRepository.m */,
 				61CA40C717CA94DB00617623 /* Model */,
 				61CA40AB17CA6FE900617623 /* GUI */,
 				612BFEF417DED11200EB2C8C /* AppDelegate.h */,
@@ -493,6 +534,93 @@
 			name = Push;
 			sourceTree = "<group>";
 		};
+		613E6CFB18E915E800445FFE /* Common.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				613E6CFC18E915E800445FFE /* Common.framework */,
+				613E6CFD18E915E800445FFE /* Resources */,
+			);
+			name = Common.embeddedframework;
+			path = "Wheaton App/Vendor/Common.embeddedframework";
+			sourceTree = "<group>";
+		};
+		613E6CFD18E915E800445FFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		613E6CFE18E915E800445FFE /* ContextCore.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				613E6CFF18E915E800445FFE /* ContextCore.framework */,
+				613E6D0018E915E800445FFE /* Resources */,
+			);
+			name = ContextCore.embeddedframework;
+			path = "Wheaton App/Vendor/ContextCore.embeddedframework";
+			sourceTree = "<group>";
+		};
+		613E6D0018E915E800445FFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		613E6D0118E915E800445FFE /* ContextLocation.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				613E6D0218E915E800445FFE /* ContextLocation.framework */,
+				613E6D0318E915E800445FFE /* Resources */,
+			);
+			name = ContextLocation.embeddedframework;
+			path = "Wheaton App/Vendor/ContextLocation.embeddedframework";
+			sourceTree = "<group>";
+		};
+		613E6D0318E915E800445FFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				613E6D0418E915E800445FFE /* DataModels.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		613E6D0518E915E800445FFE /* ContextProfiling.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				613E6D0618E915E800445FFE /* ContextProfiling.framework */,
+				613E6D0718E915E800445FFE /* Resources */,
+			);
+			name = ContextProfiling.embeddedframework;
+			path = "Wheaton App/Vendor/ContextProfiling.embeddedframework";
+			sourceTree = "<group>";
+		};
+		613E6D0718E915E800445FFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				613E6D0818E915E800445FFE /* rules.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		613E6D0A18E915E800445FFE /* NetworkServices.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				613E6D0B18E915E800445FFE /* NetworkServices.framework */,
+				613E6D0C18E915E800445FFE /* Resources */,
+			);
+			name = NetworkServices.embeddedframework;
+			path = "Wheaton App/Vendor/NetworkServices.embeddedframework";
+			sourceTree = "<group>";
+		};
+		613E6D0C18E915E800445FFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		61CA409317CA6C2A00617623 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,9 +826,11 @@
 				61E4077017CC5B7B0068AE00 /* EventTableCell.m in Sources */,
 				61F70D8318311F7800345907 /* ChapelTableViewController.m in Sources */,
 				61E4077617CEB9340068AE00 /* WhoswhoTableCell.m in Sources */,
+				613E6D1518E91A5A00445FFE /* ApplicationContext.m in Sources */,
 				61E4077917CECE8B0068AE00 /* WhoswhoSearchBar.m in Sources */,
 				61F6E4DF18E618E300E95093 /* CourseTableCell.m in Sources */,
 				61F70D861831924100345907 /* MoreTableViewController.m in Sources */,
+				613E6D1818E91A9000445FFE /* UserSettingsRepository.m in Sources */,
 				61E4079917D2662D0068AE00 /* BannerScrollView.m in Sources */,
 				615CA71D18DCE7E50002279F /* CustomTableViewController.m in Sources */,
 				61E2E91B187F236800E97AD7 /* WhosWhoDetailViewController.m in Sources */,
@@ -710,6 +840,7 @@
 				61F70D7E18309AA000345907 /* SportTableCell.m in Sources */,
 				61E89E12188F7C89002F6241 /* EventAutoTableViewCell.m in Sources */,
 				610D48D217DD591F00DE574C /* EventsTableCell.m in Sources */,
+				613E6D1B18E91AD500445FFE /* Transmitter.m in Sources */,
 				61B04B0118B6876500CC509A /* Banner.m in Sources */,
 				61B04AFE18B5C90C00CC509A /* BannerLoginViewController.m in Sources */,
 				612BFEFD17DED11300EB2C8C /* AppDelegate.m in Sources */,
@@ -799,6 +930,21 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor,
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor/Common.embeddedframework,
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor/ContextCore.embeddedframework,
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor/ContextLocation.embeddedframework,
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor/ContextProfiling.embeddedframework,
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor/NetworkServices.embeddedframework,
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
@@ -826,6 +972,21 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor,
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor/Common.embeddedframework,
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor/ContextCore.embeddedframework,
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor/ContextLocation.embeddedframework,
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor/ContextProfiling.embeddedframework,
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor/NetworkServices.embeddedframework,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -872,6 +1033,21 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor,
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor/Common.embeddedframework,
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor/ContextCore.embeddedframework,
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor/ContextLocation.embeddedframework,
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor/ContextProfiling.embeddedframework,
+					"$(PROJECT_DIR)/Wheaton",
+					App/Vendor/NetworkServices.embeddedframework,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
