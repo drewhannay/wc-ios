@@ -36,7 +36,7 @@ static NSString *cellIdentifier = @"AutoTableViewCell";
                                        failure:nil];
     
     @try {
-        blurView = [AMBlurView new];
+        blurView = [JCRBlurView new];
         [blurView setFrame:CGRectMake(0,
                                       bottomBlur.frame.origin.y,
                                       bottomBlur.frame.size.width,

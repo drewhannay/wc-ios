@@ -28,7 +28,7 @@
     profileImage.contentMode = UIViewContentModeTop;
 
     @try {
-        blurView = [AMBlurView new];
+        blurView = [JCRBlurView new];
         [blurView setFrame:CGRectMake(0,
                                       self.view.frame.size.height-190,
                                       320,

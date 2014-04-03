@@ -10,6 +10,7 @@
 #import "SportTableCell.h"
 #import "EventTableCell.h"
 #import "MetraTableViewCell.h"
+#import "TEAChart.h"
 #import "Banner.h"
 #import "Sport.h"
 
@@ -54,13 +55,14 @@
 - (void)load
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-
+    
     [manager GET:c_Home parameters:@{} success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *dic = responseObject;
         
         [[home objectAtIndex:0] removeAllObjects];
         [[home objectAtIndex:1] removeAllObjects];
         [[home objectAtIndex:2] removeAllObjects];
+        
         
         NSArray *chapelArray = [dic objectForKey:@"chapel"];
         if ([chapelArray count] > 0) {
@@ -84,7 +86,7 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
-
+    
     [Banner getChapelSkips:^(NSDictionary *attendance) {
         self.chapelSkips = attendance;
         [self.tableView reloadData];

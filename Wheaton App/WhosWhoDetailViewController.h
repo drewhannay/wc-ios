@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AMBlurView.h"
+#import "JCRBlurView.h"
 #import "Person.h"
 #import "UIImage_Scale.h"
 
@@ -22,6 +22,6 @@
 @property (strong, nonatomic) IBOutlet UIView *bottomBlur;
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *profileImage;
 @property (strong, nonatomic) UIImage *image;
-@property (strong, nonatomic) AMBlurView *blurView;
+@property (strong, nonatomic) JCRBlurView *blurView;
 
 @end
