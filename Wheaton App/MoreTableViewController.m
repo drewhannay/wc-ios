@@ -23,8 +23,22 @@
     [super viewDidLoad];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
     moreTable = [[NSMutableArray alloc] init];
+    
+    [self generateTable];
+    
+    [self.navigationController.navigationBar setTranslucent:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self generateTable];
+    [super viewWillAppear:animated];
+}
+
+- (void)generateTable
+{
+    [moreTable removeAllObjects];
     
     NSMutableDictionary *optionsDictionary = [[NSMutableDictionary alloc] init];
     NSMutableArray *optionsArray = [[NSMutableArray alloc] init];
@@ -98,7 +112,6 @@
     [moreTable addObject:endDictionary];
     
     [self.tableView reloadData];
-    [self.navigationController.navigationBar setTranslucent:NO];
 }
 
 - (void)didReceiveMemoryWarning

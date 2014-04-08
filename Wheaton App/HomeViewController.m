@@ -215,8 +215,6 @@
         NSArray *resultsArray = responseObject;
         searchResults = [[NSMutableArray alloc] init];
         
-        //NSLog(@"Got Results %d", [resultsArray count]);
-        
         for (NSDictionary* dic in resultsArray) {
             NSDictionary *name = [dic objectForKey:@"name"];
             

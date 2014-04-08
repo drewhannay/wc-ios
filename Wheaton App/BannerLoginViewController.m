@@ -62,8 +62,8 @@
                            @"token": [[NSUserDefaults standardUserDefaults] objectForKey:@"token"] };
     
     [Banner setUser:user success:^(NSDictionary *response) {
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Response:"
-                                                          message:[NSString stringWithFormat:@"%@", response]
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Success"
+                                                          message:@"Thanks for logging in!"
                                                          delegate:nil
                                                 cancelButtonTitle:@"OK"
                                                 otherButtonTitles:nil];
@@ -71,8 +71,8 @@
         [self resignFirstResponder];
         [self.navigationController popViewControllerAnimated:YES];
     } failure:^(NSError *error) {
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Error:"
-                                                          message:[NSString stringWithFormat:@"%@", error]
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                          message:@"Incorrect username or password"
                                                          delegate:nil
                                                 cancelButtonTitle:@"OK"
                                                 otherButtonTitles:nil];

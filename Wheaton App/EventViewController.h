@@ -10,7 +10,7 @@
 #import "Constants.h"
 
 @interface EventViewController : UIViewController <UIGestureRecognizerDelegate> {
-    int priorSegmentIndex;
+    NSInteger priorSegmentIndex;
 }
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *switchViewControllers;

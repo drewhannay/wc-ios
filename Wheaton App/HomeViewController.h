@@ -15,7 +15,7 @@
 #import "LVDebounce.h"
 
 @interface HomeViewController : UIViewController <UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDelegate, UITableViewDataSource> {
-    int priorSegmentIndex;
+    NSInteger priorSegmentIndex;
 }
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *switchViewControllers;

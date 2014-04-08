@@ -10,7 +10,7 @@
 #import "Constants.h"
 
 @interface MasterTabViewController : UITabBarController <UITabBarControllerDelegate> {
-    int index;
+    NSInteger index;
 }
 
 @end

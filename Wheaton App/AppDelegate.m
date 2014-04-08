@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "MTReachabilityManager.h"
 #import "AFNetworking.h"
-#import "ApplicationContext.h"
 
 #define MIXPANEL_TOKEN @"ba1c3c53b3cd538357b7f85ff033c648"
 
@@ -31,9 +30,6 @@
     self.mixpanel.checkForNotificationsOnActive = YES;
     self.mixpanel.showNotificationOnActive = YES;
     
-    [[ApplicationContext sharedInstance] initializeFyxService];
-    [FYX startService:self];
-    
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     
@@ -52,10 +48,6 @@
     NSLog(@"My other token is: %@", UUID);
     
     return YES;
-}
-
-- (void)serviceStarted {
-    NSLog(@"#########STARTED");
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -99,7 +91,7 @@
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
-	//NSLog(@"My token is: %@", deviceToken);
+	NSLog(@"My token is: %@", deviceToken);
     if (deviceToken) {
         [[NSUserDefaults standardUserDefaults] setObject:deviceToken forKey:@"token"];
         [[NSUserDefaults standardUserDefaults] synchronize];
