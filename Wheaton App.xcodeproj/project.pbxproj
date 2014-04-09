@@ -65,6 +65,8 @@
 		61E4079917D2662D0068AE00 /* BannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4079817D266270068AE00 /* BannerScrollView.m */; };
 		61E68D1118583825009F0977 /* SportScoreTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61E68D1018583825009F0977 /* SportScoreTableCell.xib */; };
 		61E68D1B185D5566009F0977 /* Sport.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E68D1A185D5566009F0977 /* Sport.m */; };
+		61E7679018F4ED4F00E04D54 /* AccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E7678F18F4ED4F00E04D54 /* AccountTableViewController.m */; };
+		61E7679318F4F67200E04D54 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E7679218F4F67200E04D54 /* AccountTableViewCell.m */; };
 		61E89E12188F7C89002F6241 /* EventAutoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E89E10188F7C89002F6241 /* EventAutoTableViewCell.m */; };
 		61F05EDE17D3A4100006CC1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F05EDD17D3A4100006CC1F /* QuartzCore.framework */; };
 		61F6E4DF18E618E300E95093 /* CourseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F6E4DD18E618E300E95093 /* CourseTableCell.m */; };
@@ -180,6 +182,10 @@
 		61E68D1018583825009F0977 /* SportScoreTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportScoreTableCell.xib; sourceTree = "<group>"; };
 		61E68D19185D5566009F0977 /* Sport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sport.h; sourceTree = "<group>"; };
 		61E68D1A185D5566009F0977 /* Sport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sport.m; sourceTree = "<group>"; };
+		61E7678E18F4ED4F00E04D54 /* AccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTableViewController.h; sourceTree = "<group>"; };
+		61E7678F18F4ED4F00E04D54 /* AccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewController.m; sourceTree = "<group>"; };
+		61E7679118F4F67200E04D54 /* AccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTableViewCell.h; sourceTree = "<group>"; };
+		61E7679218F4F67200E04D54 /* AccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewCell.m; sourceTree = "<group>"; };
 		61E89E0F188F7C89002F6241 /* EventAutoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventAutoTableViewCell.h; sourceTree = "<group>"; };
 		61E89E10188F7C89002F6241 /* EventAutoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventAutoTableViewCell.m; sourceTree = "<group>"; };
 		61F05EDD17D3A4100006CC1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -407,6 +413,8 @@
 				613CF94318D8D43D005156A8 /* DegreeEvaluationTableViewController.m */,
 				615CA72218DCF02A0002279F /* ImportCalendarViewController.h */,
 				615CA72318DCF02A0002279F /* ImportCalendarViewController.m */,
+				61E7678E18F4ED4F00E04D54 /* AccountTableViewController.h */,
+				61E7678F18F4ED4F00E04D54 /* AccountTableViewController.m */,
 				61B04AFF18B6876500CC509A /* Banner.h */,
 				61B04B0018B6876500CC509A /* Banner.m */,
 			);
@@ -538,6 +546,8 @@
 				61F6E4DC18E618E300E95093 /* CourseTableCell.h */,
 				61F6E4DD18E618E300E95093 /* CourseTableCell.m */,
 				61F6E4DE18E618E300E95093 /* CourseTableCell.xib */,
+				61E7679118F4F67200E04D54 /* AccountTableViewCell.h */,
+				61E7679218F4F67200E04D54 /* AccountTableViewCell.m */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -699,6 +709,7 @@
 				61CA40CA17CA94FB00617623 /* Location.m in Sources */,
 				613961E718A870E600669034 /* MapDetailViewController.m in Sources */,
 				61F70D8C183196B200345907 /* MapViewController.m in Sources */,
+				61E7679018F4ED4F00E04D54 /* AccountTableViewController.m in Sources */,
 				61E4077017CC5B7B0068AE00 /* EventTableCell.m in Sources */,
 				61F70D8318311F7800345907 /* ChapelTableViewController.m in Sources */,
 				61E4077617CEB9340068AE00 /* WhoswhoTableCell.m in Sources */,
@@ -721,6 +732,7 @@
 				61F70D8F1831E03700345907 /* HomeViewController.m in Sources */,
 				61851B3E18306762005EDE18 /* SportsTableViewController.m in Sources */,
 				613B9557183419C900DEAA0E /* EventsTableViewController.m in Sources */,
+				61E7679318F4F67200E04D54 /* AccountTableViewCell.m in Sources */,
 				61B04AFB18B4605600CC509A /* NotificationOptionsTableViewController.m in Sources */,
 				6147B49418AD531A00110753 /* AutoTableViewCell.m in Sources */,
 				612BFF0417DEE71D00EB2C8C /* MapSearchBar.m in Sources */,

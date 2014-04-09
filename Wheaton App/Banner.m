@@ -89,6 +89,22 @@
     }
 }
 
++ (void)account:(void (^)(NSDictionary *account))success failure:(void (^)(NSError *err))failure
+{
+    if([Banner hasLoggedIn]) {
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        
+        NSString *url = [NSString stringWithFormat:@"%@/account", c_Banner];
+        
+        [manager POST:url parameters:[Banner getUser] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSDictionary *dic = responseObject;
+            success(dic);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            failure(error);
+        }];
+    }
+}
+
 + (void)importCalendar:(void (^)(NSArray *schedule))success failure:(void (^)(NSError *err))failure
 {
     if([Banner hasLoggedIn]) {
