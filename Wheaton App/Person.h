@@ -17,6 +17,7 @@
 @property NSString *email;
 @property NSString *photo;
 @property NSString *cpo;
+@property NSString *uid;
 
 - (NSString *)fullName;
 - (NSString *)fullNameWithPref;

@@ -223,6 +223,7 @@
             person.prefName = [name objectForKey:@"preferred"];
             person.lastName = [name objectForKey:@"last"];
             person.email = [dic objectForKey:@"email"];
+            person.uid = [dic objectForKey:@"schoolID"];
             
             person.classification = @"N/A";
             if (![[dic objectForKey:@"classification"] isEqual:[NSNull null]]) {

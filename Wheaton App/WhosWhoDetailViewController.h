@@ -11,7 +11,7 @@
 #import "Person.h"
 #import "UIImage_Scale.h"
 
-@interface WhosWhoDetailViewController : UIViewController
+@interface WhosWhoDetailViewController : UIViewController <UIGestureRecognizerDelegate>
 
 
 @property (strong, nonatomic) Person *person;

@@ -157,6 +157,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XYv-L9-Nbq">
                                 <rect key="frame" x="0.0" y="20" width="320" height="440"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e05-Za-qUy" userLabel="Blur View">
                                 <rect key="frame" x="0.0" y="379" width="320" height="100"/>
