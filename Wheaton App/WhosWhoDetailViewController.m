@@ -87,10 +87,12 @@
 - (void)handleTapGesture:(UITapGestureRecognizer *)sender
 {
     if (sender.state == UIGestureRecognizerStateRecognized) {
-        if ([Banner hasLoggedIn] && ![[Banner getSchoolID] isEqualToString:person.uid]) {
-            [self setFavorite];
-            [self displayWink];
-            [self animateWink];
+        if ([Banner hasLoggedIn]) {
+            if(![[Banner getSchoolID] isEqualToString:person.uid]) {
+                [self setFavorite];
+                [self displayWink];
+                [self animateWink];
+            }
         } else {
             [self alertMessage:@"Error" message:@"Please login and enable push notifications to use this feature" button:@"Ok"];
         }

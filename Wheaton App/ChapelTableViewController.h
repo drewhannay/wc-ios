@@ -7,15 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Constants.h"
-#import "AFNetworking.h"
 #import "CustomTableViewController.h"
 
-@interface ChapelTableViewController : CustomTableViewController {
-    int todayRow;
-    int todaySection;
-    NSCalendar *cal;
-}
+@interface ChapelTableViewController : CustomTableViewController 
 
 @property (nonatomic, retain) NSMutableArray *schedule;
 

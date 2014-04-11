@@ -8,9 +8,7 @@
 
 #import "MetraTableViewCell.h"
 
-@implementation MetraTableViewCell {
-    UIBezierPath *path;
-}
+@implementation MetraTableViewCell
 
 - (void)awakeFromNib
 {

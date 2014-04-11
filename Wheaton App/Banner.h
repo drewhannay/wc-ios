@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <EventKit/EventKit.h>
-#import "Constants.h"
-#import "AFNetworking.h"
 
 @interface Banner : NSObject
 

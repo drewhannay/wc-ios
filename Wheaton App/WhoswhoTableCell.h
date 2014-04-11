@@ -16,5 +16,4 @@
 @property (strong, nonatomic) IBOutlet UILabel *year;
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *profileImage;
 
-
 @end

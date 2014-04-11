@@ -14,6 +14,11 @@
 @end
 
 @implementation ChapelTableViewController
+{
+    int todayRow;
+    int todaySection;
+    NSCalendar *cal;
+}
 
 @synthesize schedule;
 

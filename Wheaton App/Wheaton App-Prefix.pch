@@ -19,3 +19,7 @@
     #import "AFNetworking.h"
     #import "Constants.h"
 #endif
+
+#ifndef DEBUG
+#define NSLog(...);
+#endif

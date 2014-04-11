@@ -10,12 +10,6 @@
 
 @implementation WhoswhoTableCell
 
-@synthesize profileImage;
-@synthesize firstName;
-@synthesize lastName;
-@synthesize type;
-@synthesize year;
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

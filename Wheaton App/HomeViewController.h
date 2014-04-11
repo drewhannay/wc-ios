@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Constants.h"
-#import "AFNetworking.h"
 #import "UIImageView+AFNetworking.h"
 #import "Reachability.h"
 #import "MTReachabilityManager.h"

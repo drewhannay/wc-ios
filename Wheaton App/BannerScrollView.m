@@ -7,10 +7,10 @@
 //
 
 #import "BannerScrollView.h"
-#import "Constants.h"
 #import "WebViewController.h"
 
-@implementation BannerScrollView {
+@implementation BannerScrollView
+{
     int totalPages;
     NSArray *bannerImages;
     UIViewController *parentController;
@@ -18,7 +18,8 @@
 
 @synthesize scrollView, pageControl;
 
-- (void)loaded:(UIViewController *)parent {
+- (void)loaded:(UIViewController *)parent
+{
     parentController = parent;
     [scrollView setTag:1];
     [scrollView setAutoresizingMask:UIViewAutoresizingNone];
@@ -58,7 +59,8 @@
     });
 }
 
-- (void)tappedImage: (UITapGestureRecognizer *)recognizer {
+- (void)tappedImage: (UITapGestureRecognizer *)recognizer
+{
     [self openURL:[[bannerImages objectAtIndex:pageControl.currentPage] objectForKey:@"url"]];
 }
 
