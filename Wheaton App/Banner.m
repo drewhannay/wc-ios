@@ -22,11 +22,11 @@
         NSDictionary *dic = responseObject;
         if ([dic objectForKey:@"success"]) {
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"login"];
+            [[NSUserDefaults standardUserDefaults] setObject:[dic objectForKey:@"user"] forKey:@"schoolID"];
             [[NSUserDefaults standardUserDefaults] synchronize];
             success(dic);
         } else {
-            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"login"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
+            [self logOut];
             failure([NSError errorWithDomain:@"Incorrect email or password" code:0 userInfo:nil]);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -59,8 +59,6 @@
         
         [manager POST:url parameters:[Banner getUser] success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSArray *dic = responseObject;
-            
-            NSLog(@"%@", dic);
             
             NSMutableArray *requirements = [[NSMutableArray alloc] init];
             
@@ -150,12 +148,12 @@
                             [event setCalendar:[store defaultCalendarForNewEvents]];
                             
                             NSError *err;
-                            //[store saveEvent:event span:EKSpanThisEvent error:&err];
+                            [store saveEvent:event span:EKSpanThisEvent error:&err];
                             
-                            NSLog(@"%@", err);
-                            NSLog(@"%@", event.title);
-                            NSLog(@"%@", [self convertToSystemTimezone:event.startDate]);
-                            NSLog(@"%@", event.endDate);
+//                            NSLog(@"%@", err);
+//                            NSLog(@"%@", event.title);
+//                            NSLog(@"%@", [self convertToSystemTimezone:event.startDate]);
+//                            NSLog(@"%@", event.endDate);
                         }
                     }
                 });
@@ -199,12 +197,25 @@
     return NO;
 }
 
++ (void)logOut
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"favorites"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"schoolID"];
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"login"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 + (NSDictionary *)getUser
 {
     return @{
              @"uuid": [[NSUserDefaults standardUserDefaults] objectForKey:@"uuid"],
              @"token": [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
              };
+}
+
++ (NSString *)getSchoolID
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"schoolID"];
 }
 
 @end

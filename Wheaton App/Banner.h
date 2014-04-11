@@ -19,5 +19,7 @@
 + (void)account:(void (^)(NSDictionary *account))success failure:(void (^)(NSError *err))failure;
 + (void)importCalendar:(void (^)(NSArray *schedule))success failure:(void (^)(NSError *err))failure;
 + (BOOL)hasLoggedIn;
++ (void)logOut;
++ (NSString *)getSchoolID;
 
 @end

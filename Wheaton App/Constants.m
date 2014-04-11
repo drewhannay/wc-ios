@@ -19,7 +19,7 @@ NSString * const c_Banners = @"https://s3.amazonaws.com/wcstatic/banners.json";
 NSString * const c_Banner = @"http://dev.isoncamp.us/wheaton/banner";
 NSString * const c_Favorites = @"http://dev.isoncamp.us/wheaton/person/favorites";
 NSString * const c_Events = @"https://isoncamp.us/wheaton/events";
-NSString * const c_PushOptions = @"https://isoncamp.us/apn";
+NSString * const c_PushOptions = @"http://dev.isoncamp.us/apn";
 NSString * const c_About = @"https://s3.amazonaws.com/wcstatic/about.html";
 NSString * const c_Metra = @"http://dev.isoncamp.us/wheaton/train";
 
