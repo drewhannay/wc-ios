@@ -110,7 +110,7 @@
         
         NSString *url = [NSString stringWithFormat:@"%@/schedule", c_Banner];
         
-        [manager GET:url parameters:[Banner getUser] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [manager POST:url parameters:[Banner getUser] success:^(AFHTTPRequestOperation *operation, id responseObject) {
             EKEventStore *store = [[EKEventStore alloc] init];
             
             NSArray *schedule = responseObject;
@@ -149,11 +149,6 @@
                             
                             NSError *err;
                             [store saveEvent:event span:EKSpanThisEvent error:&err];
-                            
-//                            NSLog(@"%@", err);
-//                            NSLog(@"%@", event.title);
-//                            NSLog(@"%@", [self convertToSystemTimezone:event.startDate]);
-//                            NSLog(@"%@", event.endDate);
                         }
                     }
                 });
@@ -164,26 +159,6 @@
     }
 }
 
-+ (NSDate*) convertToSystemTimezone:(NSDate*)sourceDate {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    [calendar setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
-    
-    NSUInteger flags = (NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit);
-    NSDateComponents *dateComponents = [calendar components:flags fromDate:sourceDate];
-    
-    NSTimeZone *tempTimeZone = [dateComponents timeZone];
-    NSString *timeZone;
-    if ([tempTimeZone isDaylightSavingTimeForDate:[[NSDate alloc]init]]) {
-        timeZone = @"CDT";
-    } else {
-        timeZone = @"CST";
-    }
-    
-    [calendar setTimeZone:[NSTimeZone timeZoneWithName:timeZone]];
-
-    NSDate *myDate = [calendar dateFromComponents:dateComponents];
-    return myDate;
-}
 
 + (BOOL)hasLoggedIn
 {

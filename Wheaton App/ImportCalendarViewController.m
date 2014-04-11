@@ -33,7 +33,7 @@
     
     
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Banner"
-                                                      message:@"Are you sure you want to import your schedule?"
+                                                      message:@"This process will import your class schedule to your phone's calendar. Are you sure you would like to continue?"
                                                      delegate:self
                                             cancelButtonTitle:@"Cancel"
                                             otherButtonTitles:nil];
