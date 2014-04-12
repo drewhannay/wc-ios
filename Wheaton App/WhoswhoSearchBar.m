@@ -14,15 +14,17 @@ CGFloat TextfieldLeftMargin = 0;
 
 CGFloat CancelAnimationDistance = 80;
 
-@interface WhoswhoSearchBar (){
-    UITextField *foundSearchTextField;
-}
+@interface WhoswhoSearchBar ()
 
 @end
 
 @implementation WhoswhoSearchBar
+{
+    UITextField *foundSearchTextField;
+}
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     
     self.backgroundColor = [UIColor clearColor];
@@ -37,7 +39,8 @@ CGFloat CancelAnimationDistance = 80;
     }
 }
 
-- (void)layoutSubviews {
+- (void)layoutSubviews
+{
     if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7) {
         UITextField *searchField;
         NSUInteger numViews = [self.subviews count];

@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AFNetworking.h"
-#import "Constants.h"
 #import "BannerScrollView.h"
 
 @interface HomePastViewController : UITableViewController

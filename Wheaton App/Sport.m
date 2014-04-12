@@ -19,7 +19,7 @@
 @synthesize home;
 @synthesize gender;
 
-- (UITableViewCell *)generateCell:(SportTableCell *)cell {
+- (SportTableCell *)generateCell:(SportTableCell *)cell {
     
     cell.time.text = [time lowercaseString];
     
@@ -38,6 +38,8 @@
         cell.sport.image = [UIImage imageNamed:@"Tennis.png"];
     else if ([sport isEqualToString:@"Swimming"])
         cell.sport.image = [UIImage imageNamed:@"Swimming.png"];
+    else if ([sport isEqualToString:@"Baseball"] || [sport isEqualToString:@"Softball"])
+        cell.sport.image = [UIImage imageNamed:@"Baseball.png"];
     else
         [cell.sport setHidden:YES];
     

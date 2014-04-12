@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "MapDetailViewController.h"
 #import "Location.h"
 
 #define METERS_PER_MILE 1609.344
@@ -26,23 +27,17 @@
     UITextView *searchTextField = [self.searchDisplayController.searchBar valueForKey:@"_searchField"];
     searchTextField.textColor = [UIColor whiteColor];
     
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]
-                                          initWithTarget:self action:@selector(showNavbar:)];
-    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]
-                                          initWithTarget:self action:@selector(hideNavbar:)];
-    [self.mapView addGestureRecognizer:tapGesture];
-    [panGesture setDelegate:self];
-    [self.mapView addGestureRecognizer:panGesture];
-    
     [self loadLocations];
     
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
     [mixpanel track:@"Opened Map" properties:@{}];
+    
+    [self resetMap:NULL];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [self resetMap:NULL];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)tapped
@@ -54,7 +49,9 @@
 {
     [self.mapView removeAnnotations:self.mapView.annotations];
     for (Location *annotation in locations) {
-        [self.mapView addAnnotation:annotation];
+        if ([annotation.type isEqualToString:@"building"]) {
+            [self.mapView addAnnotation:annotation];
+        }
     }
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = 41.870016;
@@ -75,7 +72,14 @@
         if (annotationView == nil) {
             annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             annotationView.enabled = YES;
+            annotationView.animatesDrop = NO;
             annotationView.canShowCallout = YES;
+            if ((annotation.description != (id)[NSNull null])
+                && (annotation.description.length > 0)) {
+                annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            } else {
+                annotationView.rightCalloutAccessoryView = NULL;
+            }
         } else {
             annotationView.annotation = annotation;
         }
@@ -83,6 +87,16 @@
         return annotationView;
     }
     return nil;
+}
+- (void)mapView:(MKMapView *)mv annotationView:(MKAnnotationView *)pin calloutAccessoryControlTapped:(UIControl *)control {
+    Location *loc = pin.annotation;
+    [self performSegueWithIdentifier:@"MapDetailView" sender:loc];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    MapDetailViewController *detailViewController = [segue destinationViewController];
+    detailViewController.building = sender;
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
@@ -103,33 +117,6 @@
         }
         [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
     });
-}
-
-- (void) hideNavbar:(id)sender
-{
-//    if (barHidden == NO) {
-//        CGRect tabBarFrame = self.tabBarController.tabBar.frame;
-//        tabBarFrame.origin.y += tabBarFrame.size.height;
-//        
-//        [UIView animateWithDuration:0.2 animations:^ {
-//            [self.tabBarController.tabBar setFrame:tabBarFrame];
-//        }];
-//        barHidden = YES;
-//    }
-}
-
-- (void) showNavbar:(id)sender
-{
-//    if (barHidden == YES) {
-//        CGRect tabBarFrame = self.tabBarController.tabBar.frame;
-//        tabBarFrame.origin.y -= tabBarFrame.size.height;
-//        
-//        [UIView animateWithDuration:0.1 animations:^ {
-//            [self.tabBarController.tabBar setFrame:tabBarFrame];
-//        }];
-//        
-//        barHidden = NO;
-//    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -174,19 +161,32 @@
     
     for (NSDictionary* dic in locationArray) {
         
-        NSDictionary *location = [dic objectForKey:@"location"];
-        NSNumber * latitude = [location objectForKey:@"latitude"];
-        NSNumber * longitude = [location objectForKey:@"longitude"];
-        NSString * name = [dic objectForKey:@"name"];
-        NSString * address = @"";
-        
-        CLLocationCoordinate2D coordinate;
-        coordinate.latitude = latitude.doubleValue;
-        coordinate.longitude = longitude.doubleValue;
-        Location *annotation = [[Location alloc] initWithName:name address:address coordinate:coordinate];
-        if([[dic objectForKey:@"type"] isEqualToString:@"building"])
-            [self.mapView addAnnotation:annotation];
-        [locations addObject:annotation];
+        @try {
+            NSDictionary *location = [dic objectForKey:@"location"];
+            NSNumber *latitude = [location objectForKey:@"latitude"];
+            NSNumber *longitude = [location objectForKey:@"longitude"];
+            
+            CLLocationCoordinate2D coordinate;
+            coordinate.latitude = latitude.doubleValue;
+            coordinate.longitude = longitude.doubleValue;
+            
+            Location *annotation = [[Location alloc] initWithName:[dic objectForKey:@"name"] coordinate:coordinate];
+            annotation.image = @"";
+            if (![[[dic objectForKey:@"image"] objectForKey:@"url"] isEqual:[NSNull null]]) {
+                annotation.image = [[[dic objectForKey:@"image"] objectForKey:@"url"] objectForKey:@"medium"];
+            }
+            annotation.description = @"Blank";
+            if (![[dic objectForKey:@"description"] isEqual:[NSNull null]]) {
+                annotation.description = [dic objectForKey:@"description"];
+            }
+            annotation.type = [dic objectForKey:@"type"];
+            annotation.hours = [dic objectForKey:@"hours"];
+            
+            if ([[dic objectForKey:@"type"] isEqualToString:@"building"]) {
+                [self.mapView addAnnotation:annotation];
+            }
+            [locations addObject:annotation];
+        } @catch (NSException * e) { }
     }
 }
 

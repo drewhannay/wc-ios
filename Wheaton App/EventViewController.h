@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Constants.h"
 
-@interface EventViewController : UIViewController <UIGestureRecognizerDelegate> {
-    int priorSegmentIndex;
-}
+@interface EventViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *switchViewControllers;
 @property (nonatomic, copy) NSArray *allViewControllers;

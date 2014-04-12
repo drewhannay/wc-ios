@@ -120,31 +120,14 @@
     return @"Upcoming";
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    NSString *sectionTitle = [self tableView:tableView titleForHeaderInSection:section];
-    if (sectionTitle == nil) {
-        return nil;
-    }
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 30)];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake (10, 2, 200, 20)];
-    label.text = sectionTitle;
-    [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:14]];
-    [headerView addSubview:label];
-    
-    [headerView setBackgroundColor:[UIColor colorWithRed:238/255.0f green:238/255.0f blue:238/255.0f alpha:1.0f]];
-    [label setBackgroundColor:[UIColor clearColor]];
-    return headerView;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[sportResults objectForKey:[NSString stringWithFormat:@"%d", section]] count];
+    return [[sportResults objectForKey:[NSString stringWithFormat:@"%ld", (long)section]] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Sport *sport = [[sportResults objectForKey:[NSString stringWithFormat:@"%d", indexPath.section]] objectAtIndex:indexPath.row];
+    Sport *sport = [[sportResults objectForKey:[NSString stringWithFormat:@"%ld", (long)indexPath.section]] objectAtIndex:indexPath.row];
     
     NSString *cellIdentifier = @"SportTableCell";
     
@@ -163,7 +146,7 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Sport *sport = [[sportResults objectForKey:[NSString stringWithFormat:@"%d", indexPath.section]] objectAtIndex:indexPath.row];
+    Sport *sport = [[sportResults objectForKey:[NSString stringWithFormat:@"%ld", (long)indexPath.section]] objectAtIndex:indexPath.row];
     if ([[sport.score objectForKey:@"other"] intValue] < [[sport.score objectForKey:@"school"] intValue]) {
         [cell setBackgroundColor:[UIColor colorWithRed:255/255.0f green:106/255.0f blue:0.0f alpha:.15f]];
     }

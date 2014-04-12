@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Constants.h"
 
-@interface MasterTabViewController : UITabBarController <UITabBarControllerDelegate> {
-    int index;
-}
+@interface MasterTabViewController : UITabBarController <UITabBarControllerDelegate>
 
 @end

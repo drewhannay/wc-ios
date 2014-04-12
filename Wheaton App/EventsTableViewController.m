@@ -109,7 +109,6 @@ static NSString *cellIdentifier = @"EventAutoTableViewCell";
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:[[[result objectForKey:@"timeStamp"] objectAtIndex:0] doubleValue]];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
     [dateFormatter setDateFormat:@"MM/dd hh:mm a"];
     
     cell.dateLabel.text = [dateFormatter stringFromDate:date];

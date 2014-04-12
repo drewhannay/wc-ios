@@ -7,12 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "GAI.h"
 #import "MTReachabilityManager.h"
-#import "NotificationsViewController.h"
 #import "AFNetworking.h"
 
-#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define MIXPANEL_TOKEN @"ba1c3c53b3cd538357b7f85ff033c648"
 
 @implementation AppDelegate
@@ -26,37 +23,31 @@
     
     [MTReachabilityManager sharedManager];
     
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
-    [GAI sharedInstance].dispatchInterval = 20;
-    [[GAI sharedInstance] trackerWithTrackingId:@"UA-44326922-1"];
-    
     self.mixpanel = [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
     
     self.mixpanel.checkForSurveysOnActive = YES;
     self.mixpanel.showSurveyOnActive = YES;
-    
     self.mixpanel.checkForNotificationsOnActive = YES;
     self.mixpanel.showNotificationOnActive = YES;
     
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     
-    NSDictionary *payload = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-    if (payload) {
-       //[self addNotification:payload];
+    [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    
+    NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"uuid"];
+    if (!UUID) {
+        CFUUIDRef uuid = CFUUIDCreate(NULL);
+        UUID = (__bridge_transfer NSString *)CFUUIDCreateString(NULL, uuid);
+        CFRelease(uuid);
+        
+        [[NSUserDefaults standardUserDefaults] setObject:UUID forKey:@"uuid"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     
-    return YES;
-}
-
-- (void)addNotification:(NSDictionary *)notification
-{
-//    UITabBarController *rootViewController = (UITabBarController *)self.window.rootViewController;
-//    UINavigationController *nnc = (UINavigationController *)rootViewController.childViewControllers[3];
-//    NotificationsViewController *nvc = (NotificationsViewController *)[[nnc viewControllers] lastObject];
-//    [nvc addPushNotification:notification];
+    NSLog(@"My other token is: %@", UUID);
     
-    NSLog(@"%@", notification);
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -110,7 +101,7 @@
         NSDictionary *parameters = @{@"token": deviceToken};
         NSString *url = [NSString stringWithFormat:@"%@/add", c_PushOptions];
         [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"JSON: %@", responseObject);
+            //NSLog(@"JSON: %@", responseObject);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
         }];
@@ -127,10 +118,10 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)payload {
     // Detect if APN is received on Background or Foreground state
-    if (application.applicationState == UIApplicationStateInactive)
-        [self addNotification:payload];
-    else if (application.applicationState == UIApplicationStateActive)
-        [self addNotification:payload];
+//    if (application.applicationState == UIApplicationStateInactive)
+//        [self addNotification:payload];
+//    else if (application.applicationState == UIApplicationStateActive)
+//        [self addNotification:payload];
 }
 
 

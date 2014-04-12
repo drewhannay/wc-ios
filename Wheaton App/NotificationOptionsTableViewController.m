@@ -7,13 +7,14 @@
 //
 
 #import "NotificationOptionsTableViewController.h"
-#import "Constants.h"
 
 @interface NotificationOptionsTableViewController ()
 
 @end
 
-@implementation NotificationOptionsTableViewController
+@implementation NotificationOptionsTableViewController {
+    AFHTTPRequestOperationManager *manager;
+}
 
 @synthesize notificationOptions;
 

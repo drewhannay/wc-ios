@@ -11,8 +11,13 @@
 
 @interface Location : NSObject <MKAnnotation>
 
-- (id)initWithName:(NSString*)name address:(NSString*)address coordinate:(CLLocationCoordinate2D)coordinate;
-- (id)initWithName:(NSString*)name address:(NSString*)address;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *description;
+@property (nonatomic, copy) NSString *image;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSArray *hours;
+
+- (id)initWithName:(NSString*)name coordinate:(CLLocationCoordinate2D)coordinate;
 - (MKMapItem*)mapItem;
 
 @end

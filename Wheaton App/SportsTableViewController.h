@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Constants.h"
+#import "CustomTableViewController.h"
 
-@interface SportsTableViewController : UITableViewController
+@interface SportsTableViewController : CustomTableViewController
 
 @property (nonatomic, retain) NSMutableDictionary *sportResults;
 @property NSInteger *displayResults;

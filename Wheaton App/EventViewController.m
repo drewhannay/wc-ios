@@ -17,6 +17,10 @@
 @end
 
 @implementation EventViewController
+{
+    NSInteger priorSegmentIndex;
+}
+
 
 @synthesize switchViewControllers, allViewControllers, currentViewController;
 
@@ -50,7 +54,8 @@
 
 #pragma mark - View controller switching and saving
 
-- (void)cycleFromViewController:(UIViewController*)oldVC toViewController:(UIViewController*)newVC direction:(BOOL)dir {
+- (void)cycleFromViewController:(UIViewController*)oldVC toViewController:(UIViewController*)newVC direction:(BOOL)dir
+{
     
     // Do nothing if we are attempting to swap to the same view controller
     if (newVC == oldVC) return;
@@ -116,21 +121,24 @@
     }
 }
 
-- (void)handleSwipeRight:(id)swipe {
+- (void)handleSwipeRight:(id)swipe
+{
     NSUInteger index = self.switchViewControllers.selectedSegmentIndex;
     index = priorSegmentIndex = self.switchViewControllers.selectedSegmentIndex = (index - 1) % 4;
     UIViewController *incomingViewController = [self.allViewControllers objectAtIndex:index];
     [self cycleFromViewController:self.currentViewController toViewController:incomingViewController direction:NO];
 }
 
-- (void)handleSwipeLeft:(id)swipe {
+- (void)handleSwipeLeft:(id)swipe
+{
     NSUInteger index = self.switchViewControllers.selectedSegmentIndex;
     index = priorSegmentIndex = self.switchViewControllers.selectedSegmentIndex = (index + 1) % 4;
     UIViewController *incomingViewController = [self.allViewControllers objectAtIndex:index];
     [self cycleFromViewController:self.currentViewController toViewController:incomingViewController direction:YES];
 }
 
-- (IBAction)indexDidChangeForSegmentedControl:(UISegmentedControl *)sender {
+- (IBAction)indexDidChangeForSegmentedControl:(UISegmentedControl *)sender
+{
     
     NSUInteger index = sender.selectedSegmentIndex;
     

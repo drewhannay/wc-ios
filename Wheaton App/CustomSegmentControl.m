@@ -7,7 +7,6 @@
 //
 
 #import "CustomSegmentControl.h"
-#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @implementation CustomSegmentControl
 
@@ -35,8 +34,8 @@
 - (void)drawRect:(CGRect)rect
 {
     CGColorRef borderBottomColor = CGColorRetain([UIColorFromRGB(0x7e8083) CGColor]);
-    CGColorRef dividerColor = CGColorRetain([UIColorFromRGB(0xe6e6e6) CGColor]);
-    CGColorRef backgroundColor = CGColorRetain([UIColorFromRGB(0xf1f1f1) CGColor]);
+    CGColorRef dividerColor = CGColorRetain([UIColorFromRGB(0xDADDE0) CGColor]);
+    CGColorRef backgroundColor = CGColorRetain([UIColorFromRGB(0xE1E4E7) CGColor]);
     
     CGContextRef context;
 

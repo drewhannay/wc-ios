@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Constants.h"
-#import "AFNetworking.h"
 #import "UIImageView+AFNetworking.h"
+#import "Reachability.h"
 #import "MTReachabilityManager.h"
 #import "LVDebounce.h"
 
 @interface HomeViewController : UIViewController <UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDelegate, UITableViewDataSource> {
-    int priorSegmentIndex;
+    NSInteger priorSegmentIndex;
 }
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *switchViewControllers;

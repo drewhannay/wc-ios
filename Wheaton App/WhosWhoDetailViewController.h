@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AMBlurView.h"
+#import "JCRBlurView.h"
 #import "Person.h"
+#import "UIImage_Scale.h"
 
-@interface WhosWhoDetailViewController : UIViewController
+@interface WhosWhoDetailViewController : UIViewController <UIGestureRecognizerDelegate>
 
 
 @property (strong, nonatomic) Person *person;
@@ -21,8 +22,6 @@
 @property (strong, nonatomic) IBOutlet UIView *bottomBlur;
 @property (unsafe_unretained, nonatomic) IBOutlet UIImageView *profileImage;
 @property (strong, nonatomic) UIImage *image;
-@property (strong, nonatomic) AMBlurView *blurView;
-
-- (void)setFrameByImage;
+@property (strong, nonatomic) JCRBlurView *blurView;
 
 @end
